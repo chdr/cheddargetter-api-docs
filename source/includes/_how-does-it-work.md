@@ -1,0 +1,22 @@
+# How Does It Work?
+
+Our API utilizes a REST-like interface where method calls are made by sending
+HTTP GET or POST requests.  Response data is returned in XML format.
+
+The response contains an HTTP status code of 200 for a successful request.
+A status code of 400 or greater is returned upon an adverse condition.
+That makes handling errors quite simple.
+
+## Ok, That's Nice But How Do I Use It?
+
+First, I suggest reviewing our [Open Source Wrappers](#open-source-wrappers)
+available for you to use.  They make integrating quite easy.
+
+You're also welcome to write your own code to work with the API. If you have
+questions about that, [we're here to help](#support).
+
+### Sample Integration
+
+There are just a few things to consider when planning for an integration with
+the CheddarGetter API.  We've created a KB Article on the subject based on our
+own PHP wrapper. [Check it out](http://support.cheddargetter.com/kb/api-8/sample-integration-roadmap).
