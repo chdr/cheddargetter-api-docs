@@ -1,15 +1,12 @@
 Vagrant.configure(2) do |config|
   config.vm.box = "ubuntu/trusty64"
   config.vm.network :forwarded_port, guest: 4567, host: 4567
-  config.vm.provider "virtualbox" do |vb|
-    vb.memory = "384"
-  end
 
   config.vm.provision "bootstrap",
     type: "shell",
     inline: <<-SHELL
       sudo apt-get update
-      sudo apt-get install -yq ruby ruby-dev build-essential nodejs
+      sudo apt-get install -yq ruby ruby-dev build-essential nodejs git
       sudo apt-get autoremove -yq
       gem install --no-ri --no-rdoc bundler
     SHELL
