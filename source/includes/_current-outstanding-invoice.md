@@ -1,0 +1,20 @@
+# Current vs. Outstanding Invoice
+
+Many API calls interact with a customer's subscription invoice. The "current"
+subscription invoice is the one that is currently "open". In other words, it is
+scheduled to bill in the future. You can add charges, credits, and item
+quantities to a subscription invoice. In almost every case, you'll want to
+interact with the "current" subscription invoice. This is the default for all
+relevant API calls. In rare cases, you might want to adjust the "outstanding"
+subscription invoice.
+
+An outstanding invoice is one that was scheduled to bill in the past but has
+not yet been paid. This could be a scheduled invoice that was attempted but
+declined (the subscriber is in the dunning process) or simply one that's
+scheduled in the past but CheddarGetter's recurring engine hasn't picked it up
+for execution yet. If a subscription is canceled for non-payment, it almost
+certainly has an outstanding invoice.
+
+Some API methods have a parameter named `invoicePeriod`. In the case when you want
+to interact with the outstanding invoice, set the value for this parameter to
+"outstanding".
