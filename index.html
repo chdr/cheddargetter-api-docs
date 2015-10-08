@@ -26,6 +26,7 @@
       </span>
     </a>
     <div class="tocify-wrapper">
+      <h4>API Documentation</h4>
       <img src="images/logo.png" />
         <div class="lang-selector">
               <a href="#" data-language-name="shell">shell</a>
@@ -307,63 +308,51 @@ for the pricing plan with <code class="prettyprint">code=MY_PLAN_CODE</code></p>
 <table><thead>
 <tr>
 <th>Name</th>
-<th>Required</th>
 <th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
-<td>subscriptionStatus</td>
-<td>No</td>
+<td><code class="prettyprint">subscriptionStatus</code></td>
 <td>&ldquo;activeOnly&rdquo; or &ldquo;canceledOnly&rdquo;</td>
 </tr>
 <tr>
-<td>planCode[]</td>
-<td>No</td>
+<td><code class="prettyprint">planCode[]</code></td>
 <td>Your pricing plan code. This is an array and may be provided multiple times to filter by multiple plans.</td>
 </tr>
 <tr>
-<td>createdAfterDate</td>
-<td>No</td>
+<td><code class="prettyprint">createdAfterDate</code></td>
 <td>YYYY-MM-DD</td>
 </tr>
 <tr>
-<td>createdBeforeDate</td>
-<td>No</td>
+<td><code class="prettyprint">createdBeforeDate</code></td>
 <td>YYYY-MM-DD</td>
 </tr>
 <tr>
-<td>canceledAfterDate</td>
-<td>No</td>
+<td><code class="prettyprint">canceledAfterDate</code></td>
 <td>YYYY-MM-DD</td>
 </tr>
 <tr>
-<td>canceledBeforeDate</td>
-<td>No</td>
+<td><code class="prettyprint">canceledBeforeDate</code></td>
 <td>YYYY-MM-DD</td>
 </tr>
 <tr>
-<td>transactedAfterDate</td>
-<td>No</td>
+<td><code class="prettyprint">transactedAfterDate</code></td>
 <td>YYYY-MM-DD</td>
 </tr>
 <tr>
-<td>transactedBeforeDate</td>
-<td>No</td>
+<td><code class="prettyprint">transactedBeforeDate</code></td>
 <td>YYYY-MM-DD</td>
 </tr>
 <tr>
-<td>orderBy</td>
-<td>No</td>
+<td><code class="prettyprint">orderBy</code></td>
 <td>&ldquo;name&rdquo; (default), &ldquo;company&rdquo;, &ldquo;plan&rdquo;, &ldquo;billingDatetime&rdquo; or &ldquo;createdDatetime&rdquo;</td>
 </tr>
 <tr>
-<td>orderByDirection</td>
-<td>No</td>
+<td><code class="prettyprint">orderByDirection</code></td>
 <td>&ldquo;asc&rdquo; (default) or &ldquo;desc&rdquo;</td>
 </tr>
 <tr>
-<td>search</td>
-<td>No</td>
+<td><code class="prettyprint">search</code></td>
 <td>Text search customer name, company, email address and last four digits of credit card.</td>
 </tr>
 </tbody></table>
@@ -396,204 +385,164 @@ and subscribe the customer to a pricing plan.</p>
 <table><thead>
 <tr>
 <th>Name</th>
-<th>Required</th>
 <th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
-<td>code</td>
-<td>Yes</td>
-<td>Your code for this customer. Limited to 255 characters.</td>
+<td><code class="prettyprint">code</code></td>
+<td><strong>Required</strong> Your code for this customer. Limited to 255 characters.</td>
 </tr>
 <tr>
-<td>firstName</td>
-<td>Yes</td>
-<td>Limited to 40 characters</td>
+<td><code class="prettyprint">firstName</code></td>
+<td><strong>Required</strong> Limited to 40 characters</td>
 </tr>
 <tr>
-<td>lastName</td>
-<td>Yes</td>
-<td>Limited to 40 characters</td>
+<td><code class="prettyprint">lastName</code></td>
+<td><strong>Required</strong> Limited to 40 characters</td>
 </tr>
 <tr>
-<td>email</td>
-<td>Yes</td>
-<td>Valid email address</td>
+<td><code class="prettyprint">email</code></td>
+<td><strong>Required</strong> Valid email address</td>
 </tr>
 <tr>
-<td>company</td>
-<td>No</td>
+<td><code class="prettyprint">company</code></td>
 <td>Limited to 60 characters</td>
 </tr>
 <tr>
-<td>isVatExempt</td>
-<td>No</td>
+<td><code class="prettyprint">isVatExempt</code></td>
 <td>1 or 0</td>
 </tr>
 <tr>
-<td>vatNumber</td>
-<td>No</td>
+<td><code class="prettyprint">vatNumber</code></td>
 <td>If the customer is geographically eligible to be taxed and is exempt, provide the exemption number if applicable. Limited to 32 characters</td>
 </tr>
 <tr>
-<td>notes</td>
-<td>No</td>
+<td><code class="prettyprint">notes</code></td>
 <td>Limited to 255 characters</td>
 </tr>
 <tr>
-<td>firstContactDatetime</td>
-<td>No</td>
+<td><code class="prettyprint">firstContactDatetime</code></td>
 <td>Date or datetime in ISO 8601 format.(e.g., 2011-08-01 or 2011-08-01T15:30:00+00:00). See the <a href="http://support.cheddargetter.com/faqs/marketing-metrics/marketing-metrics">KB Article</a></td>
 </tr>
 <tr>
-<td>referer</td>
-<td>No</td>
+<td><code class="prettyprint">referer</code></td>
 <td>A valid URL referer. Limited to 255 characters. See the <a href="http://support.cheddargetter.com/faqs/marketing-metrics/marketing-metrics">KB Article</a></td>
 </tr>
 <tr>
-<td>campaignTerm</td>
-<td>No</td>
+<td><code class="prettyprint">campaignTerm</code></td>
 <td>The &ldquo;term&rdquo; or &ldquo;keyword&rdquo; phrase that lead a potential customer to your site. Google Adwords equivalent: &ldquo;utm_term&rdquo;. See the <a href="http://support.cheddargetter.com/faqs/marketing-metrics/marketing-metrics">KB Article</a></td>
 </tr>
 <tr>
-<td>campaignName</td>
-<td>No</td>
+<td><code class="prettyprint">campaignName</code></td>
 <td>The name of the marketing campaign. Google Adwords equivalent: &ldquo;utm_campaign&rdquo;. See the <a href="http://support.cheddargetter.com/faqs/marketing-metrics/marketing-metrics">KB Article</a></td>
 </tr>
 <tr>
-<td>campaignSource</td>
-<td>No</td>
+<td><code class="prettyprint">campaignSource</code></td>
 <td>The source of the lead. Google Adwords equivalent: &ldquo;utm_source&rdquo;. See the <a href="http://support.cheddargetter.com/faqs/marketing-metrics/marketing-metrics">KB Article</a></td>
 </tr>
 <tr>
-<td>campaignMedium</td>
-<td>No</td>
+<td><code class="prettyprint">campaignMedium</code></td>
 <td>The medium used to find your site. Google Adwords equivalent: &ldquo;utm_medium&rdquo;. See the <a href="http://support.cheddargetter.com/faqs/marketing-metrics/marketing-metrics">KB Article</a></td>
 </tr>
 <tr>
-<td>campaignContent</td>
-<td>No</td>
+<td><code class="prettyprint">campaignContent</code></td>
 <td>The content you wish to track. Google Adwords equivalent: &ldquo;utm_content&rdquo;. See the <a href="http://support.cheddargetter.com/faqs/marketing-metrics/marketing-metrics">KB Article</a></td>
 </tr>
 <tr>
-<td>metaData[&lt;user-defined&gt;]</td>
-<td>No</td>
+<td><code class="prettyprint">metaData[&lt;user-defined&gt;]</code></td>
 <td>See the <a href="http://support.cheddargetter.com/kb/api-8/customer-meta-data">KB Article</a> about customer metadata</td>
 </tr>
 <tr>
-<td>subscription[planCode]</td>
-<td>Yes</td>
-<td>Your code for the subscribed pricing plan</td>
+<td><code class="prettyprint">subscription[planCode]</code></td>
+<td><strong>Required</strong> Your code for the subscribed pricing plan</td>
 </tr>
 <tr>
-<td>subscription[initialBillDate]</td>
-<td>No</td>
+<td><code class="prettyprint">subscription[initialBillDate]</code></td>
 <td>Date or datetime in ISO 8601 format. (e.g., 2011-08-01 or 2011-08-01T15:30:00+00:00). Date on which you would like the customers first invoice to be billable. This option overrides the pricing plan default. Must either be today&rsquo;s date (run invoice immediately) or a future date.</td>
 </tr>
 <tr>
-<td>subscription[method]</td>
-<td>No</td>
+<td><code class="prettyprint">subscription[method]</code></td>
 <td>&ldquo;cc&rdquo; (default) or &ldquo;paypal&rdquo;</td>
 </tr>
 <tr>
-<td>subscription[ccNumber]</td>
-<td>Conditional (See notes)</td>
-<td>Numbers only &ndash; a valid credit/debit card number</td>
+<td><code class="prettyprint">subscription[ccNumber]</code></td>
+<td><strong>Conditional (See Notes)</strong> Numbers only &ndash; a valid credit/debit card number</td>
 </tr>
 <tr>
-<td>subscription[ccExpiration]</td>
-<td>Conditional (See notes)</td>
-<td>MM/YYYY - the expiration date for the credit card</td>
+<td><code class="prettyprint">subscription[ccExpiration]</code></td>
+<td><strong>Conditional (See Notes)</strong> MM/YYYY - the expiration date for the credit card</td>
 </tr>
 <tr>
-<td>subscription[ccCardCode]</td>
-<td>Conditional. If plan is free, no. If your preference is to require the cardCode, yes. Not required when method is paypal.</td>
-<td>3-4 digits - The Card Verification Value (CCV).</td>
+<td><code class="prettyprint">subscription[ccCardCode]</code></td>
+<td><strong>Conditional. If plan is free, not required. If your preference is to require the <code class="prettyprint">cardCode</code>, required. Not required when method is paypal.</strong> 3-4 digits - The Card Verification Value (CCV).</td>
 </tr>
 <tr>
-<td>subscription[ccFirstName]</td>
-<td>Conditional (see notes)</td>
-<td>Limited to 40 characters</td>
+<td><code class="prettyprint">subscription[ccFirstName]</code></td>
+<td><strong>Conditional (See Notes)</strong> Limited to 40 characters</td>
 </tr>
 <tr>
-<td>subscription[ccLastName]</td>
-<td>Conditional (see notes)</td>
-<td>Limited to 40 characters</td>
+<td><code class="prettyprint">subscription[ccLastName]</code></td>
+<td><strong>Conditional (See Notes)</strong> Limited to 40 characters</td>
 </tr>
 <tr>
-<td>subscription[ccCompany]</td>
-<td>No</td>
+<td><code class="prettyprint">subscription[ccCompany]</code></td>
 <td>Limited to 60 characters</td>
 </tr>
 <tr>
-<td>subscription[ccCountry]</td>
-<td>No</td>
+<td><code class="prettyprint">subscription[ccCountry]</code></td>
 <td>Limited to 60 characters. Many billing solutions require that the ISO 2 char codes are used.</td>
 </tr>
 <tr>
-<td>subscription[ccAddress]</td>
-<td>No</td>
+<td><code class="prettyprint">subscription[ccAddress]</code></td>
 <td>Limited to 60 characters</td>
 </tr>
 <tr>
-<td>subscription[ccCity]</td>
-<td>No</td>
+<td><code class="prettyprint">subscription[ccCity]</code></td>
 <td>Limited to 40 characters</td>
 </tr>
 <tr>
-<td>subscription[ccState]</td>
-<td>No</td>
+<td><code class="prettyprint">subscription[ccState]</code></td>
 <td>Limited to 40 characters. 2 character state/province codes are suggested when country is US/Canada.</td>
 </tr>
 <tr>
-<td>subscription[ccZip]</td>
-<td>No</td>
+<td><code class="prettyprint">subscription[ccZip]</code></td>
 <td>Limited to 20 characters</td>
 </tr>
 <tr>
-<td>subscription[returnUrl]</td>
-<td>when method is paypal.</td>
-<td>Must be a valid URL. Only used when method is paypal. This is the location where subscriber is returned from paypal after accepting a preapproval.</td>
+<td><code class="prettyprint">subscription[returnUrl]</code></td>
+<td><strong>Conditional. Required when method is PayPal.</strong> Must be a valid URL. Only used when method is paypal. This is the location where subscriber is returned from paypal after accepting a preapproval.</td>
 </tr>
 <tr>
-<td>subscription[cancelUrl]</td>
-<td>Conditional. Required when method is paypal.</td>
-<td>Must be a valid URL. Only used when method is paypal. This is the location where subscriber is returned from paypal after declining a preapproval.</td>
+<td><code class="prettyprint">subscription[cancelUrl]</code></td>
+<td><strong>Conditional. Required when method is PayPal.</strong> Must be a valid URL. Only used when method is paypal. This is the location where subscriber is returned from paypal after declining a preapproval.</td>
 </tr>
 <tr>
-<td>charges[&lt;user-defined&gt;][chargeCode]</td>
-<td>No (see notes)</td>
-<td>Your code for this charge. Limited to 36 characters.</td>
+<td><code class="prettyprint">charges[&lt;user-defined&gt;][chargeCode]</code></td>
+<td><strong>Not Required (See Notes)</strong> Your code for this charge. Limited to 36 characters.</td>
 </tr>
 <tr>
-<td>charges[&lt;user-defined&gt;][quantity]</td>
-<td>No (see notes)</td>
-<td>Positive integer quantity</td>
+<td><code class="prettyprint">charges[&lt;user-defined&gt;][quantity]</code></td>
+<td><strong>Not Required (See Notes)</strong> Positive integer quantity</td>
 </tr>
 <tr>
-<td>charges[&lt;user-defined&gt;][eachAmount]</td>
-<td>No (see notes)</td>
-<td>Positive or negative integer or float with two digit decimal precision. A positive number will create a charge (debit). A negative number will create a credit.</td>
+<td><code class="prettyprint">charges[&lt;user-defined&gt;][eachAmount]</code></td>
+<td><strong>Not Required (See Notes)</strong> Positive or negative integer or float with two digit decimal precision. A positive number will create a charge (debit). A negative number will create a credit.</td>
 </tr>
 <tr>
-<td>charges[&lt;user-defined&gt;][description]</td>
-<td>No</td>
+<td><code class="prettyprint">charges[&lt;user-defined&gt;][description]</code></td>
 <td>Description for this charge/credit</td>
 </tr>
 <tr>
-<td>items[&lt;user-defined&gt;][itemCode]</td>
-<td>No (see notes)</td>
-<td>Your code for this tracked item. Limited to 36 characters.</td>
+<td><code class="prettyprint">items[&lt;user-defined&gt;][itemCode]</code></td>
+<td><strong>Not Required (See Notes)</strong> Your code for this tracked item. Limited to 36 characters.</td>
 </tr>
 <tr>
-<td>items[&lt;user-defined&gt;][quantity]</td>
-<td>No (see notes)</td>
-<td>The positive amount accurate to up to 4 decimal places that you wish to set the current usage to for this item. Can be zero.</td>
+<td><code class="prettyprint">items[&lt;user-defined&gt;][quantity]</code></td>
+<td><strong>Not Required (See Notes)</strong> The positive amount accurate to up to 4 decimal places that you wish to set the current usage to for this item. Can be zero.</td>
 </tr>
 <tr>
-<td>remoteAddress</td>
-<td>No (<a href="#fraud-protection-rate-limiting">see below</a>)</td>
-<td>Client IPv4 address</td>
+<td><code class="prettyprint">remoteAddress</code></td>
+<td><strong>Not Required (<a href="#fraud-protection-rate-limiting">See Below</a>)</strong> Client IPv4 address</td>
 </tr>
 </tbody></table>
 
@@ -646,184 +595,148 @@ about whether or not importing is possible in your situation.</p>
 <table><thead>
 <tr>
 <th>Name</th>
-<th>Required</th>
 <th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
-<td>code</td>
-<td>Yes</td>
-<td>Your code for this customer. Limited to 255 characters.</td>
+<td><code class="prettyprint">code</code></td>
+<td><strong>Required</strong> Your code for this customer. Limited to 255 characters.</td>
 </tr>
 <tr>
-<td>gatewayToken</td>
-<td>Conditional</td>
-<td>The gateway reference code. Limited to 255 characters.</td>
+<td><code class="prettyprint">gatewayToken</code></td>
+<td><strong>Conditional</strong> The gateway reference code. Limited to 255 characters.</td>
 </tr>
 <tr>
-<td>firstName</td>
-<td>Yes</td>
-<td>Limited to 40 characters</td>
+<td><code class="prettyprint">firstName</code></td>
+<td><strong>Required</strong> Limited to 40 characters</td>
 </tr>
 <tr>
-<td>lastName</td>
-<td>Yes</td>
-<td>Limited to 40 characters</td>
+<td><code class="prettyprint">lastName</code></td>
+<td><strong>Required</strong> Limited to 40 characters</td>
 </tr>
 <tr>
-<td>email</td>
-<td>Yes</td>
-<td>Valid email address</td>
+<td><code class="prettyprint">email</code></td>
+<td><strong>Required</strong> Valid email address</td>
 </tr>
 <tr>
-<td>company</td>
-<td>No</td>
+<td><code class="prettyprint">company</code></td>
 <td>Limited to 60 characters</td>
 </tr>
 <tr>
-<td>isVatExempt</td>
-<td>No</td>
+<td><code class="prettyprint">isVatExempt</code></td>
 <td>1 or 0</td>
 </tr>
 <tr>
-<td>vatNumber</td>
-<td>No</td>
+<td><code class="prettyprint">vatNumber</code></td>
 <td>If the customer is geographically eligible to be taxed and is exempt, provide the exemption number if applicable. Limited to 32 characters</td>
 </tr>
 <tr>
-<td>notes</td>
-<td>No</td>
+<td><code class="prettyprint">notes</code></td>
 <td>Limited to 255 characters</td>
 </tr>
 <tr>
-<td>firstContactDatetime</td>
-<td>No</td>
+<td><code class="prettyprint">firstContactDatetime</code></td>
 <td>Date or datetime in ISO 8601 format. (e.g., 2011-08-01 or 2011-08-01T15:30:00+00:00). See the <a href="http://support.cheddargetter.com/faqs/marketing-metrics/marketing-metrics">KB Article</a></td>
 </tr>
 <tr>
-<td>referer</td>
-<td>No</td>
+<td><code class="prettyprint">referer</code></td>
 <td>A valid URL referer. Limited to 255 characters. See the <a href="http://support.cheddargetter.com/faqs/marketing-metrics/marketing-metrics">KB Article</a></td>
 </tr>
 <tr>
-<td>campaignTerm</td>
-<td>No</td>
+<td><code class="prettyprint">campaignTerm</code></td>
 <td>The &ldquo;term&rdquo; or &ldquo;keyword&rdquo; phrase that lead a potential customer to your site. Google Adwords equivalent: &ldquo;utm_term&rdquo;. See the <a href="http://support.cheddargetter.com/faqs/marketing-metrics/marketing-metrics">KB Article</a></td>
 </tr>
 <tr>
-<td>campaignName</td>
-<td>No</td>
+<td><code class="prettyprint">campaignName</code></td>
 <td>The name of the marketing campaign. Google Adwords equivalent: &ldquo;utm_campaign&rdquo;. See the <a href="http://support.cheddargetter.com/faqs/marketing-metrics/marketing-metrics">KB Article</a></td>
 </tr>
 <tr>
-<td>campaignSource</td>
-<td>No</td>
+<td><code class="prettyprint">campaignSource</code></td>
 <td>The source of the lead. Google Adwords equivalent: &ldquo;utm_source&rdquo;. See the <a href="http://support.cheddargetter.com/faqs/marketing-metrics/marketing-metrics">KB Article</a></td>
 </tr>
 <tr>
-<td>campaignMedium</td>
-<td>No</td>
+<td><code class="prettyprint">campaignMedium</code></td>
 <td>The medium used to find your site. Google Adwords equivalent: &ldquo;utm_medium&rdquo;. See the <a href="http://support.cheddargetter.com/faqs/marketing-metrics/marketing-metrics">KB Article</a></td>
 </tr>
 <tr>
-<td>campaignContent</td>
-<td>No</td>
+<td><code class="prettyprint">campaignContent</code></td>
 <td>The content you wish to track. Google Adwords equivalent: &ldquo;utm_content&rdquo;. See the <a href="http://support.cheddargetter.com/faqs/marketing-metrics/marketing-metrics">KB Article</a></td>
 </tr>
 <tr>
-<td>metaData[&lt;user-defined&gt;]</td>
-<td>No</td>
+<td><code class="prettyprint">metaData[&lt;user-defined&gt;]</code></td>
 <td>See the <a href="http://support.cheddargetter.com/kb/api-8/customer-meta-data">KB Article</a> about customer metadata</td>
 </tr>
 <tr>
-<td>subscription[initialBillDate]</td>
-<td>Yes</td>
-<td>Date or datetime in ISO 8601 format. (e.g., 2011-08-01 or 2011-08-01T15:30:00+00:00). Date on which you would like the customers first invoice to be billable. This option overrides the pricing plan default. Must either be today&rsquo;s date (run invoice immediately) or a future date.</td>
+<td><code class="prettyprint">subscription[initialBillDate]</code></td>
+<td><strong>Required</strong> Date or datetime in ISO 8601 format. (e.g., 2011-08-01 or 2011-08-01T15:30:00+00:00). Date on which you would like the customers first invoice to be billable. This option overrides the pricing plan default. Must either be today&rsquo;s date (run invoice immediately) or a future date.</td>
 </tr>
 <tr>
-<td>subscription[ccType]</td>
-<td>Conditional</td>
-<td>visa, mc, disc, amex, diners, jcb, unk. If you specify a subscription[gatewayToken], this is required.</td>
+<td><code class="prettyprint">subscription[ccType]</code></td>
+<td><strong>Conditional</strong> visa, mc, disc, amex, diners, jcb, unk. If you specify a <code class="prettyprint">subscription[gatewayToken]</code>, this is required.</td>
 </tr>
 <tr>
-<td>subscription[ccLastFour]</td>
-<td>Conditional</td>
-<td>Numbers only &ndash; last four digits of credit/debit card number. If you specify a subscription[gatewayToken], this is required.</td>
+<td><code class="prettyprint">subscription[ccLastFour]</code></td>
+<td><strong>Conditional</strong> Numbers only &ndash; last four digits of credit/debit card number. If you specify a <code class="prettyprint">subscription[gatewayToken]</code>, this is required.</td>
 </tr>
 <tr>
-<td>subscription[ccExpiration]</td>
-<td>Conditional</td>
-<td>MM/YYYY - the expiration date for the credit/debit card. If you specify a subscription[gatewayToken], this is required.</td>
+<td><code class="prettyprint">subscription[ccExpiration]</code></td>
+<td><strong>Conditional</strong> MM/YYYY - the expiration date for the credit/debit card. If you specify a subscription[gatewayToken], this is required.</td>
 </tr>
 <tr>
-<td>subscription[ccFirstName]</td>
-<td>Conditional</td>
-<td>Limited to 40 characters. If you specify a subscription[gatewayToken], this is required.</td>
+<td><code class="prettyprint">subscription[ccFirstName]</code></td>
+<td><strong>Conditional</strong> Limited to 40 characters. If you specify a subscription[gatewayToken], this is required.</td>
 </tr>
 <tr>
-<td>subscription[ccLastName]</td>
-<td>Conditional</td>
-<td>Limited to 40 characters. If you specify a subscription[gatewayToken], this is required.</td>
+<td><code class="prettyprint">subscription[ccLastName]</code></td>
+<td><strong>Conditional</strong> Limited to 40 characters. If you specify a subscription[gatewayToken], this is required.</td>
 </tr>
 <tr>
-<td>subscription[ccCompany]</td>
-<td>No</td>
+<td><code class="prettyprint">subscription[ccCompany]</code></td>
 <td>Limited to 60 characters</td>
 </tr>
 <tr>
-<td>subscription[ccCountry]</td>
-<td>No</td>
+<td><code class="prettyprint">subscription[ccCountry]</code></td>
 <td>Limited to 60 characters. Many billing solutions require that the ISO 2 char codes are used.</td>
 </tr>
 <tr>
-<td>subscription[ccAddress]</td>
-<td>No</td>
+<td><code class="prettyprint">subscription[ccAddress]</code></td>
 <td>Limited to 60 characters</td>
 </tr>
 <tr>
-<td>subscription[ccCity]</td>
-<td>No</td>
+<td><code class="prettyprint">subscription[ccCity]</code></td>
 <td>Limited to 40 characters</td>
 </tr>
 <tr>
-<td>subscription[ccState]</td>
-<td>No</td>
+<td><code class="prettyprint">subscription[ccState]</code></td>
 <td>Limited to 40 characters. 2 character state/province codes are suggested when country is US/Canada.</td>
 </tr>
 <tr>
-<td>subscription[ccZip]</td>
-<td>No</td>
+<td><code class="prettyprint">subscription[ccZip]</code></td>
 <td>Limited to 20 characters</td>
 </tr>
 <tr>
-<td>charges[&lt;user-defined&gt;][chargeCode]</td>
-<td>No (see notes)</td>
-<td>Your code for this charge. Limited to 36 characters.</td>
+<td><code class="prettyprint">charges[&lt;user-defined&gt;][chargeCode]</code></td>
+<td><strong>Not Required (See Notes)</strong> Your code for this charge. Limited to 36 characters.</td>
 </tr>
 <tr>
-<td>charges[&lt;user-defined&gt;][quantity]</td>
-<td>No (see notes)</td>
-<td>Positive integer quantity</td>
+<td><code class="prettyprint">charges[&lt;user-defined&gt;][quantity]</code></td>
+<td><strong>Not Required (See Notes)</strong> Positive integer quantity</td>
 </tr>
 <tr>
-<td>charges[&lt;user-defined&gt;][eachAmount]</td>
-<td>No (see notes)</td>
-<td>Positive or negative integer or float with two digit decimal precision. A positive number will create a charge (debit). A negative number will create a credit.</td>
+<td><code class="prettyprint">charges[&lt;user-defined&gt;][eachAmount]</code></td>
+<td><strong>Not Required (See Notes)</strong> Positive or negative integer or float with two digit decimal precision. A positive number will create a charge (debit). A negative number will create a credit.</td>
 </tr>
 <tr>
-<td>charges[&lt;user-defined&gt;][description]</td>
-<td>No</td>
+<td><code class="prettyprint">charges[&lt;user-defined&gt;][description]</code></td>
 <td>Description for this charge/credit</td>
 </tr>
 <tr>
-<td>items[&lt;user-defined&gt;][itemCode]</td>
-<td>No (see notes)</td>
-<td>Your code for this tracked item. Limited to 36 characters.</td>
+<td><code class="prettyprint">items[&lt;user-defined&gt;][itemCode]</code></td>
+<td><strong>Not Required (See Notes)</strong> Your code for this tracked item. Limited to 36 characters.</td>
 </tr>
 <tr>
-<td>items[&lt;user-defined&gt;][quantity]</td>
-<td>No (see notes)</td>
-<td>The positive amount accurate to up to 4 decimal places that you wish to set the current usage to for this item. Can be zero.</td>
+<td><code class="prettyprint">items[&lt;user-defined&gt;][quantity]</code></td>
+<td><strong>Not Required (See Notes)</strong> The positive amount accurate to up to 4 decimal places that you wish to set the current usage to for this item. Can be zero.</td>
 </tr>
 </tbody></table>
 
@@ -894,174 +807,140 @@ about whether or not importing is possible in your situation.</p>
 <table><thead>
 <tr>
 <th>Name</th>
-<th>Required</th>
 <th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
-<td>firstName</td>
-<td>No</td>
+<td><code class="prettyprint">firstName</code></td>
 <td>Limited to 20 characters.</td>
 </tr>
 <tr>
-<td>lastName</td>
-<td>No</td>
+<td><code class="prettyprint">lastName</code></td>
 <td>Limited to 20 characters.</td>
 </tr>
 <tr>
-<td>email</td>
-<td>No</td>
+<td><code class="prettyprint">email</code></td>
 <td>Valid email address</td>
 </tr>
 <tr>
-<td>company</td>
-<td>No</td>
+<td><code class="prettyprint">company</code></td>
 <td>Limited to 60 characters</td>
 </tr>
 <tr>
-<td>notes</td>
-<td>No</td>
+<td><code class="prettyprint">notes</code></td>
 <td>Limited to 255 characters</td>
 </tr>
 <tr>
-<td>isVatExempt</td>
-<td>No</td>
+<td><code class="prettyprint">isVatExempt</code></td>
 <td>1 or 0</td>
 </tr>
 <tr>
-<td>vatNumber</td>
-<td>No</td>
+<td><code class="prettyprint">vatNumber</code></td>
 <td>If the customer lives in a VAT eligible country and is exempt, provide the exemption number. Limited to 32 characters</td>
 </tr>
 <tr>
-<td>firstContactDatetime</td>
-<td>No</td>
+<td><code class="prettyprint">firstContactDatetime</code></td>
 <td>Date or datetime in ISO 8601 format. (e.g., 2011-08-01 or 2011-08-01T15:30:00+00:00). See the <a href="http://support.cheddargetter.com/faqs/marketing-metrics/marketing-metrics">KB Article</a></td>
 </tr>
 <tr>
-<td>referer</td>
-<td>No</td>
+<td><code class="prettyprint">referer</code></td>
 <td>A valid URL referer. Limited to 255 characters. See the <a href="http://support.cheddargetter.com/faqs/marketing-metrics/marketing-metrics">KB Article</a></td>
 </tr>
 <tr>
-<td>campaignTerm</td>
-<td>No</td>
+<td><code class="prettyprint">campaignTerm</code></td>
 <td>The &ldquo;term&rdquo; or &ldquo;keyword&rdquo; phrase that lead a potential customer to your site. Google Adwords equivalent: &ldquo;utm_term&rdquo;. See the <a href="http://support.cheddargetter.com/faqs/marketing-metrics/marketing-metrics">KB Article</a></td>
 </tr>
 <tr>
-<td>campaignName</td>
-<td>No</td>
+<td><code class="prettyprint">campaignName</code></td>
 <td>The name of the marketing campaign. Google Adwords equivalent: &ldquo;utm_campaign&rdquo;. See the <a href="http://support.cheddargetter.com/faqs/marketing-metrics/marketing-metrics">KB Article</a></td>
 </tr>
 <tr>
-<td>campaignSource</td>
-<td>No</td>
+<td><code class="prettyprint">campaignSource</code></td>
 <td>The source of the lead. Google Adwords equivalent: &ldquo;utm_source&rdquo;. See the <a href="http://support.cheddargetter.com/faqs/marketing-metrics/marketing-metrics">KB Article</a></td>
 </tr>
 <tr>
-<td>campaignMedium</td>
-<td>No</td>
+<td><code class="prettyprint">campaignMedium</code></td>
 <td>The medium used to find your site. Google Adwords equivalent: &ldquo;utm_medium&rdquo;. See the <a href="http://support.cheddargetter.com/faqs/marketing-metrics/marketing-metrics">KB Article</a></td>
 </tr>
 <tr>
-<td>campaignContent</td>
-<td>No</td>
+<td><code class="prettyprint">campaignContent</code></td>
 <td>The content you wish to track. Google Adwords equivalent: &ldquo;utm_content&rdquo;. See the <a href="http://support.cheddargetter.com/faqs/marketing-metrics/marketing-metrics">KB Article</a></td>
 </tr>
 <tr>
-<td>metaData[&lt;user-defined&gt;]</td>
-<td>No</td>
+<td><code class="prettyprint">metaData[&lt;user-defined&gt;]</code></td>
 <td>See the <a href="http://support.cheddargetter.com/kb/api-8/customer-meta-data">KB Article</a> about customer metadata</td>
 </tr>
 <tr>
-<td>subscription[method]</td>
-<td>No</td>
+<td><code class="prettyprint">subscription[method]</code></td>
 <td>&ldquo;cc&rdquo; (default) or &ldquo;paypal&rdquo;</td>
 </tr>
 <tr>
-<td>subscription[planCode]</td>
-<td>No</td>
+<td><code class="prettyprint">subscription[planCode]</code></td>
 <td>Your code for the subscribed pricing plan</td>
 </tr>
 <tr>
-<td>subscription[couponCode]</td>
-<td>No</td>
+<td><code class="prettyprint">subscription[couponCode]</code></td>
 <td>Coupon code for the promotion you&rsquo;d like to apply to the subscription</td>
 </tr>
 <tr>
-<td>subscription[ccNumber]</td>
-<td>No (see notes)</td>
-<td>Numbers only &ndash; a valid credit/debit card number</td>
+<td><code class="prettyprint">subscription[ccNumber]</code></td>
+<td><strong>Not Required (See Notes)</strong> Numbers only &ndash; a valid credit/debit card number</td>
 </tr>
 <tr>
-<td>subscription[ccExpiration]</td>
-<td>No (see notes)</td>
-<td>MM/YYYY - the expiration date for the credit card</td>
+<td><code class="prettyprint">subscription[ccExpiration]</code></td>
+<td><strong>Not Required (See Notes)</strong> MM/YYYY - the expiration date for the credit card</td>
 </tr>
 <tr>
-<td>subscription[ccCardCode]</td>
-<td>Conditional. If plan is free, no. If your preference is to require the cardCode, yes.</td>
-<td>3-4 digits - The Card Verification Value (CCV).</td>
+<td><code class="prettyprint">subscription[ccCardCode]</code></td>
+<td><strong>Conditional. If plan is free, no. If your preference is to require the cardCode, yes.</strong> 3-4 digits - The Card Verification Value (CCV).</td>
 </tr>
 <tr>
-<td>subscription[ccFirstName]</td>
-<td>No (see notes)</td>
-<td>Limited to 20 characters</td>
+<td><code class="prettyprint">subscription[ccFirstName]</code></td>
+<td><strong>Not Required (See Notes)</strong> Limited to 20 characters</td>
 </tr>
 <tr>
-<td>subscription[ccLastName]</td>
-<td>No (see notes)</td>
-<td>Limited to 20 characters</td>
+<td><code class="prettyprint">subscription[ccLastName]</code></td>
+<td><strong>Not Required (See Notes)</strong> Limited to 20 characters</td>
 </tr>
 <tr>
-<td>subscription[ccCompany]</td>
-<td>No</td>
+<td><code class="prettyprint">subscription[ccCompany]</code></td>
 <td>Limited to 50 characters</td>
 </tr>
 <tr>
-<td>subscription[ccCountry]</td>
-<td>No</td>
+<td><code class="prettyprint">subscription[ccCountry]</code></td>
 <td>Limited to 60 characters. Many billing solutions require that the ISO 2 char codes are used.</td>
 </tr>
 <tr>
-<td>subscription[ccAddress]</td>
-<td>No</td>
+<td><code class="prettyprint">subscription[ccAddress]</code></td>
 <td>Limited to 60 characters</td>
 </tr>
 <tr>
-<td>subscription[ccCity]</td>
-<td>No</td>
+<td><code class="prettyprint">subscription[ccCity]</code></td>
 <td>Limited to 40 characters</td>
 </tr>
 <tr>
-<td>subscription[ccState]</td>
-<td>No</td>
-<td>suggested when country is US/Canada.</td>
+<td><code class="prettyprint">subscription[ccState]</code></td>
+<td>Suggested when country is US/Canada.</td>
 </tr>
 <tr>
-<td>subscription[ccZip]</td>
+<td><code class="prettyprint">subscription[ccZip]</code></td>
 <td>Conditional. If plan is free, no. If your preference is to require the zip, yes.</td>
-<td>Limited to 20 characters</td>
 </tr>
 <tr>
-<td>subscription[returnUrl]</td>
-<td>Conditional. Required when method is paypal.</td>
-<td>Must be a valid URL. Only used when method is paypal. This is the location where subscriber is returned from paypal after accepting a preapproval.</td>
+<td><code class="prettyprint">subscription[returnUrl]</code></td>
+<td><strong>Conditional. Required when method is paypal.</strong> Must be a valid URL. Only used when method is paypal. This is the location where subscriber is returned from paypal after accepting a preapproval.</td>
 </tr>
 <tr>
-<td>subscription[cancelUrl]</td>
-<td>Conditional. Required when method is paypal.</td>
-<td>Must be a valid URL. Only used when method is paypal. This is the location where subscriber is returned from paypal after declining a preapproval.</td>
+<td><code class="prettyprint">subscription[cancelUrl]</code></td>
+<td><strong>Conditional. Required when method is paypal.</strong> Must be a valid URL. Only used when method is paypal. This is the location where subscriber is returned from paypal after declining a preapproval.</td>
 </tr>
 <tr>
-<td>subscription[changeBillDate]</td>
-<td>No</td>
+<td><code class="prettyprint">subscription[changeBillDate]</code></td>
 <td>Date or datetime in ISO 8601 format. (e.g., 2011-08-01 or 2011-08-01T15:30:00+00:00). You may also use the word &lsquo;now&rsquo; as shorthand for the current datetime.</td>
 </tr>
 <tr>
-<td>remoteAddress</td>
-<td>No (<a href="#fraud-protection-rate-limiting">see below</a>)</td>
-<td>Client IPv4 address</td>
+<td><code class="prettyprint">remoteAddress</code></td>
+<td><strong>Not Required (<a href="#fraud-protection-rate-limiting">See Below</a>)</strong> Client IPv4 address</td>
 </tr>
 </tbody></table>
 
@@ -1110,44 +989,36 @@ about whether or not importing is possible in your situation.</p>
 <table><thead>
 <tr>
 <th>Name</th>
-<th>Required</th>
 <th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
-<td>firstName</td>
-<td>No</td>
+<td><code class="prettyprint">firstName</code></td>
 <td>Limited to 20 characters</td>
 </tr>
 <tr>
-<td>lastName</td>
-<td>No</td>
+<td><code class="prettyprint">lastName</code></td>
 <td>Limited to 20 characters</td>
 </tr>
 <tr>
-<td>email</td>
-<td>No</td>
+<td><code class="prettyprint">email</code></td>
 <td>Valid email address</td>
 </tr>
 <tr>
-<td>Company</td>
-<td>No</td>
+<td><code class="prettyprint">Company</code></td>
 <td>Limited to 60 characters</td>
 </tr>
 <tr>
-<td>notes</td>
-<td>No</td>
+<td><code class="prettyprint">notes</code></td>
 <td>Limited to 255 characters</td>
 </tr>
 <tr>
-<td>metaData[&lt;user-defined&gt;]</td>
-<td>No</td>
+<td><code class="prettyprint">metaData[&lt;user-defined&gt;]</code></td>
 <td>See the <a href="http://support.cheddargetter.com/kb/api-8/customer-meta-data">KB Article</a> about customer metadata</td>
 </tr>
 <tr>
-<td>remoteAddress</td>
-<td>No (<a href="#fraud-protection-rate-limiting">see below</a>)</td>
-<td>Client IPv4 address</td>
+<td><code class="prettyprint">remoteAddress</code></td>
+<td><strong>Not Required (<a href="#fraud-protection-rate-limiting">See Below</a>)</strong> Client IPv4 address</td>
 </tr>
 </tbody></table>
 
@@ -1155,7 +1026,7 @@ about whether or not importing is possible in your situation.</p>
 
 <h3 id="update-a-subscription-only">Update a Subscription Only</h3>
 
-<p>UUpdate an existing customer&rsquo;s subscription information in the product with
+<p>Update an existing customer&rsquo;s subscription information in the product with
 <code class="prettyprint">productCode=MY_PRODUCT_CODE</code></p>
 
 <p><code class="prettyprint">/customers/edit-subscription/productCode/MY_PRODUCT_CODE/code/MY_CUSTOMER_CODE</code></p>
@@ -1163,99 +1034,80 @@ about whether or not importing is possible in your situation.</p>
 <table><thead>
 <tr>
 <th>Name</th>
-<th>Required</th>
 <th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
-<td>method</td>
-<td>No</td>
+<td><code class="prettyprint">method</code></td>
 <td>&ldquo;cc&rdquo; (default) or &ldquo;paypal&rdquo;</td>
 </tr>
 <tr>
-<td>planCode</td>
-<td>No</td>
+<td><code class="prettyprint">planCode</code></td>
 <td>Your code for the subscribed plan</td>
 </tr>
 <tr>
-<td>couponCode</td>
-<td>No</td>
+<td><code class="prettyprint">couponCode</code></td>
 <td>Coupon code you&rsquo;d like to apply to the subscription</td>
 </tr>
 <tr>
-<td>ccNumber</td>
-<td>No (see notes)</td>
-<td>Numbers only &ndash; a valid credit/debit card number</td>
+<td><code class="prettyprint">ccNumber</code></td>
+<td><strong>Not Required (See Notes)</strong> Numbers only &ndash; a valid credit/debit card number</td>
 </tr>
 <tr>
-<td>ccExpiration</td>
-<td>No (see notes)</td>
-<td>MM/YYYY - the expiration date for the credit card</td>
+<td><code class="prettyprint">ccExpiration</code></td>
+<td><strong>Not Required (See Notes)</strong> MM/YYYY - the expiration date for the credit card</td>
 </tr>
 <tr>
-<td>ccCardCode</td>
-<td>No (see notes)</td>
-<td>3-4 digits - The Card Verification Value (CCV).</td>
+<td><code class="prettyprint">ccCardCode</code></td>
+<td><strong>Not Required (See Notes)</strong> 3-4 digits - The Card Verification Value (CCV).</td>
 </tr>
 <tr>
-<td>ccFirstName</td>
-<td>No (see notes)</td>
-<td>Limited to 20 characters</td>
+<td><code class="prettyprint">ccFirstName</code></td>
+<td><strong>Not Required (See Notes)</strong> Limited to 20 characters</td>
 </tr>
 <tr>
-<td>ccLastName</td>
-<td>No (see notes)</td>
-<td>Limited to 20 characters</td>
+<td><code class="prettyprint">ccLastName</code></td>
+<td><strong>Not Required (See Notes)</strong> Limited to 20 characters</td>
 </tr>
 <tr>
-<td>ccCompany</td>
-<td>No</td>
+<td><code class="prettyprint">ccCompany</code></td>
 <td>Limited to 50 characters</td>
 </tr>
 <tr>
-<td>ccCountry</td>
-<td>No</td>
+<td><code class="prettyprint">ccCountry</code></td>
 <td>Limited to 60 characters. Many billing solutions require that the ISO 2 char codes are used.</td>
 </tr>
 <tr>
-<td>ccAddress</td>
-<td>No</td>
+<td><code class="prettyprint">ccAddress</code></td>
 <td>Limited to 60 characters</td>
 </tr>
 <tr>
-<td>ccCity</td>
-<td>No</td>
+<td><code class="prettyprint">ccCity</code></td>
 <td>Limited to 40 characters</td>
 </tr>
 <tr>
-<td>ccState</td>
-<td>No</td>
+<td><code class="prettyprint">ccState</code></td>
 <td>Limited to 40 characters. 2 character state/province codes are suggested when country is US/Canada.</td>
 </tr>
 <tr>
-<td>ccZip</td>
-<td>No (see notes)</td>
-<td>Limited to 20 characters</td>
+<td><code class="prettyprint">ccZip</code></td>
+<td><strong>Not Required (See Notes)</strong> Limited to 20 characters</td>
 </tr>
 <tr>
-<td>returnUrl</td>
-<td>Conditional. Required when method is paypal.</td>
-<td>Must be a valid URL. Only used when method is paypal. This is the location where subscriber is returned from paypal after accepting a preapproval.</td>
+<td><code class="prettyprint">returnUrl</code></td>
+<td><strong>Conditional. Required when method is paypal.</strong> Must be a valid URL. Only used when method is paypal. This is the location where subscriber is returned from paypal after accepting a preapproval.</td>
 </tr>
 <tr>
-<td>cancelUrl</td>
-<td>Conditional. Required when method is paypal.</td>
-<td>Must be a valid URL. Only used when method is paypal. This is the location where subscriber is returned from paypal after declining a preapproval.</td>
+<td><code class="prettyprint">cancelUrl</code></td>
+<td><strong>Conditional. Required when method is paypal.</strong> Must be a valid URL. Only used when method is paypal. This is the location where subscriber is returned from paypal after declining a preapproval.</td>
 </tr>
 <tr>
-<td>changeBillDate</td>
-<td>No</td>
+<td><code class="prettyprint">changeBillDate</code></td>
 <td>Date or datetime in ISO 8601 format. (e.g., 2011-08-01 or 2011-08-01T15:30:00+00:00). You may also use the word &#39;now&rsquo; as shorthand for the current datetime.</td>
 </tr>
 <tr>
-<td>remoteAddress</td>
-<td>No (<a href="#fraud-protection-rate-limiting">see below</a>)</td>
-<td>Client IPv4 address</td>
+<td><code class="prettyprint">remoteAddress</code></td>
+<td><strong>Not Required (<a href="#fraud-protection-rate-limiting">See Below</a>)</strong> Client IPv4 address</td>
 </tr>
 </tbody></table>
 
@@ -1320,19 +1172,16 @@ about whether or not importing is possible in your situation.</p>
 <table><thead>
 <tr>
 <th>Name</th>
-<th>Required</th>
 <th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
-<td>quantity</td>
-<td>No</td>
+<td><code class="prettyprint">quantity</code></td>
 <td>The positive amount accurate to up to 4 decimal places (if other that 1.0000) that you wish to add to the current usage for this item.</td>
 </tr>
 <tr>
-<td>remoteAddress</td>
-<td>No (<a href="#fraud-protection-rate-limiting">see below</a>)</td>
-<td>Client IPv4 address</td>
+<td><code class="prettyprint">remoteAddress</code></td>
+<td><strong>Not Required (<a href="#fraud-protection-rate-limiting">See Below</a>)</strong> Client IPv4 address</td>
 </tr>
 </tbody></table>
 
@@ -1351,19 +1200,16 @@ about whether or not importing is possible in your situation.</p>
 <table><thead>
 <tr>
 <th>Name</th>
-<th>Required</th>
 <th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
-<td>quantity</td>
-<td>No</td>
+<td><code class="prettyprint">quantity</code></td>
 <td>The positive amount accurate to up to 4 decimal places (if other that 1.0000) that you wish to add to the current usage for this item.</td>
 </tr>
 <tr>
-<td>remoteAddress</td>
-<td>No (<a href="#fraud-protection-rate-limiting">see below</a>)</td>
-<td>Client IPv4 address</td>
+<td><code class="prettyprint">remoteAddress</code></td>
+<td><strong>Not Required (<a href="#fraud-protection-rate-limiting">see below</a>)</strong> Client IPv4 address</td>
 </tr>
 </tbody></table>
 
@@ -1382,24 +1228,20 @@ about whether or not importing is possible in your situation.</p>
 <table><thead>
 <tr>
 <th>Name</th>
-<th>Required</th>
 <th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
-<td>quantity</td>
+<td><code class="prettyprint">quantity</code></td>
 <td>Yes</td>
-<td>The positive amount accurate to up to 4 decimal places (if other than 1.0000) that you wish to add to the current usage for this item. Can be zero.</td>
 </tr>
 <tr>
-<td>invoicePeriod</td>
-<td>No</td>
+<td><code class="prettyprint">invoicePeriod</code></td>
 <td>The billing period - &#39;current&rsquo; (the default) or &#39;outstanding&rsquo;. <a href="#current-vs-outstanding-invoice">See below</a>.</td>
 </tr>
 <tr>
-<td>remoteAddress</td>
-<td>No (<a href="#fraud-protection-rate-limiting">see below</a>)</td>
-<td>Client IPv4 address</td>
+<td><code class="prettyprint">remoteAddress</code></td>
+<td><strong>Not Required (<a href="#fraud-protection-rate-limiting">see below</a>)</strong> Client IPv4 address</td>
 </tr>
 </tbody></table>
 
@@ -1415,39 +1257,32 @@ with <code class="prettyprint">productCode=MY_PRODUCT_CODE</code></p>
 <table><thead>
 <tr>
 <th>Name</th>
-<th>Required</th>
 <th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
-<td>chargeCode</td>
-<td>Yes</td>
-<td>Your code for this charge. Limited to 36 characters.</td>
+<td><code class="prettyprint">chargeCode</code></td>
+<td><strong>Required</strong> Your code for this charge. Limited to 36 characters.</td>
 </tr>
 <tr>
-<td>quantity</td>
-<td>Yes</td>
-<td>Positive integer quantity</td>
+<td><code class="prettyprint">quantity</code></td>
+<td><strong>Required</strong> Positive integer quantity</td>
 </tr>
 <tr>
-<td>eachAmount</td>
-<td>Yes</td>
-<td>Positive or negative integer or float with two digit decimal precision. A positive number will create a charge (debit). A negative number will create a credit.</td>
+<td><code class="prettyprint">eachAmount</code></td>
+<td><strong>Required</strong> Positive or negative integer or float with two digit decimal precision. A positive number will create a charge (debit). A negative number will create a credit.</td>
 </tr>
 <tr>
-<td>description</td>
-<td>No</td>
+<td><code class="prettyprint">description</code></td>
 <td>Description for this charge/credit</td>
 </tr>
 <tr>
-<td>invoicePeriod</td>
-<td>No</td>
+<td><code class="prettyprint">invoicePeriod</code></td>
 <td>The billing period - &#39;current&rsquo; (the default) or &#39;outstanding&rsquo;. <a href="#current-vs-outstanding-invoice">See below</a>.</td>
 </tr>
 <tr>
-<td>remoteAddress</td>
-<td>No (<a href="#fraud-protection-rate-limiting">see below</a>)</td>
-<td>Client IPv4 address</td>
+<td><code class="prettyprint">remoteAddress</code></td>
+<td><strong>Not Required (<a href="#fraud-protection-rate-limiting">see below</a>)</strong> Client IPv4 address</td>
 </tr>
 </tbody></table>
 
@@ -1461,24 +1296,20 @@ with <code class="prettyprint">productCode=MY_PRODUCT_CODE</code></p>
 <table><thead>
 <tr>
 <th>Name</th>
-<th>Required</th>
 <th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
-<td>chargeId</td>
-<td>Yes</td>
-<td>CheddarGetter&rsquo;s ID for the charge/credit</td>
+<td><code class="prettyprint">chargeId</code></td>
+<td><strong>Required</strong> CheddarGetter&rsquo;s ID for the charge/credit</td>
 </tr>
 <tr>
-<td>invoicePeriod</td>
-<td>No</td>
+<td><code class="prettyprint">invoicePeriod</code></td>
 <td>The billing period - &#39;current&rsquo; (the default) or &#39;outstanding&rsquo;. <a href="#current-vs-outstanding-invoice">See below</a>.</td>
 </tr>
 <tr>
-<td>remoteAddress</td>
-<td>No (<a href="#fraud-protection-rate-limiting">see below</a>)</td>
-<td>Client IPv4 address</td>
+<td><code class="prettyprint">remoteAddress</code></td>
+<td><strong>Not Required (<a href="#fraud-protection-rate-limiting">see below</a>)</strong> Client IPv4 address</td>
 </tr>
 </tbody></table>
 
@@ -1492,34 +1323,28 @@ the customer&rsquo;s current payment method in the product with <code class="pre
 <table><thead>
 <tr>
 <th>Name</th>
-<th>Required</th>
 <th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
-<td>charges[&lt;user-defined&gt;][chargeCode]</td>
-<td>Yes</td>
-<td>Your code for this charge. Limited to 36 characters.</td>
+<td><code class="prettyprint">charges[&lt;user-defined&gt;][chargeCode]</code></td>
+<td><strong>Required</strong> Your code for this charge. Limited to 36 characters.</td>
 </tr>
 <tr>
-<td>charges[&lt;user-defined&gt;][quantity]</td>
-<td>Yes</td>
-<td>Positive integer quantity</td>
+<td><code class="prettyprint">charges[&lt;user-defined&gt;][quantity]</code></td>
+<td><strong>Required</strong> Positive integer quantity</td>
 </tr>
 <tr>
-<td>charges[&lt;user-defined&gt;][eachAmount]</td>
-<td>Yes</td>
-<td>Positive or negative integer or float with two digit decimal precision. A positive number will create a charge (debit). A negative number will create a credit.</td>
+<td><code class="prettyprint">charges[&lt;user-defined&gt;][eachAmount]</code></td>
+<td><strong>Required</strong> Positive or negative integer or float with two digit decimal precision. A positive number will create a charge (debit). A negative number will create a credit.</td>
 </tr>
 <tr>
-<td>charges[&lt;user-defined&gt;][description]</td>
-<td>No</td>
+<td><code class="prettyprint">charges[&lt;user-defined&gt;][description]</code></td>
 <td>Description for this charge/credit</td>
 </tr>
 <tr>
-<td>remoteAddress</td>
-<td>No (<a href="#fraud-protection-rate-limiting">see below</a>)</td>
-<td>Client IPv4 address</td>
+<td><code class="prettyprint">remoteAddress</code></td>
+<td><strong>Not Required (<a href="#fraud-protection-rate-limiting">see below</a>)</strong> Client IPv4 address</td>
 </tr>
 </tbody></table>
 
@@ -1536,19 +1361,16 @@ the customer&rsquo;s current payment method in the product with <code class="pre
 <table><thead>
 <tr>
 <th>Name</th>
-<th>Required</th>
 <th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
-<td>ccCardCode</td>
-<td>No</td>
+<td><code class="prettyprint">ccCardCode</code></td>
 <td>3-4 digits - The Card Verification Value (CCV).</td>
 </tr>
 <tr>
-<td>remoteAddress</td>
-<td>No (<a href="#fraud-protection-rate-limiting">see below</a>)</td>
-<td>Client IPv4 address</td>
+<td><code class="prettyprint">remoteAddress</code></td>
+<td><strong>Not Required (<a href="#fraud-protection-rate-limiting">see below</a>)</strong> Client IPv4 address</td>
 </tr>
 </tbody></table>
 
@@ -1579,24 +1401,20 @@ the customer&rsquo;s current payment method in the product with <code class="pre
 <table><thead>
 <tr>
 <th>Name</th>
-<th>Required</th>
 <th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
-<td>number or id</td>
-<td>Yes</td>
-<td>Either CheddarGetter&rsquo;s ID for the invoice or the CheddarGetter-generated invoice number</td>
+<td><code class="prettyprint">number</code> or <code class="prettyprint">id</code></td>
+<td><strong>Required</strong> Either CheddarGetter&rsquo;s ID for the invoice or the CheddarGetter-generated invoice number</td>
 </tr>
 <tr>
-<td>amount</td>
-<td>Yes</td>
-<td>An amount less than or equal to the refundable amount. See notes.</td>
+<td><code class="prettyprint">amount</code></td>
+<td><strong>Required</strong> An amount less than or equal to the refundable amount. See notes.</td>
 </tr>
 <tr>
-<td>remoteAddress</td>
-<td>No (<a href="#fraud-protection-rate-limiting">see below</a>)</td>
-<td>Client IPv4 address</td>
+<td><code class="prettyprint">remoteAddress</code></td>
+<td><strong>Not Required (<a href="#fraud-protection-rate-limiting">see below</a>)</strong> Client IPv4 address</td>
 </tr>
 </tbody></table>
 
@@ -1625,19 +1443,16 @@ the customer&rsquo;s current payment method in the product with <code class="pre
 <table><thead>
 <tr>
 <th>Name</th>
-<th>Required</th>
 <th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
-<td>number or id</td>
-<td>Yes</td>
-<td>Either CheddarGetter&rsquo;s ID for the invoice or the CheddarGetter-generated invoice number</td>
+<td><code class="prettyprint">number</code> or <code class="prettyprint">id</code></td>
+<td><strong>Required</strong> Either CheddarGetter&rsquo;s ID for the invoice or the CheddarGetter-generated invoice number</td>
 </tr>
 <tr>
-<td>remoteAddress</td>
-<td>No (<a href="#fraud-protection-rate-limiting">see below</a>)</td>
-<td>Client IPv4 address</td>
+<td><code class="prettyprint">remoteAddress</code></td>
+<td><strong>Not Required (<a href="#fraud-protection-rate-limiting">see below</a>)</strong> lient IPv4 address</td>
 </tr>
 </tbody></table>
 
@@ -1656,19 +1471,16 @@ the invoice in the product with  <code class="prettyprint">productCode=MY_PRODUC
 <table><thead>
 <tr>
 <th>Name</th>
-<th>Required</th>
 <th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
-<td>number or id</td>
-<td>Yes</td>
-<td>Either CheddarGetter&rsquo;s ID for the invoice or the CheddarGetter-generated invoice number</td>
+<td><code class="prettyprint">number</code> or <code class="prettyprint">id</code></td>
+<td><strong>Required</strong> Either CheddarGetter&rsquo;s ID for the invoice or the CheddarGetter-generated invoice number</td>
 </tr>
 <tr>
-<td>remoteAddress</td>
-<td>No (<a href="#fraud-protection-rate-limiting">see below</a>)</td>
-<td>Client IPv4 address</td>
+<td><code class="prettyprint">remoteAddress</code></td>
+<td><strong>Not Required (<a href="#fraud-protection-rate-limiting">see below</a>)</strong> Client IPv4 address</td>
 </tr>
 </tbody></table>
 
@@ -1690,19 +1502,16 @@ with  <code class="prettyprint">productCode=MY_PRODUCT_CODE</code></p>
 <table><thead>
 <tr>
 <th>Name</th>
-<th>Required</th>
 <th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
-<td>number or id</td>
-<td>Yes</td>
-<td>Either CheddarGetter&rsquo;s ID for the invoice or the CheddarGetter-generated invoice number</td>
+<td><code class="prettyprint">number</code> or <code class="prettyprint">id</code></td>
+<td><strong>Required</strong> Either CheddarGetter&rsquo;s ID for the invoice or the CheddarGetter-generated invoice number</td>
 </tr>
 <tr>
-<td>remoteAddress</td>
-<td>No (<a href="#fraud-protection-rate-limiting">see below</a>)</td>
-<td>Client IPv4 address</td>
+<td><code class="prettyprint">remoteAddress</code></td>
+<td><strong>Not Required (<a href="#fraud-protection-rate-limiting">see below</a>)</strong> Client IPv4 address</td>
 </tr>
 </tbody></table>
 
