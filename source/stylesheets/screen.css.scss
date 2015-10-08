@@ -69,6 +69,7 @@ html, body {
   bottom: 0;
   width: $nav-width;
   background-color: $nav-bg;
+  @extend %header-font;
   font-size: 13px;
   font-weight: bold;
 
@@ -333,6 +334,12 @@ html, body {
     content: '';
     display: block;
     clear: both;
+  }
+  .gist {
+    margin-right:50%;
+    .gist-data {
+      max-height:300px;
+    }
   }
 
   &>h1, &>h2, &>h3, &>h4, &>h5, &>h6, &>p, &>table, &>ul, &>ol, &>aside, &>dl {
@@ -616,5 +623,8 @@ html, body {
 
   %right-col + %left-col {
     margin-top: $main-padding;
+  }
+  .content .gist {
+    margin-right: 0;
   }
 }
