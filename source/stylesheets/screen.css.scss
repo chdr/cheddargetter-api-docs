@@ -86,7 +86,14 @@ html, body {
   &>img {
     display: block;
   }
-
+  h4 {
+    @extend %header-font;
+    color:#e39812;
+    text-transform:uppercase;
+    margin:0 auto;
+    margin-top:15px;
+    text-align:center;
+  }
   &>.search {
     position: relative;
 
@@ -336,7 +343,7 @@ html, body {
     clear: both;
   }
   .gist {
-    margin-right:50%;
+    margin-right:35%;
     .gist-data {
       max-height:300px;
     }
@@ -432,6 +439,9 @@ html, body {
       vertical-align: top;
       line-height: 1.6;
     }
+    td:first-child {
+      width:35%;
+    }
 
     th {
       padding: 5px 10px;
@@ -493,7 +503,7 @@ html, body {
     margin-top: 1.5em;
     margin-bottom: 1.5em;
     margin-left:1em;
-    margin-right:51%;
+    margin-right:37%;
     background: $aside-notice-bg;
     line-height: 1.6;
     @extend %box-shadow;

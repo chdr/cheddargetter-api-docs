@@ -31,19 +31,19 @@ Get all customer data from the product with `productCode=MY_PRODUCT_CODE`
 
 `/customers/get/productCode/MY_PRODUCT_CODE`
 
-Name | Required | Description
----- | -------- | -----------
-subscriptionStatus | No | "activeOnly" or "canceledOnly"
-planCode[] | No | Your pricing plan code. This is an array and may be provided multiple times to filter by multiple plans.
-createdAfterDate | No | YYYY-MM-DD
-createdBeforeDate | No | YYYY-MM-DD
-canceledAfterDate | No | YYYY-MM-DD
-canceledBeforeDate | No | YYYY-MM-DD
-transactedAfterDate | No | YYYY-MM-DD
-transactedBeforeDate | No | YYYY-MM-DD
-orderBy | No | "name" (default), "company", "plan", "billingDatetime" or "createdDatetime"
-orderByDirection | No | "asc" (default) or "desc"
-search | No | Text search customer name, company, email address and last four digits of credit card.
+Name | Description
+---- | -----------
+`subscriptionStatus` | "activeOnly" or "canceledOnly"
+`planCode[]` | Your pricing plan code. This is an array and may be provided multiple times to filter by multiple plans.
+`createdAfterDate` | YYYY-MM-DD
+`createdBeforeDate` | YYYY-MM-DD
+`canceledAfterDate` | YYYY-MM-DD
+`canceledBeforeDate` | YYYY-MM-DD
+`transactedAfterDate` | YYYY-MM-DD
+`transactedBeforeDate` | YYYY-MM-DD
+`orderBy` | "name" (default), "company", "plan", "billingDatetime" or "createdDatetime"
+`orderByDirection` | "asc" (default) or "desc"
+`search` | Text search customer name, company, email address and last four digits of credit card.
 
 <aside class="notice">
 As in all date and time related operations, the timezone used is the timezone set
@@ -71,47 +71,47 @@ and subscribe the customer to a pricing plan.
 
 `/customers/new/productCode/MY_PRODUCT_CODE`
 
-Name | Required | Description
----- | -------- | -----------
-code | Yes | Your code for this customer. Limited to 255 characters.
-firstName | Yes | Limited to 40 characters
-lastName | Yes | Limited to 40 characters
-email | Yes | Valid email address
-company | No | Limited to 60 characters
-isVatExempt | No | 1 or 0
-vatNumber | No | If the customer is geographically eligible to be taxed and is exempt, provide the exemption number if applicable. Limited to 32 characters
-notes | No | Limited to 255 characters
-firstContactDatetime | No | Date or datetime in ISO 8601 format.(e.g., 2011-08-01 or 2011-08-01T15:30:00+00:00). See the [KB Article](http://support.cheddargetter.com/faqs/marketing-metrics/marketing-metrics)
-referer | No | A valid URL referer. Limited to 255 characters. See the [KB Article](http://support.cheddargetter.com/faqs/marketing-metrics/marketing-metrics)
-campaignTerm | No | The "term" or "keyword" phrase that lead a potential customer to your site. Google Adwords equivalent: "utm_term". See the [KB Article](http://support.cheddargetter.com/faqs/marketing-metrics/marketing-metrics)
-campaignName | No | The name of the marketing campaign. Google Adwords equivalent: "utm_campaign". See the [KB Article](http://support.cheddargetter.com/faqs/marketing-metrics/marketing-metrics)
-campaignSource | No | The source of the lead. Google Adwords equivalent: "utm_source". See the [KB Article](http://support.cheddargetter.com/faqs/marketing-metrics/marketing-metrics)
-campaignMedium | No | The medium used to find your site. Google Adwords equivalent: "utm_medium". See the [KB Article](http://support.cheddargetter.com/faqs/marketing-metrics/marketing-metrics)
-campaignContent | No | The content you wish to track. Google Adwords equivalent: "utm_content". See the [KB Article](http://support.cheddargetter.com/faqs/marketing-metrics/marketing-metrics)
-metaData[&lt;user-defined&gt;] | No | See the [KB Article](http://support.cheddargetter.com/kb/api-8/customer-meta-data) about customer metadata
-subscription[planCode] | Yes | Your code for the subscribed pricing plan
-subscription[initialBillDate] | No | Date or datetime in ISO 8601 format. (e.g., 2011-08-01 or 2011-08-01T15:30:00+00:00). Date on which you would like the customers first invoice to be billable. This option overrides the pricing plan default. Must either be today's date (run invoice immediately) or a future date.
-subscription[method] | No | "cc" (default) or "paypal"
-subscription[ccNumber] | Conditional (See notes) | Numbers only -- a valid credit/debit card number
-subscription[ccExpiration] | Conditional (See notes) | MM/YYYY - the expiration date for the credit card
-subscription[ccCardCode] | Conditional. If plan is free, no. If your preference is to require the cardCode, yes. Not required when method is paypal. | 3-4 digits - The Card Verification Value (CCV).
-subscription[ccFirstName] | Conditional (see notes) | Limited to 40 characters
-subscription[ccLastName] | Conditional (see notes) | Limited to 40 characters
-subscription[ccCompany] | No | Limited to 60 characters
-subscription[ccCountry] | No | Limited to 60 characters. Many billing solutions require that the ISO 2 char codes are used.
-subscription[ccAddress] | No | Limited to 60 characters
-subscription[ccCity] | No | Limited to 40 characters
-subscription[ccState] | No | Limited to 40 characters. 2 character state/province codes are suggested when country is US/Canada.
-subscription[ccZip] | No | Limited to 20 characters
-subscription[returnUrl] | when method is paypal. | Must be a valid URL. Only used when method is paypal. This is the location where subscriber is returned from paypal after accepting a preapproval.
-subscription[cancelUrl] | Conditional. Required when method is paypal. | Must be a valid URL. Only used when method is paypal. This is the location where subscriber is returned from paypal after declining a preapproval.
-charges[&lt;user-defined&gt;][chargeCode] | No (see notes) | Your code for this charge. Limited to 36 characters.
-charges[&lt;user-defined&gt;][quantity] | No (see notes) | Positive integer quantity
-charges[&lt;user-defined&gt;][eachAmount] | No (see notes) | Positive or negative integer or float with two digit decimal precision. A positive number will create a charge (debit). A negative number will create a credit.
-charges[&lt;user-defined&gt;][description] | No | Description for this charge/credit
-items[&lt;user-defined&gt;][itemCode] | No (see notes) | Your code for this tracked item. Limited to 36 characters.
-items[&lt;user-defined&gt;][quantity] | No (see notes) | The positive amount accurate to up to 4 decimal places that you wish to set the current usage to for this item. Can be zero.
-remoteAddress | No ([see below](#fraud-protection-rate-limiting)) | Client IPv4 address
+Name | Description
+---- | -----------
+`code` | **Required** Your code for this customer. Limited to 255 characters.
+`firstName` | **Required** Limited to 40 characters
+`lastName` | **Required** Limited to 40 characters
+`email` | **Required** Valid email address
+`company` |  Limited to 60 characters
+`isVatExempt` | 1 or 0
+`vatNumber` | If the customer is geographically eligible to be taxed and is exempt, provide the exemption number if applicable. Limited to 32 characters
+`notes` | Limited to 255 characters
+`firstContactDatetime` | Date or datetime in ISO 8601 format.(e.g., 2011-08-01 or 2011-08-01T15:30:00+00:00). See the [KB Article](http://support.cheddargetter.com/faqs/marketing-metrics/marketing-metrics)
+`referer` | A valid URL referer. Limited to 255 characters. See the [KB Article](http://support.cheddargetter.com/faqs/marketing-metrics/marketing-metrics)
+`campaignTerm` | The "term" or "keyword" phrase that lead a potential customer to your site. Google Adwords equivalent: "utm_term". See the [KB Article](http://support.cheddargetter.com/faqs/marketing-metrics/marketing-metrics)
+`campaignName` | The name of the marketing campaign. Google Adwords equivalent: "utm_campaign". See the [KB Article](http://support.cheddargetter.com/faqs/marketing-metrics/marketing-metrics)
+`campaignSource` | The source of the lead. Google Adwords equivalent: "utm_source". See the [KB Article](http://support.cheddargetter.com/faqs/marketing-metrics/marketing-metrics)
+`campaignMedium` | The medium used to find your site. Google Adwords equivalent: "utm_medium". See the [KB Article](http://support.cheddargetter.com/faqs/marketing-metrics/marketing-metrics)
+`campaignContent` | The content you wish to track. Google Adwords equivalent: "utm_content". See the [KB Article](http://support.cheddargetter.com/faqs/marketing-metrics/marketing-metrics)
+`metaData[<user-defined>]` | See the [KB Article](http://support.cheddargetter.com/kb/api-8/customer-meta-data) about customer metadata
+`subscription[planCode] `| **Required** Your code for the subscribed pricing plan
+`subscription[initialBillDate]` | Date or datetime in ISO 8601 format. (e.g., 2011-08-01 or 2011-08-01T15:30:00+00:00). Date on which you would like the customers first invoice to be billable. This option overrides the pricing plan default. Must either be today's date (run invoice immediately) or a future date.
+`subscription[method]` | "cc" (default) or "paypal"
+`subscription[ccNumber]` | **Conditional (See Notes)** Numbers only -- a valid credit/debit card number
+`subscription[ccExpiration]` | **Conditional (See Notes)** MM/YYYY - the expiration date for the credit card
+`subscription[ccCardCode]` | **Conditional. If plan is free, not required. If your preference is to require the `cardCode`, required. Not required when method is paypal.** 3-4 digits - The Card Verification Value (CCV).
+`subscription[ccFirstName]` | **Conditional (See Notes)** Limited to 40 characters
+`subscription[ccLastName]` | **Conditional (See Notes)** Limited to 40 characters
+`subscription[ccCompany]` | Limited to 60 characters
+`subscription[ccCountry]` | Limited to 60 characters. Many billing solutions require that the ISO 2 char codes are used.
+`subscription[ccAddress]` | Limited to 60 characters
+`subscription[ccCity]` | Limited to 40 characters
+`subscription[ccState]` | Limited to 40 characters. 2 character state/province codes are suggested when country is US/Canada.
+`subscription[ccZip]` | Limited to 20 characters
+`subscription[returnUrl]` | **Conditional. Required when method is PayPal.** Must be a valid URL. Only used when method is paypal. This is the location where subscriber is returned from paypal after accepting a preapproval.
+`subscription[cancelUrl]` | **Conditional. Required when method is PayPal.** Must be a valid URL. Only used when method is paypal. This is the location where subscriber is returned from paypal after declining a preapproval.
+`charges[<user-defined>][chargeCode]` | **Not Required (See Notes)** Your code for this charge. Limited to 36 characters.
+`charges[<user-defined>][quantity]` | **Not Required (See Notes)** Positive integer quantity
+`charges[<user-defined>][eachAmount]` | **Not Required (See Notes)** Positive or negative integer or float with two digit decimal precision. A positive number will create a charge (debit). A negative number will create a credit.
+`charges[<user-defined>][description]` | Description for this charge/credit
+`items[<user-defined>][itemCode]` | **Not Required (See Notes)** Your code for this tracked item. Limited to 36 characters.
+`items[<user-defined>][quantity]` | **Not Required (See Notes)** The positive amount accurate to up to 4 decimal places that you wish to set the current usage to for this item. Can be zero.
+`remoteAddress` | **Not Required ([See Below](#fraud-protection-rate-limiting))** Client IPv4 address
 
 <aside class="notice">
 
@@ -159,43 +159,43 @@ about whether or not importing is possible in your situation.
 
 `/customers/import/productCode/MY_PRODUCT_CODE`
 
-Name | Required | Description
----- | -------- | -----------
-code | Yes | Your code for this customer. Limited to 255 characters.
-gatewayToken | Conditional | The gateway reference code. Limited to 255 characters.
-firstName | Yes | Limited to 40 characters
-lastName | Yes | Limited to 40 characters
-email | Yes | Valid email address
-company | No | Limited to 60 characters
-isVatExempt | No | 1 or 0
-vatNumber | No | If the customer is geographically eligible to be taxed and is exempt, provide the exemption number if applicable. Limited to 32 characters
-notes | No | Limited to 255 characters
-firstContactDatetime | No | Date or datetime in ISO 8601 format. (e.g., 2011-08-01 or 2011-08-01T15:30:00+00:00). See the [KB Article](http://support.cheddargetter.com/faqs/marketing-metrics/marketing-metrics)
-referer | No | A valid URL referer. Limited to 255 characters. See the [KB Article](http://support.cheddargetter.com/faqs/marketing-metrics/marketing-metrics)
-campaignTerm | No | The "term" or "keyword" phrase that lead a potential customer to your site. Google Adwords equivalent: "utm_term". See the [KB Article](http://support.cheddargetter.com/faqs/marketing-metrics/marketing-metrics)
-campaignName | No | The name of the marketing campaign. Google Adwords equivalent: "utm_campaign". See the [KB Article](http://support.cheddargetter.com/faqs/marketing-metrics/marketing-metrics)
-campaignSource | No | The source of the lead. Google Adwords equivalent: "utm_source". See the [KB Article](http://support.cheddargetter.com/faqs/marketing-metrics/marketing-metrics)
-campaignMedium | No | The medium used to find your site. Google Adwords equivalent: "utm_medium". See the [KB Article](http://support.cheddargetter.com/faqs/marketing-metrics/marketing-metrics)
-campaignContent | No | The content you wish to track. Google Adwords equivalent: "utm_content". See the [KB Article](http://support.cheddargetter.com/faqs/marketing-metrics/marketing-metrics)
-metaData[&lt;user-defined&gt;] | No | See the [KB Article](http://support.cheddargetter.com/kb/api-8/customer-meta-data) about customer metadata
-subscription[initialBillDate] | Yes | Date or datetime in ISO 8601 format. (e.g., 2011-08-01 or 2011-08-01T15:30:00+00:00). Date on which you would like the customers first invoice to be billable. This option overrides the pricing plan default. Must either be today's date (run invoice immediately) or a future date.
-subscription[ccType] | Conditional | visa, mc, disc, amex, diners, jcb, unk. If you specify a subscription[gatewayToken], this is required.
-subscription[ccLastFour] | Conditional | Numbers only -- last four digits of credit/debit card number. If you specify a subscription[gatewayToken], this is required.
-subscription[ccExpiration] | Conditional | MM/YYYY - the expiration date for the credit/debit card. If you specify a subscription[gatewayToken], this is required.
-subscription[ccFirstName] | Conditional | Limited to 40 characters. If you specify a subscription[gatewayToken], this is required.
-subscription[ccLastName] | Conditional | Limited to 40 characters. If you specify a subscription[gatewayToken], this is required.
-subscription[ccCompany] | No | Limited to 60 characters
-subscription[ccCountry] | No | Limited to 60 characters. Many billing solutions require that the ISO 2 char codes are used.
-subscription[ccAddress] | No | Limited to 60 characters
-subscription[ccCity] | No | Limited to 40 characters
-subscription[ccState] | No | Limited to 40 characters. 2 character state/province codes are suggested when country is US/Canada.
-subscription[ccZip] | No | Limited to 20 characters
-charges[&lt;user-defined&gt;][chargeCode] | No (see notes) | Your code for this charge. Limited to 36 characters.
-charges[&lt;user-defined&gt;][quantity] | No (see notes) | Positive integer quantity
-charges[&lt;user-defined&gt;][eachAmount] | No (see notes) | Positive or negative integer or float with two digit decimal precision. A positive number will create a charge (debit). A negative number will create a credit.
-charges[&lt;user-defined&gt;][description] | No | Description for this charge/credit
-items[&lt;user-defined&gt;][itemCode] | No (see notes) | Your code for this tracked item. Limited to 36 characters.
-items[&lt;user-defined&gt;][quantity] | No (see notes) | The positive amount accurate to up to 4 decimal places that you wish to set the current usage to for this item. Can be zero.
+Name | Description
+---- | -----------
+`code` | **Required** Your code for this customer. Limited to 255 characters.
+`gatewayToken` | **Conditional** The gateway reference code. Limited to 255 characters.
+`firstName` | **Required** Limited to 40 characters
+`lastName` | **Required** Limited to 40 characters
+`email` | **Required** Valid email address
+`company` | Limited to 60 characters
+`isVatExempt` | 1 or 0
+`vatNumber` | If the customer is geographically eligible to be taxed and is exempt, provide the exemption number if applicable. Limited to 32 characters
+`notes` | Limited to 255 characters
+`firstContactDatetime` | Date or datetime in ISO 8601 format. (e.g., 2011-08-01 or 2011-08-01T15:30:00+00:00). See the [KB Article](http://support.cheddargetter.com/faqs/marketing-metrics/marketing-metrics)
+`referer` | A valid URL referer. Limited to 255 characters. See the [KB Article](http://support.cheddargetter.com/faqs/marketing-metrics/marketing-metrics)
+`campaignTerm` | The "term" or "keyword" phrase that lead a potential customer to your site. Google Adwords equivalent: "utm_term". See the [KB Article](http://support.cheddargetter.com/faqs/marketing-metrics/marketing-metrics)
+`campaignName` | The name of the marketing campaign. Google Adwords equivalent: "utm_campaign". See the [KB Article](http://support.cheddargetter.com/faqs/marketing-metrics/marketing-metrics)
+`campaignSource` | The source of the lead. Google Adwords equivalent: "utm_source". See the [KB Article](http://support.cheddargetter.com/faqs/marketing-metrics/marketing-metrics)
+`campaignMedium` | The medium used to find your site. Google Adwords equivalent: "utm_medium". See the [KB Article](http://support.cheddargetter.com/faqs/marketing-metrics/marketing-metrics)
+`campaignContent` | The content you wish to track. Google Adwords equivalent: "utm_content". See the [KB Article](http://support.cheddargetter.com/faqs/marketing-metrics/marketing-metrics)
+`metaData[<user-defined>]` | See the [KB Article](http://support.cheddargetter.com/kb/api-8/customer-meta-data) about customer metadata
+`subscription[initialBillDate]` | **Required** Date or datetime in ISO 8601 format. (e.g., 2011-08-01 or 2011-08-01T15:30:00+00:00). Date on which you would like the customers first invoice to be billable. This option overrides the pricing plan default. Must either be today's date (run invoice immediately) or a future date.
+`subscription[ccType] `| **Conditional** visa, mc, disc, amex, diners, jcb, unk. If you specify a `subscription[gatewayToken]`, this is required.
+`subscription[ccLastFour]` | **Conditional** Numbers only -- last four digits of credit/debit card number. If you specify a `subscription[gatewayToken]`, this is required.
+`subscription[ccExpiration]` | **Conditional** MM/YYYY - the expiration date for the credit/debit card. If you specify a subscription[gatewayToken], this is required.
+`subscription[ccFirstName]` | **Conditional** Limited to 40 characters. If you specify a subscription[gatewayToken], this is required.
+`subscription[ccLastName]` | **Conditional** Limited to 40 characters. If you specify a subscription[gatewayToken], this is required.
+`subscription[ccCompany]` | Limited to 60 characters
+`subscription[ccCountry]` | Limited to 60 characters. Many billing solutions require that the ISO 2 char codes are used.
+`subscription[ccAddress]` | Limited to 60 characters
+`subscription[ccCity]` | Limited to 40 characters
+`subscription[ccState]` | Limited to 40 characters. 2 character state/province codes are suggested when country is US/Canada.
+`subscription[ccZip] `| Limited to 20 characters
+`charges[<user-defined>][chargeCode]` | **Not Required (See Notes)** Your code for this charge. Limited to 36 characters.
+`charges[<user-defined>][quantity]` | **Not Required (See Notes)** Positive integer quantity
+`charges[<user-defined>][eachAmount]` | **Not Required (See Notes)** Positive or negative integer or float with two digit decimal precision. A positive number will create a charge (debit). A negative number will create a credit.
+`charges[<user-defined>][description]` | Description for this charge/credit
+`items[<user-defined>][itemCode]` | **Not Required (See Notes)** Your code for this tracked item. Limited to 36 characters.
+`items[<user-defined>][quantity]` | **Not Required (See Notes)** The positive amount accurate to up to 4 decimal places that you wish to set the current usage to for this item. Can be zero.
 
 <aside class="notice">
 
@@ -261,41 +261,41 @@ Update an existing customer's information in the product with
 
 `/customers/edit/productCode/MY_PRODUCT_CODE/code/MY_CUSTOMER_CODE`
 
-Name | Required | Description
----- | -------- | -----------
-firstName | No | Limited to 20 characters.
-lastName | No | Limited to 20 characters.
-email | No | Valid email address
-company | No | Limited to 60 characters
-notes | No | Limited to 255 characters
-isVatExempt | No | 1 or 0
-vatNumber | No | If the customer lives in a VAT eligible country and is exempt, provide the exemption number. Limited to 32 characters
-firstContactDatetime | No | Date or datetime in ISO 8601 format. (e.g., 2011-08-01 or 2011-08-01T15:30:00+00:00). See the [KB Article](http://support.cheddargetter.com/faqs/marketing-metrics/marketing-metrics)
-referer | No | A valid URL referer. Limited to 255 characters. See the [KB Article](http://support.cheddargetter.com/faqs/marketing-metrics/marketing-metrics)
-campaignTerm | No | The "term" or "keyword" phrase that lead a potential customer to your site. Google Adwords equivalent: "utm_term". See the [KB Article](http://support.cheddargetter.com/faqs/marketing-metrics/marketing-metrics)
-campaignName | No | The name of the marketing campaign. Google Adwords equivalent: "utm_campaign". See the [KB Article](http://support.cheddargetter.com/faqs/marketing-metrics/marketing-metrics)
-campaignSource | No | The source of the lead. Google Adwords equivalent: "utm_source". See the [KB Article](http://support.cheddargetter.com/faqs/marketing-metrics/marketing-metrics)
-campaignMedium | No | The medium used to find your site. Google Adwords equivalent: "utm_medium". See the [KB Article](http://support.cheddargetter.com/faqs/marketing-metrics/marketing-metrics)
-campaignContent | No | The content you wish to track. Google Adwords equivalent: "utm_content". See the [KB Article](http://support.cheddargetter.com/faqs/marketing-metrics/marketing-metrics)
-metaData[&lt;user-defined&gt;] | No | See the [KB Article](http://support.cheddargetter.com/kb/api-8/customer-meta-data) about customer metadata
-subscription[method] | No | "cc" (default) or "paypal"
-subscription[planCode] | No | Your code for the subscribed pricing plan
-subscription[couponCode] | No | Coupon code for the promotion you'd like to apply to the subscription
-subscription[ccNumber] | No (see notes) | Numbers only -- a valid credit/debit card number
-subscription[ccExpiration] | No (see notes) | MM/YYYY - the expiration date for the credit card
-subscription[ccCardCode] | Conditional. If plan is free, no. If your preference is to require the cardCode, yes. | 3-4 digits - The Card Verification Value (CCV).
-subscription[ccFirstName] | No (see notes) | Limited to 20 characters
-subscription[ccLastName] | No (see notes) | Limited to 20 characters
-subscription[ccCompany] | No | Limited to 50 characters
-subscription[ccCountry] | No | Limited to 60 characters. Many billing solutions require that the ISO 2 char codes are used.
-subscription[ccAddress] | No | Limited to 60 characters
-subscription[ccCity] | No | Limited to 40 characters
-subscription[ccState] | No | suggested when country is US/Canada.
-subscription[ccZip] | Conditional. If plan is free, no. If your preference is to require the zip, yes. | Limited to 20 characters
-subscription[returnUrl] | Conditional. Required when method is paypal. | Must be a valid URL. Only used when method is paypal. This is the location where subscriber is returned from paypal after accepting a preapproval.
-subscription[cancelUrl] | Conditional. Required when method is paypal. | Must be a valid URL. Only used when method is paypal. This is the location where subscriber is returned from paypal after declining a preapproval.
-subscription[changeBillDate] | No | Date or datetime in ISO 8601 format. (e.g., 2011-08-01 or 2011-08-01T15:30:00+00:00). You may also use the word 'now' as shorthand for the current datetime.
-remoteAddress | No ([see below](#fraud-protection-rate-limiting)) | Client IPv4 address
+Name | Description
+---- | -----------
+`firstName` | Limited to 20 characters.
+`lastName` | Limited to 20 characters.
+`email` | Valid email address
+`company` | Limited to 60 characters
+`notes` | Limited to 255 characters
+`isVatExempt` | 1 or 0
+`vatNumber` | If the customer lives in a VAT eligible country and is exempt, provide the exemption number. Limited to 32 characters
+`firstContactDatetime` | Date or datetime in ISO 8601 format. (e.g., 2011-08-01 or 2011-08-01T15:30:00+00:00). See the [KB Article](http://support.cheddargetter.com/faqs/marketing-metrics/marketing-metrics)
+`referer` | A valid URL referer. Limited to 255 characters. See the [KB Article](http://support.cheddargetter.com/faqs/marketing-metrics/marketing-metrics)
+`campaignTerm` | The "term" or "keyword" phrase that lead a potential customer to your site. Google Adwords equivalent: "utm_term". See the [KB Article](http://support.cheddargetter.com/faqs/marketing-metrics/marketing-metrics)
+`campaignName` | The name of the marketing campaign. Google Adwords equivalent: "utm_campaign". See the [KB Article](http://support.cheddargetter.com/faqs/marketing-metrics/marketing-metrics)
+`campaignSource` | The source of the lead. Google Adwords equivalent: "utm_source". See the [KB Article](http://support.cheddargetter.com/faqs/marketing-metrics/marketing-metrics)
+`campaignMedium` | The medium used to find your site. Google Adwords equivalent: "utm_medium". See the [KB Article](http://support.cheddargetter.com/faqs/marketing-metrics/marketing-metrics)
+`campaignContent` | The content you wish to track. Google Adwords equivalent: "utm_content". See the [KB Article](http://support.cheddargetter.com/faqs/marketing-metrics/marketing-metrics)
+`metaData[<user-defined>]` | See the [KB Article](http://support.cheddargetter.com/kb/api-8/customer-meta-data) about customer metadata
+`subscription[method]` | "cc" (default) or "paypal"
+`subscription[planCode]` | Your code for the subscribed pricing plan
+`subscription[couponCode]` | Coupon code for the promotion you'd like to apply to the subscription
+`subscription[ccNumber]` | **Not Required (See Notes)** Numbers only -- a valid credit/debit card number
+`subscription[ccExpiration]` | **Not Required (See Notes)** MM/YYYY - the expiration date for the credit card
+`subscription[ccCardCode]` | **Conditional. If plan is free, no. If your preference is to require the cardCode, yes.** 3-4 digits - The Card Verification Value (CCV).
+`subscription[ccFirstName]` | **Not Required (See Notes)** Limited to 20 characters
+`subscription[ccLastName]` | **Not Required (See Notes)** Limited to 20 characters
+`subscription[ccCompany]` | Limited to 50 characters
+`subscription[ccCountry]` | Limited to 60 characters. Many billing solutions require that the ISO 2 char codes are used.
+`subscription[ccAddress]` | Limited to 60 characters
+`subscription[ccCity]` | Limited to 40 characters
+`subscription[ccState]` | Suggested when country is US/Canada.
+`subscription[ccZip]` | Conditional. If plan is free, no. If your preference is to require the zip, yes. | Limited to 20 characters
+`subscription[returnUrl]` | **Conditional. Required when method is paypal.** Must be a valid URL. Only used when method is paypal. This is the location where subscriber is returned from paypal after accepting a preapproval.
+`subscription[cancelUrl]` | **Conditional. Required when method is paypal.** Must be a valid URL. Only used when method is paypal. This is the location where subscriber is returned from paypal after declining a preapproval.
+`subscription[changeBillDate]` | Date or datetime in ISO 8601 format. (e.g., 2011-08-01 or 2011-08-01T15:30:00+00:00). You may also use the word 'now' as shorthand for the current datetime.
+`remoteAddress` | **Not Required ([See Below](#fraud-protection-rate-limiting))** Client IPv4 address
 
 <aside class="notice">
 
@@ -339,45 +339,45 @@ Update an existing customer's information in the product with
 
 `/customers/edit-customer/productCode/MY_PRODUCT_CODE/code/MY_CUSTOMER_CODE`
 
-Name | Required | Description
----- | -------- | -----------
-firstName | No | Limited to 20 characters
-lastName | No | Limited to 20 characters
-email | No | Valid email address
-Company | No | Limited to 60 characters
-notes | No | Limited to 255 characters
-metaData[&lt;user-defined&gt;] | No | See the [KB Article](http://support.cheddargetter.com/kb/api-8/customer-meta-data) about customer metadata
-remoteAddress | No ([see below](#fraud-protection-rate-limiting)) | Client IPv4 address
+Name | Description
+---- | -----------
+`firstName` | Limited to 20 characters
+`lastName` | Limited to 20 characters
+`email` | Valid email address
+`Company` | Limited to 60 characters
+`notes` | Limited to 255 characters
+`metaData[<user-defined>]` | See the [KB Article](http://support.cheddargetter.com/kb/api-8/customer-meta-data) about customer metadata
+`remoteAddress` | **Not Required ([See Below](#fraud-protection-rate-limiting))** Client IPv4 address
 
 ## Subscriptions
 
 ### Update a Subscription Only
 
-UUpdate an existing customer's subscription information in the product with
+Update an existing customer's subscription information in the product with
 `productCode=MY_PRODUCT_CODE`
 
 `/customers/edit-subscription/productCode/MY_PRODUCT_CODE/code/MY_CUSTOMER_CODE`
 
-Name | Required | Description
----- | -------- | -----------
-method | No | "cc" (default) or "paypal"
-planCode | No | Your code for the subscribed plan
-couponCode | No | Coupon code you'd like to apply to the subscription
-ccNumber | No (see notes) | Numbers only -- a valid credit/debit card number
-ccExpiration | No (see notes) | MM/YYYY - the expiration date for the credit card
-ccCardCode | No (see notes) | 3-4 digits - The Card Verification Value (CCV).
-ccFirstName | No (see notes) | Limited to 20 characters
-ccLastName | No (see notes) | Limited to 20 characters
-ccCompany | No | Limited to 50 characters
-ccCountry | No | Limited to 60 characters. Many billing solutions require that the ISO 2 char codes are used.
-ccAddress | No | Limited to 60 characters
-ccCity | No | Limited to 40 characters
-ccState | No | Limited to 40 characters. 2 character state/province codes are suggested when country is US/Canada.
-ccZip | No (see notes) | Limited to 20 characters
-returnUrl | Conditional. Required when method is paypal. | Must be a valid URL. Only used when method is paypal. This is the location where subscriber is returned from paypal after accepting a preapproval.
-cancelUrl | Conditional. Required when method is paypal. | Must be a valid URL. Only used when method is paypal. This is the location where subscriber is returned from paypal after declining a preapproval.
-changeBillDate | No | Date or datetime in ISO 8601 format. (e.g., 2011-08-01 or 2011-08-01T15:30:00+00:00). You may also use the word 'now' as shorthand for the current datetime.
-remoteAddress | No ([see below](#fraud-protection-rate-limiting)) | Client IPv4 address
+Name | Description
+---- | -----------
+`method` | "cc" (default) or "paypal"
+`planCode` | Your code for the subscribed plan
+`couponCode` | Coupon code you'd like to apply to the subscription
+`ccNumber` | **Not Required (See Notes)** Numbers only -- a valid credit/debit card number
+`ccExpiration` | **Not Required (See Notes)** MM/YYYY - the expiration date for the credit card
+`ccCardCode` | **Not Required (See Notes)** 3-4 digits - The Card Verification Value (CCV).
+`ccFirstName` | **Not Required (See Notes)** Limited to 20 characters
+`ccLastName` | **Not Required (See Notes)** Limited to 20 characters
+`ccCompany` | Limited to 50 characters
+`ccCountry` | Limited to 60 characters. Many billing solutions require that the ISO 2 char codes are used.
+`ccAddress` | Limited to 60 characters
+`ccCity` | Limited to 40 characters
+`ccState` | Limited to 40 characters. 2 character state/province codes are suggested when country is US/Canada.
+`ccZip` | **Not Required (See Notes)** Limited to 20 characters
+`returnUrl` | **Conditional. Required when method is paypal.** Must be a valid URL. Only used when method is paypal. This is the location where subscriber is returned from paypal after accepting a preapproval.
+`cancelUrl` | **Conditional. Required when method is paypal.** Must be a valid URL. Only used when method is paypal. This is the location where subscriber is returned from paypal after declining a preapproval.
+`changeBillDate` | Date or datetime in ISO 8601 format. (e.g., 2011-08-01 or 2011-08-01T15:30:00+00:00). You may also use the word 'now' as shorthand for the current datetime.
+`remoteAddress` | **Not Required ([See Below](#fraud-protection-rate-limiting))** Client IPv4 address
 
 <aside class="notice">
 
@@ -437,10 +437,10 @@ Increment a customer's current usage of a single item in the product with
 
 `/customers/add-item-quantity/productCode/MY_PRODUCT_CODE/code/MY_CUSTOMER_CODE/itemCode/MY_ITEM_CODE`
 
-Name | Required | Description
----- | -------- | -----------
-quantity | No | The positive amount accurate to up to 4 decimal places (if other that 1.0000) that you wish to add to the current usage for this item.
-remoteAddress | No ([see below](#fraud-protection-rate-limiting)) | Client IPv4 address
+Name | Description
+---- | -----------
+`quantity` | The positive amount accurate to up to 4 decimal places (if other that 1.0000) that you wish to add to the current usage for this item.
+`remoteAddress` | **Not Required ([See Below](#fraud-protection-rate-limiting))** Client IPv4 address
 
 <aside class="notice">
   <code>quantity</code> is only required if you wish to add more than one to
@@ -454,10 +454,10 @@ Decrement a customer's current usage of a single item in the product with
 
 `/customers/remove-item-quantity/productCode/MY_PRODUCT_CODE/code/MY_CUSTOMER_CODE/itemCode/MY_ITEM_CODE`
 
-Name | Required | Description
----- | -------- | -----------
-quantity | No | The positive amount accurate to up to 4 decimal places (if other that 1.0000) that you wish to add to the current usage for this item.
-remoteAddress | No ([see below](#fraud-protection-rate-limiting)) | Client IPv4 address
+Name | Description
+---- | -----------
+`quantity` | The positive amount accurate to up to 4 decimal places (if other that 1.0000) that you wish to add to the current usage for this item.
+`remoteAddress` | **Not Required ([see below](#fraud-protection-rate-limiting))** Client IPv4 address
 
 <aside class="notice">
   <code>quantity</code> is only required if you wish to subtract more than one from
@@ -471,11 +471,11 @@ Set a customer's current usage of a single item in the product with
 
 `/customers/set-item-quantity/productCode/MY_PRODUCT_CODE/code/MY_CUSTOMER_CODE/itemCode/MY_ITEM_CODE`
 
-Name | Required | Description
----- | -------- | -----------
-quantity | Yes | The positive amount accurate to up to 4 decimal places (if other than 1.0000) that you wish to add to the current usage for this item. Can be zero.
-invoicePeriod | No | The billing period - 'current' (the default) or 'outstanding'. [See below](#current-vs-outstanding-invoice).
-remoteAddress | No ([see below](#fraud-protection-rate-limiting)) | Client IPv4 address
+Name | Description
+---- | -----------
+`quantity` | Yes | **Required** The positive amount accurate to up to 4 decimal places (if other than 1.0000) that you wish to add to the current usage for this item. Can be zero.
+`invoicePeriod` | The billing period - 'current' (the default) or 'outstanding'. [See below](#current-vs-outstanding-invoice).
+`remoteAddress` | **Not Required ([see below](#fraud-protection-rate-limiting))** Client IPv4 address
 
 ## Invoice Interactions
 
@@ -486,14 +486,14 @@ with `productCode=MY_PRODUCT_CODE`
 
 `/customers/add-charge/productCode/MY_PRODUCT_CODE/code/MY_CUSTOMER_CODE`
 
-Name | Required | Description
----- | -------- | -----------
-chargeCode | Yes | Your code for this charge. Limited to 36 characters.
-quantity | Yes | Positive integer quantity
-eachAmount | Yes | Positive or negative integer or float with two digit decimal precision. A positive number will create a charge (debit). A negative number will create a credit.
-description | No | Description for this charge/credit
-invoicePeriod | No | The billing period - 'current' (the default) or 'outstanding'. [See below](#current-vs-outstanding-invoice).
-remoteAddress | No ([see below](#fraud-protection-rate-limiting)) | Client IPv4 address
+Name | Description
+---- | -----------
+`chargeCode` | **Required** Your code for this charge. Limited to 36 characters.
+`quantity` | **Required** Positive integer quantity
+`eachAmount` | **Required** Positive or negative integer or float with two digit decimal precision. A positive number will create a charge (debit). A negative number will create a credit.
+`description` | Description for this charge/credit
+`invoicePeriod` | The billing period - 'current' (the default) or 'outstanding'. [See below](#current-vs-outstanding-invoice).
+`remoteAddress` | **Not Required ([see below](#fraud-protection-rate-limiting))** Client IPv4 address
 
 ### Delete a Custom Charge/Credit
 
@@ -502,11 +502,11 @@ with `productCode=MY_PRODUCT_CODE`
 
 `/customers/delete-charge/productCode/MY_PRODUCT_CODE/code/MY_CUSTOMER_CODE`
 
-Name | Required | Description
----- | -------- | -----------
-chargeId | Yes | CheddarGetter's ID for the charge/credit
-invoicePeriod | No | The billing period - 'current' (the default) or 'outstanding'. [See below](#current-vs-outstanding-invoice).
-remoteAddress | No ([see below](#fraud-protection-rate-limiting)) | Client IPv4 address
+Name | Description
+---- | -----------
+`chargeId` | **Required** CheddarGetter's ID for the charge/credit
+`invoicePeriod` | The billing period - 'current' (the default) or 'outstanding'. [See below](#current-vs-outstanding-invoice).
+`remoteAddress` | **Not Required ([see below](#fraud-protection-rate-limiting))** Client IPv4 address
 
 ### Create a One-Time Invoice
 
@@ -515,13 +515,13 @@ the customer's current payment method in the product with `productCode=MY_PRODUC
 
 `/invoices/new/productCode/MY_PRODUCT_CODE/code/MY_CUSTOMER_CODE`
 
-Name | Required | Description
----- | -------- | -----------
-charges[&lt;user-defined&gt;][chargeCode] | Yes | Your code for this charge. Limited to 36 characters.
-charges[&lt;user-defined&gt;][quantity] | Yes | Positive integer quantity
-charges[&lt;user-defined&gt;][eachAmount] | Yes | Positive or negative integer or float with two digit decimal precision. A positive number will create a charge (debit). A negative number will create a credit.
-charges[&lt;user-defined&gt;][description] | No | Description for this charge/credit
-remoteAddress | No ([see below](#fraud-protection-rate-limiting)) | Client IPv4 address
+Name | Description
+---- | -----------
+`charges[<user-defined>][chargeCode]` | **Required** Your code for this charge. Limited to 36 characters.
+`charges[<user-defined>][quantity]` | **Required** Positive integer quantity
+`charges[<user-defined>][eachAmount]` | **Required** Positive or negative integer or float with two digit decimal precision. A positive number will create a charge (debit). A negative number will create a credit.
+`charges[<user-defined>][description]` | Description for this charge/credit
+`remoteAddress` | **Not Required ([see below](#fraud-protection-rate-limiting))** Client IPv4 address
 
 <aside class="notice">
   At least one charge is required. Multiple charges may be submitted.
@@ -533,10 +533,10 @@ Execute an outstanding invoice in the product with `productCode=MY_PRODUCT_CODE`
 
 `/customers/run-outstanding/productCode/MY_PRODUCT_CODE/code/MY_CUSTOMER_CODE`
 
-Name | Required | Description
----- | -------- | -----------
-ccCardCode | No | 3-4 digits - The Card Verification Value (CCV).
-remoteAddress | No ([see below](#fraud-protection-rate-limiting)) | Client IPv4 address
+Name | Description
+---- | -----------
+`ccCardCode` | 3-4 digits - The Card Verification Value (CCV).
+`remoteAddress` | **Not Required ([see below](#fraud-protection-rate-limiting))** Client IPv4 address
 
 <aside class="notice">
   The customer must have an outstanding invoice. This method can be useful for
@@ -562,11 +562,11 @@ Refund a transaction on a billed invoice in the product with `productCode=MY_PRO
 
 `/invoices/refund/productCode/MY_PRODUCT_CODE`
 
-Name | Required | Description
----- | -------- | -----------
-number or id | Yes | Either CheddarGetter's ID for the invoice or the CheddarGetter-generated invoice number
-amount | Yes | An amount less than or equal to the refundable amount. See notes.
-remoteAddress | No ([see below](#fraud-protection-rate-limiting)) | Client IPv4 address
+Name | Description
+---- | -----------
+`number` or `id `| **Required** Either CheddarGetter's ID for the invoice or the CheddarGetter-generated invoice number
+`amount` | **Required** An amount less than or equal to the refundable amount. See notes.
+`remoteAddress` | **Not Required ([see below](#fraud-protection-rate-limiting))** Client IPv4 address
 
 <aside class="notice">
   Many billing solutions allow for partial refunds. If your billing solution
@@ -590,10 +590,10 @@ Void a transaction on a billed invoice in the product with `productCode=MY_PRODU
 
 `/invoices/void/productCode/MY_PRODUCT_CODE`
 
-Name | Required | Description
----- | -------- | -----------
-number or id | Yes | Either CheddarGetter's ID for the invoice or the CheddarGetter-generated invoice number
-remoteAddress | No ([see below](#fraud-protection-rate-limiting)) | Client IPv4 address
+Name | Description
+---- | -----------
+`number` or `id` | **Required** Either CheddarGetter's ID for the invoice or the CheddarGetter-generated invoice number
+`remoteAddress` | **Not Required ([see below](#fraud-protection-rate-limiting))** lient IPv4 address
 
 <aside class="notice">
   Some billing solutions allow for voids. If your billing solution allows
@@ -607,10 +607,10 @@ the invoice in the product with  `productCode=MY_PRODUCT_CODE`
 
 `/invoices/void-or-refund/productCode/MY_PRODUCT_CODE`
 
-Name | Required | Description
----- | -------- | -----------
-number or id | Yes | Either CheddarGetter's ID for the invoice or the CheddarGetter-generated invoice number
-remoteAddress | No ([see below](#fraud-protection-rate-limiting)) | Client IPv4 address
+Name | Description
+---- | -----------
+`number` or `id` | **Required** Either CheddarGetter's ID for the invoice or the CheddarGetter-generated invoice number
+`remoteAddress` | **Not Required ([see below](#fraud-protection-rate-limiting))** Client IPv4 address
 
 <aside class="notice">
   Many billing solutions do not allow for voids. Voids are only possible for a
@@ -627,10 +627,10 @@ with  `productCode=MY_PRODUCT_CODE`
 
 `/invoices/send-email/productCode/MY_PRODUCT_CODE`
 
-Name | Required | Description
----- | -------- | -----------
-number or id | Yes | Either CheddarGetter's ID for the invoice or the CheddarGetter-generated invoice number
-remoteAddress | No ([see below](#fraud-protection-rate-limiting)) | Client IPv4 address
+Name | Description
+---- | -----------
+`number` or `id` | **Required** Either CheddarGetter's ID for the invoice or the CheddarGetter-generated invoice number
+`remoteAddress` | **Not Required ([see below](#fraud-protection-rate-limiting))** Client IPv4 address
 
 <aside class="notice">
   Email notifications must be enabled in your account.
