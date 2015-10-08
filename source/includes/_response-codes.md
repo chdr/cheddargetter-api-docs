@@ -1,0 +1,15 @@
+# Response Codes
+
+## HTTP Status Codes
+
+The CheddarGetter API returns appropriate HTTP status codes for every request.
+
+Code | Meaning
+---- | -------
+`200 OK` | Success!
+`400 Bad Request` | The request was invalid. An accompanying error message will explain why.
+`404 Not Found` | The URI requested is invalid or the resource requested, such as a user, does not exist.
+`412 Precondition Failed` | The request contains POST data that is in an invalid format or required parameters are missing.
+`422 Unprocessable Entity` | The gateway doesn't like the payment data. In other words, the gateway failed to process the request.
+`500 Internal Server Error` | Something is broken. Please post in the support forum so the CheddarGetter team can investigate.
+`502 Bad Gateway` | Communication with the payment gateway failed. Try again later.
