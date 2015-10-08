@@ -46,163 +46,13 @@
     <div class="page-wrapper">
       <div class="dark-box"></div>
       <div class="content">
-        <h1 id="introduction">Introduction</h1>
+        
+          <h1 id="introduction">Introduction</h1>
 
-<p>Welcome to the Puppy API! You can use our API to access Kittn API endpoints, which can get information on various cats, kittens, and breeds in our database.</p>
-
-<p>We have language bindings in Shell, Ruby, and Python! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.</p>
-
-<p>This example API documentation page was created with <a href="https://github.com/tripit/slate">Slate</a>. Feel free to edit it and use it as a base for your own API&rsquo;s documentation.</p>
-
-<h1 id="authentication">Authentication</h1>
-
-<blockquote>
-<p>To authorize, use this code:</p>
-</blockquote>
-<pre class="highlight ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-</code></pre>
-<pre class="highlight python"><code><span class="kn">import</span> <span class="nn">kittn</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-</code></pre>
-<pre class="highlight shell"><code><span class="c"># With shell, you can just pass the correct header with each request</span>
-curl <span class="s2">"api_endpoint_here"</span>
-  -H <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre>
-
-<blockquote>
-<p>Make sure to replace <code class="prettyprint">meowmeowmeow</code> with your API key.</p>
-</blockquote>
-
-<p>Kittn uses API keys to allow access to the API. You can register a new Kittn API key at our <a href="http://example.com/developers">developer portal</a>.</p>
-
-<p>Kittn expects for the API key to be included in all API requests to the server in a header that looks like the following:</p>
-
-<p><code class="prettyprint">Authorization: meowmeowmeow</code></p>
-
-<aside class="notice">
-You must replace <code>meowmeowmeow</code> with your personal API key.
-</aside>
-
-<h1 id="kittens">Kittens</h1>
-
-<h2 id="get-all-kittens">Get All Kittens</h2>
-<pre class="highlight ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="nf">kittens</span><span class="p">.</span><span class="nf">get</span>
-</code></pre>
-<pre class="highlight python"><code><span class="kn">import</span> <span class="nn">kittn</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="o">.</span><span class="n">kittens</span><span class="o">.</span><span class="n">get</span><span class="p">()</span>
-</code></pre>
-<pre class="highlight shell"><code>curl <span class="s2">"http://example.com/api/kittens"</span>
-  -H <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre>
-
-<blockquote>
-<p>The above command returns JSON structured like this:</p>
-</blockquote>
-<pre class="highlight json"><code><span class="p">[</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Fluffums"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"calico"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Isis"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unknown"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">]</span><span class="w">
-</span></code></pre>
-
-<p>This endpoint retrieves all kittens.</p>
-
-<h3 id="http-request">HTTP Request</h3>
-
-<p><code class="prettyprint">GET http://example.com/api/kittens</code></p>
-
-<h3 id="query-parameters">Query Parameters</h3>
-
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Default</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>include_cats</td>
-<td>false</td>
-<td>If set to true, the result will also include cats.</td>
-</tr>
-<tr>
-<td>available</td>
-<td>true</td>
-<td>If set to false, the result will include kittens that have already been adopted.</td>
-</tr>
-</tbody></table>
-
-<aside class="success">
-Remember — a happy kitten is an authenticated kitten!
-</aside>
-
-<h2 id="get-a-specific-kitten">Get a Specific Kitten</h2>
-<pre class="highlight ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="nf">kittens</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre>
-<pre class="highlight python"><code><span class="kn">import</span> <span class="nn">kittn</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="o">.</span><span class="n">kittens</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre>
-<pre class="highlight shell"><code>curl <span class="s2">"http://example.com/api/kittens/2"</span>
-  -H <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre>
-
-<blockquote>
-<p>The above command returns JSON structured like this:</p>
-</blockquote>
-<pre class="highlight json"><code><span class="p">{</span><span class="w">
-  </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Isis"</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unknown"</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-
-<p>This endpoint retrieves a specific kitten.</p>
-
-<aside class="warning">If you&rsquo;re not using an administrator API key, note that some kittens will return 403 Forbidden if they are hidden for admins only.</aside>
-
-<h3 id="http-request">HTTP Request</h3>
-
-<p><code class="prettyprint">GET http://example.com/kittens/&lt;ID&gt;</code></p>
-
-<h3 id="url-parameters">URL Parameters</h3>
-
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>ID</td>
-<td>The ID of the kitten to retrieve</td>
-</tr>
-</tbody></table>
+<p>The CheddarGetter API enables you to leverage the full power of CheddarGetter
+directly into your custom application. You can use our API with any programming
+language to integrate the recurring billing and subscription management
+processes curated by CheddarGetter</p>
 
           <h1 id="how-does-it-work">How Does It Work?</h1>
 
@@ -396,350 +246,6 @@ with  <code class="prettyprint">code=MY_PRODUCT_CODE</code></p>
 
 <h2 id="response">Response</h2>
 
-<blockquote>
-<p>Plans Response Example</p>
-</blockquote>
-<pre class="highlight xml"><code><span class="cp">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
-<span class="nt">&lt;plans&gt;</span>
-  <span class="nt">&lt;plan</span> <span class="na">id=</span><span class="s">"e6eac530-e5e9-11df-86d5-40407c9117fd"</span> <span class="na">code=</span><span class="s">"FREE"</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;name&gt;</span>Free<span class="nt">&lt;/name&gt;</span>
-    <span class="nt">&lt;description&gt;</span>This one is free!<span class="nt">&lt;/description&gt;</span>
-    <span class="nt">&lt;isActive&gt;</span>1<span class="nt">&lt;/isActive&gt;</span>
-    <span class="nt">&lt;isFree&gt;</span>1<span class="nt">&lt;/isFree&gt;</span>
-    <span class="nt">&lt;trialDays&gt;</span>0<span class="nt">&lt;/trialDays&gt;</span>
-    <span class="nt">&lt;billingFrequency&gt;</span>monthly<span class="nt">&lt;/billingFrequency&gt;</span>
-    <span class="nt">&lt;billingFrequencyPer&gt;</span>month<span class="nt">&lt;/billingFrequencyPer&gt;</span>
-    <span class="nt">&lt;billingFrequencyUnit&gt;</span>months<span class="nt">&lt;/billingFrequencyUnit&gt;</span>
-    <span class="nt">&lt;billingFrequencyQuantity&gt;</span>1<span class="nt">&lt;/billingFrequencyQuantity&gt;</span>
-    <span class="nt">&lt;setupChargeCode&gt;</span>FREE_SETUP<span class="nt">&lt;/setupChargeCode&gt;</span>
-    <span class="nt">&lt;setupChargeAmount&gt;</span>0.00<span class="nt">&lt;/setupChargeAmount&gt;</span>
-    <span class="nt">&lt;recurringChargeCode&gt;</span>FREE_RECURRING<span class="nt">&lt;/recurringChargeCode&gt;</span>
-    <span class="nt">&lt;recurringChargeAmount&gt;</span>0.00<span class="nt">&lt;/recurringChargeAmount&gt;</span>
-    <span class="nt">&lt;createdDatetime&gt;</span>2010-11-01T18:57:40+00:00<span class="nt">&lt;/createdDatetime&gt;</span>
-    <span class="nt">&lt;items&gt;</span>
-      <span class="nt">&lt;item</span> <span class="na">id=</span><span class="s">"e6ef5cee-e5e9-11df-86d5-40407c9117fd"</span> <span class="na">code=</span><span class="s">"PROJECTS"</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;name&gt;</span>Projects<span class="nt">&lt;/name&gt;</span>
-        <span class="nt">&lt;quantityIncluded&gt;</span>2<span class="nt">&lt;/quantityIncluded&gt;</span>
-        <span class="nt">&lt;isPeriodic&gt;</span>1<span class="nt">&lt;/isPeriodic&gt;</span>
-        <span class="nt">&lt;overageAmount&gt;</span>0.00<span class="nt">&lt;/overageAmount&gt;</span>
-        <span class="nt">&lt;createdDatetime&gt;</span>2010-11-01T18:57:41+00:00<span class="nt">&lt;/createdDatetime&gt;</span>
-      <span class="nt">&lt;/item&gt;</span>
-      <span class="nt">&lt;item</span> <span class="na">id=</span><span class="s">"e6ef5e60-e5e9-11df-86d5-40407c9117fd"</span> <span class="na">code=</span><span class="s">"USERS"</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;name&gt;</span>Users<span class="nt">&lt;/name&gt;</span>
-        <span class="nt">&lt;quantityIncluded&gt;</span>2<span class="nt">&lt;/quantityIncluded&gt;</span>
-        <span class="nt">&lt;isPeriodic&gt;</span>1<span class="nt">&lt;/isPeriodic&gt;</span>
-        <span class="nt">&lt;overageAmount&gt;</span>0.00<span class="nt">&lt;/overageAmount&gt;</span>
-        <span class="nt">&lt;createdDatetime&gt;</span>2010-11-01T18:57:41+00:00<span class="nt">&lt;/createdDatetime&gt;</span>
-      <span class="nt">&lt;/item&gt;</span>
-    <span class="nt">&lt;/items&gt;</span>
-  <span class="nt">&lt;/plan&gt;</span>
-  <span class="nt">&lt;plan</span> <span class="na">id=</span><span class="s">"e6eac5ee-e5e9-11df-86d5-40407c9117fd"</span> <span class="na">code=</span><span class="s">"PAID"</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;name&gt;</span>Paid<span class="nt">&lt;/name&gt;</span>
-    <span class="nt">&lt;description&gt;</span>This is a paid plan!<span class="nt">&lt;/description&gt;</span>
-    <span class="nt">&lt;isActive&gt;</span>1<span class="nt">&lt;/isActive&gt;</span>
-    <span class="nt">&lt;isFree&gt;</span>0<span class="nt">&lt;/isFree&gt;</span>
-    <span class="nt">&lt;trialDays&gt;</span>0<span class="nt">&lt;/trialDays&gt;</span>
-    <span class="nt">&lt;billingFrequency&gt;</span>monthly<span class="nt">&lt;/billingFrequency&gt;</span>
-    <span class="nt">&lt;billingFrequencyPer&gt;</span>month<span class="nt">&lt;/billingFrequencyPer&gt;</span>
-    <span class="nt">&lt;billingFrequencyUnit&gt;</span>months<span class="nt">&lt;/billingFrequencyUnit&gt;</span>
-    <span class="nt">&lt;billingFrequencyQuantity&gt;</span>1<span class="nt">&lt;/billingFrequencyQuantity&gt;</span>
-    <span class="nt">&lt;setupChargeCode&gt;</span>PAID_SETUP<span class="nt">&lt;/setupChargeCode&gt;</span>
-    <span class="nt">&lt;setupChargeAmount&gt;</span>0.00<span class="nt">&lt;/setupChargeAmount&gt;</span>
-    <span class="nt">&lt;recurringChargeCode&gt;</span>PAID_RECURRING<span class="nt">&lt;/recurringChargeCode&gt;</span>
-    <span class="nt">&lt;recurringChargeAmount&gt;</span>19.99<span class="nt">&lt;/recurringChargeAmount&gt;</span>
-    <span class="nt">&lt;createdDatetime&gt;</span>2010-11-01T18:57:40+00:00<span class="nt">&lt;/createdDatetime&gt;</span>
-    <span class="nt">&lt;items&gt;</span>
-      <span class="nt">&lt;item</span> <span class="na">id=</span><span class="s">"e6ef5cee-e5e9-11df-86d5-40407c9117fd"</span> <span class="na">code=</span><span class="s">"PROJECTS"</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;name&gt;</span>Projects<span class="nt">&lt;/name&gt;</span>
-        <span class="nt">&lt;quantityIncluded&gt;</span>5<span class="nt">&lt;/quantityIncluded&gt;</span>
-        <span class="nt">&lt;isPeriodic&gt;</span>1<span class="nt">&lt;/isPeriodic&gt;</span>
-        <span class="nt">&lt;overageAmount&gt;</span>4.00<span class="nt">&lt;/overageAmount&gt;</span>
-        <span class="nt">&lt;createdDatetime&gt;</span>2010-11-01T18:57:41+00:00<span class="nt">&lt;/createdDatetime&gt;</span>
-      <span class="nt">&lt;/item&gt;</span>
-      <span class="nt">&lt;item</span> <span class="na">id=</span><span class="s">"e6ef5e60-e5e9-11df-86d5-40407c9117fd"</span> <span class="na">code=</span><span class="s">"USERS"</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;name&gt;</span>Users<span class="nt">&lt;/name&gt;</span>
-        <span class="nt">&lt;quantityIncluded&gt;</span>5<span class="nt">&lt;/quantityIncluded&gt;</span>
-        <span class="nt">&lt;isPeriodic&gt;</span>1<span class="nt">&lt;/isPeriodic&gt;</span>
-        <span class="nt">&lt;overageAmount&gt;</span>2.50<span class="nt">&lt;/overageAmount&gt;</span>
-        <span class="nt">&lt;createdDatetime&gt;</span>2010-11-01T18:57:41+00:00<span class="nt">&lt;/createdDatetime&gt;</span>
-      <span class="nt">&lt;/item&gt;</span>
-    <span class="nt">&lt;/items&gt;</span>
-  <span class="nt">&lt;/plan&gt;</span>
-<span class="nt">&lt;/plans&gt;</span>
-</code></pre>
-
-<blockquote>
-<p>Customers Response Example</p>
-</blockquote>
-<pre class="highlight xml"><code><span class="cp">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
-<span class="nt">&lt;customers&gt;</span>
-  <span class="nt">&lt;customer</span> <span class="na">id=</span><span class="s">"89fdd0e4-c775-11de-8728-40407c9117fd"</span> <span class="na">code=</span><span class="s">"test_customer"</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;firstName&gt;</span>Joe<span class="nt">&lt;/firstName&gt;</span>
-    <span class="nt">&lt;lastName&gt;</span>Schmoe<span class="nt">&lt;/lastName&gt;</span>
-    <span class="nt">&lt;company/&gt;</span>
-    <span class="nt">&lt;email&gt;</span>joe.schmoe@example.com<span class="nt">&lt;/email&gt;</span>
-    <span class="nt">&lt;notes/&gt;</span>
-    <span class="nt">&lt;gatewayToken&gt;</span>SIMULATED<span class="nt">&lt;/gatewayToken&gt;</span>
-    <span class="nt">&lt;isVatExempt&gt;</span>0<span class="nt">&lt;/isVatExempt&gt;</span>
-    <span class="nt">&lt;vatNumber/&gt;</span>
-    <span class="nt">&lt;firstContactDatetime&gt;</span>2009-10-01T19:24:10+00:00<span class="nt">&lt;/firstContactDatetime&gt;</span>
-    <span class="nt">&lt;referer/&gt;</span>
-    <span class="nt">&lt;refererHost/&gt;</span>
-    <span class="nt">&lt;campaignSource/&gt;</span>
-    <span class="nt">&lt;campaignMedium/&gt;</span>
-    <span class="nt">&lt;campaignTerm/&gt;</span>
-    <span class="nt">&lt;campaignContent/&gt;</span>
-    <span class="nt">&lt;campaignName/&gt;</span>
-    <span class="nt">&lt;createdDatetime&gt;</span>2009-11-02T06:04:10+00:00<span class="nt">&lt;/createdDatetime&gt;</span>
-    <span class="nt">&lt;modifiedDatetime&gt;</span>2009-11-02T06:04:10+00:00<span class="nt">&lt;/modifiedDatetime&gt;</span>
-    <span class="nt">&lt;metaData/&gt;</span>
-    <span class="nt">&lt;subscriptions&gt;</span>
-      <span class="nt">&lt;subscription</span> <span class="na">id=</span><span class="s">"7fc2f2e6-3e47-11df-8728-40407c9117fd"</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;plans&gt;</span>
-          <span class="nt">&lt;plan</span> <span class="na">id=</span><span class="s">"e6eac5ee-e5e9-11df-86d5-40407c9117fd"</span> <span class="na">code=</span><span class="s">"PAID"</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;name&gt;</span>Paid<span class="nt">&lt;/name&gt;</span>
-            <span class="nt">&lt;description&gt;</span>This is a paid plan!<span class="nt">&lt;/description&gt;</span>
-            <span class="nt">&lt;isActive&gt;</span>1<span class="nt">&lt;/isActive&gt;</span>
-            <span class="nt">&lt;isFree&gt;</span>0<span class="nt">&lt;/isFree&gt;</span>
-            <span class="nt">&lt;trialDays&gt;</span>0<span class="nt">&lt;/trialDays&gt;</span>
-            <span class="nt">&lt;billingFrequency&gt;</span>monthly<span class="nt">&lt;/billingFrequency&gt;</span>
-            <span class="nt">&lt;billingFrequencyPer&gt;</span>month<span class="nt">&lt;/billingFrequencyPer&gt;</span>
-            <span class="nt">&lt;billingFrequencyUnit&gt;</span>months<span class="nt">&lt;/billingFrequencyUnit&gt;</span>
-            <span class="nt">&lt;billingFrequencyQuantity&gt;</span>1<span class="nt">&lt;/billingFrequencyQuantity&gt;</span>
-            <span class="nt">&lt;setupChargeCode&gt;</span>PAID_SETUP<span class="nt">&lt;/setupChargeCode&gt;</span>
-            <span class="nt">&lt;setupChargeAmount&gt;</span>0.00<span class="nt">&lt;/setupChargeAmount&gt;</span>
-            <span class="nt">&lt;recurringChargeCode&gt;</span>PAID_RECURRING<span class="nt">&lt;/recurringChargeCode&gt;</span>
-            <span class="nt">&lt;recurringChargeAmount&gt;</span>19.99<span class="nt">&lt;/recurringChargeAmount&gt;</span>
-            <span class="nt">&lt;createdDatetime&gt;</span>2009-11-01T18:57:40+00:00<span class="nt">&lt;/createdDatetime&gt;</span>
-            <span class="nt">&lt;items&gt;</span>
-              <span class="nt">&lt;item</span> <span class="na">id=</span><span class="s">"e6ef5cee-e5e9-11df-86d5-40407c9117fd"</span> <span class="na">code=</span><span class="s">"PROJECTS"</span><span class="nt">&gt;</span>
-                <span class="nt">&lt;name&gt;</span>Projects<span class="nt">&lt;/name&gt;</span>
-                <span class="nt">&lt;quantityIncluded&gt;</span>5<span class="nt">&lt;/quantityIncluded&gt;</span>
-                <span class="nt">&lt;isPeriodic&gt;</span>1<span class="nt">&lt;/isPeriodic&gt;</span>
-                <span class="nt">&lt;overageAmount&gt;</span>4.00<span class="nt">&lt;/overageAmount&gt;</span>
-                <span class="nt">&lt;createdDatetime&gt;</span>2009-11-01T18:57:41+00:00<span class="nt">&lt;/createdDatetime&gt;</span>
-              <span class="nt">&lt;/item&gt;</span>
-              <span class="nt">&lt;item</span> <span class="na">id=</span><span class="s">"e6ef5e60-e5e9-11df-86d5-40407c9117fd"</span> <span class="na">code=</span><span class="s">"USERS"</span><span class="nt">&gt;</span>
-                <span class="nt">&lt;name&gt;</span>Users<span class="nt">&lt;/name&gt;</span>
-                <span class="nt">&lt;quantityIncluded&gt;</span>5<span class="nt">&lt;/quantityIncluded&gt;</span>
-                <span class="nt">&lt;isPeriodic&gt;</span>1<span class="nt">&lt;/isPeriodic&gt;</span>
-                <span class="nt">&lt;overageAmount&gt;</span>2.50<span class="nt">&lt;/overageAmount&gt;</span>
-                <span class="nt">&lt;createdDatetime&gt;</span>2009-11-01T18:57:41+00:00<span class="nt">&lt;/createdDatetime&gt;</span>
-              <span class="nt">&lt;/item&gt;</span>
-            <span class="nt">&lt;/items&gt;</span>
-          <span class="nt">&lt;/plan&gt;</span>
-        <span class="nt">&lt;/plans&gt;</span>
-        <span class="nt">&lt;gatewayToken&gt;</span>SIMULATED<span class="nt">&lt;/gatewayToken&gt;</span>
-        <span class="nt">&lt;gatewayAccount&gt;</span>
-          <span class="nt">&lt;id&gt;</span>d6733a6e-44b3-11e1-a628-40403c39f8d9<span class="nt">&lt;/id&gt;</span>
-          <span class="nt">&lt;gateway&gt;</span>CheddarGateway_Simulator<span class="nt">&lt;/gateway&gt;</span>
-          <span class="nt">&lt;type&gt;</span>cc<span class="nt">&lt;/type&gt;</span>
-        <span class="nt">&lt;/gatewayAccount&gt;</span>
-        <span class="nt">&lt;ccFirstName&gt;</span>Joe<span class="nt">&lt;/ccFirstName&gt;</span>
-        <span class="nt">&lt;ccLastName&gt;</span>Schmoe<span class="nt">&lt;/ccLastName&gt;</span>
-        <span class="nt">&lt;ccCompany/&gt;</span>
-        <span class="nt">&lt;ccCountry/&gt;</span>
-        <span class="nt">&lt;ccAddress/&gt;</span>
-        <span class="nt">&lt;ccCity/&gt;</span>
-        <span class="nt">&lt;ccState/&gt;</span>
-        <span class="nt">&lt;ccZip&gt;</span>90210<span class="nt">&lt;/ccZip&gt;</span>
-        <span class="nt">&lt;ccType&gt;</span>mc<span class="nt">&lt;/ccType&gt;</span>
-        <span class="nt">&lt;ccLastFour&gt;</span>0015<span class="nt">&lt;/ccLastFour&gt;</span>
-        <span class="nt">&lt;ccExpirationDate&gt;</span>2011-02-28T00:00:00+00:00<span class="nt">&lt;/ccExpirationDate&gt;</span>
-        <span class="nt">&lt;canceledDatetime/&gt;</span>
-        <span class="nt">&lt;createdDatetime&gt;</span>2010-10-02T11:04:25+00:00<span class="nt">&lt;/createdDatetime&gt;</span>
-        <span class="nt">&lt;items&gt;</span>
-          <span class="nt">&lt;item</span> <span class="na">id=</span><span class="s">"e6ef5cee-e5e9-11df-86d5-40407c9117fd"</span> <span class="na">code=</span><span class="s">"PROJECTS"</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;name&gt;</span>Projects<span class="nt">&lt;/name&gt;</span>
-            <span class="nt">&lt;quantity&gt;</span>3<span class="nt">&lt;/quantity&gt;</span>
-            <span class="nt">&lt;createdDatetime&gt;</span>2010-11-04T18:57:42+00:00<span class="nt">&lt;/createdDatetime&gt;</span>
-            <span class="nt">&lt;modifiedDatetime&gt;</span>2010-11-04T18:57:43+00:00<span class="nt">&lt;/modifiedDatetime&gt;</span>
-          <span class="nt">&lt;/item&gt;</span>
-          <span class="nt">&lt;item</span> <span class="na">id=</span><span class="s">"e6ef5e60-e5e9-11df-86d5-40407c9117fd"</span> <span class="na">code=</span><span class="s">"USERS"</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;name&gt;</span>Users<span class="nt">&lt;/name&gt;</span>
-            <span class="nt">&lt;quantity&gt;</span>8<span class="nt">&lt;/quantity&gt;</span>
-            <span class="nt">&lt;createdDatetime&gt;</span>2010-11-04T18:57:42+00:00<span class="nt">&lt;/createdDatetime&gt;</span>
-            <span class="nt">&lt;modifiedDatetime&gt;</span>2010-11-04T18:57:43+00:00<span class="nt">&lt;/modifiedDatetime&gt;</span>
-          <span class="nt">&lt;/item&gt;</span>
-        <span class="nt">&lt;/items&gt;</span>
-        <span class="nt">&lt;invoices&gt;</span>
-          <span class="nt">&lt;invoice</span> <span class="na">id=</span><span class="s">"ab8fad6c-e6ab-11df-8728-40407c9117fd"</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;number&gt;</span>2658<span class="nt">&lt;/number&gt;</span>
-            <span class="nt">&lt;type&gt;</span>subscription<span class="nt">&lt;/type&gt;</span>
-            <span class="nt">&lt;vatRate/&gt;</span>
-            <span class="nt">&lt;billingDatetime&gt;</span>2010-12-02T06:04:10+00:00<span class="nt">&lt;/billingDatetime&gt;</span>
-            <span class="nt">&lt;paidTransactionId/&gt;</span>
-            <span class="nt">&lt;createdDatetime&gt;</span>2010-11-02T18:04:43+00:00<span class="nt">&lt;/createdDatetime&gt;</span>
-            <span class="nt">&lt;charges&gt;</span>
-              <span class="nt">&lt;charge</span> <span class="na">id=</span><span class="s">""</span> <span class="na">code=</span><span class="s">"PAID_RECURRING"</span><span class="nt">&gt;</span>
-                <span class="nt">&lt;type&gt;</span>recurring<span class="nt">&lt;/type&gt;</span>
-                <span class="nt">&lt;quantity&gt;</span>1<span class="nt">&lt;/quantity&gt;</span>
-                <span class="nt">&lt;eachAmount&gt;</span>19.00<span class="nt">&lt;/eachAmount&gt;</span>
-                <span class="nt">&lt;description/&gt;</span>
-                <span class="nt">&lt;createdDatetime&gt;</span>2010-12-02T06:04:10+00:00<span class="nt">&lt;/createdDatetime&gt;</span>
-              <span class="nt">&lt;/charge&gt;</span>
-              <span class="nt">&lt;charge</span> <span class="na">id=</span><span class="s">""</span> <span class="na">code=</span><span class="s">"PROJECTS"</span><span class="nt">&gt;</span>
-                <span class="nt">&lt;type&gt;</span>item<span class="nt">&lt;/type&gt;</span>
-                <span class="nt">&lt;quantity&gt;</span>0<span class="nt">&lt;/quantity&gt;</span>
-                <span class="nt">&lt;eachAmount&gt;</span>4.00<span class="nt">&lt;/eachAmount&gt;</span>
-                <span class="nt">&lt;description/&gt;</span>
-                <span class="nt">&lt;createdDatetime/&gt;</span>
-              <span class="nt">&lt;/charge&gt;</span>
-              <span class="nt">&lt;charge</span> <span class="na">id=</span><span class="s">""</span> <span class="na">code=</span><span class="s">"USERS"</span><span class="nt">&gt;</span>
-                <span class="nt">&lt;type&gt;</span>item<span class="nt">&lt;/type&gt;</span>
-                <span class="nt">&lt;quantity&gt;</span>3<span class="nt">&lt;/quantity&gt;</span>
-                <span class="nt">&lt;eachAmount&gt;</span>2.50<span class="nt">&lt;/eachAmount&gt;</span>
-                <span class="nt">&lt;description/&gt;</span>
-                <span class="nt">&lt;createdDatetime/&gt;</span>
-              <span class="nt">&lt;/charge&gt;</span>
-            <span class="nt">&lt;/charges&gt;</span>
-          <span class="nt">&lt;/invoice&gt;</span>
-          <span class="nt">&lt;invoice</span> <span class="na">id=</span><span class="s">"2535f824-ce47-11df-8728-40407c9117fd"</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;number&gt;</span>1635<span class="nt">&lt;/number&gt;</span>
-            <span class="nt">&lt;type&gt;</span>subscription<span class="nt">&lt;/type&gt;</span>
-            <span class="nt">&lt;vatRate/&gt;</span>
-            <span class="nt">&lt;billingDatetime&gt;</span>2010-11-02T06:04:10+00:00<span class="nt">&lt;/billingDatetime&gt;</span>
-            <span class="nt">&lt;paidTransactionId&gt;</span>ab6aedd8-e6ab-11df-8728-40407c9117fd<span class="nt">&lt;/paidTransactionId&gt;</span>
-            <span class="nt">&lt;createdDatetime&gt;</span>2010-10-02T17:04:40+00:00<span class="nt">&lt;/createdDatetime&gt;</span>
-            <span class="nt">&lt;charges&gt;</span>
-              <span class="nt">&lt;charge</span> <span class="na">id=</span><span class="s">"ab6992e4-e6ab-11df-8728-40407c9117fd"</span> <span class="na">code=</span><span class="s">"PAID_RECURRING"</span><span class="nt">&gt;</span>
-                <span class="nt">&lt;type&gt;</span>recurring<span class="nt">&lt;/type&gt;</span>
-                <span class="nt">&lt;quantity&gt;</span>1<span class="nt">&lt;/quantity&gt;</span>
-                <span class="nt">&lt;eachAmount&gt;</span>19.00<span class="nt">&lt;/eachAmount&gt;</span>
-                <span class="nt">&lt;description/&gt;</span>
-                <span class="nt">&lt;createdDatetime&gt;</span>2010-11-02T18:04:43+00:00<span class="nt">&lt;/createdDatetime&gt;</span>
-              <span class="nt">&lt;/charge&gt;</span>
-              <span class="nt">&lt;charge</span> <span class="na">id=</span><span class="s">"ab69884e-e6ab-11df-8728-40407c9117fd"</span> <span class="na">code=</span><span class="s">"USERS"</span><span class="nt">&gt;</span>
-                <span class="nt">&lt;type&gt;</span>item<span class="nt">&lt;/type&gt;</span>
-                <span class="nt">&lt;quantity&gt;</span>3<span class="nt">&lt;/quantity&gt;</span>
-                <span class="nt">&lt;eachAmount&gt;</span>2.50<span class="nt">&lt;/eachAmount&gt;</span>
-                <span class="nt">&lt;description/&gt;</span>
-                <span class="nt">&lt;createdDatetime&gt;</span>2010-11-02T18:04:43+00:00<span class="nt">&lt;/createdDatetime&gt;</span>
-              <span class="nt">&lt;/charge&gt;</span>
-            <span class="nt">&lt;/charges&gt;</span>
-            <span class="nt">&lt;transactions&gt;</span>
-              <span class="nt">&lt;transaction</span> <span class="na">id=</span><span class="s">"ab6aedd8-e6ab-11df-8728-40407c9117fd"</span> <span class="na">code=</span><span class="s">""</span><span class="nt">&gt;</span>
-                <span class="nt">&lt;parentId/&gt;</span>
-                <span class="nt">&lt;gatewayToken/&gt;</span>
-                <span class="nt">&lt;gatewayAccount&gt;</span>
-                  <span class="nt">&lt;id&gt;</span>d6733a6e-44b3-11e1-a628-40403c39f8d9<span class="nt">&lt;/id&gt;</span>
-                  <span class="nt">&lt;gateway&gt;</span>CheddarGateway_Simulator<span class="nt">&lt;/gateway&gt;</span>
-                  <span class="nt">&lt;type&gt;</span>cc<span class="nt">&lt;/type&gt;</span>
-                <span class="nt">&lt;/gatewayAccount&gt;</span>
-                <span class="nt">&lt;amount&gt;</span>26.50<span class="nt">&lt;/amount&gt;</span>
-                <span class="nt">&lt;memo&gt;</span>SIMULATED approved payment<span class="nt">&lt;/memo&gt;</span>
-                <span class="nt">&lt;response&gt;</span>approved<span class="nt">&lt;/response&gt;</span>
-                <span class="nt">&lt;responseReason/&gt;</span>
-                <span class="nt">&lt;transactedDatetime&gt;</span>2010-11-02T18:04:43+00:00<span class="nt">&lt;/transactedDatetime&gt;</span>
-                <span class="nt">&lt;createdDatetime&gt;</span>2010-11-02T18:04:43+00:00<span class="nt">&lt;/createdDatetime&gt;</span>
-              <span class="nt">&lt;/transaction&gt;</span>
-            <span class="nt">&lt;/transactions&gt;</span>
-          <span class="nt">&lt;/invoice&gt;</span>
-        <span class="nt">&lt;/invoices&gt;</span>
-      <span class="nt">&lt;/subscription&gt;</span>
-      <span class="nt">&lt;subscription</span> <span class="na">id=</span><span class="s">"89feb4b4-c775-11de-8728-40407c9117fd"</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;plans&gt;</span>
-          <span class="nt">&lt;plan</span> <span class="na">id=</span><span class="s">"e6eac530-e5e9-11df-86d5-40407c9117fd"</span> <span class="na">code=</span><span class="s">"FREE"</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;name&gt;</span>Free<span class="nt">&lt;/name&gt;</span>
-            <span class="nt">&lt;description&gt;</span>This one is free!<span class="nt">&lt;/description&gt;</span>
-            <span class="nt">&lt;isActive&gt;</span>1<span class="nt">&lt;/isActive&gt;</span>
-            <span class="nt">&lt;isFree&gt;</span>1<span class="nt">&lt;/isFree&gt;</span>
-            <span class="nt">&lt;trialDays&gt;</span>0<span class="nt">&lt;/trialDays&gt;</span>
-            <span class="nt">&lt;billingFrequency&gt;</span>monthly<span class="nt">&lt;/billingFrequency&gt;</span>
-            <span class="nt">&lt;billingFrequencyPer&gt;</span>month<span class="nt">&lt;/billingFrequencyPer&gt;</span>
-            <span class="nt">&lt;billingFrequencyUnit&gt;</span>months<span class="nt">&lt;/billingFrequencyUnit&gt;</span>
-            <span class="nt">&lt;billingFrequencyQuantity&gt;</span>1<span class="nt">&lt;/billingFrequencyQuantity&gt;</span>
-            <span class="nt">&lt;setupChargeCode&gt;</span>FREE_SETUP<span class="nt">&lt;/setupChargeCode&gt;</span>
-            <span class="nt">&lt;setupChargeAmount&gt;</span>0.00<span class="nt">&lt;/setupChargeAmount&gt;</span>
-            <span class="nt">&lt;recurringChargeCode&gt;</span>FREE_RECURRING<span class="nt">&lt;/recurringChargeCode&gt;</span>
-            <span class="nt">&lt;recurringChargeAmount&gt;</span>0.00<span class="nt">&lt;/recurringChargeAmount&gt;</span>
-            <span class="nt">&lt;createdDatetime&gt;</span>2010-11-01T18:57:40+00:00<span class="nt">&lt;/createdDatetime&gt;</span>
-            <span class="nt">&lt;items&gt;</span>
-              <span class="nt">&lt;item</span> <span class="na">id=</span><span class="s">"e6ef5cee-e5e9-11df-86d5-40407c9117fd"</span> <span class="na">code=</span><span class="s">"PROJECTS"</span><span class="nt">&gt;</span>
-                <span class="nt">&lt;name&gt;</span>Projects<span class="nt">&lt;/name&gt;</span>
-                <span class="nt">&lt;quantityIncluded&gt;</span>2<span class="nt">&lt;/quantityIncluded&gt;</span>
-                <span class="nt">&lt;isPeriodic&gt;</span>1<span class="nt">&lt;/isPeriodic&gt;</span>
-                <span class="nt">&lt;overageAmount&gt;</span>0.00<span class="nt">&lt;/overageAmount&gt;</span>
-                <span class="nt">&lt;createdDatetime&gt;</span>2010-11-01T18:57:41+00:00<span class="nt">&lt;/createdDatetime&gt;</span>
-              <span class="nt">&lt;/item&gt;</span>
-              <span class="nt">&lt;item</span> <span class="na">id=</span><span class="s">"e6ef5e60-e5e9-11df-86d5-40407c9117fd"</span> <span class="na">code=</span><span class="s">"USERS"</span><span class="nt">&gt;</span>
-                <span class="nt">&lt;name&gt;</span>Users<span class="nt">&lt;/name&gt;</span>
-                <span class="nt">&lt;quantityIncluded&gt;</span>2<span class="nt">&lt;/quantityIncluded&gt;</span>
-                <span class="nt">&lt;isPeriodic&gt;</span>1<span class="nt">&lt;/isPeriodic&gt;</span>
-                <span class="nt">&lt;overageAmount&gt;</span>0.00<span class="nt">&lt;/overageAmount&gt;</span>
-                <span class="nt">&lt;createdDatetime&gt;</span>2010-11-01T18:57:41+00:00<span class="nt">&lt;/createdDatetime&gt;</span>
-              <span class="nt">&lt;/item&gt;</span>
-            <span class="nt">&lt;/items&gt;</span>
-          <span class="nt">&lt;/plan&gt;</span>
-        <span class="nt">&lt;/plans&gt;</span>
-        <span class="nt">&lt;gatewayToken&gt;</span>SIMULATED<span class="nt">&lt;/gatewayToken&gt;</span>
-        <span class="nt">&lt;gatewayAccount&gt;</span>
-          <span class="nt">&lt;id&gt;</span>d6733a6e-44b3-11e1-a628-40403c39f8d9<span class="nt">&lt;/id&gt;</span>
-          <span class="nt">&lt;gateway&gt;</span>CheddarGateway_Simulator<span class="nt">&lt;/gateway&gt;</span>
-          <span class="nt">&lt;type&gt;</span>cc<span class="nt">&lt;/type&gt;</span>
-        <span class="nt">&lt;/gatewayAccount&gt;</span>
-        <span class="nt">&lt;ccFirstName&gt;</span>Joe<span class="nt">&lt;/ccFirstName&gt;</span>
-        <span class="nt">&lt;ccLastName&gt;</span>Schmoe<span class="nt">&lt;/ccLastName&gt;</span>
-        <span class="nt">&lt;ccCompany/&gt;</span>
-        <span class="nt">&lt;ccCountry/&gt;</span>
-        <span class="nt">&lt;ccAddress/&gt;</span>
-        <span class="nt">&lt;ccCity/&gt;</span>
-        <span class="nt">&lt;ccState/&gt;</span>
-        <span class="nt">&lt;ccZip&gt;</span>90210<span class="nt">&lt;/ccZip&gt;</span>
-        <span class="nt">&lt;ccType&gt;</span>mc<span class="nt">&lt;/ccType&gt;</span>
-        <span class="nt">&lt;ccLastFour&gt;</span>0015<span class="nt">&lt;/ccLastFour&gt;</span>
-        <span class="nt">&lt;ccExpirationDate&gt;</span>2011-02-28T00:00:00+00:00<span class="nt">&lt;/ccExpirationDate&gt;</span>
-        <span class="nt">&lt;canceledDatetime/&gt;</span>
-        <span class="nt">&lt;createdDatetime&gt;</span>2009-11-02T06:04:10+00:00<span class="nt">&lt;/createdDatetime&gt;</span>
-        <span class="nt">&lt;invoices&gt;</span>
-          <span class="nt">&lt;invoice</span> <span class="na">id=</span><span class="s">"f87f6796-25e2-11df-8728-40407c9117fd"</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;number&gt;</span>524<span class="nt">&lt;/number&gt;</span>
-            <span class="nt">&lt;type&gt;</span>subscription<span class="nt">&lt;/type&gt;</span>
-            <span class="nt">&lt;vatRate/&gt;</span>
-            <span class="nt">&lt;billingDatetime&gt;</span>2010-10-02T06:04:10+00:00<span class="nt">&lt;/billingDatetime&gt;</span>
-            <span class="nt">&lt;paidTransactionId&gt;</span>7ebb3eee-3e47-11df-8728-40407c9117fd<span class="nt">&lt;/paidTransactionId&gt;</span>
-            <span class="nt">&lt;createdDatetime&gt;</span>2010-09-02T10:04:20+00:00<span class="nt">&lt;/createdDatetime&gt;</span>
-            <span class="nt">&lt;charges&gt;</span>
-              <span class="nt">&lt;charge</span> <span class="na">id=</span><span class="s">"7eb9bdf8-3e47-11df-8728-40407c9117fd"</span> <span class="na">code=</span><span class="s">"FREE_RECURRING"</span><span class="nt">&gt;</span>
-                <span class="nt">&lt;type&gt;</span>recurring<span class="nt">&lt;/type&gt;</span>
-                <span class="nt">&lt;quantity&gt;</span>1<span class="nt">&lt;/quantity&gt;</span>
-                <span class="nt">&lt;eachAmount&gt;</span>0.00<span class="nt">&lt;/eachAmount&gt;</span>
-                <span class="nt">&lt;description/&gt;</span>
-                <span class="nt">&lt;createdDatetime&gt;</span>2010-10-02T11:04:23+00:00<span class="nt">&lt;/createdDatetime&gt;</span>
-              <span class="nt">&lt;/charge&gt;</span>
-            <span class="nt">&lt;/charges&gt;</span>
-            <span class="nt">&lt;transactions&gt;</span>
-              <span class="nt">&lt;transaction</span> <span class="na">id=</span><span class="s">"7ebb3eee-3e47-11df-8728-40407c9117fd"</span> <span class="na">code=</span><span class="s">""</span><span class="nt">&gt;</span>
-                <span class="nt">&lt;parentId/&gt;</span>
-                <span class="nt">&lt;gatewayToken/&gt;</span>
-                <span class="nt">&lt;gatewayAccount&gt;</span>
-                  <span class="nt">&lt;id&gt;</span>d6733a6e-44b3-11e1-a628-40403c39f8d9<span class="nt">&lt;/id&gt;</span>
-                  <span class="nt">&lt;gateway&gt;</span>CheddarGateway_Simulator<span class="nt">&lt;/gateway&gt;</span>
-                  <span class="nt">&lt;type&gt;</span>cc<span class="nt">&lt;/type&gt;</span>
-                <span class="nt">&lt;/gatewayAccount&gt;</span>
-                <span class="nt">&lt;amount&gt;</span>0.00<span class="nt">&lt;/amount&gt;</span>
-                <span class="nt">&lt;memo&gt;</span>SIMULATED approved payment<span class="nt">&lt;/memo&gt;</span>
-                <span class="nt">&lt;response&gt;</span>approved<span class="nt">&lt;/response&gt;</span>
-                <span class="nt">&lt;responseReason/&gt;</span>
-                <span class="nt">&lt;transactedDatetime&gt;</span>2010-10-02T11:04:23+00:00<span class="nt">&lt;/transactedDatetime&gt;</span>
-                <span class="nt">&lt;createdDatetime&gt;</span>2010-10-02T11:04:23+00:00<span class="nt">&lt;/createdDatetime&gt;</span>
-              <span class="nt">&lt;/transaction&gt;</span>
-            <span class="nt">&lt;/transactions&gt;</span>
-          <span class="nt">&lt;/invoice&gt;</span>
-        <span class="nt">&lt;/invoices&gt;</span>
-      <span class="nt">&lt;/subscription&gt;</span>
-    <span class="nt">&lt;/subscriptions&gt;</span>
-  <span class="nt">&lt;/customer&gt;</span>
-<span class="nt">&lt;/customers&gt;</span>
-</code></pre>
-
-<blockquote>
-<p>Error Response Example</p>
-</blockquote>
-<pre class="highlight xml"><code><span class="cp">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
-<span class="nt">&lt;error</span> <span class="na">id=</span><span class="s">"73542"</span> <span class="na">code=</span><span class="s">"404"</span> <span class="na">auxCode=</span><span class="s">""</span><span class="nt">&gt;</span>Customer not found<span class="nt">&lt;/error&gt;</span>
-</code></pre>
-
 <p>Response format is XML.  There are three response document types: <em>Plans</em>,
 <em>Customers</em>, and <em>Error</em>.  The <em>Plans</em> document is returned when interacting
 with pricing plans (a simple <code class="prettyprint">GET</code>, for example).  The <em>Customers</em> document is
@@ -752,6 +258,18 @@ returned when interacting with customers.</p>
 <p>Simply change <code class="prettyprint">/admin/</code> to <code class="prettyprint">/xml/</code>:</p>
 
 <p><code class="prettyprint">https://cheddargetter.com/xml/customers/get</code></p>
+
+<h3 id="plans-response-example">Plans Response Example</h3>
+
+<script src="https://gist.github.com/marcguyer/660077.js?file=plans.xml"></script>
+
+<h3 id="customers-response-example">Customers Response Example</h3>
+
+<script src="https://gist.github.com/marcguyer/660077.js?file=customers.xml"></script>
+
+<h3 id="error-response-example">Error Response Example</h3>
+
+<script src="https://gist.github.com/marcguyer/660077.js?file=error.xml"></script>
 
           <h1 id="request-dictionary">Request Dictionary</h1>
 
@@ -1080,7 +598,7 @@ and subscribe the customer to a pricing plan.</p>
 </tbody></table>
 
 <aside class="notice">
-<p>
+
   If the plan is free, only <code>code</code>, <code>firstName</code>, <code>lastName</code>, <code>email</code> and
   <code>subscription[planCode]</code> are required. If the plan is a paid plan, credit card
   information is only required if you have configured CheddarGetter to require it.
@@ -1088,8 +606,9 @@ and subscribe the customer to a pricing plan.</p>
   subscription on a paid plan does not have a payment method when it comes time to
   bill, the subscription will be auto-cancelled. See the the email templates
   <a href="http://support.cheddargetter.com/kb/operational-how-tos/email-notification-templates">KB Article</a>
-  regarding free trials and the *Bill Reminder* email.
-</p>
+  regarding free trials and the <em>Bill Reminder</em> email.
+  <br/>
+  <br/>
 <p>
   When using $0.00 verification transactions (e.g., <code>Authorize.Net CIM validationMode=liveMode)</code>
   for credit card pre-verifications, <code>subscription[ccAddress]</code> and
@@ -1107,17 +626,1208 @@ and subscribe the customer to a pricing plan.</p>
 </p>
 
 <p>
-  Check out this article for more information about <a href="http://support.cheddargetter.com/kb/api-8/using-paypal-with-the-api">using the API with PayPal</a>.
+  Check out this article for more information about <a href="http://support.cheddargetter.com/kb/api-8/using-paypal-with-the-api">
+  using the API with PayPal
+  </a>.
 </p>
 
 </aside>
 
-          
-          
-          
+<h3 id="import-customers">Import Customers</h3>
+
+<p>Import customers to the product with <code class="prettyprint">productCode=MY_PRODUCT_CODE</code>. Existing
+paying (or non-paying) customers in another billing system may be imported while
+maintaining payment methods if the billing solution is compatible. Please <a href="http://support.cheddargetter.com/discussion/new">contact
+support</a> for more information
+about whether or not importing is possible in your situation.</p>
+
+<p><code class="prettyprint">/customers/import/productCode/MY_PRODUCT_CODE</code></p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>code</td>
+<td>Yes</td>
+<td>Your code for this customer. Limited to 255 characters.</td>
+</tr>
+<tr>
+<td>gatewayToken</td>
+<td>Conditional</td>
+<td>The gateway reference code. Limited to 255 characters.</td>
+</tr>
+<tr>
+<td>firstName</td>
+<td>Yes</td>
+<td>Limited to 40 characters</td>
+</tr>
+<tr>
+<td>lastName</td>
+<td>Yes</td>
+<td>Limited to 40 characters</td>
+</tr>
+<tr>
+<td>email</td>
+<td>Yes</td>
+<td>Valid email address</td>
+</tr>
+<tr>
+<td>company</td>
+<td>No</td>
+<td>Limited to 60 characters</td>
+</tr>
+<tr>
+<td>isVatExempt</td>
+<td>No</td>
+<td>1 or 0</td>
+</tr>
+<tr>
+<td>vatNumber</td>
+<td>No</td>
+<td>If the customer is geographically eligible to be taxed and is exempt, provide the exemption number if applicable. Limited to 32 characters</td>
+</tr>
+<tr>
+<td>notes</td>
+<td>No</td>
+<td>Limited to 255 characters</td>
+</tr>
+<tr>
+<td>firstContactDatetime</td>
+<td>No</td>
+<td>Date or datetime in ISO 8601 format. (e.g., 2011-08-01 or 2011-08-01T15:30:00+00:00). See the <a href="http://support.cheddargetter.com/faqs/marketing-metrics/marketing-metrics">KB Article</a></td>
+</tr>
+<tr>
+<td>referer</td>
+<td>No</td>
+<td>A valid URL referer. Limited to 255 characters. See the <a href="http://support.cheddargetter.com/faqs/marketing-metrics/marketing-metrics">KB Article</a></td>
+</tr>
+<tr>
+<td>campaignTerm</td>
+<td>No</td>
+<td>The &ldquo;term&rdquo; or &ldquo;keyword&rdquo; phrase that lead a potential customer to your site. Google Adwords equivalent: &ldquo;utm_term&rdquo;. See the <a href="http://support.cheddargetter.com/faqs/marketing-metrics/marketing-metrics">KB Article</a></td>
+</tr>
+<tr>
+<td>campaignName</td>
+<td>No</td>
+<td>The name of the marketing campaign. Google Adwords equivalent: &ldquo;utm_campaign&rdquo;. See the <a href="http://support.cheddargetter.com/faqs/marketing-metrics/marketing-metrics">KB Article</a></td>
+</tr>
+<tr>
+<td>campaignSource</td>
+<td>No</td>
+<td>The source of the lead. Google Adwords equivalent: &ldquo;utm_source&rdquo;. See the <a href="http://support.cheddargetter.com/faqs/marketing-metrics/marketing-metrics">KB Article</a></td>
+</tr>
+<tr>
+<td>campaignMedium</td>
+<td>No</td>
+<td>The medium used to find your site. Google Adwords equivalent: &ldquo;utm_medium&rdquo;. See the <a href="http://support.cheddargetter.com/faqs/marketing-metrics/marketing-metrics">KB Article</a></td>
+</tr>
+<tr>
+<td>campaignContent</td>
+<td>No</td>
+<td>The content you wish to track. Google Adwords equivalent: &ldquo;utm_content&rdquo;. See the <a href="http://support.cheddargetter.com/faqs/marketing-metrics/marketing-metrics">KB Article</a></td>
+</tr>
+<tr>
+<td>metaData[&lt;user-defined&gt;]</td>
+<td>No</td>
+<td>See the <a href="http://support.cheddargetter.com/kb/api-8/customer-meta-data">KB Article</a> about customer metadata</td>
+</tr>
+<tr>
+<td>subscription[initialBillDate]</td>
+<td>Yes</td>
+<td>Date or datetime in ISO 8601 format. (e.g., 2011-08-01 or 2011-08-01T15:30:00+00:00). Date on which you would like the customers first invoice to be billable. This option overrides the pricing plan default. Must either be today&rsquo;s date (run invoice immediately) or a future date.</td>
+</tr>
+<tr>
+<td>subscription[ccType]</td>
+<td>Conditional</td>
+<td>visa, mc, disc, amex, diners, jcb, unk. If you specify a subscription[gatewayToken], this is required.</td>
+</tr>
+<tr>
+<td>subscription[ccLastFour]</td>
+<td>Conditional</td>
+<td>Numbers only &ndash; last four digits of credit/debit card number. If you specify a subscription[gatewayToken], this is required.</td>
+</tr>
+<tr>
+<td>subscription[ccExpiration]</td>
+<td>Conditional</td>
+<td>MM/YYYY - the expiration date for the credit/debit card. If you specify a subscription[gatewayToken], this is required.</td>
+</tr>
+<tr>
+<td>subscription[ccFirstName]</td>
+<td>Conditional</td>
+<td>Limited to 40 characters. If you specify a subscription[gatewayToken], this is required.</td>
+</tr>
+<tr>
+<td>subscription[ccLastName]</td>
+<td>Conditional</td>
+<td>Limited to 40 characters. If you specify a subscription[gatewayToken], this is required.</td>
+</tr>
+<tr>
+<td>subscription[ccCompany]</td>
+<td>No</td>
+<td>Limited to 60 characters</td>
+</tr>
+<tr>
+<td>subscription[ccCountry]</td>
+<td>No</td>
+<td>Limited to 60 characters. Many billing solutions require that the ISO 2 char codes are used.</td>
+</tr>
+<tr>
+<td>subscription[ccAddress]</td>
+<td>No</td>
+<td>Limited to 60 characters</td>
+</tr>
+<tr>
+<td>subscription[ccCity]</td>
+<td>No</td>
+<td>Limited to 40 characters</td>
+</tr>
+<tr>
+<td>subscription[ccState]</td>
+<td>No</td>
+<td>Limited to 40 characters. 2 character state/province codes are suggested when country is US/Canada.</td>
+</tr>
+<tr>
+<td>subscription[ccZip]</td>
+<td>No</td>
+<td>Limited to 20 characters</td>
+</tr>
+<tr>
+<td>charges[&lt;user-defined&gt;][chargeCode]</td>
+<td>No (see notes)</td>
+<td>Your code for this charge. Limited to 36 characters.</td>
+</tr>
+<tr>
+<td>charges[&lt;user-defined&gt;][quantity]</td>
+<td>No (see notes)</td>
+<td>Positive integer quantity</td>
+</tr>
+<tr>
+<td>charges[&lt;user-defined&gt;][eachAmount]</td>
+<td>No (see notes)</td>
+<td>Positive or negative integer or float with two digit decimal precision. A positive number will create a charge (debit). A negative number will create a credit.</td>
+</tr>
+<tr>
+<td>charges[&lt;user-defined&gt;][description]</td>
+<td>No</td>
+<td>Description for this charge/credit</td>
+</tr>
+<tr>
+<td>items[&lt;user-defined&gt;][itemCode]</td>
+<td>No (see notes)</td>
+<td>Your code for this tracked item. Limited to 36 characters.</td>
+</tr>
+<tr>
+<td>items[&lt;user-defined&gt;][quantity]</td>
+<td>No (see notes)</td>
+<td>The positive amount accurate to up to 4 decimal places that you wish to set the current usage to for this item. Can be zero.</td>
+</tr>
+</tbody></table>
+
+<aside class="notice">
+
+  Up to 100 customers may be imported in one call. Customer data must be in a
+  nested list.
+<br/>
+<br/>
+<p>
+  Any customer may be imported with or without a payment method. If payment
+  method import is desired, the last four digits of the card number, the
+  expiration date and the card type are required (card type may be &ldquo;unk&rdquo; if
+  not known).
+</p>
+
+<p>
+  <code>subscription[initialBillDate]</code> is required. The first transaction
+  will occur on the <code>initialBillDate</code>.
+
+<p>
+  Charges are not required but when including charges, <code>chargeCode</code>,
+  <code>quantity</code> and <code>eachAmount</code> are required for each charge.
+</p>
+
+<p>
+  Items are not required but when including items, <code>itemCode</code> and
+  <code>quantity</code> are required for each item.
+</p>
+
+<p>
+  Check out this article for more information about <a href="http://support.cheddargetter.com/kb/getting-started-19/can-i-migrate-or-import-existing-customers-to-cheddargetter-how">
+  using the import functionality
+  </a>.
+</p>
+
+</aside>
+
+<h3 id="delete-a-customer">Delete a Customer</h3>
+
+<p>Delete an existing customer in the product with <code class="prettyprint">productCode=MY_PRODUCT_CODE</code></p>
+
+<p><code class="prettyprint">/customers/delete/productCode/MY_PRODUCT_CODE/code/MY_CUSTOMER_CODE</code></p>
+
+<aside class="warning">
+  Warning - This will delete the customer and all related data in CheddarGetter
+  and will delete the customer data at the gateway if a gateway is configured.
+</aside>
+
+<h3 id="delete-all-customers">Delete All Customers</h3>
+
+<p>Delete all existing customers in the product with <code class="prettyprint">productCode=MY_PRODUCT_CODE</code></p>
+
+<p><code class="prettyprint">/customers/delete-all/confirm/[current unix timestamp]/productCode/MY_PRODUCT_CODE</code></p>
+
+<aside class="warning">
+  Warning - This will delete all customers and all related data in
+  CheddarGetter. This method is <b>disabled</b> in production accounts.
+</aside>
+
+<h3 id="update-a-customer-and-subscription">Update a Customer and Subscription</h3>
+
+<p>Update an existing customer&rsquo;s information in the product with
+<code class="prettyprint">productCode=MY_PRODUCT_CODE</code> and modify the subscription information</p>
+
+<p><code class="prettyprint">/customers/edit/productCode/MY_PRODUCT_CODE/code/MY_CUSTOMER_CODE</code></p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>firstName</td>
+<td>No</td>
+<td>Limited to 20 characters.</td>
+</tr>
+<tr>
+<td>lastName</td>
+<td>No</td>
+<td>Limited to 20 characters.</td>
+</tr>
+<tr>
+<td>email</td>
+<td>No</td>
+<td>Valid email address</td>
+</tr>
+<tr>
+<td>company</td>
+<td>No</td>
+<td>Limited to 60 characters</td>
+</tr>
+<tr>
+<td>notes</td>
+<td>No</td>
+<td>Limited to 255 characters</td>
+</tr>
+<tr>
+<td>isVatExempt</td>
+<td>No</td>
+<td>1 or 0</td>
+</tr>
+<tr>
+<td>vatNumber</td>
+<td>No</td>
+<td>If the customer lives in a VAT eligible country and is exempt, provide the exemption number. Limited to 32 characters</td>
+</tr>
+<tr>
+<td>firstContactDatetime</td>
+<td>No</td>
+<td>Date or datetime in ISO 8601 format. (e.g., 2011-08-01 or 2011-08-01T15:30:00+00:00). See the <a href="http://support.cheddargetter.com/faqs/marketing-metrics/marketing-metrics">KB Article</a></td>
+</tr>
+<tr>
+<td>referer</td>
+<td>No</td>
+<td>A valid URL referer. Limited to 255 characters. See the <a href="http://support.cheddargetter.com/faqs/marketing-metrics/marketing-metrics">KB Article</a></td>
+</tr>
+<tr>
+<td>campaignTerm</td>
+<td>No</td>
+<td>The &ldquo;term&rdquo; or &ldquo;keyword&rdquo; phrase that lead a potential customer to your site. Google Adwords equivalent: &ldquo;utm_term&rdquo;. See the <a href="http://support.cheddargetter.com/faqs/marketing-metrics/marketing-metrics">KB Article</a></td>
+</tr>
+<tr>
+<td>campaignName</td>
+<td>No</td>
+<td>The name of the marketing campaign. Google Adwords equivalent: &ldquo;utm_campaign&rdquo;. See the <a href="http://support.cheddargetter.com/faqs/marketing-metrics/marketing-metrics">KB Article</a></td>
+</tr>
+<tr>
+<td>campaignSource</td>
+<td>No</td>
+<td>The source of the lead. Google Adwords equivalent: &ldquo;utm_source&rdquo;. See the <a href="http://support.cheddargetter.com/faqs/marketing-metrics/marketing-metrics">KB Article</a></td>
+</tr>
+<tr>
+<td>campaignMedium</td>
+<td>No</td>
+<td>The medium used to find your site. Google Adwords equivalent: &ldquo;utm_medium&rdquo;. See the <a href="http://support.cheddargetter.com/faqs/marketing-metrics/marketing-metrics">KB Article</a></td>
+</tr>
+<tr>
+<td>campaignContent</td>
+<td>No</td>
+<td>The content you wish to track. Google Adwords equivalent: &ldquo;utm_content&rdquo;. See the <a href="http://support.cheddargetter.com/faqs/marketing-metrics/marketing-metrics">KB Article</a></td>
+</tr>
+<tr>
+<td>metaData[&lt;user-defined&gt;]</td>
+<td>No</td>
+<td>See the <a href="http://support.cheddargetter.com/kb/api-8/customer-meta-data">KB Article</a> about customer metadata</td>
+</tr>
+<tr>
+<td>subscription[method]</td>
+<td>No</td>
+<td>&ldquo;cc&rdquo; (default) or &ldquo;paypal&rdquo;</td>
+</tr>
+<tr>
+<td>subscription[planCode]</td>
+<td>No</td>
+<td>Your code for the subscribed pricing plan</td>
+</tr>
+<tr>
+<td>subscription[couponCode]</td>
+<td>No</td>
+<td>Coupon code for the promotion you&rsquo;d like to apply to the subscription</td>
+</tr>
+<tr>
+<td>subscription[ccNumber]</td>
+<td>No (see notes)</td>
+<td>Numbers only &ndash; a valid credit/debit card number</td>
+</tr>
+<tr>
+<td>subscription[ccExpiration]</td>
+<td>No (see notes)</td>
+<td>MM/YYYY - the expiration date for the credit card</td>
+</tr>
+<tr>
+<td>subscription[ccCardCode]</td>
+<td>Conditional. If plan is free, no. If your preference is to require the cardCode, yes.</td>
+<td>3-4 digits - The Card Verification Value (CCV).</td>
+</tr>
+<tr>
+<td>subscription[ccFirstName]</td>
+<td>No (see notes)</td>
+<td>Limited to 20 characters</td>
+</tr>
+<tr>
+<td>subscription[ccLastName]</td>
+<td>No (see notes)</td>
+<td>Limited to 20 characters</td>
+</tr>
+<tr>
+<td>subscription[ccCompany]</td>
+<td>No</td>
+<td>Limited to 50 characters</td>
+</tr>
+<tr>
+<td>subscription[ccCountry]</td>
+<td>No</td>
+<td>Limited to 60 characters. Many billing solutions require that the ISO 2 char codes are used.</td>
+</tr>
+<tr>
+<td>subscription[ccAddress]</td>
+<td>No</td>
+<td>Limited to 60 characters</td>
+</tr>
+<tr>
+<td>subscription[ccCity]</td>
+<td>No</td>
+<td>Limited to 40 characters</td>
+</tr>
+<tr>
+<td>subscription[ccState]</td>
+<td>No</td>
+<td>suggested when country is US/Canada.</td>
+</tr>
+<tr>
+<td>subscription[ccZip]</td>
+<td>Conditional. If plan is free, no. If your preference is to require the zip, yes.</td>
+<td>Limited to 20 characters</td>
+</tr>
+<tr>
+<td>subscription[returnUrl]</td>
+<td>Conditional. Required when method is paypal.</td>
+<td>Must be a valid URL. Only used when method is paypal. This is the location where subscriber is returned from paypal after accepting a preapproval.</td>
+</tr>
+<tr>
+<td>subscription[cancelUrl]</td>
+<td>Conditional. Required when method is paypal.</td>
+<td>Must be a valid URL. Only used when method is paypal. This is the location where subscriber is returned from paypal after declining a preapproval.</td>
+</tr>
+<tr>
+<td>subscription[changeBillDate]</td>
+<td>No</td>
+<td>Date or datetime in ISO 8601 format. (e.g., 2011-08-01 or 2011-08-01T15:30:00+00:00). You may also use the word &lsquo;now&rsquo; as shorthand for the current datetime.</td>
+</tr>
+<tr>
+<td>remoteAddress</td>
+<td>No (<a href="#fraud-protection-rate-limiting">see below</a>)</td>
+<td>Client IPv4 address</td>
+</tr>
+</tbody></table>
+
+<aside class="notice">
+
+  If the customer does not already have a subscription with a valid credit card,
+  all credit card information is required. If the plan code corresponds to a
+  &ldquo;free&rdquo; plan, no Credit Card data is required. If the customer already has a
+  subscription with a credit card, no credit card information data is required.
+  In this instance, any subset of credit card data may be provided.
+<br/>
+<br/>
+<p>
+  If the plan is a paid plan, credit card information is only required if you
+  have configured CheddarGetter to require it. It can be optional only if the
+  next invoice is delayed. If a subscription on a paid plan does not have a
+  credit card when it comes time to bill, the subscription will be auto-cancelled.
+  See the email templates <a href="http://support.cheddargetter.com/kb/operational-how-tos/email-notification-templates">KB Article</a> regarding free trials and the <em>Bill Reminder</em> email.
+</p>
+
+<p>
+  Changing the next bill date using <code>subscription[changeBillDate]</code>
+  effects the billing cycle. Subsequent bill dates will be on the new cycle.
+  In other words, for a monthly plan that typically bills on the 3rd of every
+  month, if the next bill date is changed to the 10th, the subscription will
+  now bill every month on the 10th. If the date is equal to 'now&rsquo; or is less
+  than or equal to the current date and time, the current invoice will be
+  executed in real-time.
+
+  <p>
+    Check out this article for more information about
+    <a href="http://support.cheddargetter.com/kb/api-8/using-paypal-with-the-api">
+    using the API with PayPal
+    </a>.
+  </p>
+
+</aside>
+
+<h3 id="update-a-customer-only">Update a Customer Only</h3>
+
+<p>Update an existing customer&rsquo;s information in the product with
+<code class="prettyprint">productCode=MY_PRODUCT_CODE</code></p>
+
+<p><code class="prettyprint">/customers/edit-customer/productCode/MY_PRODUCT_CODE/code/MY_CUSTOMER_CODE</code></p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>firstName</td>
+<td>No</td>
+<td>Limited to 20 characters</td>
+</tr>
+<tr>
+<td>lastName</td>
+<td>No</td>
+<td>Limited to 20 characters</td>
+</tr>
+<tr>
+<td>email</td>
+<td>No</td>
+<td>Valid email address</td>
+</tr>
+<tr>
+<td>Company</td>
+<td>No</td>
+<td>Limited to 60 characters</td>
+</tr>
+<tr>
+<td>notes</td>
+<td>No</td>
+<td>Limited to 255 characters</td>
+</tr>
+<tr>
+<td>metaData[&lt;user-defined&gt;]</td>
+<td>No</td>
+<td>See the <a href="http://support.cheddargetter.com/kb/api-8/customer-meta-data">KB Article</a> about customer metadata</td>
+</tr>
+<tr>
+<td>remoteAddress</td>
+<td>No (<a href="#fraud-protection-rate-limiting">see below</a>)</td>
+<td>Client IPv4 address</td>
+</tr>
+</tbody></table>
+
+<h2 id="subscriptions">Subscriptions</h2>
+
+<h3 id="update-a-subscription-only">Update a Subscription Only</h3>
+
+<p>UUpdate an existing customer&rsquo;s subscription information in the product with
+<code class="prettyprint">productCode=MY_PRODUCT_CODE</code></p>
+
+<p><code class="prettyprint">/customers/edit-subscription/productCode/MY_PRODUCT_CODE/code/MY_CUSTOMER_CODE</code></p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>method</td>
+<td>No</td>
+<td>&ldquo;cc&rdquo; (default) or &ldquo;paypal&rdquo;</td>
+</tr>
+<tr>
+<td>planCode</td>
+<td>No</td>
+<td>Your code for the subscribed plan</td>
+</tr>
+<tr>
+<td>couponCode</td>
+<td>No</td>
+<td>Coupon code you&rsquo;d like to apply to the subscription</td>
+</tr>
+<tr>
+<td>ccNumber</td>
+<td>No (see notes)</td>
+<td>Numbers only &ndash; a valid credit/debit card number</td>
+</tr>
+<tr>
+<td>ccExpiration</td>
+<td>No (see notes)</td>
+<td>MM/YYYY - the expiration date for the credit card</td>
+</tr>
+<tr>
+<td>ccCardCode</td>
+<td>No (see notes)</td>
+<td>3-4 digits - The Card Verification Value (CCV).</td>
+</tr>
+<tr>
+<td>ccFirstName</td>
+<td>No (see notes)</td>
+<td>Limited to 20 characters</td>
+</tr>
+<tr>
+<td>ccLastName</td>
+<td>No (see notes)</td>
+<td>Limited to 20 characters</td>
+</tr>
+<tr>
+<td>ccCompany</td>
+<td>No</td>
+<td>Limited to 50 characters</td>
+</tr>
+<tr>
+<td>ccCountry</td>
+<td>No</td>
+<td>Limited to 60 characters. Many billing solutions require that the ISO 2 char codes are used.</td>
+</tr>
+<tr>
+<td>ccAddress</td>
+<td>No</td>
+<td>Limited to 60 characters</td>
+</tr>
+<tr>
+<td>ccCity</td>
+<td>No</td>
+<td>Limited to 40 characters</td>
+</tr>
+<tr>
+<td>ccState</td>
+<td>No</td>
+<td>Limited to 40 characters. 2 character state/province codes are suggested when country is US/Canada.</td>
+</tr>
+<tr>
+<td>ccZip</td>
+<td>No (see notes)</td>
+<td>Limited to 20 characters</td>
+</tr>
+<tr>
+<td>returnUrl</td>
+<td>Conditional. Required when method is paypal.</td>
+<td>Must be a valid URL. Only used when method is paypal. This is the location where subscriber is returned from paypal after accepting a preapproval.</td>
+</tr>
+<tr>
+<td>cancelUrl</td>
+<td>Conditional. Required when method is paypal.</td>
+<td>Must be a valid URL. Only used when method is paypal. This is the location where subscriber is returned from paypal after declining a preapproval.</td>
+</tr>
+<tr>
+<td>changeBillDate</td>
+<td>No</td>
+<td>Date or datetime in ISO 8601 format. (e.g., 2011-08-01 or 2011-08-01T15:30:00+00:00). You may also use the word &#39;now&rsquo; as shorthand for the current datetime.</td>
+</tr>
+<tr>
+<td>remoteAddress</td>
+<td>No (<a href="#fraud-protection-rate-limiting">see below</a>)</td>
+<td>Client IPv4 address</td>
+</tr>
+</tbody></table>
+
+<aside class="notice">
+
+  If the customer does not already have a subscription with a valid credit card,
+  all credit card information is required. If the plan code corresponds to a
+  &ldquo;free&rdquo; plan, no credit card data is required. If the customer already has a
+  subscription with a credit card, no credit card information data is required.
+  In this instance, any subset of credit card data may be provided. Your
+  preferences still apply for <code>ccCardCode</code> and <code>ccZip</code>.
+<br/>
+<br/>
+<p>
+  If the plan is a paid plan, credit card information is only required if you
+  have configured CheddarGetter to require it. It can be optional only if the
+  next invoice is delayed. If a subscription on a paid plan does not have a credit
+  card when it comes time to bill, the subscription will be auto-cancelled.
+  See the email templates <a href="http://support.cheddargetter.com/kb/operational-how-tos/email-notification-templates">KB Article</a> regarding free trials and the <em>Bill Reminder</em> email.
+</p>
+
+<p>
+  Changing the next bill date using <code>subscription[changeBillDate]</code>
+  effects the billing cycle. Subsequent bill dates will be on the new cycle.
+  In other words, for a monthly plan that typically bills on the 3rd of every
+  month, if the next bill date is changed to the 10th, the subscription will
+  now bill every month on the 10th. If the date is equal to 'now&rsquo; or is less
+  than or equal to the current date and time, the current invoice will be
+  executed in real-time.
+
+  <p>
+    Check out this article for more information about
+    <a href="http://support.cheddargetter.com/kb/api-8/using-paypal-with-the-api">
+    using the API with PayPal
+    </a>.
+  </p>
+
+</aside>
+
+<h3 id="cancel-a-customer-39-s-subscription">Cancel a Customer&rsquo;s Subscription</h3>
+
+<p>Cancel an existing customer&rsquo;s subscription in the product with
+<code class="prettyprint">productCode=MY_PRODUCT_CODE</code></p>
+
+<p><code class="prettyprint">/customers/cancel/productCode/MY_PRODUCT_CODE/code/MY_CUSTOMER_CODE</code></p>
+
+<aside class="notice">
+  The customer&rsquo;s current subscription will be canceled at the moment this call
+  is made. If you would like to reactivate a customer&rsquo;s subscription, you may do
+  so by updating the subscription with full credit card data.
+</aside>
+
+<h2 id="tracked-items">Tracked Items</h2>
+
+<h3 id="add-item-quantity">Add Item quantity</h3>
+
+<p>Increment a customer&rsquo;s current usage of a single item in the product with
+<code class="prettyprint">productCode=MY_PRODUCT_CODE</code></p>
+
+<p><code class="prettyprint">/customers/add-item-quantity/productCode/MY_PRODUCT_CODE/code/MY_CUSTOMER_CODE/itemCode/MY_ITEM_CODE</code></p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>quantity</td>
+<td>No</td>
+<td>The positive amount accurate to up to 4 decimal places (if other that 1.0000) that you wish to add to the current usage for this item.</td>
+</tr>
+<tr>
+<td>remoteAddress</td>
+<td>No (<a href="#fraud-protection-rate-limiting">see below</a>)</td>
+<td>Client IPv4 address</td>
+</tr>
+</tbody></table>
+
+<aside class="notice">
+  <code>quantity</code> is only required if you wish to add more than one to
+  the current usage amount.
+</aside>
+
+<h3 id="remove-item-quantity">Remove Item Quantity</h3>
+
+<p>Decrement a customer&rsquo;s current usage of a single item in the product with
+<code class="prettyprint">productCode=MY_PRODUCT_CODE</code></p>
+
+<p><code class="prettyprint">/customers/remove-item-quantity/productCode/MY_PRODUCT_CODE/code/MY_CUSTOMER_CODE/itemCode/MY_ITEM_CODE</code></p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>quantity</td>
+<td>No</td>
+<td>The positive amount accurate to up to 4 decimal places (if other that 1.0000) that you wish to add to the current usage for this item.</td>
+</tr>
+<tr>
+<td>remoteAddress</td>
+<td>No (<a href="#fraud-protection-rate-limiting">see below</a>)</td>
+<td>Client IPv4 address</td>
+</tr>
+</tbody></table>
+
+<aside class="notice">
+  <code>quantity</code> is only required if you wish to subtract more than one from
+  the current usage amount.
+</aside>
+
+<h3 id="set-item-quantity">Set Item Quantity</h3>
+
+<p>Set a customer&rsquo;s current usage of a single item in the product with
+<code class="prettyprint">productCode=MY_PRODUCT_CODE</code></p>
+
+<p><code class="prettyprint">/customers/set-item-quantity/productCode/MY_PRODUCT_CODE/code/MY_CUSTOMER_CODE/itemCode/MY_ITEM_CODE</code></p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>quantity</td>
+<td>Yes</td>
+<td>The positive amount accurate to up to 4 decimal places (if other than 1.0000) that you wish to add to the current usage for this item. Can be zero.</td>
+</tr>
+<tr>
+<td>invoicePeriod</td>
+<td>No</td>
+<td>The billing period - &#39;current&rsquo; (the default) or &#39;outstanding&rsquo;. <a href="#current-vs-outstanding-invoice">See below</a>.</td>
+</tr>
+<tr>
+<td>remoteAddress</td>
+<td>No (<a href="#fraud-protection-rate-limiting">see below</a>)</td>
+<td>Client IPv4 address</td>
+</tr>
+</tbody></table>
+
+<h2 id="invoice-interactions">Invoice Interactions</h2>
+
+<h3 id="add-a-custom-charge-credit">Add a Custom Charge/Credit</h3>
+
+<p>Add an arbitrary charge or credit to the customer&rsquo;s current invoice in the product
+with <code class="prettyprint">productCode=MY_PRODUCT_CODE</code></p>
+
+<p><code class="prettyprint">/customers/add-charge/productCode/MY_PRODUCT_CODE/code/MY_CUSTOMER_CODE</code></p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>chargeCode</td>
+<td>Yes</td>
+<td>Your code for this charge. Limited to 36 characters.</td>
+</tr>
+<tr>
+<td>quantity</td>
+<td>Yes</td>
+<td>Positive integer quantity</td>
+</tr>
+<tr>
+<td>eachAmount</td>
+<td>Yes</td>
+<td>Positive or negative integer or float with two digit decimal precision. A positive number will create a charge (debit). A negative number will create a credit.</td>
+</tr>
+<tr>
+<td>description</td>
+<td>No</td>
+<td>Description for this charge/credit</td>
+</tr>
+<tr>
+<td>invoicePeriod</td>
+<td>No</td>
+<td>The billing period - &#39;current&rsquo; (the default) or &#39;outstanding&rsquo;. <a href="#current-vs-outstanding-invoice">See below</a>.</td>
+</tr>
+<tr>
+<td>remoteAddress</td>
+<td>No (<a href="#fraud-protection-rate-limiting">see below</a>)</td>
+<td>Client IPv4 address</td>
+</tr>
+</tbody></table>
+
+<h3 id="delete-a-custom-charge-credit">Delete a Custom Charge/Credit</h3>
+
+<p>Remove a charge or credit from the customer&rsquo;s current invoice in the product
+with <code class="prettyprint">productCode=MY_PRODUCT_CODE</code></p>
+
+<p><code class="prettyprint">/customers/delete-charge/productCode/MY_PRODUCT_CODE/code/MY_CUSTOMER_CODE</code></p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>chargeId</td>
+<td>Yes</td>
+<td>CheddarGetter&rsquo;s ID for the charge/credit</td>
+</tr>
+<tr>
+<td>invoicePeriod</td>
+<td>No</td>
+<td>The billing period - &#39;current&rsquo; (the default) or &#39;outstanding&rsquo;. <a href="#current-vs-outstanding-invoice">See below</a>.</td>
+</tr>
+<tr>
+<td>remoteAddress</td>
+<td>No (<a href="#fraud-protection-rate-limiting">see below</a>)</td>
+<td>Client IPv4 address</td>
+</tr>
+</tbody></table>
+
+<h3 id="create-a-one-time-invoice">Create a One-Time Invoice</h3>
+
+<p>Create a parallel one-time invoice and execute the transaction immediately using
+the customer&rsquo;s current payment method in the product with <code class="prettyprint">productCode=MY_PRODUCT_CODE</code></p>
+
+<p><code class="prettyprint">/invoices/new/productCode/MY_PRODUCT_CODE/code/MY_CUSTOMER_CODE</code></p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>charges[&lt;user-defined&gt;][chargeCode]</td>
+<td>Yes</td>
+<td>Your code for this charge. Limited to 36 characters.</td>
+</tr>
+<tr>
+<td>charges[&lt;user-defined&gt;][quantity]</td>
+<td>Yes</td>
+<td>Positive integer quantity</td>
+</tr>
+<tr>
+<td>charges[&lt;user-defined&gt;][eachAmount]</td>
+<td>Yes</td>
+<td>Positive or negative integer or float with two digit decimal precision. A positive number will create a charge (debit). A negative number will create a credit.</td>
+</tr>
+<tr>
+<td>charges[&lt;user-defined&gt;][description]</td>
+<td>No</td>
+<td>Description for this charge/credit</td>
+</tr>
+<tr>
+<td>remoteAddress</td>
+<td>No (<a href="#fraud-protection-rate-limiting">see below</a>)</td>
+<td>Client IPv4 address</td>
+</tr>
+</tbody></table>
+
+<aside class="notice">
+  At least one charge is required. Multiple charges may be submitted.
+</aside>
+
+<h3 id="run-an-outstanding-invoice">Run an Outstanding Invoice</h3>
+
+<p>Execute an outstanding invoice in the product with <code class="prettyprint">productCode=MY_PRODUCT_CODE</code></p>
+
+<p><code class="prettyprint">/customers/run-outstanding/productCode/MY_PRODUCT_CODE/code/MY_CUSTOMER_CODE</code></p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>ccCardCode</td>
+<td>No</td>
+<td>3-4 digits - The Card Verification Value (CCV).</td>
+</tr>
+<tr>
+<td>remoteAddress</td>
+<td>No (<a href="#fraud-protection-rate-limiting">see below</a>)</td>
+<td>Client IPv4 address</td>
+</tr>
+</tbody></table>
+
+<aside class="notice">
+  The customer must have an outstanding invoice. This method can be useful for
+  manually retrying the transaction on an outstanding invoice. An invoice may
+  be outstanding if all prior attempts to transact the invoice were unsuccessful
+  or if the invoice has not yet been attempted as with the <a href="http://support.cheddargetter.com/kb/operational-how-tos/web-hooks-service-hooks-and-captain-hooks#subscription-billable">
+  Subscription Billable Event
+  </a>.
+  <br/>
+  <br/>
+  <p>
+    This method can be used to reactivate a canceled subscription. If the retry
+    succeeds on a canceled subscription, the subscription is reactivated. You
+    can also add credits to the invoice to offset charges, making the invoice
+    amount = 0. In this case, executing that outstanding invoice will succeed
+    for a zero amount and reactivate the subscription.
+  </p>
+</aside>
+
+<h3 id="issue-a-refund">Issue a Refund</h3>
+
+<p>Refund a transaction on a billed invoice in the product with <code class="prettyprint">productCode=MY_PRODUCT_CODE</code></p>
+
+<p><code class="prettyprint">/invoices/refund/productCode/MY_PRODUCT_CODE</code></p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>number or id</td>
+<td>Yes</td>
+<td>Either CheddarGetter&rsquo;s ID for the invoice or the CheddarGetter-generated invoice number</td>
+</tr>
+<tr>
+<td>amount</td>
+<td>Yes</td>
+<td>An amount less than or equal to the refundable amount. See notes.</td>
+</tr>
+<tr>
+<td>remoteAddress</td>
+<td>No (<a href="#fraud-protection-rate-limiting">see below</a>)</td>
+<td>Client IPv4 address</td>
+</tr>
+</tbody></table>
+
+<aside class="notice">
+  Many billing solutions allow for partial refunds. If your billing solution
+  allows partial refunds, the amount may be less than the amount of the original
+  transaction. If the transaction had been previously refunded and you wish to
+  issue another refund, the amount must be less than or equal to the original
+  amount minus any previously issued partial refund amounts.
+  <br/>
+  <br/>
+  <p>
+    Some billing solutions allow for refunds prior to transaction settlement.
+    If your billing solution does not allow refunds prior to settlement, you
+    must execute a void of the full transaction or wait until after settlement
+    occurs to issue a refund.
+  </p>
+</aside>
+
+<h3 id="issue-a-void">Issue a Void</h3>
+
+<p>Void a transaction on a billed invoice in the product with <code class="prettyprint">productCode=MY_PRODUCT_CODE</code></p>
+
+<p><code class="prettyprint">/invoices/void/productCode/MY_PRODUCT_CODE</code></p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>number or id</td>
+<td>Yes</td>
+<td>Either CheddarGetter&rsquo;s ID for the invoice or the CheddarGetter-generated invoice number</td>
+</tr>
+<tr>
+<td>remoteAddress</td>
+<td>No (<a href="#fraud-protection-rate-limiting">see below</a>)</td>
+<td>Client IPv4 address</td>
+</tr>
+</tbody></table>
+
+<aside class="notice">
+  Some billing solutions allow for voids. If your billing solution allows
+  voids, a void can only be executed prior to transaction settlement.
+</aside>
+
+<h3 id="issue-a-void-or-refund">Issue a Void or Refund</h3>
+
+<p>Defer to CheddarGetter to decide if a void or a refund is executed against
+the invoice in the product with  <code class="prettyprint">productCode=MY_PRODUCT_CODE</code></p>
+
+<p><code class="prettyprint">/invoices/void-or-refund/productCode/MY_PRODUCT_CODE</code></p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>number or id</td>
+<td>Yes</td>
+<td>Either CheddarGetter&rsquo;s ID for the invoice or the CheddarGetter-generated invoice number</td>
+</tr>
+<tr>
+<td>remoteAddress</td>
+<td>No (<a href="#fraud-protection-rate-limiting">see below</a>)</td>
+<td>Client IPv4 address</td>
+</tr>
+</tbody></table>
+
+<aside class="notice">
+  Many billing solutions do not allow for voids. Voids are only possible for a
+  short period of time after the transaction is executed. In short, determining
+  whether to execute a void or a refund is a moving target. Fortunately, CheddarGetter
+  has already figured that out. Using this call makes voids and refunds simple.
+  A drawback of using this method is that partial refunds are not possible.
+</aside>
+
+<h3 id="send-or-resend-an-invoice-email">Send or Resend an Invoice email</h3>
+
+<p>Send (or resend) email notification for the invoice in the product
+with  <code class="prettyprint">productCode=MY_PRODUCT_CODE</code></p>
+
+<p><code class="prettyprint">/invoices/send-email/productCode/MY_PRODUCT_CODE</code></p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>number or id</td>
+<td>Yes</td>
+<td>Either CheddarGetter&rsquo;s ID for the invoice or the CheddarGetter-generated invoice number</td>
+</tr>
+<tr>
+<td>remoteAddress</td>
+<td>No (<a href="#fraud-protection-rate-limiting">see below</a>)</td>
+<td>Client IPv4 address</td>
+</tr>
+</tbody></table>
+
+<aside class="notice">
+  Email notifications must be enabled in your account.
+  <a href="https://cheddargetter.com/admin/emails">
+    Check your settings here
+  </a>.
+  <br/>
+  <br/>
+  <p>
+    Emails are automatically sent but if you&rsquo;d like to resend one, just use this
+    method. The most recent relevant email will be sent for the invoice. For
+    example, if the most recent transaction was declined, the decline email is
+    sent. If that most recent transaction was approved, the payment receipt email
+    is sent.
+  </p>
+</aside>
+
+<h2 id="promotions">Promotions</h2>
+
+<h3 id="get-all-promotions">Get all Promotions</h3>
+
+<p>Get all promotion data from the product with  <code class="prettyprint">productCode=MY_PRODUCT_CODE</code></p>
+
+<p><code class="prettyprint">/promotions/get/productCode/MY_PRODUCT_CODE</code></p>
+
+<h3 id="get-a-single-promotions">Get a Single Promotions</h3>
+
+<p>Get the promotion data from the product with  <code class="prettyprint">productCode=MY_PRODUCT_CODE</code> for
+the promotion with coupon <code class="prettyprint">code=MY_COUPON_CODE</code></p>
+
+<p><code class="prettyprint">/promotions/get/productCode/MY_PRODUCT_CODE/code/MY_COUPON_CODE</code></p>
+
+          <h1 id="current-vs-outstanding-invoice">Current vs. Outstanding Invoice</h1>
+
+<p>Many API calls interact with a customer&rsquo;s subscription invoice. The &ldquo;current&rdquo;
+subscription invoice is the one that is currently &ldquo;open&rdquo;. In other words, it is
+scheduled to bill in the future. You can add charges, credits, and item
+quantities to a subscription invoice. In almost every case, you&rsquo;ll want to
+interact with the &ldquo;current&rdquo; subscription invoice. This is the default for all
+relevant API calls. In rare cases, you might want to adjust the &ldquo;outstanding&rdquo;
+subscription invoice.</p>
+
+<p>An outstanding invoice is one that was scheduled to bill in the past but has
+not yet been paid. This could be a scheduled invoice that was attempted but
+declined (the subscriber is in the dunning process) or simply one that&rsquo;s
+scheduled in the past but CheddarGetter&rsquo;s recurring engine hasn&rsquo;t picked it up
+for execution yet. If a subscription is canceled for non-payment, it almost
+certainly has an outstanding invoice.</p>
+
+<p>Some API methods have a parameter named <code class="prettyprint">invoicePeriod</code>. In the case when you want
+to interact with the outstanding invoice, set the value for this parameter to
+&ldquo;outstanding&rdquo;.</p>
+
+          <h1 id="response-codes">Response Codes</h1>
+
+<h2 id="http-status-codes">HTTP Status Codes</h2>
+
+<p>The CheddarGetter API returns appropriate HTTP status codes for every request.</p>
+
+<table><thead>
+<tr>
+<th>Code</th>
+<th>Meaning</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code class="prettyprint">200 OK</code></td>
+<td>Success!</td>
+</tr>
+<tr>
+<td><code class="prettyprint">400 Bad Request</code></td>
+<td>The request was invalid. An accompanying error message will explain why.</td>
+</tr>
+<tr>
+<td><code class="prettyprint">404 Not Found</code></td>
+<td>The URI requested is invalid or the resource requested, such as a user, does not exist.</td>
+</tr>
+<tr>
+<td><code class="prettyprint">412 Precondition Failed</code></td>
+<td>The request contains POST data that is in an invalid format or required parameters are missing.</td>
+</tr>
+<tr>
+<td><code class="prettyprint">422 Unprocessable Entity</code></td>
+<td>The gateway doesn&rsquo;t like the payment data. In other words, the gateway failed to process the request.</td>
+</tr>
+<tr>
+<td><code class="prettyprint">500 Internal Server Error</code></td>
+<td>Something is broken. Please post in the support forum so the CheddarGetter team can investigate.</td>
+</tr>
+<tr>
+<td><code class="prettyprint">502 Bad Gateway</code></td>
+<td>Communication with the payment gateway failed. Try again later.</td>
+</tr>
+</tbody></table>
+
+          <h1 id="error-messages">Error Messages</h1>
+
+<p>When the CheddarGetter API returns error messages, it does so in XML format. For example, an error from an XML method might look like this:</p>
+
+<p><code class="prettyprint">&lt;error id=&quot;1234&quot; code=&quot;404&quot; auxCode=&quot;&quot;&gt;Customer not found&lt;/error&gt;</code></p>
+
+<p>Errors are logged and exposed to you in the admin GUI: <a href="https://cheddargetter.com/admin/activity/errors">https://cheddargetter.com/admin/activity/errors</a></p>
+
+<p><a href="http://support.cheddargetter.com/kb/api-8/error-handling">More information about errors is available in this KB article</a></p>
+
           <h1 id="fraud-protection-rate-limiting">Fraud Protection, Rate Limiting</h1>
 
-          
+<p>All API requests should include the client IP address if possible. If not
+provided, the IP of the machine making the request will be used. This value is
+used for rate limiting, fraud protection, etc. To prevent the same fraudster
+from attempting to signup for your service over and over and over again with
+different credit card numbers, you&rsquo;ll need to provide the IP address with the
+request.</p>
+
+          <h1 id="webhooks-reverse-api-callbacks">Webhooks, Reverse API, Callbacks</h1>
+
+<p>Yup, CheddarGetter supports custom webhooks as well as some pre-defined third
+party hooks. The hook system is fault tolerant with automatic retries and
+includes a management console and some other niceties at no extra charge
+(ooh, burn!). Yeah, we&rsquo;re pretty proud of it.</p>
+
+<p><a href="http://support.cheddargetter.com/kb/api-8/web-hooks-service-hooks-and-captain-hooks">More information about webhooks</a></p>
+
       </div>
       <div class="dark-box">
           <div class="lang-selector">
