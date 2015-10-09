@@ -58,7 +58,7 @@ as 2010-07-04T00:00:00+00:00 <= X <= 2010-08-04T23:59:59+00:00.
 > Get a Single Customer
 
 ```shell
-curl -u "<username>:t<API key>" \
+curl -u "<username>:<API key>" \
 https://unittest.cgdev.com/xml/customers/get/productCode/MY_PRODUCT_CODE/code/canceled_reactivate
 ```
 
