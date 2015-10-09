@@ -2,9 +2,9 @@
 title: API Reference
 
 language_tabs:
-  - shell
+  - shell: cUrl
+  - php
   - ruby
-  - python
 
 toc_footers:
   - <a href='https://cheddargetter.com'>Go to CheddarGetter</a>

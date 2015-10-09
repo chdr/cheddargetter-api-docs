@@ -55,6 +55,35 @@ as 2010-07-04T00:00:00+00:00 <= X <= 2010-08-04T23:59:59+00:00.
 
 ### Get a Single Customer
 
+> Get a Single Customer
+
+```shell
+curl -u "<username>:t<API key>" \
+https://unittest.cgdev.com/xml/customers/get/productCode/MY_PRODUCT_CODE/code/canceled_reactivate
+```
+
+```php
+$customer = $client->getCustomer('canceled_reactivate');
+
+// get current subscription
+$subscription = $customer->getCustomerSubscription();
+
+// is this customer's account active?
+$customerIsActive = $customer->getCustomerIsActive();
+
+// get the customer's current subscribed pricing plan
+$plan = $customer->getCustomerPlan();
+
+// get the customer's current/pending invoice
+$invoice = $customer->getCustomerInvoice();
+
+// See CheddarGetter_Response for more convenience methods
+```
+
+```ruby
+client.get_customer(:code => 'canceled_reactivate')
+```
+
 Get the customer data from the product with `productCode=MY_PRODUCT_CODE`
 for the customer with `code=MY_CUSTOMER_CODE` (or by id or `invoiceNumber`).
 
@@ -65,6 +94,87 @@ for the customer with `code=MY_CUSTOMER_CODE` (or by id or `invoiceNumber`).
 `/customers/get/productCode/MY_PRODUCT_CODE/id/CG_CUSTOMER_ID`
 
 ### Create a New Customer
+
+> Create a customer with a credit card
+
+```shell
+curl -d "code=MY_CUSTOMER_CODE&firstName=Example" \
+-d "lastName=Customer&email=example_customer@example.com" \
+-d "subscription[planCode]=FREE" \
+-d "subscription[ccFirstName]=Example" \
+-d "subscription[ccLastName]=Customer" \
+-d "subscription[ccNumber]=4111111111111111" \
+-d "subscription[ccExpiration]=04/2017" \
+-u "<username>:<API key>" \
+https://cheddargetter/xml/customers/new/productCode/MY_PRODUCT_CODE
+```
+
+```php
+$data = array(
+	'code'      => 'MY_CUSTOMER_CODE',
+	'firstName' => 'Example',
+	'lastName'  => 'Customer',
+	'email'     => 'example_customer@example.com',
+	'subscription' => array(
+		'planCode'      => 'FREE',
+		'ccFirstName'   => 'Example',
+		'ccLastName'    => 'Customer',
+		'ccNumber'      => '4111111111111111',
+		'ccExpiration'  => '04/2017',
+	)
+);
+$customer = $client->newCustomer($data);
+```
+
+```ruby
+client.new_customer(
+  :code      => 'MY_CUSTOMER_CODE',
+  :firstName => 'Example',
+  :lastName  => 'Customer',
+  :email     => 'example_customer@example.com',
+  :subscription => {
+    :planCode     => 'FREE',
+    :ccFirstName  => 'Example',
+    :ccLastName   => 'Customer',
+    :ccNumber     => '4111111111111111',
+    :ccExpiration => '04/2017'
+  }
+)
+```
+> Create a customer without payment
+
+```shell
+curl -d "code=MY_CUSTOMER_CODE&firstName=Example" \
+-d "lastName=Customer&email=example_customer@example.com" \
+-d "subscription[planCode]=FREE" \
+-u "<username>:<API key>" \
+https://cheddargetter/xml/customers/new/productCode/MY_PRODUCT_CODE
+```
+
+```php
+$data = array(
+	'code'      => 'MY_CUSTOMER_CODE',
+	'firstName' => 'Example',
+	'lastName'  => 'Customer',
+	'email'     => 'example_customer@example.com',
+	'subscription' => array(
+		'planCode'      => 'FREE'
+	)
+);
+$customer = $client->newCustomer($data);
+```
+
+```ruby
+client.new_customer(
+  :code      => 'MY_CUSTOMER_CODE',
+  :firstName => 'Example',
+  :lastName  => 'Customer',
+  :email     => 'example_customer@example.com',
+  :subscription => {
+    :planCode     => 'FREE'
+  }
+)
+```
 
 Create a new customer in the product with  `productCode=MY_PRODUCT_CODE`
 and subscribe the customer to a pricing plan.
@@ -256,6 +366,61 @@ Delete all existing customers in the product with `productCode=MY_PRODUCT_CODE`
 
 ### Update a Customer and Subscription
 
+> Update a Customer and Subscription
+
+```shell
+curl -d "firstName=New&lastName=Info&email=new_info@example.com" \
+-d "subscription[planCode]=NEW_PLAN_CODE" \
+-u "<username>:<API key>" \
+https://cheddargetter.com/xml/customers/edit/productCode/MY_PRODUCT_CODE/code/canceled_reactivate
+```
+
+```php
+$data = array(
+	'firstName' => 'New',
+	'lastName'  => 'Info',
+	'email'     => 'new_info@example.com',
+	'subscription' => array(
+		'planCode' => 'NEW_PLAN_CODE'
+	)
+);
+$customer = $client->editCustomer('canceled_reactivate', null, $data);
+```
+
+```ruby
+client.edit_customer(
+  {:code      => 'canceled_reactivate'},
+  {
+    :firstName => 'New',
+    :lastName  => 'Info',
+    :email     => 'new_info@example.com',
+    :subscription => {
+      :planCode     => 'NEW_PLAN_CODE'
+    }
+  }
+)
+```
+
+> Change Next Bill Date
+
+```shell
+curl -d "changeBillDate=2015-12-09" \
+-u "<username>:<API key>" \
+https://cheddargetter.com/xml/customers/edit-subscription/productCode/MY_PRODUCT_CODE/code/canceled_reactivate
+```
+
+```php
+$data = array('changeBillDate' => '2015-12-09T09:36:37-05:00');
+$customer = $client->editSubscription('canceled_reactivate', null, $data);
+```
+
+```ruby
+client.edit_subscription(
+  {:code      => 'canceled_reactivate'},
+  {:changeBillDate     => '2015-12-09T09:36:37-05:00'}
+)
+```
+
 Update an existing customer's information in the product with
 `productCode=MY_PRODUCT_CODE` and modify the subscription information
 
@@ -334,6 +499,36 @@ Name | Description
 
 ### Update a Customer Only
 
+> Update a Customer
+
+```shell
+curl -d "firstName=New&lastName=Name" \
+-u "<username>:<API key>" \
+https://cheddargetter.com/xml/customers/edit/productCode/MY_PRODUCT_CODE/code/canceled_reactivate
+```
+
+```php
+$data = array(
+	'firstName' => 'New',
+	'lastName'  => 'Info',
+	'email'     => 'new_info@example.com'
+);
+$customer = $client->editCustomerOnly('canceled_reactivate', null, $data);
+```
+
+```ruby
+client.edit_customer_only(
+  {:code       => 'canceled_reactivate'},
+  {
+    :firstName => 'New',
+    :lastName  => 'Info',
+    :email     => 'new_info@example.com',
+    :company   => '',
+    :notes     => ''
+  }
+)
+```
+
 Update an existing customer's information in the product with
 `productCode=MY_PRODUCT_CODE`
 
@@ -352,6 +547,26 @@ Name | Description
 ## Subscriptions
 
 ### Update a Subscription Only
+
+> Update a Customer's Subscription
+
+```shell
+curl -d "planCode=NEW_PLAN_CODE" \
+-u "<username>:<API key>" \
+https://cheddargetter.com/xml/customers/edit-subscription/productCode/MY_PRODUCT_CODE/code/canceled_reactivate
+```
+
+```php
+$data = array('planCode' => 'NEW_PLAN_CODE');
+$customer = $client->editSubscription('canceled_reactivate', null, $data);
+```
+
+```ruby
+client.edit_subscription(
+  {:code      => 'canceled_reactivate'},
+  {:planCode     => 'NEW_PLAN_CODE'}
+)
+```
 
 Update an existing customer's subscription information in the product with
 `productCode=MY_PRODUCT_CODE`
@@ -432,6 +647,30 @@ Cancel an existing customer's subscription in the product with
 
 ### Add Item quantity
 
+> Add Item Quantity
+
+```shell
+curl -u "<username>:<API key>" \
+https://cheddargetter.com/xml/customers/add-item-quantity/productCode/MY_PRODUCT_CODE/code/canceled_reactivate/itemCode/MY_ITEM_CODE
+```
+
+```php
+$data = array(
+	'itemCode' => 'MY_ITEM_CODE'
+);
+
+$quantity = $client->addItemQuantity('canceled_reactivate', null, $data);
+```
+
+```ruby
+client.add_item_quantity(
+	{
+		:code => 'canceled_reactivate',
+		:item_code => 'MY_ITEM_CODE'
+	}
+)
+```
+
 Increment a customer's current usage of a single item in the product with
 `productCode=MY_PRODUCT_CODE`
 
@@ -448,6 +687,30 @@ Name | Description
 </aside>
 
 ### Remove Item Quantity
+
+> Remove Item Quantity
+
+```shell
+curl -u "<username>:<API key>" \
+https://cheddargetter.com/xml/customers/remove-item-quantity/productCode/MY_PRODUCT_CODE/code/canceled_reactivate/itemCode/MY_ITEM_CODE
+```
+
+```php
+$data = array(
+	'itemCode' => 'MY_ITEM_CODE'
+);
+
+$quantity = $client->removeItemQuantity('canceled_reactivate', null, $data);
+```
+
+```ruby
+client.remove_item_quantity(
+	{
+		:code => 'canceled_reactivate',
+		:item_code => 'MY_ITEM_CODE'
+	}
+)
+```
 
 Decrement a customer's current usage of a single item in the product with
 `productCode=MY_PRODUCT_CODE`
@@ -466,6 +729,37 @@ Name | Description
 
 ### Set Item Quantity
 
+> Set Item Quantity
+
+```shell
+curl -d "quantity=1.0000" \
+-u "<username>:<API key>" \
+https://cheddargetter.com/xml/customers/set-item-quantity/productCode/MY_PRODUCT_CODE/code/canceled_reactivate/itemCode/MY_ITEM_CODE
+```
+
+```php
+$data = array(
+	'itemCode' => 'MY_ITEM_CODE',
+	'quantity' => 1.0000
+);
+
+$quantity = $client->setItemQuantity('canceled_reactivate', null, $data);
+```
+
+```ruby
+client.set_item_quantity(
+	{
+		:code => 'canceled_reactivate',
+		:item_code => 'MY_ITEM_CODE'
+	},
+	{
+		:charge_code => 'CHARGE_CODE',
+		:quantity => 1.0000,
+		:eachAmount => '1'
+	}
+)
+```
+
 Set a customer's current usage of a single item in the product with
 `productCode=MY_PRODUCT_CODE`
 
@@ -480,6 +774,70 @@ Name | Description
 ## Invoice Interactions
 
 ### Add a Custom Charge/Credit
+
+> Add a Custom Charge
+
+```shell
+curl -d "chargeCode=CHARGE_CODE" \
+-d "quantity=3" \
+-d "eachAmount=2.50" \
+-u "<username>:<API key>" \
+https://cheddargetter.com/xml/customers/add-charge/productCode/MY_PRODUCT_CODE/code/canceled_reactivate
+```
+
+```php
+$data = array(
+	'chargeCode' => 'CHARGE_CODE',
+	'quantity' => 3,
+	'eachAmount' => 2.50,
+	'description' => 'Example charge'
+);
+$customer = $client->addCharge('canceled_reactivate', null, $data);
+```
+
+```ruby
+client.add_charge(
+	{:code => 'canceled_reactivate'},
+	{
+		:chargeCode => 'CHARGE_CODE',
+		:quantity => 3,
+		:eachAmount => 2.50,
+		:description => 'Example charge'
+	}
+)
+```
+
+> Add a Custom Credit
+
+```shell
+curl -d "chargeCode=CREDIT_CODE" \
+-d "quantity=2" \
+-d "eachAmount=-8.00" \
+-u "<username>:<API key>" \
+https://cheddargetter.com/xml/customers/add-charge/productCode/MY_PRODUCT_CODE/code/canceled_reactivate
+```
+
+```php
+$data = array(
+	'chargeCode' => 'CHARGE_CODE',
+	'quantity' => 3,
+	'eachAmount' => 2.50,
+	'description' => 'Example charge'
+);
+$customer = $client->addCharge('canceled_reactivate', null, $data);
+```
+
+```ruby
+client.add_charge(
+	{:code => 'canceled_reactivate'},
+	{
+		:chargeCode => 'CHARGE_CODE',
+		:quantity => 2,
+		:eachAmount => -8.00, // set negative value for a credit
+		:description => 'Example credit'
+	}
+)
+```
 
 Add an arbitrary charge or credit to the customer's current invoice in the product
 with `productCode=MY_PRODUCT_CODE`
@@ -496,6 +854,30 @@ Name | Description
 `remoteAddress` | **Not Required ([see below](#fraud-protection-rate-limiting))** Client IPv4 address
 
 ### Delete a Custom Charge/Credit
+
+> Delete a Custom Charge/Credit
+
+```shell
+curl -d "chargeId=CHARGE_ID" \
+-u "<username>:<API key>" \
+https://chedddargetter.com/xml/customers/delete-charge/productCode/MY_PRODUCT_CODE/code/canceled_reactivate
+```
+
+```php
+$data = array(
+	'chargeId' => 'CHARGE_ID'
+);
+$customer = $client->deleteCharge('canceled_reactivate', null, $data);
+```
+
+```ruby
+client.delete_charge(
+	{:code => 'canceled_reactivate'},
+	{
+		:chargeId => 'CHARGE_ID'
+	}
+)
+```
 
 Remove a charge or credit from the customer's current invoice in the product
 with `productCode=MY_PRODUCT_CODE`
