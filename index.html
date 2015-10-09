@@ -13,7 +13,7 @@
 
       <script>
         $(function() {
-          setupLanguages(["shell","ruby","python"]);
+          setupLanguages(["shell","php","ruby"]);
         });
       </script>
   </head>
@@ -29,9 +29,9 @@
       <h4>API Documentation</h4>
       <img src="images/logo.png" />
         <div class="lang-selector">
-              <a href="#" data-language-name="shell">shell</a>
+              <a href="#" data-language-name="shell">cUrl</a>
+              <a href="#" data-language-name="php">php</a>
               <a href="#" data-language-name="ruby">ruby</a>
-              <a href="#" data-language-name="python">python</a>
         </div>
         <div class="search">
           <input type="text" class="search" id="input-search" placeholder="Search">
@@ -366,6 +366,31 @@ as 2010-07-04T00:00:00+00:00 <= X <= 2010-08-04T23:59:59+00:00.
 
 <h3 id="get-a-single-customer">Get a Single Customer</h3>
 
+<blockquote>
+<p>Get a Single Customer</p>
+</blockquote>
+<pre class="highlight shell"><code>curl -u <span class="s2">"&lt;username&gt;:t&lt;API key&gt;"</span> <span class="se">\</span>
+https://unittest.cgdev.com/xml/customers/get/productCode/MY_PRODUCT_CODE/code/canceled_reactivate
+</code></pre>
+<pre class="highlight php"><code>$customer = $client-&gt;getCustomer('canceled_reactivate');
+
+// get current subscription
+$subscription = $customer-&gt;getCustomerSubscription();
+
+// is this customer's account active?
+$customerIsActive = $customer-&gt;getCustomerIsActive();
+
+// get the customer's current subscribed pricing plan
+$plan = $customer-&gt;getCustomerPlan();
+
+// get the customer's current/pending invoice
+$invoice = $customer-&gt;getCustomerInvoice();
+
+// See CheddarGetter_Response for more convenience methods
+</code></pre>
+<pre class="highlight ruby"><code><span class="n">client</span><span class="p">.</span><span class="nf">get_customer</span><span class="p">(</span><span class="ss">:code</span> <span class="o">=&gt;</span> <span class="s1">'canceled_reactivate'</span><span class="p">)</span>
+</code></pre>
+
 <p>Get the customer data from the product with <code class="prettyprint">productCode=MY_PRODUCT_CODE</code>
 for the customer with <code class="prettyprint">code=MY_CUSTOMER_CODE</code> (or by id or <code class="prettyprint">invoiceNumber</code>).</p>
 
@@ -376,6 +401,80 @@ for the customer with <code class="prettyprint">code=MY_CUSTOMER_CODE</code> (or
 <p><code class="prettyprint">/customers/get/productCode/MY_PRODUCT_CODE/id/CG_CUSTOMER_ID</code></p>
 
 <h3 id="create-a-new-customer">Create a New Customer</h3>
+
+<blockquote>
+<p>Create a customer with a credit card</p>
+</blockquote>
+<pre class="highlight shell"><code>curl -d <span class="s2">"code=MY_CUSTOMER_CODE&amp;firstName=Example"</span> <span class="se">\</span>
+-d <span class="s2">"lastName=Customer&amp;email=example_customer@example.com"</span> <span class="se">\</span>
+-d <span class="s2">"subscription[planCode]=FREE"</span> <span class="se">\</span>
+-d <span class="s2">"subscription[ccFirstName]=Example"</span> <span class="se">\</span>
+-d <span class="s2">"subscription[ccLastName]=Customer"</span> <span class="se">\</span>
+-d <span class="s2">"subscription[ccNumber]=4111111111111111"</span> <span class="se">\</span>
+-d <span class="s2">"subscription[ccExpiration]=04/2017"</span> <span class="se">\</span>
+-u <span class="s2">"&lt;username&gt;:&lt;API key&gt;"</span> <span class="se">\</span>
+https://cheddargetter/xml/customers/new/productCode/MY_PRODUCT_CODE
+</code></pre>
+<pre class="highlight php"><code>$data = array(
+    'code'      =&gt; 'MY_CUSTOMER_CODE',
+    'firstName' =&gt; 'Example',
+    'lastName'  =&gt; 'Customer',
+    'email'     =&gt; 'example_customer@example.com',
+    'subscription' =&gt; array(
+        'planCode'      =&gt; 'FREE',
+        'ccFirstName'   =&gt; 'Example',
+        'ccLastName'    =&gt; 'Customer',
+        'ccNumber'      =&gt; '4111111111111111',
+        'ccExpiration'  =&gt; '04/2017',
+    )
+);
+$customer = $client-&gt;newCustomer($data);
+</code></pre>
+<pre class="highlight ruby"><code><span class="n">client</span><span class="p">.</span><span class="nf">new_customer</span><span class="p">(</span>
+  <span class="ss">:code</span>      <span class="o">=&gt;</span> <span class="s1">'MY_CUSTOMER_CODE'</span><span class="p">,</span>
+  <span class="ss">:firstName</span> <span class="o">=&gt;</span> <span class="s1">'Example'</span><span class="p">,</span>
+  <span class="ss">:lastName</span>  <span class="o">=&gt;</span> <span class="s1">'Customer'</span><span class="p">,</span>
+  <span class="ss">:email</span>     <span class="o">=&gt;</span> <span class="s1">'example_customer@example.com'</span><span class="p">,</span>
+  <span class="ss">:subscription</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="ss">:planCode</span>     <span class="o">=&gt;</span> <span class="s1">'FREE'</span><span class="p">,</span>
+    <span class="ss">:ccFirstName</span>  <span class="o">=&gt;</span> <span class="s1">'Example'</span><span class="p">,</span>
+    <span class="ss">:ccLastName</span>   <span class="o">=&gt;</span> <span class="s1">'Customer'</span><span class="p">,</span>
+    <span class="ss">:ccNumber</span>     <span class="o">=&gt;</span> <span class="s1">'4111111111111111'</span><span class="p">,</span>
+    <span class="ss">:ccExpiration</span> <span class="o">=&gt;</span> <span class="s1">'04/2017'</span>
+  <span class="p">}</span>
+<span class="p">)</span>
+</code></pre>
+
+<blockquote>
+<p>Create a customer without payment</p>
+</blockquote>
+<pre class="highlight shell"><code>curl -d <span class="s2">"code=MY_CUSTOMER_CODE&amp;firstName=Example"</span> <span class="se">\</span>
+-d <span class="s2">"lastName=Customer&amp;email=example_customer@example.com"</span> <span class="se">\</span>
+-d <span class="s2">"subscription[planCode]=FREE"</span> <span class="se">\</span>
+-u <span class="s2">"&lt;username&gt;:&lt;API key&gt;"</span> <span class="se">\</span>
+https://cheddargetter/xml/customers/new/productCode/MY_PRODUCT_CODE
+</code></pre>
+<pre class="highlight php"><code>$data = array(
+    'code'      =&gt; 'MY_CUSTOMER_CODE',
+    'firstName' =&gt; 'Example',
+    'lastName'  =&gt; 'Customer',
+    'email'     =&gt; 'example_customer@example.com',
+    'subscription' =&gt; array(
+        'planCode'      =&gt; 'FREE'
+    )
+);
+$customer = $client-&gt;newCustomer($data);
+</code></pre>
+<pre class="highlight ruby"><code><span class="n">client</span><span class="p">.</span><span class="nf">new_customer</span><span class="p">(</span>
+  <span class="ss">:code</span>      <span class="o">=&gt;</span> <span class="s1">'MY_CUSTOMER_CODE'</span><span class="p">,</span>
+  <span class="ss">:firstName</span> <span class="o">=&gt;</span> <span class="s1">'Example'</span><span class="p">,</span>
+  <span class="ss">:lastName</span>  <span class="o">=&gt;</span> <span class="s1">'Customer'</span><span class="p">,</span>
+  <span class="ss">:email</span>     <span class="o">=&gt;</span> <span class="s1">'example_customer@example.com'</span><span class="p">,</span>
+  <span class="ss">:subscription</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="ss">:planCode</span>     <span class="o">=&gt;</span> <span class="s1">'FREE'</span>
+  <span class="p">}</span>
+<span class="p">)</span>
+</code></pre>
 
 <p>Create a new customer in the product with  <code class="prettyprint">productCode=MY_PRODUCT_CODE</code>
 and subscribe the customer to a pricing plan.</p>
@@ -799,6 +898,53 @@ about whether or not importing is possible in your situation.</p>
 
 <h3 id="update-a-customer-and-subscription">Update a Customer and Subscription</h3>
 
+<blockquote>
+<p>Update a Customer and Subscription</p>
+</blockquote>
+<pre class="highlight shell"><code>curl -d <span class="s2">"firstName=New&amp;lastName=Info&amp;email=new_info@example.com"</span> <span class="se">\</span>
+-d <span class="s2">"subscription[planCode]=NEW_PLAN_CODE"</span> <span class="se">\</span>
+-u <span class="s2">"&lt;username&gt;:&lt;API key&gt;"</span> <span class="se">\</span>
+https://cheddargetter.com/xml/customers/edit/productCode/MY_PRODUCT_CODE/code/canceled_reactivate
+</code></pre>
+<pre class="highlight php"><code>$data = array(
+    'firstName' =&gt; 'New',
+    'lastName'  =&gt; 'Info',
+    'email'     =&gt; 'new_info@example.com',
+    'subscription' =&gt; array(
+        'planCode' =&gt; 'NEW_PLAN_CODE'
+    )
+);
+$customer = $client-&gt;editCustomer('canceled_reactivate', null, $data);
+</code></pre>
+<pre class="highlight ruby"><code><span class="n">client</span><span class="p">.</span><span class="nf">edit_customer</span><span class="p">(</span>
+  <span class="p">{</span><span class="ss">:code</span>      <span class="o">=&gt;</span> <span class="s1">'canceled_reactivate'</span><span class="p">},</span>
+  <span class="p">{</span>
+    <span class="ss">:firstName</span> <span class="o">=&gt;</span> <span class="s1">'New'</span><span class="p">,</span>
+    <span class="ss">:lastName</span>  <span class="o">=&gt;</span> <span class="s1">'Info'</span><span class="p">,</span>
+    <span class="ss">:email</span>     <span class="o">=&gt;</span> <span class="s1">'new_info@example.com'</span><span class="p">,</span>
+    <span class="ss">:subscription</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="ss">:planCode</span>     <span class="o">=&gt;</span> <span class="s1">'NEW_PLAN_CODE'</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">)</span>
+</code></pre>
+
+<blockquote>
+<p>Change Next Bill Date</p>
+</blockquote>
+<pre class="highlight shell"><code>curl -d <span class="s2">"changeBillDate=2015-12-09"</span> <span class="se">\</span>
+-u <span class="s2">"&lt;username&gt;:&lt;API key&gt;"</span> <span class="se">\</span>
+https://cheddargetter.com/xml/customers/edit-subscription/productCode/MY_PRODUCT_CODE/code/canceled_reactivate
+</code></pre>
+<pre class="highlight php"><code>$data = array('changeBillDate' =&gt; '2015-12-09T09:36:37-05:00');
+$customer = $client-&gt;editSubscription('canceled_reactivate', null, $data);
+</code></pre>
+<pre class="highlight ruby"><code><span class="n">client</span><span class="p">.</span><span class="nf">edit_subscription</span><span class="p">(</span>
+  <span class="p">{</span><span class="ss">:code</span>      <span class="o">=&gt;</span> <span class="s1">'canceled_reactivate'</span><span class="p">},</span>
+  <span class="p">{</span><span class="ss">:changeBillDate</span>     <span class="o">=&gt;</span> <span class="s1">'2015-12-09T09:36:37-05:00'</span><span class="p">}</span>
+<span class="p">)</span>
+</code></pre>
+
 <p>Update an existing customer&rsquo;s information in the product with
 <code class="prettyprint">productCode=MY_PRODUCT_CODE</code> and modify the subscription information</p>
 
@@ -981,6 +1127,32 @@ about whether or not importing is possible in your situation.</p>
 
 <h3 id="update-a-customer-only">Update a Customer Only</h3>
 
+<blockquote>
+<p>Update a Customer</p>
+</blockquote>
+<pre class="highlight shell"><code>curl -d <span class="s2">"firstName=New&amp;lastName=Name"</span> <span class="se">\</span>
+-u <span class="s2">"&lt;username&gt;:&lt;API key&gt;"</span> <span class="se">\</span>
+https://cheddargetter.com/xml/customers/edit/productCode/MY_PRODUCT_CODE/code/canceled_reactivate
+</code></pre>
+<pre class="highlight php"><code>$data = array(
+    'firstName' =&gt; 'New',
+    'lastName'  =&gt; 'Info',
+    'email'     =&gt; 'new_info@example.com'
+);
+$customer = $client-&gt;editCustomerOnly('canceled_reactivate', null, $data);
+</code></pre>
+<pre class="highlight ruby"><code><span class="n">client</span><span class="p">.</span><span class="nf">edit_customer_only</span><span class="p">(</span>
+  <span class="p">{</span><span class="ss">:code</span>       <span class="o">=&gt;</span> <span class="s1">'canceled_reactivate'</span><span class="p">},</span>
+  <span class="p">{</span>
+    <span class="ss">:firstName</span> <span class="o">=&gt;</span> <span class="s1">'New'</span><span class="p">,</span>
+    <span class="ss">:lastName</span>  <span class="o">=&gt;</span> <span class="s1">'Info'</span><span class="p">,</span>
+    <span class="ss">:email</span>     <span class="o">=&gt;</span> <span class="s1">'new_info@example.com'</span><span class="p">,</span>
+    <span class="ss">:company</span>   <span class="o">=&gt;</span> <span class="s1">''</span><span class="p">,</span>
+    <span class="ss">:notes</span>     <span class="o">=&gt;</span> <span class="s1">''</span>
+  <span class="p">}</span>
+<span class="p">)</span>
+</code></pre>
+
 <p>Update an existing customer&rsquo;s information in the product with
 <code class="prettyprint">productCode=MY_PRODUCT_CODE</code></p>
 
@@ -1025,6 +1197,22 @@ about whether or not importing is possible in your situation.</p>
 <h2 id="subscriptions">Subscriptions</h2>
 
 <h3 id="update-a-subscription-only">Update a Subscription Only</h3>
+
+<blockquote>
+<p>Update a Customer&rsquo;s Subscription</p>
+</blockquote>
+<pre class="highlight shell"><code>curl -d <span class="s2">"planCode=NEW_PLAN_CODE"</span> <span class="se">\</span>
+-u <span class="s2">"&lt;username&gt;:&lt;API key&gt;"</span> <span class="se">\</span>
+https://cheddargetter.com/xml/customers/edit-subscription/productCode/MY_PRODUCT_CODE/code/canceled_reactivate
+</code></pre>
+<pre class="highlight php"><code>$data = array('planCode' =&gt; 'NEW_PLAN_CODE');
+$customer = $client-&gt;editSubscription('canceled_reactivate', null, $data);
+</code></pre>
+<pre class="highlight ruby"><code><span class="n">client</span><span class="p">.</span><span class="nf">edit_subscription</span><span class="p">(</span>
+  <span class="p">{</span><span class="ss">:code</span>      <span class="o">=&gt;</span> <span class="s1">'canceled_reactivate'</span><span class="p">},</span>
+  <span class="p">{</span><span class="ss">:planCode</span>     <span class="o">=&gt;</span> <span class="s1">'NEW_PLAN_CODE'</span><span class="p">}</span>
+<span class="p">)</span>
+</code></pre>
 
 <p>Update an existing customer&rsquo;s subscription information in the product with
 <code class="prettyprint">productCode=MY_PRODUCT_CODE</code></p>
@@ -1164,6 +1352,26 @@ about whether or not importing is possible in your situation.</p>
 
 <h3 id="add-item-quantity">Add Item quantity</h3>
 
+<blockquote>
+<p>Add Item Quantity</p>
+</blockquote>
+<pre class="highlight shell"><code>curl -u <span class="s2">"&lt;username&gt;:&lt;API key&gt;"</span> <span class="se">\</span>
+https://cheddargetter.com/xml/customers/add-item-quantity/productCode/MY_PRODUCT_CODE/code/canceled_reactivate/itemCode/MY_ITEM_CODE
+</code></pre>
+<pre class="highlight php"><code>$data = array(
+    'itemCode' =&gt; 'MY_ITEM_CODE'
+);
+
+$quantity = $client-&gt;addItemQuantity('canceled_reactivate', null, $data);
+</code></pre>
+<pre class="highlight ruby"><code><span class="n">client</span><span class="p">.</span><span class="nf">add_item_quantity</span><span class="p">(</span>
+    <span class="p">{</span>
+        <span class="ss">:code</span> <span class="o">=&gt;</span> <span class="s1">'canceled_reactivate'</span><span class="p">,</span>
+        <span class="ss">:item_code</span> <span class="o">=&gt;</span> <span class="s1">'MY_ITEM_CODE'</span>
+    <span class="p">}</span>
+<span class="p">)</span>
+</code></pre>
+
 <p>Increment a customer&rsquo;s current usage of a single item in the product with
 <code class="prettyprint">productCode=MY_PRODUCT_CODE</code></p>
 
@@ -1191,6 +1399,26 @@ about whether or not importing is possible in your situation.</p>
 </aside>
 
 <h3 id="remove-item-quantity">Remove Item Quantity</h3>
+
+<blockquote>
+<p>Remove Item Quantity</p>
+</blockquote>
+<pre class="highlight shell"><code>curl -u <span class="s2">"&lt;username&gt;:&lt;API key&gt;"</span> <span class="se">\</span>
+https://cheddargetter.com/xml/customers/remove-item-quantity/productCode/MY_PRODUCT_CODE/code/canceled_reactivate/itemCode/MY_ITEM_CODE
+</code></pre>
+<pre class="highlight php"><code>$data = array(
+    'itemCode' =&gt; 'MY_ITEM_CODE'
+);
+
+$quantity = $client-&gt;removeItemQuantity('canceled_reactivate', null, $data);
+</code></pre>
+<pre class="highlight ruby"><code><span class="n">client</span><span class="p">.</span><span class="nf">remove_item_quantity</span><span class="p">(</span>
+    <span class="p">{</span>
+        <span class="ss">:code</span> <span class="o">=&gt;</span> <span class="s1">'canceled_reactivate'</span><span class="p">,</span>
+        <span class="ss">:item_code</span> <span class="o">=&gt;</span> <span class="s1">'MY_ITEM_CODE'</span>
+    <span class="p">}</span>
+<span class="p">)</span>
+</code></pre>
 
 <p>Decrement a customer&rsquo;s current usage of a single item in the product with
 <code class="prettyprint">productCode=MY_PRODUCT_CODE</code></p>
@@ -1220,6 +1448,33 @@ about whether or not importing is possible in your situation.</p>
 
 <h3 id="set-item-quantity">Set Item Quantity</h3>
 
+<blockquote>
+<p>Set Item Quantity</p>
+</blockquote>
+<pre class="highlight shell"><code>curl -d <span class="s2">"quantity=1.0000"</span> <span class="se">\</span>
+-u <span class="s2">"&lt;username&gt;:&lt;API key&gt;"</span> <span class="se">\</span>
+https://cheddargetter.com/xml/customers/set-item-quantity/productCode/MY_PRODUCT_CODE/code/canceled_reactivate/itemCode/MY_ITEM_CODE
+</code></pre>
+<pre class="highlight php"><code>$data = array(
+    'itemCode' =&gt; 'MY_ITEM_CODE',
+    'quantity' =&gt; 1.0000
+);
+
+$quantity = $client-&gt;setItemQuantity('canceled_reactivate', null, $data);
+</code></pre>
+<pre class="highlight ruby"><code><span class="n">client</span><span class="p">.</span><span class="nf">set_item_quantity</span><span class="p">(</span>
+    <span class="p">{</span>
+        <span class="ss">:code</span> <span class="o">=&gt;</span> <span class="s1">'canceled_reactivate'</span><span class="p">,</span>
+        <span class="ss">:item_code</span> <span class="o">=&gt;</span> <span class="s1">'MY_ITEM_CODE'</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+        <span class="ss">:charge_code</span> <span class="o">=&gt;</span> <span class="s1">'CHARGE_CODE'</span><span class="p">,</span>
+        <span class="ss">:quantity</span> <span class="o">=&gt;</span> <span class="mi">1</span><span class="o">.</span><span class="mo">0000</span><span class="p">,</span>
+        <span class="ss">:eachAmount</span> <span class="o">=&gt;</span> <span class="s1">'1'</span>
+    <span class="p">}</span>
+<span class="p">)</span>
+</code></pre>
+
 <p>Set a customer&rsquo;s current usage of a single item in the product with
 <code class="prettyprint">productCode=MY_PRODUCT_CODE</code></p>
 
@@ -1248,6 +1503,62 @@ about whether or not importing is possible in your situation.</p>
 <h2 id="invoice-interactions">Invoice Interactions</h2>
 
 <h3 id="add-a-custom-charge-credit">Add a Custom Charge/Credit</h3>
+
+<blockquote>
+<p>Add a Custom Charge</p>
+</blockquote>
+<pre class="highlight shell"><code>curl -d <span class="s2">"chargeCode=CHARGE_CODE"</span> <span class="se">\</span>
+-d <span class="s2">"quantity=3"</span> <span class="se">\</span>
+-d <span class="s2">"eachAmount=2.50"</span> <span class="se">\</span>
+-u <span class="s2">"&lt;username&gt;:&lt;API key&gt;"</span> <span class="se">\</span>
+https://cheddargetter.com/xml/customers/add-charge/productCode/MY_PRODUCT_CODE/code/canceled_reactivate
+</code></pre>
+<pre class="highlight php"><code>$data = array(
+    'chargeCode' =&gt; 'CHARGE_CODE',
+    'quantity' =&gt; 3,
+    'eachAmount' =&gt; 2.50,
+    'description' =&gt; 'Example charge'
+);
+$customer = $client-&gt;addCharge('canceled_reactivate', null, $data);
+</code></pre>
+<pre class="highlight ruby"><code><span class="n">client</span><span class="p">.</span><span class="nf">add_charge</span><span class="p">(</span>
+    <span class="p">{</span><span class="ss">:code</span> <span class="o">=&gt;</span> <span class="s1">'canceled_reactivate'</span><span class="p">},</span>
+    <span class="p">{</span>
+        <span class="ss">:chargeCode</span> <span class="o">=&gt;</span> <span class="s1">'CHARGE_CODE'</span><span class="p">,</span>
+        <span class="ss">:quantity</span> <span class="o">=&gt;</span> <span class="mi">3</span><span class="p">,</span>
+        <span class="ss">:eachAmount</span> <span class="o">=&gt;</span> <span class="mi">2</span><span class="o">.</span><span class="mi">50</span><span class="p">,</span>
+        <span class="ss">:description</span> <span class="o">=&gt;</span> <span class="s1">'Example charge'</span>
+    <span class="p">}</span>
+<span class="p">)</span>
+</code></pre>
+
+<blockquote>
+<p>Add a Custom Credit</p>
+</blockquote>
+<pre class="highlight shell"><code>curl -d <span class="s2">"chargeCode=CREDIT_CODE"</span> <span class="se">\</span>
+-d <span class="s2">"quantity=2"</span> <span class="se">\</span>
+-d <span class="s2">"eachAmount=-8.00"</span> <span class="se">\</span>
+-u <span class="s2">"&lt;username&gt;:&lt;API key&gt;"</span> <span class="se">\</span>
+https://cheddargetter.com/xml/customers/add-charge/productCode/MY_PRODUCT_CODE/code/canceled_reactivate
+</code></pre>
+<pre class="highlight php"><code>$data = array(
+    'chargeCode' =&gt; 'CHARGE_CODE',
+    'quantity' =&gt; 3,
+    'eachAmount' =&gt; 2.50,
+    'description' =&gt; 'Example charge'
+);
+$customer = $client-&gt;addCharge('canceled_reactivate', null, $data);
+</code></pre>
+<pre class="highlight ruby"><code><span class="n">client</span><span class="p">.</span><span class="nf">add_charge</span><span class="p">(</span>
+    <span class="p">{</span><span class="ss">:code</span> <span class="o">=&gt;</span> <span class="s1">'canceled_reactivate'</span><span class="p">},</span>
+    <span class="p">{</span>
+        <span class="ss">:chargeCode</span> <span class="o">=&gt;</span> <span class="s1">'CHARGE_CODE'</span><span class="p">,</span>
+        <span class="ss">:quantity</span> <span class="o">=&gt;</span> <span class="mi">2</span><span class="p">,</span>
+        <span class="ss">:eachAmount</span> <span class="o">=&gt;</span> <span class="o">-</span><span class="mi">8</span><span class="o">.</span><span class="mo">00</span><span class="p">,</span> <span class="sr">//</span> <span class="n">set</span> <span class="n">negative</span> <span class="n">value</span> <span class="k">for</span> <span class="n">a</span> <span class="n">credit</span>
+        <span class="ss">:description</span> <span class="o">=&gt;</span> <span class="s1">'Example credit'</span>
+    <span class="p">}</span>
+<span class="p">)</span>
+</code></pre>
 
 <p>Add an arbitrary charge or credit to the customer&rsquo;s current invoice in the product
 with <code class="prettyprint">productCode=MY_PRODUCT_CODE</code></p>
@@ -1287,6 +1598,26 @@ with <code class="prettyprint">productCode=MY_PRODUCT_CODE</code></p>
 </tbody></table>
 
 <h3 id="delete-a-custom-charge-credit">Delete a Custom Charge/Credit</h3>
+
+<blockquote>
+<p>Delete a Custom Charge/Credit</p>
+</blockquote>
+<pre class="highlight shell"><code>curl -d <span class="s2">"chargeId=CHARGE_ID"</span> <span class="se">\</span>
+-u <span class="s2">"&lt;username&gt;:&lt;API key&gt;"</span> <span class="se">\</span>
+https://chedddargetter.com/xml/customers/delete-charge/productCode/MY_PRODUCT_CODE/code/canceled_reactivate
+</code></pre>
+<pre class="highlight php"><code>$data = array(
+    'chargeId' =&gt; 'CHARGE_ID'
+);
+$customer = $client-&gt;deleteCharge('canceled_reactivate', null, $data);
+</code></pre>
+<pre class="highlight ruby"><code><span class="n">client</span><span class="p">.</span><span class="nf">delete_charge</span><span class="p">(</span>
+    <span class="p">{</span><span class="ss">:code</span> <span class="o">=&gt;</span> <span class="s1">'canceled_reactivate'</span><span class="p">},</span>
+    <span class="p">{</span>
+        <span class="ss">:chargeId</span> <span class="o">=&gt;</span> <span class="s1">'CHARGE_ID'</span>
+    <span class="p">}</span>
+<span class="p">)</span>
+</code></pre>
 
 <p>Remove a charge or credit from the customer&rsquo;s current invoice in the product
 with <code class="prettyprint">productCode=MY_PRODUCT_CODE</code></p>
@@ -1640,9 +1971,9 @@ includes a management console and some other niceties at no extra charge
       </div>
       <div class="dark-box">
           <div class="lang-selector">
-                <a href="#" data-language-name="shell">shell</a>
+                <a href="#" data-language-name="shell">cUrl</a>
+                <a href="#" data-language-name="php">php</a>
                 <a href="#" data-language-name="ruby">ruby</a>
-                <a href="#" data-language-name="python">python</a>
           </div>
       </div>
     </div>
