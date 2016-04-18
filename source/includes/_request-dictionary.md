@@ -645,7 +645,18 @@ Cancel an existing customer's subscription in the product with
 
 ## Tracked Items
 
-### Add Item quantity
+Use the tracked item endpoints to *set*, *increment*, or *decrement* the quantity of
+and item for an individual subscription.
+
+[Learn more about using Tracked Items](http://support.cheddargetter.com/kb/pricing-plans/pricing-plan-basics#tracked-items)
+
+**Note:** Updates of item quantities on <em>canceled subscriptions</em> are only possible under a few circumstances:
+
+* The cancellation is the special <code>paypal-wait</code> state and the PayPal preapproval request period is still valid (up to 3 hours)
+* The canceled subscription has a pending invoice with a billingDatetime in the future
+* The quantity update request is for the outstanding invoice. The request includes the `invoicePeriod` parameter and it is set to `outstanding`
+
+### Add Item Quantity
 
 > Add Item Quantity
 
