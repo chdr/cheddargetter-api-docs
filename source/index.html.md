@@ -1,5 +1,5 @@
 ---
-title: API Reference
+title: CheddarGetter API Reference
 
 language_tabs:
   - shell: cUrl

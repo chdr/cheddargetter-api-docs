@@ -1,4 +1,4 @@
-# Request/Response format
+# Request/Response Format
 
 ## Authentication
 
