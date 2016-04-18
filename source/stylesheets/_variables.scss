@@ -124,10 +124,6 @@ $aside-shadow:0 0 4px rgba(114, 115, 117, 0.15);
 // These settings are probably best left alone.
 
 %break-words {
-     word-break: break-all;
-
-     /* Non standard for webkit */
-     word-break: break-word;
-
-        hyphens: auto;
+    word-break: break-all;
+    hyphens: auto;
 }

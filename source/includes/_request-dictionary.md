@@ -648,7 +648,7 @@ Cancel an existing customer's subscription in the product with
 Use the tracked item endpoints to *set*, *increment*, or *decrement* the quantity of
 and item for an individual subscription.
 
-[Learn more about using Tracked Items](http://support.cheddargetter.com/kb/pricing-plans/pricing-plan-basics#tracked-items)
+[Learn more about using Tracked Items in the Knowledge Base](http://support.cheddargetter.com/kb/pricing-plans/pricing-plan-basics#tracked-items)
 
 **Note:** Updates of item quantities on <em>canceled subscriptions</em> are only possible under a few circumstances:
 
