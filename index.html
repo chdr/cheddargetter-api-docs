@@ -447,7 +447,7 @@ as 2010-07-04T00:00:00+00:00 <= X <= 2010-08-04T23:59:59+00:00.
 <p>Get a Single Customer</p>
 </blockquote>
 <pre class="highlight shell"><code>curl -u <span class="s2">"&lt;username&gt;:&lt;API key&gt;"</span> <span class="se">\</span>
-https://unittest.cgdev.com/xml/customers/get/productCode/MY_PRODUCT_CODE/code/canceled_reactivate
+https://cheddargetter.com/xml/customers/get/productCode/MY_PRODUCT_CODE/code/canceled_reactivate
 </code></pre>
 <pre class="highlight php"><code>$customer = $client-&gt;getCustomer('canceled_reactivate');
 
@@ -490,7 +490,7 @@ for the customer with <code class="prettyprint">code=MY_CUSTOMER_CODE</code> (or
 -d <span class="s2">"subscription[ccNumber]=4111111111111111"</span> <span class="se">\</span>
 -d <span class="s2">"subscription[ccExpiration]=04/2017"</span> <span class="se">\</span>
 -u <span class="s2">"&lt;username&gt;:&lt;API key&gt;"</span> <span class="se">\</span>
-https://cheddargetter/xml/customers/new/productCode/MY_PRODUCT_CODE
+https://cheddargetter.com/xml/customers/new/productCode/MY_PRODUCT_CODE
 </code></pre>
 <pre class="highlight php"><code>$data = array(
     'code'      =&gt; 'MY_CUSTOMER_CODE',
@@ -529,7 +529,7 @@ $customer = $client-&gt;newCustomer($data);
 -d <span class="s2">"lastName=Customer&amp;email=example_customer@example.com"</span> <span class="se">\</span>
 -d <span class="s2">"subscription[planCode]=FREE"</span> <span class="se">\</span>
 -u <span class="s2">"&lt;username&gt;:&lt;API key&gt;"</span> <span class="se">\</span>
-https://cheddargetter/xml/customers/new/productCode/MY_PRODUCT_CODE
+https://cheddargetter.com/xml/customers/new/productCode/MY_PRODUCT_CODE
 </code></pre>
 <pre class="highlight php"><code>$data = array(
     'code'      =&gt; 'MY_CUSTOMER_CODE',
