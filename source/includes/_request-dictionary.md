@@ -59,7 +59,7 @@ as 2010-07-04T00:00:00+00:00 <= X <= 2010-08-04T23:59:59+00:00.
 
 ```shell
 curl -u "<username>:<API key>" \
-https://unittest.cgdev.com/xml/customers/get/productCode/MY_PRODUCT_CODE/code/canceled_reactivate
+https://cheddargetter.com/xml/customers/get/productCode/MY_PRODUCT_CODE/code/canceled_reactivate
 ```
 
 ```php
@@ -106,7 +106,7 @@ curl -d "code=MY_CUSTOMER_CODE&firstName=Example" \
 -d "subscription[ccNumber]=4111111111111111" \
 -d "subscription[ccExpiration]=04/2017" \
 -u "<username>:<API key>" \
-https://cheddargetter/xml/customers/new/productCode/MY_PRODUCT_CODE
+https://cheddargetter.com/xml/customers/new/productCode/MY_PRODUCT_CODE
 ```
 
 ```php
@@ -148,7 +148,7 @@ curl -d "code=MY_CUSTOMER_CODE&firstName=Example" \
 -d "lastName=Customer&email=example_customer@example.com" \
 -d "subscription[planCode]=FREE" \
 -u "<username>:<API key>" \
-https://cheddargetter/xml/customers/new/productCode/MY_PRODUCT_CODE
+https://cheddargetter.com/xml/customers/new/productCode/MY_PRODUCT_CODE
 ```
 
 ```php
