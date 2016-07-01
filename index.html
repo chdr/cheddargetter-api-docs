@@ -843,8 +843,16 @@ about whether or not importing is possible in your situation.</p>
 <td>See the <a href="http://support.cheddargetter.com/kb/api-8/customer-meta-data">KB Article</a> about customer metadata</td>
 </tr>
 <tr>
+<td><code class="prettyprint">subscription[planCode]</code></td>
+<td><strong>Required</strong> Your code for the subscribed pricing plan</td>
+</tr>
+<tr>
 <td><code class="prettyprint">subscription[initialBillDate]</code></td>
 <td><strong>Required</strong> Date or datetime in ISO 8601 format. (e.g., 2011-08-01 or 2011-08-01T15:30:00+00:00). Date on which you would like the customers first invoice to be billable. This option overrides the pricing plan default. Must either be today&rsquo;s date (run invoice immediately) or a future date.</td>
+</tr>
+<tr>
+<td><code class="prettyprint">subscription[gatewayToken]</code></td>
+<td><strong>Conditional</strong> The gateway reference code for the payment method. Required if your settings require it and/or if the customer currently has a payment method that you would like to use to continue to bill this customer.</td>
 </tr>
 <tr>
 <td><code class="prettyprint">subscription[ccType]</code></td>
@@ -1523,7 +1531,7 @@ $quantity = $client-&gt;removeItemQuantity('canceled_reactivate', null, $data);
 </thead><tbody>
 <tr>
 <td><code class="prettyprint">quantity</code></td>
-<td>The positive amount accurate to up to 4 decimal places (if other that 1.0000) that you wish to add to the current usage for this item.</td>
+<td>The positive amount accurate to up to 4 decimal places (if other that 1.0000) that you wish to remove from the customer&rsquo;s current quantity for this item.</td>
 </tr>
 <tr>
 <td><code class="prettyprint">remoteAddress</code></td>
@@ -1532,7 +1540,7 @@ $quantity = $client-&gt;removeItemQuantity('canceled_reactivate', null, $data);
 </tbody></table>
 
 <aside class="notice">
-  <code>quantity</code> is only required if you wish to subtract more than one from
+  <code>quantity</code> is only required if you wish to subtract more than 1 from
   the current usage amount.
 </aside>
 
