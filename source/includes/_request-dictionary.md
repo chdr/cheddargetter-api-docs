@@ -288,7 +288,9 @@ Name | Description
 `campaignMedium` | The medium used to find your site. Google Adwords equivalent: "utm_medium". See the [KB Article](http://support.cheddargetter.com/faqs/marketing-metrics/marketing-metrics)
 `campaignContent` | The content you wish to track. Google Adwords equivalent: "utm_content". See the [KB Article](http://support.cheddargetter.com/faqs/marketing-metrics/marketing-metrics)
 `metaData[<user-defined>]` | See the [KB Article](http://support.cheddargetter.com/kb/api-8/customer-meta-data) about customer metadata
+`subscription[planCode] `| **Required** Your code for the subscribed pricing plan
 `subscription[initialBillDate]` | **Required** Date or datetime in ISO 8601 format. (e.g., 2011-08-01 or 2011-08-01T15:30:00+00:00). Date on which you would like the customers first invoice to be billable. This option overrides the pricing plan default. Must either be today's date (run invoice immediately) or a future date.
+`subscription[gatewayToken]` | **Conditional** The gateway reference code for the payment method. Required if your settings require it and/or if the customer currently has a payment method that you would like to use to continue to bill this customer.
 `subscription[ccType] `| **Conditional** visa, mc, disc, amex, diners, jcb, unk. If you specify a `subscription[gatewayToken]`, this is required.
 `subscription[ccLastFour]` | **Conditional** Numbers only -- last four digits of credit/debit card number. If you specify a `subscription[gatewayToken]`, this is required.
 `subscription[ccExpiration]` | **Conditional** MM/YYYY - the expiration date for the credit/debit card. If you specify a subscription[gatewayToken], this is required.
@@ -730,11 +732,11 @@ Decrement a customer's current usage of a single item in the product with
 
 Name | Description
 ---- | -----------
-`quantity` | The positive amount accurate to up to 4 decimal places (if other that 1.0000) that you wish to add to the current usage for this item.
+`quantity` | The positive amount accurate to up to 4 decimal places (if other that 1.0000) that you wish to remove from the customer's current quantity for this item.
 `remoteAddress` | **Not Required ([see below](#fraud-protection-rate-limiting))** Client IPv4 address
 
 <aside class="notice">
-  <code>quantity</code> is only required if you wish to subtract more than one from
+  <code>quantity</code> is only required if you wish to subtract more than 1 from
   the current usage amount.
 </aside>
 
