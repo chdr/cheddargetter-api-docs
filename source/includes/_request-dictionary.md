@@ -200,6 +200,7 @@ Name | Description
 `campaignContent` | The content you wish to track. Google Adwords equivalent: "utm_content". See the [KB Article](http://support.cheddargetter.com/faqs/marketing-metrics/marketing-metrics)
 `metaData[<user-defined>]` | See the [KB Article](http://support.cheddargetter.com/kb/api-8/customer-meta-data) about customer metadata
 `subscription[planCode] `| **Required** Your code for the subscribed pricing plan
+`subscription[couponCode]` | Coupon code for the promotion you'd like to apply to the subscription
 `subscription[initialBillDate]` | Date or datetime in ISO 8601 format. (e.g., 2011-08-01 or 2011-08-01T15:30:00+00:00). Date on which you would like the customers first invoice to be billable. This option overrides the pricing plan default. Must either be today's date (run invoice immediately) or a future date.
 `subscription[method]` | "cc" (default) or "paypal"
 `subscription[ccNumber]` | **Conditional (See Notes)** Numbers only -- a valid credit/debit card number
