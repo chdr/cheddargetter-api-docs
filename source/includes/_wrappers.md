@@ -8,9 +8,9 @@ for more information.
 
 ## Ruby
 
-The officially supported gem from Michael at [ExpectedBehavior](http://www.expectedbehavior.com/).  
+The officially supported gem from Michael at [ExpectedBehavior](http://www.expectedbehavior.com/).
 The ExpectedBehavior gem fully implements the API and includes 100% test coverage.
-[Check out the docs](http://rubydoc.info/gems/cheddargetter_client_ruby/0.3.0/frame).
+[Check out the docs](http://www.rubydoc.info/gems/cheddargetter_client_ruby).
 
 * [https://github.com/expectedbehavior/cheddargetter_client_ruby](https://github.com/expectedbehavior/cheddargetter_client_ruby)
 
@@ -18,7 +18,7 @@ The ExpectedBehavior gem fully implements the API and includes 100% test coverag
 
 The PHP CheddarGetter Client is a wrapper for the CheddarGetter API provided and
 supported by the CheddarGetter team.  There's a nice
-[Quick Start Guide](http://support.cheddargetter.com/kb/api-8/php-client-library-quick-start).  
+[Quick Start Guide](http://support.cheddargetter.com/kb/api-8/php-client-library-quick-start).
 This ZF-compatible library is provided as an open source repository via GitHub
 here:
 
@@ -31,7 +31,7 @@ stock PHP wrapper as a [CodeIgniter](http://codeigniter.com/) library.
 * [http://github.com/cloudmanic/CheddarGetter-Codeignitor-API-Wrapper](http://github.com/cloudmanic/CheddarGetter-Codeignitor-API-Wrapper)
 
 [Dan Harper](http://danharper.me/) of [Radweb Ltd](http://radweb.co.uk/) added a
-[FuelPHP](http://fuelphp.com/) port. Follow  [@danharper](http://twitter.com/danharper7)  
+[FuelPHP](http://fuelphp.com/) port. Follow  [@danharper](http://twitter.com/danharper7)
 and [@radweb](http://twitter.com/radweb).
 
 * [https://github.com/danharper/fuel-cheddar](https://github.com/danharper/fuel-cheddar)
