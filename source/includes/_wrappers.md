@@ -8,7 +8,7 @@ for more information.
 
 ## Ruby
 
-The officially supported gem from Michael at [ExpectedBehavior](http://www.expectedbehavior.com/).  
+The officially supported gem from Michael at [ExpectedBehavior](http://www.expectedbehavior.com/).
 The ExpectedBehavior gem fully implements the API and includes 100% test coverage.
 [Check out the docs](http://rubydoc.info/gems/cheddargetter_client_ruby/0.3.0/frame).
 
@@ -18,7 +18,7 @@ The ExpectedBehavior gem fully implements the API and includes 100% test coverag
 
 The PHP CheddarGetter Client is a wrapper for the CheddarGetter API provided and
 supported by the CheddarGetter team.  There's a nice
-[Quick Start Guide](http://support.cheddargetter.com/kb/api-8/php-client-library-quick-start).  
+[Quick Start Guide](http://support.cheddargetter.com/kb/api-8/php-client-library-quick-start).
 This ZF-compatible library is provided as an open source repository via GitHub
 here:
 
@@ -31,7 +31,7 @@ stock PHP wrapper as a [CodeIgniter](http://codeigniter.com/) library.
 * [http://github.com/cloudmanic/CheddarGetter-Codeignitor-API-Wrapper](http://github.com/cloudmanic/CheddarGetter-Codeignitor-API-Wrapper)
 
 [Dan Harper](http://danharper.me/) of [Radweb Ltd](http://radweb.co.uk/) added a
-[FuelPHP](http://fuelphp.com/) port. Follow  [@danharper](http://twitter.com/danharper7)  
+[FuelPHP](http://fuelphp.com/) port. Follow  [@danharper](http://twitter.com/danharper7)
 and [@radweb](http://twitter.com/radweb).
 
 * [https://github.com/danharper/fuel-cheddar](https://github.com/danharper/fuel-cheddar)
@@ -43,24 +43,15 @@ built on the official PHP wrapper.
 
 ## Python
 
-In keeping with the tradition of cleverly named libraries, Sean O'Connor has
-produced Sharpy. This wrapper is on a simple BSD license and has 100% test
-coverage. Follow [@theSeanOC](http://twitter.com/theSeanOC).
+[Smartfile](https://www.smartfile.com/) has taken over maintenance of Sharpy. Thanks,  [@theSeanOC](http://twitter.com/theSeanOC) for the original lib!
 
-* [https://github.com/saaspire/sharpy](https://github.com/saaspire/sharpy)
-
-PyCheddar, a Django compatible library written by Jason and Luke at
-[FeedMagnet](http://www.feedmagnet.com/). Follow
-[@FeedMagnet](http://twitter.com/feedmagnet).
-
-* [http://www.feedmagnet.com/blog/cheddargetter-for-python-and-django/](http://www.feedmagnet.com/blog/cheddargetter-for-python-and-django/)
+* [https://github.com/smartfile/sharpy](https://github.com/smartfile/sharpy)
 
 ## Node.js
 
-Kevin of [Invisions Technical Arts](http://www.invisionsta.com/) has posted
-his Node.js offering on GitHub. Follow [@respectTheCode](https://twitter.com/respectTheCode).
+[Michiel ter Reehorst](http://www.jamiter.com/) has taken over maintenance of the Node.js lib. Follow [@_jamiter](https://twitter.com/_jamiter). Thanks, [@respectTheCode](https://twitter.com/respectTheCode) for the original lib!
 
-* [https://github.com/respectTheCode/node-cheddargetter](https://github.com/respectTheCode/node-cheddargetter)
+* [https://github.com/jamiter/node-cheddargetter](https://github.com/jamiter/node-cheddargetter)
 
 ## Java
 
