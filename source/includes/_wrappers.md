@@ -43,24 +43,15 @@ built on the official PHP wrapper.
 
 ## Python
 
-In keeping with the tradition of cleverly named libraries, Sean O'Connor has
-produced Sharpy. This wrapper is on a simple BSD license and has 100% test
-coverage. Follow [@theSeanOC](http://twitter.com/theSeanOC).
+[Smartfile](https://www.smartfile.com/) has taken over maintenance of Sharpy. Thanks,  [@theSeanOC](http://twitter.com/theSeanOC) for the original lib!
 
-* [https://github.com/saaspire/sharpy](https://github.com/saaspire/sharpy)
-
-PyCheddar, a Django compatible library written by Jason and Luke at
-[FeedMagnet](http://www.feedmagnet.com/). Follow
-[@FeedMagnet](http://twitter.com/feedmagnet).
-
-* [http://www.feedmagnet.com/blog/cheddargetter-for-python-and-django/](http://www.feedmagnet.com/blog/cheddargetter-for-python-and-django/)
+* [https://github.com/smartfile/sharpy](https://github.com/smartfile/sharpy)
 
 ## Node.js
 
-Kevin of [Invisions Technical Arts](http://www.invisionsta.com/) has posted
-his Node.js offering on GitHub. Follow [@respectTheCode](https://twitter.com/respectTheCode).
+[Michiel ter Reehorst](http://www.jamiter.com/) has taken over maintenance of the Node.js lib. Follow [@_jamiter](https://twitter.com/_jamiter). Thanks, [@respectTheCode](https://twitter.com/respectTheCode) for the original lib!
 
-* [https://github.com/respectTheCode/node-cheddargetter](https://github.com/respectTheCode/node-cheddargetter)
+* [https://github.com/jamiter/node-cheddargetter](https://github.com/jamiter/node-cheddargetter)
 
 ## Java
 
