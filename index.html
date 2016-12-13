@@ -558,6 +558,10 @@ and subscribe the customer to a pricing plan.</p>
 <td><strong>Required</strong> Your code for this customer. Limited to 255 characters.</td>
 </tr>
 <tr>
+<td><code class="prettyprint">gatewayToken</code></td>
+<td><strong>Conditional</strong> The gateway reference code. Limited to 255 characters.</td>
+</tr>
+<tr>
 <td><code class="prettyprint">firstName</code></td>
 <td><strong>Required</strong> Limited to 40 characters</td>
 </tr>
@@ -646,6 +650,18 @@ and subscribe the customer to a pricing plan.</p>
 <td><strong>Conditional. If plan is free, not required. If your preference is to require the <code class="prettyprint">cardCode</code>, required. Not required when method is paypal.</strong> 3-4 digits - The Card Verification Value (CCV).</td>
 </tr>
 <tr>
+<td><code class="prettyprint">subscription[gatewayToken]</code></td>
+<td><strong>Conditional (See Notes)</strong> The gateway reference code for the payment method. Provide this in lieu of <code class="prettyprint">ccNumber</code> when pre-tokenized payment methods are available.</td>
+</tr>
+<tr>
+<td><code class="prettyprint">subscription[ccType]</code></td>
+<td><strong>Conditional</strong> visa, mc, disc, amex, diners, jcb, unk. If you specify a <code class="prettyprint">subscription[gatewayToken]</code>, this is required.</td>
+</tr>
+<tr>
+<td><code class="prettyprint">subscription[ccLastFour]</code></td>
+<td><strong>Conditional</strong> Numbers only &ndash; last four digits of credit/debit card number. If you specify a <code class="prettyprint">subscription[gatewayToken]</code>, this is required.</td>
+</tr>
+<tr>
 <td><code class="prettyprint">subscription[ccFirstName]</code></td>
 <td><strong>Conditional (See Notes)</strong> Limited to 40 characters</td>
 </tr>
@@ -727,10 +743,23 @@ and subscribe the customer to a pricing plan.</p>
   regarding free trials and the <em>Bill Reminder</em> email.
   <br/>
   <br/>
+
 <p>
   When using $0.00 verification transactions (e.g., <code>Authorize.Net CIM validationMode=liveMode)</code>
   for credit card pre-verifications, <code>subscription[ccAddress]</code> and
   <code>subscription[ccZip]</code> are required.
+</p>
+
+<p>
+    If pre-tokenized payment methods are available, you may create a new
+    customer with a payment method by providing a
+    <code>subscription[gatewayToken]</code>,
+    <code>subscription[ccType]</code>,
+    and <code>subscription[ccLastFour]</code>
+    values instead of
+    <code>subscription[ccNumber]</code>
+    and <code>subscription[ccCardCode]</code>.
+    This feature is compatible with only some back-end billing solutions.
 </p>
 
 <p>
@@ -1035,6 +1064,10 @@ $customer = $client-&gt;editSubscription('canceled_reactivate', null, $data);
 </tr>
 </thead><tbody>
 <tr>
+<td><code class="prettyprint">gatewayToken</code></td>
+<td>The gateway reference code. Limited to 255 characters.</td>
+</tr>
+<tr>
 <td><code class="prettyprint">firstName</code></td>
 <td>Limited to 20 characters.</td>
 </tr>
@@ -1119,6 +1152,18 @@ $customer = $client-&gt;editSubscription('canceled_reactivate', null, $data);
 <td><strong>Conditional. If plan is free, no. If your preference is to require the cardCode, yes.</strong> 3-4 digits - The Card Verification Value (CCV).</td>
 </tr>
 <tr>
+<td><code class="prettyprint">subscription[gatewayToken]</code></td>
+<td><strong>Conditional (See Notes)</strong> The gateway reference code for the payment method. Provide this in lieu of <code class="prettyprint">ccNumber</code> when pre-tokenized payment methods are available.</td>
+</tr>
+<tr>
+<td><code class="prettyprint">subscription[ccType]</code></td>
+<td><strong>Conditional</strong> visa, mc, disc, amex, diners, jcb, unk. If you specify a <code class="prettyprint">subscription[gatewayToken]</code>, this is required.</td>
+</tr>
+<tr>
+<td><code class="prettyprint">subscription[ccLastFour]</code></td>
+<td><strong>Conditional</strong> Numbers only &ndash; last four digits of credit/debit card number. If you specify a <code class="prettyprint">subscription[gatewayToken]</code>, this is required.</td>
+</tr>
+<tr>
 <td><code class="prettyprint">subscription[ccFirstName]</code></td>
 <td><strong>Not Required (See Notes)</strong> Limited to 20 characters</td>
 </tr>
@@ -1183,6 +1228,18 @@ $customer = $client-&gt;editSubscription('canceled_reactivate', null, $data);
   next invoice is delayed. If a subscription on a paid plan does not have a
   credit card when it comes time to bill, the subscription will be auto-cancelled.
   See the email templates <a href="http://support.cheddargetter.com/kb/operational-how-tos/email-notification-templates">KB Article</a> regarding free trials and the <em>Bill Reminder</em> email.
+</p>
+
+<p>
+    If pre-tokenized payment methods are available, you may create a new
+    customer with a payment method by providing a
+    <code>subscription[gatewayToken]</code>,
+    <code>subscription[ccType]</code>,
+    and <code>subscription[ccLastFour]</code>
+    values instead of
+    <code>subscription[ccNumber]</code>
+    and <code>subscription[ccCardCode]</code>.
+    This feature is compatible with only some back-end billing solutions.
 </p>
 
 <p>
@@ -1328,6 +1385,18 @@ $customer = $client-&gt;editSubscription('canceled_reactivate', null, $data);
 <td><strong>Not Required (See Notes)</strong> 3-4 digits - The Card Verification Value (CCV).</td>
 </tr>
 <tr>
+<td><code class="prettyprint">gatewayToken</code></td>
+<td><strong>Conditional (See Notes)</strong> The gateway reference code for the payment method. Provide this in lieu of <code class="prettyprint">ccNumber</code> when pre-tokenized payment methods are available.</td>
+</tr>
+<tr>
+<td><code class="prettyprint">ccType</code></td>
+<td><strong>Conditional</strong> visa, mc, disc, amex, diners, jcb, unk. If you specify a <code class="prettyprint">gatewayToken</code>, this is required.</td>
+</tr>
+<tr>
+<td><code class="prettyprint">ccLastFour</code></td>
+<td><strong>Conditional</strong> Numbers only &ndash; last four digits of credit/debit card number. If you specify a <code class="prettyprint">subscription[gatewayToken]</code>, this is required.</td>
+</tr>
+<tr>
 <td><code class="prettyprint">ccFirstName</code></td>
 <td><strong>Not Required (See Notes)</strong> Limited to 20 characters</td>
 </tr>
@@ -1396,6 +1465,18 @@ $customer = $client-&gt;editSubscription('canceled_reactivate', null, $data);
 </p>
 
 <p>
+    If pre-tokenized payment methods are available, you may create a new
+    customer with a payment method by providing a
+    <code>gatewayToken</code>,
+    <code>ccType</code>,
+    and <code>ccLastFour</code>
+    values instead of
+    <code>ccNumber</code>
+    and <code>ccCardCode</code>. 
+    This feature is compatible with only some back-end billing solutions.
+</p>
+
+<p>
   Changing the next bill date using <code>subscription[changeBillDate]</code>
   effects the billing cycle. Subsequent bill dates will be on the new cycle.
   In other words, for a monthly plan that typically bills on the 3rd of every
@@ -1403,7 +1484,7 @@ $customer = $client-&gt;editSubscription('canceled_reactivate', null, $data);
   now bill every month on the 10th. If the date is equal to 'now&rsquo; or is less
   than or equal to the current date and time, the current invoice will be
   executed in real-time.
-
+</p>
   <p>
     Check out this article for more information about
     <a href="http://support.cheddargetter.com/kb/api-8/using-paypal-with-the-api">
