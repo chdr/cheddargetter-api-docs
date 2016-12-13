@@ -184,6 +184,7 @@ and subscribe the customer to a pricing plan.
 Name | Description
 ---- | -----------
 `code` | **Required** Your code for this customer. Limited to 255 characters.
+`gatewayToken` | **Conditional** The gateway reference code. Limited to 255 characters.
 `firstName` | **Required** Limited to 40 characters
 `lastName` | **Required** Limited to 40 characters
 `email` | **Required** Valid email address
@@ -206,6 +207,9 @@ Name | Description
 `subscription[ccNumber]` | **Conditional (See Notes)** Numbers only -- a valid credit/debit card number
 `subscription[ccExpiration]` | **Conditional (See Notes)** MM/YYYY - the expiration date for the credit card
 `subscription[ccCardCode]` | **Conditional. If plan is free, not required. If your preference is to require the `cardCode`, required. Not required when method is paypal.** 3-4 digits - The Card Verification Value (CCV).
+`subscription[gatewayToken]` | **Conditional (See Notes)** The gateway reference code for the payment method. Provide this in lieu of `ccNumber` when pre-tokenized payment methods are available.
+`subscription[ccType] `| **Conditional** visa, mc, disc, amex, diners, jcb, unk. If you specify a `subscription[gatewayToken]`, this is required.
+`subscription[ccLastFour]` | **Conditional** Numbers only -- last four digits of credit/debit card number. If you specify a `subscription[gatewayToken]`, this is required.
 `subscription[ccFirstName]` | **Conditional (See Notes)** Limited to 40 characters
 `subscription[ccLastName]` | **Conditional (See Notes)** Limited to 40 characters
 `subscription[ccCompany]` | Limited to 60 characters
@@ -236,10 +240,23 @@ Name | Description
   regarding free trials and the <em>Bill Reminder</em> email.
   <br/>
   <br/>
+
 <p>
   When using $0.00 verification transactions (e.g., <code>Authorize.Net CIM validationMode=liveMode)</code>
   for credit card pre-verifications, <code>subscription[ccAddress]</code> and
   <code>subscription[ccZip]</code> are required.
+</p>
+
+<p>
+    If pre-tokenized payment methods are available, you may create a new
+    customer with a payment method by providing a
+    <code>subscription[gatewayToken]</code>,
+    <code>subscription[ccType]</code>,
+    and <code>subscription[ccLastFour]</code>
+    values instead of
+    <code>subscription[ccNumber]</code>
+    and <code>subscription[ccCardCode]</code>.
+    This feature is compatible with only some back-end billing solutions.
 </p>
 
 <p>
@@ -431,6 +448,7 @@ Update an existing customer's information in the product with
 
 Name | Description
 ---- | -----------
+`gatewayToken` | The gateway reference code. Limited to 255 characters.
 `firstName` | Limited to 20 characters.
 `lastName` | Limited to 20 characters.
 `email` | Valid email address
@@ -452,6 +470,9 @@ Name | Description
 `subscription[ccNumber]` | **Not Required (See Notes)** Numbers only -- a valid credit/debit card number
 `subscription[ccExpiration]` | **Not Required (See Notes)** MM/YYYY - the expiration date for the credit card
 `subscription[ccCardCode]` | **Conditional. If plan is free, no. If your preference is to require the cardCode, yes.** 3-4 digits - The Card Verification Value (CCV).
+`subscription[gatewayToken]` | **Conditional (See Notes)** The gateway reference code for the payment method. Provide this in lieu of `ccNumber` when pre-tokenized payment methods are available.
+`subscription[ccType] `| **Conditional** visa, mc, disc, amex, diners, jcb, unk. If you specify a `subscription[gatewayToken]`, this is required.
+`subscription[ccLastFour]` | **Conditional** Numbers only -- last four digits of credit/debit card number. If you specify a `subscription[gatewayToken]`, this is required.
 `subscription[ccFirstName]` | **Not Required (See Notes)** Limited to 20 characters
 `subscription[ccLastName]` | **Not Required (See Notes)** Limited to 20 characters
 `subscription[ccCompany]` | Limited to 50 characters
@@ -480,6 +501,18 @@ Name | Description
   next invoice is delayed. If a subscription on a paid plan does not have a
   credit card when it comes time to bill, the subscription will be auto-cancelled.
   See the email templates <a href="http://support.cheddargetter.com/kb/operational-how-tos/email-notification-templates">KB Article</a> regarding free trials and the <em>Bill Reminder</em> email.
+</p>
+
+<p>
+    If pre-tokenized payment methods are available, you may create a new
+    customer with a payment method by providing a
+    <code>subscription[gatewayToken]</code>,
+    <code>subscription[ccType]</code>,
+    and <code>subscription[ccLastFour]</code>
+    values instead of
+    <code>subscription[ccNumber]</code>
+    and <code>subscription[ccCardCode]</code>.
+    This feature is compatible with only some back-end billing solutions.
 </p>
 
 <p>
@@ -584,6 +617,9 @@ Name | Description
 `ccNumber` | **Not Required (See Notes)** Numbers only -- a valid credit/debit card number
 `ccExpiration` | **Not Required (See Notes)** MM/YYYY - the expiration date for the credit card
 `ccCardCode` | **Not Required (See Notes)** 3-4 digits - The Card Verification Value (CCV).
+`gatewayToken` | **Conditional (See Notes)** The gateway reference code for the payment method. Provide this in lieu of `ccNumber` when pre-tokenized payment methods are available.
+`ccType`| **Conditional** visa, mc, disc, amex, diners, jcb, unk. If you specify a `gatewayToken`, this is required.
+`ccLastFour` | **Conditional** Numbers only -- last four digits of credit/debit card number. If you specify a `subscription[gatewayToken]`, this is required.
 `ccFirstName` | **Not Required (See Notes)** Limited to 20 characters
 `ccLastName` | **Not Required (See Notes)** Limited to 20 characters
 `ccCompany` | Limited to 50 characters
@@ -616,6 +652,18 @@ Name | Description
 </p>
 
 <p>
+    If pre-tokenized payment methods are available, you may create a new
+    customer with a payment method by providing a
+    <code>gatewayToken</code>,
+    <code>ccType</code>,
+    and <code>ccLastFour</code>
+    values instead of
+    <code>ccNumber</code>
+    and <code>ccCardCode</code>. 
+    This feature is compatible with only some back-end billing solutions.
+</p>
+
+<p>
   Changing the next bill date using <code>subscription[changeBillDate]</code>
   effects the billing cycle. Subsequent bill dates will be on the new cycle.
   In other words, for a monthly plan that typically bills on the 3rd of every
@@ -623,7 +671,7 @@ Name | Description
   now bill every month on the 10th. If the date is equal to 'now' or is less
   than or equal to the current date and time, the current invoice will be
   executed in real-time.
-
+</p>
   <p>
     Check out this article for more information about
     <a href="http://support.cheddargetter.com/kb/api-8/using-paypal-with-the-api">
