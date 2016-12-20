@@ -335,6 +335,12 @@ Name | Description
 <br/>
 <br/>
 <p>
+    Gateway token values are not validated against the upstream gateway. In
+    other words, request data is validated for format only and not for accuracy
+    or existence of the corresponding payment method reference at the upstream
+    billing solution.
+</p>
+<p>
     Up to 100 customers may be imported in one call. Customer data must be in a
     nested list.
 </p>
