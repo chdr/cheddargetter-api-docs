@@ -329,10 +329,15 @@ Name | Description
 
 <aside class="notice">
 
-  Up to 100 customers may be imported in one call. Customer data must be in a
-  nested list.
+  Only direct credit card billing solutions are compatible with this import
+  when importing customers with a payment method. Future implementations may
+  include support for additional billing solution types.
 <br/>
 <br/>
+<p>
+    Up to 100 customers may be imported in one call. Customer data must be in a
+    nested list.
+</p>
 <p>
   Any customer may be imported with or without a payment method. If payment
   method import is desired, the last four digits of the card number, the
@@ -659,7 +664,7 @@ Name | Description
     and <code>ccLastFour</code>
     values instead of
     <code>ccNumber</code>
-    and <code>ccCardCode</code>. 
+    and <code>ccCardCode</code>.
     This feature is compatible with only some back-end billing solutions.
 </p>
 
