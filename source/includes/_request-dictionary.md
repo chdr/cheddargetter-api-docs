@@ -257,6 +257,10 @@ Name | Description
     <code>subscription[ccNumber]</code>
     and <code>subscription[ccCardCode]</code>.
     This feature is compatible with only some back-end billing solutions.
+    In some cases, only the <code>subscription[gatewayToken]</code> is
+    required as the additional data is subsequently requested from the
+    upstream gateway. In that case, params passed in the request will
+    override/update the the upstream gateway.
 </p>
 
 <p>
@@ -524,6 +528,10 @@ Name | Description
     <code>subscription[ccNumber]</code>
     and <code>subscription[ccCardCode]</code>.
     This feature is compatible with only some back-end billing solutions.
+    In some cases, only the <code>subscription[gatewayToken]</code> is
+    required as the additional data is subsequently requested from the
+    upstream gateway. In that case, params passed in the request will
+    override/update the the upstream gateway.
 </p>
 
 <p>
@@ -672,6 +680,10 @@ Name | Description
     <code>ccNumber</code>
     and <code>ccCardCode</code>.
     This feature is compatible with only some back-end billing solutions.
+    In some cases, only the <code>subscription[gatewayToken]</code> is
+    required as the additional data is subsequently requested from the
+    upstream gateway. In that case, params passed in the request will
+    override/update the the upstream gateway.
 </p>
 
 <p>
