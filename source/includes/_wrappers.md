@@ -36,11 +36,6 @@ and [@radweb](http://twitter.com/radweb).
 
 * [https://github.com/danharper/fuel-cheddar](https://github.com/danharper/fuel-cheddar)
 
-[@LogSafe](http://logsafe.org/) added a [Symfony2](http://symfony.com/) bundle
-built on the official PHP wrapper.
-
-* [https://github.com/LogSafe/LogSafeCheddarGetterBundle](https://github.com/LogSafe/LogSafeCheddarGetterBundle)
-
 ## Python
 
 [Smartfile](https://www.smartfile.com/) has taken over maintenance of Sharpy. Thanks,  [@theSeanOC](http://twitter.com/theSeanOC) for the original lib!
@@ -59,11 +54,6 @@ David of [Rustici Software](http://rusticisoftware.com) has posted his Java
 offering on GitHub.
 
 * [https://github.com/RusticiSoftware/CheddarClient](https://github.com/RusticiSoftware/CheddarClient)
-
-Michiel from [VideoView](http://videoview.com/) joined the party with this
-Maven project.
-
-* [https://github.com/videoview/CheddarClient](https://github.com/videoview/CheddarClient)
 
 ## C&#35;
 
