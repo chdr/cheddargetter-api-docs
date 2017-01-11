@@ -201,13 +201,6 @@ and <a href="http://twitter.com/radweb">@radweb</a>.</p>
 <li><a href="https://github.com/danharper/fuel-cheddar">https://github.com/danharper/fuel-cheddar</a></li>
 </ul>
 
-<p><a href="http://logsafe.org/">@LogSafe</a> added a <a href="http://symfony.com/">Symfony2</a> bundle
-built on the official PHP wrapper.</p>
-
-<ul>
-<li><a href="https://github.com/LogSafe/LogSafeCheddarGetterBundle">https://github.com/LogSafe/LogSafeCheddarGetterBundle</a></li>
-</ul>
-
 <h2 id="python">Python</h2>
 
 <p><a href="https://www.smartfile.com/">Smartfile</a> has taken over maintenance of Sharpy. Thanks,  <a href="http://twitter.com/theSeanOC">@theSeanOC</a> for the original lib!</p>
@@ -231,13 +224,6 @@ offering on GitHub.</p>
 
 <ul>
 <li><a href="https://github.com/RusticiSoftware/CheddarClient">https://github.com/RusticiSoftware/CheddarClient</a></li>
-</ul>
-
-<p>Michiel from <a href="http://videoview.com/">VideoView</a> joined the party with this
-Maven project.</p>
-
-<ul>
-<li><a href="https://github.com/videoview/CheddarClient">https://github.com/videoview/CheddarClient</a></li>
 </ul>
 
 <h2 id="c-35">C&#35;</h2>
@@ -760,6 +746,10 @@ and subscribe the customer to a pricing plan.</p>
     <code>subscription[ccNumber]</code>
     and <code>subscription[ccCardCode]</code>.
     This feature is compatible with only some back-end billing solutions.
+    In some cases, only the <code>subscription[gatewayToken]</code> is
+    required as the additional data is subsequently requested from the
+    upstream gateway. In that case, params passed in the request will
+    override/update the the upstream gateway.
 </p>
 
 <p>
@@ -1251,6 +1241,10 @@ $customer = $client-&gt;editSubscription('canceled_reactivate', null, $data);
     <code>subscription[ccNumber]</code>
     and <code>subscription[ccCardCode]</code>.
     This feature is compatible with only some back-end billing solutions.
+    In some cases, only the <code>subscription[gatewayToken]</code> is
+    required as the additional data is subsequently requested from the
+    upstream gateway. In that case, params passed in the request will
+    override/update the the upstream gateway.
 </p>
 
 <p>
@@ -1485,6 +1479,10 @@ $customer = $client-&gt;editSubscription('canceled_reactivate', null, $data);
     <code>ccNumber</code>
     and <code>ccCardCode</code>.
     This feature is compatible with only some back-end billing solutions.
+    In some cases, only the <code>subscription[gatewayToken]</code> is
+    required as the additional data is subsequently requested from the
+    upstream gateway. In that case, params passed in the request will
+    override/update the the upstream gateway.
 </p>
 
 <p>
