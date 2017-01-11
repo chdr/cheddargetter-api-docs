@@ -24,18 +24,6 @@ here:
 
 * [http://github.com/marcguyer/cheddargetter-client-php](http://github.com/marcguyer/cheddargetter-client-php)
 
-Spicer Matthews of [Cloudmanic Labs](http://www.cloudmanic.com) has ported the
-stock PHP wrapper as a [CodeIgniter](http://codeigniter.com/) library.
-[Follow @Cloudmanic](http://twitter.com/cloudmanic).
-
-* [http://github.com/cloudmanic/CheddarGetter-Codeignitor-API-Wrapper](http://github.com/cloudmanic/CheddarGetter-Codeignitor-API-Wrapper)
-
-[Dan Harper](http://danharper.me/) of [Radweb Ltd](http://radweb.co.uk/) added a
-[FuelPHP](http://fuelphp.com/) port. Follow  [@danharper](http://twitter.com/danharper7)
-and [@radweb](http://twitter.com/radweb).
-
-* [https://github.com/danharper/fuel-cheddar](https://github.com/danharper/fuel-cheddar)
-
 ## Python
 
 [Smartfile](https://www.smartfile.com/) has taken over maintenance of Sharpy. Thanks,  [@theSeanOC](http://twitter.com/theSeanOC) for the original lib!
