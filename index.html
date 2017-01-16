@@ -844,7 +844,11 @@ about whether or not importing is possible in your situation.</p>
 </tr>
 <tr>
 <td><code class="prettyprint">subscription[initialBillDate]</code></td>
-<td><strong>Required</strong> Date or datetime in ISO 8601 format. (e.g., 2011-08-01 or 2011-08-01T15:30:00+00:00). Date on which you would like the customers first invoice to be billable. This option overrides the pricing plan default. Must either be today&rsquo;s date (run invoice immediately) or a future date.</td>
+<td>Date or datetime in ISO 8601 format. (e.g., 2011-08-01 or 2011-08-01T15:30:00+00:00). Date on which you would like the customers first invoice to be billable. This option overrides the pricing plan default. Must either be today&rsquo;s date (run invoice immediately) or a future date. If empty, the initial invoice will not be scheduled and a subsequent subscription edit with <code class="prettyprint">changeBillDate</code> param is required to schedule the invoice.</td>
+</tr>
+<tr>
+<td><code class="prettyprint">subscription[method]</code></td>
+<td><strong>Conditional</strong> Payment method (&lsquo;cc&rsquo; or &#39;paypal&rsquo;). Required if specifying a payment method. If empty, payment method will be ignored.</td>
 </tr>
 <tr>
 <td><code class="prettyprint">subscription[gatewayToken]</code></td>
@@ -852,15 +856,15 @@ about whether or not importing is possible in your situation.</p>
 </tr>
 <tr>
 <td><code class="prettyprint">subscription[ccType]</code></td>
-<td><strong>Conditional</strong> visa, mc, disc, amex, diners, jcb, unk. If you specify a <code class="prettyprint">subscription[gatewayToken]</code>, this is required.</td>
+<td><strong>Conditional</strong> visa, mc, disc, amex, diners, jcb, unk. If you specify a <code class="prettyprint">subscription[gatewayToken]</code> and <code class="prettyprint">subscription[method]=cc</code>, this is required.</td>
 </tr>
 <tr>
 <td><code class="prettyprint">subscription[ccLastFour]</code></td>
-<td><strong>Conditional</strong> Numbers only &ndash; last four digits of credit/debit card number. If you specify a <code class="prettyprint">subscription[gatewayToken]</code>, this is required.</td>
+<td><strong>Conditional</strong> Numbers only &ndash; last four digits of credit/debit card number. If you specify a <code class="prettyprint">subscription[gatewayToken]</code> and <code class="prettyprint">subscription[method]=cc</code>, this is required.</td>
 </tr>
 <tr>
 <td><code class="prettyprint">subscription[ccExpiration]</code></td>
-<td><strong>Conditional</strong> MM/YYYY - the expiration date for the credit/debit card. If you specify a subscription[gatewayToken], this is required.</td>
+<td><strong>Conditional</strong> MM/YYYY - the expiration date for the credit/debit card. If you specify a <code class="prettyprint">subscription[gatewayToken]</code> and <code class="prettyprint">subscription[method]=cc</code>, this is required.</td>
 </tr>
 <tr>
 <td><code class="prettyprint">subscription[ccFirstName]</code></td>
@@ -945,8 +949,12 @@ about whether or not importing is possible in your situation.</p>
 </p>
 
 <p>
-  <code>subscription[initialBillDate]</code> is required. The first transaction
-  will occur on the <code>initialBillDate</code>.
+  <code>subscription[initialBillDate]</code> is not required. If specified,
+  the first transaction will occur on the <code>initialBillDate</code>. If
+  empty, the intitial invoice will not be scheduled and a subsequent
+  subscription edit (with `changeBillDate`) is required to schedule the
+  initial invoice.
+</p>
 
 <p>
   Charges are not required but when including charges, <code>chargeCode</code>,
@@ -1190,7 +1198,7 @@ $customer = $client-&gt;editSubscription('canceled_reactivate', null, $data);
 </tr>
 <tr>
 <td><code class="prettyprint">subscription[changeBillDate]</code></td>
-<td>Date or datetime in ISO 8601 format. (e.g., 2011-08-01 or 2011-08-01T15:30:00+00:00). You may also use the word &lsquo;now&rsquo; as shorthand for the current datetime.</td>
+<td>Date or datetime in ISO 8601 format. (e.g., 2011-08-01 or 2011-08-01T15:30:00+00:00). You may also use the word &#39;now&rsquo; as shorthand for the current datetime.</td>
 </tr>
 <tr>
 <td><code class="prettyprint">remoteAddress</code></td>
@@ -1239,7 +1247,7 @@ $customer = $client-&gt;editSubscription('canceled_reactivate', null, $data);
   now bill every month on the 10th. If the date is equal to 'now&rsquo; or is less
   than or equal to the current date and time, the current invoice will be
   executed in real-time.
-
+</p>
   <p>
     Check out this article for more information about
     <a href="http://support.cheddargetter.com/kb/api-8/using-paypal-with-the-api">
