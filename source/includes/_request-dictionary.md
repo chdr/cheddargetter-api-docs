@@ -310,12 +310,13 @@ Name | Description
 `campaignMedium` | The medium used to find your site. Google Adwords equivalent: "utm_medium". See the [KB Article](http://support.cheddargetter.com/faqs/marketing-metrics/marketing-metrics)
 `campaignContent` | The content you wish to track. Google Adwords equivalent: "utm_content". See the [KB Article](http://support.cheddargetter.com/faqs/marketing-metrics/marketing-metrics)
 `metaData[<user-defined>]` | See the [KB Article](http://support.cheddargetter.com/kb/api-8/customer-meta-data) about customer metadata
-`subscription[planCode] `| **Required** Your code for the subscribed pricing plan
-`subscription[initialBillDate]` | **Required** Date or datetime in ISO 8601 format. (e.g., 2011-08-01 or 2011-08-01T15:30:00+00:00). Date on which you would like the customers first invoice to be billable. This option overrides the pricing plan default. Must either be today's date (run invoice immediately) or a future date.
+`subscription[planCode]` | **Required** Your code for the subscribed pricing plan
+`subscription[initialBillDate]` | Date or datetime in ISO 8601 format. (e.g., 2011-08-01 or 2011-08-01T15:30:00+00:00). Date on which you would like the customers first invoice to be billable. This option overrides the pricing plan default. Must either be today's date (run invoice immediately) or a future date. If empty, the initial invoice will not be scheduled and a subsequent subscription edit with `changeBillDate` param is required to schedule the invoice.
+`subscription[method]` | **Conditional** Payment method ('cc' or 'paypal'). Required if specifying a payment method. If empty, payment method will be ignored.
 `subscription[gatewayToken]` | **Conditional** The gateway reference code for the payment method. Required if your settings require it and/or if the customer currently has a payment method that you would like to use to continue to bill this customer.
-`subscription[ccType] `| **Conditional** visa, mc, disc, amex, diners, jcb, unk. If you specify a `subscription[gatewayToken]`, this is required.
-`subscription[ccLastFour]` | **Conditional** Numbers only -- last four digits of credit/debit card number. If you specify a `subscription[gatewayToken]`, this is required.
-`subscription[ccExpiration]` | **Conditional** MM/YYYY - the expiration date for the credit/debit card. If you specify a subscription[gatewayToken], this is required.
+`subscription[ccType]` | **Conditional** visa, mc, disc, amex, diners, jcb, unk. If you specify a `subscription[gatewayToken]` and `subscription[method]=cc`, this is required.
+`subscription[ccLastFour]` | **Conditional** Numbers only -- last four digits of credit/debit card number. If you specify a `subscription[gatewayToken]` and `subscription[method]=cc`, this is required.
+`subscription[ccExpiration]` | **Conditional** MM/YYYY - the expiration date for the credit/debit card. If you specify a `subscription[gatewayToken]` and `subscription[method]=cc`, this is required.
 `subscription[ccFirstName]` | **Conditional** Limited to 40 characters. If you specify a subscription[gatewayToken], this is required.
 `subscription[ccLastName]` | **Conditional** Limited to 40 characters. If you specify a subscription[gatewayToken], this is required.
 `subscription[ccCompany]` | Limited to 60 characters
@@ -356,8 +357,12 @@ Name | Description
 </p>
 
 <p>
-  <code>subscription[initialBillDate]</code> is required. The first transaction
-  will occur on the <code>initialBillDate</code>.
+  <code>subscription[initialBillDate]</code> is not required. If specified,
+  the first transaction will occur on the <code>initialBillDate</code>. If
+  empty, the intitial invoice will not be scheduled and a subsequent
+  subscription edit (with `changeBillDate`) is required to schedule the
+  initial invoice.
+</p>
 
 <p>
   Charges are not required but when including charges, <code>chargeCode</code>,
@@ -542,7 +547,7 @@ Name | Description
   now bill every month on the 10th. If the date is equal to 'now' or is less
   than or equal to the current date and time, the current invoice will be
   executed in real-time.
-
+</p>
   <p>
     Check out this article for more information about
     <a href="http://support.cheddargetter.com/kb/api-8/using-paypal-with-the-api">
