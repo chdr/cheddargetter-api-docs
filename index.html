@@ -868,11 +868,15 @@ about whether or not importing is possible in your situation.</p>
 </tr>
 <tr>
 <td><code class="prettyprint">subscription[ccFirstName]</code></td>
-<td><strong>Conditional</strong> Limited to 40 characters. If you specify a subscription[gatewayToken], this is required.</td>
+<td><strong>Conditional</strong> Limited to 40 characters. If you specify a <code class="prettyprint">subscription[gatewayToken]</code>, this is required.</td>
 </tr>
 <tr>
 <td><code class="prettyprint">subscription[ccLastName]</code></td>
-<td><strong>Conditional</strong> Limited to 40 characters. If you specify a subscription[gatewayToken], this is required.</td>
+<td><strong>Conditional</strong> Limited to 40 characters. If you specify a <code class="prettyprint">subscription[gatewayToken]</code>, this is required.</td>
+</tr>
+<tr>
+<td><code class="prettyprint">subscription[ccEmail]</code></td>
+<td><strong>Conditional</strong> A valid email address. If you specify a subscription[gatewayToken] and  and <code class="prettyprint">subscription[method]=paypal</code>, this is required and should be the email address of the PayPal account.</td>
 </tr>
 <tr>
 <td><code class="prettyprint">subscription[ccCompany]</code></td>
