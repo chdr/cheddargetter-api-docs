@@ -317,8 +317,9 @@ Name | Description
 `subscription[ccType]` | **Conditional** visa, mc, disc, amex, diners, jcb, unk. If you specify a `subscription[gatewayToken]` and `subscription[method]=cc`, this is required.
 `subscription[ccLastFour]` | **Conditional** Numbers only -- last four digits of credit/debit card number. If you specify a `subscription[gatewayToken]` and `subscription[method]=cc`, this is required.
 `subscription[ccExpiration]` | **Conditional** MM/YYYY - the expiration date for the credit/debit card. If you specify a `subscription[gatewayToken]` and `subscription[method]=cc`, this is required.
-`subscription[ccFirstName]` | **Conditional** Limited to 40 characters. If you specify a subscription[gatewayToken], this is required.
-`subscription[ccLastName]` | **Conditional** Limited to 40 characters. If you specify a subscription[gatewayToken], this is required.
+`subscription[ccFirstName]` | **Conditional** Limited to 40 characters. If you specify a `subscription[gatewayToken]`, this is required.
+`subscription[ccLastName]` | **Conditional** Limited to 40 characters. If you specify a `subscription[gatewayToken]`, this is required.
+`subscription[ccEmail]` | **Conditional** A valid email address. If you specify a subscription[gatewayToken] and  and `subscription[method]=paypal`, this is required and should be the email address of the PayPal account.
 `subscription[ccCompany]` | Limited to 60 characters
 `subscription[ccCountry]` | Limited to 60 characters. Many billing solutions require that the ISO 2 char codes are used.
 `subscription[ccAddress]` | Limited to 60 characters
