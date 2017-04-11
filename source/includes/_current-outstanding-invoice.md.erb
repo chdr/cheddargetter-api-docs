@@ -11,7 +11,7 @@ subscription invoice.
 An outstanding invoice is one that was scheduled to bill in the past but has
 not yet been paid. This could be a scheduled invoice that was attempted but
 declined (the subscriber is in the dunning process) or simply one that's
-scheduled in the past but CheddarGetter's recurring engine hasn't picked it up
+scheduled in the past but <%= config[:general_name] %>'s recurring engine hasn't picked it up
 for execution yet. If a subscription is canceled for non-payment, it almost
 certainly has an outstanding invoice.
 

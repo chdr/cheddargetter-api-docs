@@ -59,7 +59,7 @@ as 2010-07-04T00:00:00+00:00 <= X <= 2010-08-04T23:59:59+00:00.
 
 ```shell
 curl -u "<username>:<API key>" \
-https://cheddargetter.com/xml/customers/get/productCode/MY_PRODUCT_CODE/code/canceled_reactivate
+<%= config[:general_url] %>/xml/customers/get/productCode/MY_PRODUCT_CODE/code/canceled_reactivate
 ```
 
 ```php
@@ -77,7 +77,7 @@ $plan = $customer->getCustomerPlan();
 // get the customer's current/pending invoice
 $invoice = $customer->getCustomerInvoice();
 
-// See CheddarGetter_Response for more convenience methods
+// See <%= config[:general_name] %>_Response for more convenience methods
 ```
 
 ```ruby
@@ -106,7 +106,7 @@ curl -d "code=MY_CUSTOMER_CODE&firstName=Example" \
 -d "subscription[ccNumber]=4111111111111111" \
 -d "subscription[ccExpiration]=04/2017" \
 -u "<username>:<API key>" \
-https://cheddargetter.com/xml/customers/new/productCode/MY_PRODUCT_CODE
+<%= config[:general_url] %>/xml/customers/new/productCode/MY_PRODUCT_CODE
 ```
 
 ```php
@@ -148,7 +148,7 @@ curl -d "code=MY_CUSTOMER_CODE&firstName=Example" \
 -d "lastName=Customer&email=example_customer@example.com" \
 -d "subscription[planCode]=FREE" \
 -u "<username>:<API key>" \
-https://cheddargetter.com/xml/customers/new/productCode/MY_PRODUCT_CODE
+<%= config[:general_url] %>/xml/customers/new/productCode/MY_PRODUCT_CODE
 ```
 
 ```php
@@ -192,14 +192,14 @@ Name | Description
 `isVatExempt` | 1 or 0
 `vatNumber` | If the customer is geographically eligible to be taxed and is exempt, provide the exemption number if applicable. Limited to 32 characters
 `notes` | Limited to 255 characters
-`firstContactDatetime` | Date or datetime in ISO 8601 format.(e.g., 2011-08-01 or 2011-08-01T15:30:00+00:00). See the [KB Article](http://support.cheddargetter.com/faqs/marketing-metrics/marketing-metrics)
-`referer` | A valid URL referer. Limited to 255 characters. See the [KB Article](http://support.cheddargetter.com/faqs/marketing-metrics/marketing-metrics)
-`campaignTerm` | The "term" or "keyword" phrase that lead a potential customer to your site. Google Adwords equivalent: "utm_term". See the [KB Article](http://support.cheddargetter.com/faqs/marketing-metrics/marketing-metrics)
-`campaignName` | The name of the marketing campaign. Google Adwords equivalent: "utm_campaign". See the [KB Article](http://support.cheddargetter.com/faqs/marketing-metrics/marketing-metrics)
-`campaignSource` | The source of the lead. Google Adwords equivalent: "utm_source". See the [KB Article](http://support.cheddargetter.com/faqs/marketing-metrics/marketing-metrics)
-`campaignMedium` | The medium used to find your site. Google Adwords equivalent: "utm_medium". See the [KB Article](http://support.cheddargetter.com/faqs/marketing-metrics/marketing-metrics)
-`campaignContent` | The content you wish to track. Google Adwords equivalent: "utm_content". See the [KB Article](http://support.cheddargetter.com/faqs/marketing-metrics/marketing-metrics)
-`metaData[<user-defined>]` | See the [KB Article](http://support.cheddargetter.com/kb/api-8/customer-meta-data) about customer metadata
+`firstContactDatetime` | Date or datetime in ISO 8601 format.(e.g., 2011-08-01 or 2011-08-01T15:30:00+00:00). See the [KB Article](<%= config[:support_url] %>/faqs/marketing-metrics/marketing-metrics)
+`referer` | A valid URL referer. Limited to 255 characters. See the [KB Article](<%= config[:support_url] %>/faqs/marketing-metrics/marketing-metrics)
+`campaignTerm` | The "term" or "keyword" phrase that lead a potential customer to your site. Google Adwords equivalent: "utm_term". See the [KB Article](<%= config[:support_url] %>/faqs/marketing-metrics/marketing-metrics)
+`campaignName` | The name of the marketing campaign. Google Adwords equivalent: "utm_campaign". See the [KB Article](<%= config[:support_url] %>/faqs/marketing-metrics/marketing-metrics)
+`campaignSource` | The source of the lead. Google Adwords equivalent: "utm_source". See the [KB Article](<%= config[:support_url] %>/faqs/marketing-metrics/marketing-metrics)
+`campaignMedium` | The medium used to find your site. Google Adwords equivalent: "utm_medium". See the [KB Article](<%= config[:support_url] %>/faqs/marketing-metrics/marketing-metrics)
+`campaignContent` | The content you wish to track. Google Adwords equivalent: "utm_content". See the [KB Article](<%= config[:support_url] %>/faqs/marketing-metrics/marketing-metrics)
+`metaData[<user-defined>]` | See the [KB Article](<%= config[:support_url] %>/kb/api-8/customer-meta-data) about customer metadata
 `subscription[planCode] `| **Required** Your code for the subscribed pricing plan
 `subscription[couponCode]` | Coupon code for the promotion you'd like to apply to the subscription
 `subscription[initialBillDate]` | Date or datetime in ISO 8601 format. (e.g., 2011-08-01 or 2011-08-01T15:30:00+00:00). Date on which you would like the customers first invoice to be billable. This option overrides the pricing plan default. Must either be today's date (run invoice immediately) or a future date.
@@ -232,11 +232,11 @@ Name | Description
 
   If the plan is free, only <code>code</code>, <code>firstName</code>, <code>lastName</code>, <code>email</code> and
   <code>subscription[planCode]</code> are required. If the plan is a paid plan, credit card
-  information is only required if you have configured CheddarGetter to require it.
+  information is only required if you have configured <%= config[:general_name] %> to require it.
   It can be optional only if the first invoice on a pricing plan is delayed. If a
   subscription on a paid plan does not have a payment method when it comes time to
   bill, the subscription will be auto-cancelled. See the the email templates
-  <a href="http://support.cheddargetter.com/kb/operational-how-tos/email-notification-templates">KB Article</a>
+  <a href="<%= config[:support_url] %>/kb/operational-how-tos/email-notification-templates">KB Article</a>
   regarding free trials and the <em>Bill Reminder</em> email.
   <br/>
   <br/>
@@ -274,7 +274,7 @@ Name | Description
 </p>
 
 <p>
-  Check out this article for more information about <a href="http://support.cheddargetter.com/kb/api-8/using-paypal-with-the-api">
+  Check out this article for more information about <a href="<%= config[:support_url] %>/kb/api-8/using-paypal-with-the-api">
   using the API with PayPal
   </a>.
 </p>
@@ -286,7 +286,7 @@ Name | Description
 Import customers to the product with `productCode=MY_PRODUCT_CODE`. Existing
 paying (or non-paying) customers in another billing system may be imported while
 maintaining payment methods if the billing solution is compatible. Please [contact
-support](http://support.cheddargetter.com/discussion/new) for more information
+support](<%= config[:support_url] %>/discussion/new) for more information
 about whether or not importing is possible in your situation.
 
 `/customers/import/productCode/MY_PRODUCT_CODE`
@@ -302,14 +302,14 @@ Name | Description
 `isVatExempt` | 1 or 0
 `vatNumber` | If the customer is geographically eligible to be taxed and is exempt, provide the exemption number if applicable. Limited to 32 characters
 `notes` | Limited to 255 characters
-`firstContactDatetime` | Date or datetime in ISO 8601 format. (e.g., 2011-08-01 or 2011-08-01T15:30:00+00:00). See the [KB Article](http://support.cheddargetter.com/faqs/marketing-metrics/marketing-metrics)
-`referer` | A valid URL referer. Limited to 255 characters. See the [KB Article](http://support.cheddargetter.com/faqs/marketing-metrics/marketing-metrics)
-`campaignTerm` | The "term" or "keyword" phrase that lead a potential customer to your site. Google Adwords equivalent: "utm_term". See the [KB Article](http://support.cheddargetter.com/faqs/marketing-metrics/marketing-metrics)
-`campaignName` | The name of the marketing campaign. Google Adwords equivalent: "utm_campaign". See the [KB Article](http://support.cheddargetter.com/faqs/marketing-metrics/marketing-metrics)
-`campaignSource` | The source of the lead. Google Adwords equivalent: "utm_source". See the [KB Article](http://support.cheddargetter.com/faqs/marketing-metrics/marketing-metrics)
-`campaignMedium` | The medium used to find your site. Google Adwords equivalent: "utm_medium". See the [KB Article](http://support.cheddargetter.com/faqs/marketing-metrics/marketing-metrics)
-`campaignContent` | The content you wish to track. Google Adwords equivalent: "utm_content". See the [KB Article](http://support.cheddargetter.com/faqs/marketing-metrics/marketing-metrics)
-`metaData[<user-defined>]` | See the [KB Article](http://support.cheddargetter.com/kb/api-8/customer-meta-data) about customer metadata
+`firstContactDatetime` | Date or datetime in ISO 8601 format. (e.g., 2011-08-01 or 2011-08-01T15:30:00+00:00). See the [KB Article](<%= config[:support_url] %>/faqs/marketing-metrics/marketing-metrics)
+`referer` | A valid URL referer. Limited to 255 characters. See the [KB Article](<%= config[:support_url] %>/faqs/marketing-metrics/marketing-metrics)
+`campaignTerm` | The "term" or "keyword" phrase that lead a potential customer to your site. Google Adwords equivalent: "utm_term". See the [KB Article](<%= config[:support_url] %>/faqs/marketing-metrics/marketing-metrics)
+`campaignName` | The name of the marketing campaign. Google Adwords equivalent: "utm_campaign". See the [KB Article](<%= config[:support_url] %>/faqs/marketing-metrics/marketing-metrics)
+`campaignSource` | The source of the lead. Google Adwords equivalent: "utm_source". See the [KB Article](<%= config[:support_url] %>/faqs/marketing-metrics/marketing-metrics)
+`campaignMedium` | The medium used to find your site. Google Adwords equivalent: "utm_medium". See the [KB Article](<%= config[:support_url] %>/faqs/marketing-metrics/marketing-metrics)
+`campaignContent` | The content you wish to track. Google Adwords equivalent: "utm_content". See the [KB Article](<%= config[:support_url] %>/faqs/marketing-metrics/marketing-metrics)
+`metaData[<user-defined>]` | See the [KB Article](<%= config[:support_url] %>/kb/api-8/customer-meta-data) about customer metadata
 `subscription[planCode]` | **Required** Your code for the subscribed pricing plan
 `subscription[initialBillDate]` | Date or datetime in ISO 8601 format. (e.g., 2011-08-01 or 2011-08-01T15:30:00+00:00). Date on which you would like the customers first invoice to be billable. This option overrides the pricing plan default. Must either be today's date (run invoice immediately) or a future date. If empty, the initial invoice will not be scheduled and a subsequent subscription edit with `changeBillDate` param is required to schedule the invoice.
 `subscription[method]` | **Conditional** Payment method ('cc' or 'paypal'). Required if specifying a payment method. If empty, payment method will be ignored.
@@ -376,7 +376,7 @@ Name | Description
 </p>
 
 <p>
-  Check out this article for more information about <a href="http://support.cheddargetter.com/kb/getting-started-19/can-i-migrate-or-import-existing-customers-to-cheddargetter-how">
+  Check out this article for more information about <a href="<%= config[:support_url] %>/kb/getting-started-19/can-i-migrate-or-import-existing-customers-to-cheddargetter-how">
   using the import functionality
   </a>.
 </p>
@@ -390,7 +390,7 @@ Delete an existing customer in the product with `productCode=MY_PRODUCT_CODE`
 `/customers/delete/productCode/MY_PRODUCT_CODE/code/MY_CUSTOMER_CODE`
 
 <aside class="warning">
-  Warning - This will delete the customer and all related data in CheddarGetter
+  Warning - This will delete the customer and all related data in <%= config[:general_name] %>
   and will delete the customer data at the gateway if a gateway is configured.
 </aside>
 
@@ -402,7 +402,7 @@ Delete all existing customers in the product with `productCode=MY_PRODUCT_CODE`
 
 <aside class="warning">
   Warning - This will delete all customers and all related data in
-  CheddarGetter. This method is <b>disabled</b> in production accounts.
+  <%= config[:general_name] %>. This method is <b>disabled</b> in production accounts.
 </aside>
 
 ### Update a Customer and Subscription
@@ -413,7 +413,7 @@ Delete all existing customers in the product with `productCode=MY_PRODUCT_CODE`
 curl -d "firstName=New&lastName=Info&email=new_info@example.com" \
 -d "subscription[planCode]=NEW_PLAN_CODE" \
 -u "<username>:<API key>" \
-https://cheddargetter.com/xml/customers/edit/productCode/MY_PRODUCT_CODE/code/canceled_reactivate
+<%= config[:general_url] %>/xml/customers/edit/productCode/MY_PRODUCT_CODE/code/canceled_reactivate
 ```
 
 ```php
@@ -447,7 +447,7 @@ client.edit_customer(
 ```shell
 curl -d "changeBillDate=2015-12-09" \
 -u "<username>:<API key>" \
-https://cheddargetter.com/xml/customers/edit-subscription/productCode/MY_PRODUCT_CODE/code/canceled_reactivate
+<%= config[:general_url] %>/xml/customers/edit-subscription/productCode/MY_PRODUCT_CODE/code/canceled_reactivate
 ```
 
 ```php
@@ -477,14 +477,14 @@ Name | Description
 `notes` | Limited to 255 characters
 `isVatExempt` | 1 or 0
 `vatNumber` | If the customer lives in a VAT eligible country and is exempt, provide the exemption number. Limited to 32 characters
-`firstContactDatetime` | Date or datetime in ISO 8601 format. (e.g., 2011-08-01 or 2011-08-01T15:30:00+00:00). See the [KB Article](http://support.cheddargetter.com/faqs/marketing-metrics/marketing-metrics)
-`referer` | A valid URL referer. Limited to 255 characters. See the [KB Article](http://support.cheddargetter.com/faqs/marketing-metrics/marketing-metrics)
-`campaignTerm` | The "term" or "keyword" phrase that lead a potential customer to your site. Google Adwords equivalent: "utm_term". See the [KB Article](http://support.cheddargetter.com/faqs/marketing-metrics/marketing-metrics)
-`campaignName` | The name of the marketing campaign. Google Adwords equivalent: "utm_campaign". See the [KB Article](http://support.cheddargetter.com/faqs/marketing-metrics/marketing-metrics)
-`campaignSource` | The source of the lead. Google Adwords equivalent: "utm_source". See the [KB Article](http://support.cheddargetter.com/faqs/marketing-metrics/marketing-metrics)
-`campaignMedium` | The medium used to find your site. Google Adwords equivalent: "utm_medium". See the [KB Article](http://support.cheddargetter.com/faqs/marketing-metrics/marketing-metrics)
-`campaignContent` | The content you wish to track. Google Adwords equivalent: "utm_content". See the [KB Article](http://support.cheddargetter.com/faqs/marketing-metrics/marketing-metrics)
-`metaData[<user-defined>]` | See the [KB Article](http://support.cheddargetter.com/kb/api-8/customer-meta-data) about customer metadata
+`firstContactDatetime` | Date or datetime in ISO 8601 format. (e.g., 2011-08-01 or 2011-08-01T15:30:00+00:00). See the [KB Article](<%= config[:support_url] %>/faqs/marketing-metrics/marketing-metrics)
+`referer` | A valid URL referer. Limited to 255 characters. See the [KB Article](<%= config[:support_url] %>/faqs/marketing-metrics/marketing-metrics)
+`campaignTerm` | The "term" or "keyword" phrase that lead a potential customer to your site. Google Adwords equivalent: "utm_term". See the [KB Article](<%= config[:support_url] %>/faqs/marketing-metrics/marketing-metrics)
+`campaignName` | The name of the marketing campaign. Google Adwords equivalent: "utm_campaign". See the [KB Article](<%= config[:support_url] %>/faqs/marketing-metrics/marketing-metrics)
+`campaignSource` | The source of the lead. Google Adwords equivalent: "utm_source". See the [KB Article](<%= config[:support_url] %>/faqs/marketing-metrics/marketing-metrics)
+`campaignMedium` | The medium used to find your site. Google Adwords equivalent: "utm_medium". See the [KB Article](<%= config[:support_url] %>/faqs/marketing-metrics/marketing-metrics)
+`campaignContent` | The content you wish to track. Google Adwords equivalent: "utm_content". See the [KB Article](<%= config[:support_url] %>/faqs/marketing-metrics/marketing-metrics)
+`metaData[<user-defined>]` | See the [KB Article](<%= config[:support_url] %>/kb/api-8/customer-meta-data) about customer metadata
 `subscription[method]` | "cc" (default) or "paypal"
 `subscription[planCode]` | Your code for the subscribed pricing plan
 `subscription[couponCode]` | Coupon code for the promotion you'd like to apply to the subscription
@@ -518,10 +518,10 @@ Name | Description
 <br/>
 <p>
   If the plan is a paid plan, credit card information is only required if you
-  have configured CheddarGetter to require it. It can be optional only if the
+  have configured <%= config[:general_name] %> to require it. It can be optional only if the
   next invoice is delayed. If a subscription on a paid plan does not have a
   credit card when it comes time to bill, the subscription will be auto-cancelled.
-  See the email templates <a href="http://support.cheddargetter.com/kb/operational-how-tos/email-notification-templates">KB Article</a> regarding free trials and the <em>Bill Reminder</em> email.
+  See the email templates <a href="<%= config[:support_url] %>/kb/operational-how-tos/email-notification-templates">KB Article</a> regarding free trials and the <em>Bill Reminder</em> email.
 </p>
 
 <p>
@@ -551,7 +551,7 @@ Name | Description
 </p>
   <p>
     Check out this article for more information about
-    <a href="http://support.cheddargetter.com/kb/api-8/using-paypal-with-the-api">
+    <a href="<%= config[:support_url] %>/kb/api-8/using-paypal-with-the-api">
     using the API with PayPal
     </a>.
   </p>
@@ -565,7 +565,7 @@ Name | Description
 ```shell
 curl -d "firstName=New&lastName=Name" \
 -u "<username>:<API key>" \
-https://cheddargetter.com/xml/customers/edit/productCode/MY_PRODUCT_CODE/code/canceled_reactivate
+<%= config[:general_url] %>/xml/customers/edit/productCode/MY_PRODUCT_CODE/code/canceled_reactivate
 ```
 
 ```php
@@ -602,7 +602,7 @@ Name | Description
 `email` | Valid email address
 `Company` | Limited to 60 characters
 `notes` | Limited to 255 characters
-`metaData[<user-defined>]` | See the [KB Article](http://support.cheddargetter.com/kb/api-8/customer-meta-data) about customer metadata
+`metaData[<user-defined>]` | See the [KB Article](<%= config[:support_url] %>/kb/api-8/customer-meta-data) about customer metadata
 `remoteAddress` | **Not Required ([See Below](#fraud-protection-rate-limiting))** Client IPv4 address
 
 ## Subscriptions
@@ -614,7 +614,7 @@ Name | Description
 ```shell
 curl -d "planCode=NEW_PLAN_CODE" \
 -u "<username>:<API key>" \
-https://cheddargetter.com/xml/customers/edit-subscription/productCode/MY_PRODUCT_CODE/code/canceled_reactivate
+<%= config[:general_url] %>/xml/customers/edit-subscription/productCode/MY_PRODUCT_CODE/code/canceled_reactivate
 ```
 
 ```php
@@ -670,10 +670,10 @@ Name | Description
 <br/>
 <p>
   If the plan is a paid plan, credit card information is only required if you
-  have configured CheddarGetter to require it. It can be optional only if the
+  have configured <%= config[:general_name] %> to require it. It can be optional only if the
   next invoice is delayed. If a subscription on a paid plan does not have a credit
   card when it comes time to bill, the subscription will be auto-cancelled.
-  See the email templates <a href="http://support.cheddargetter.com/kb/operational-how-tos/email-notification-templates">KB Article</a> regarding free trials and the <em>Bill Reminder</em> email.
+  See the email templates <a href="<%= config[:support_url] %>/kb/operational-how-tos/email-notification-templates">KB Article</a> regarding free trials and the <em>Bill Reminder</em> email.
 </p>
 
 <p>
@@ -703,7 +703,7 @@ Name | Description
 </p>
   <p>
     Check out this article for more information about
-    <a href="http://support.cheddargetter.com/kb/api-8/using-paypal-with-the-api">
+    <a href="<%= config[:support_url] %>/kb/api-8/using-paypal-with-the-api">
     using the API with PayPal
     </a>.
   </p>
@@ -728,7 +728,7 @@ Cancel an existing customer's subscription in the product with
 Use the tracked item endpoints to *set*, *increment*, or *decrement* the quantity of
 and item for an individual subscription.
 
-[Learn more about using Tracked Items in the Knowledge Base](http://support.cheddargetter.com/kb/pricing-plans/pricing-plan-basics#tracked-items)
+[Learn more about using Tracked Items in the Knowledge Base](<%= config[:support_url] %>/kb/pricing-plans/pricing-plan-basics#tracked-items)
 
 **Note:** Updates of item quantities on <em>canceled subscriptions</em> are only possible under a few circumstances:
 
@@ -742,7 +742,7 @@ and item for an individual subscription.
 
 ```shell
 curl -u "<username>:<API key>" \
-https://cheddargetter.com/xml/customers/add-item-quantity/productCode/MY_PRODUCT_CODE/code/canceled_reactivate/itemCode/MY_ITEM_CODE
+<%= config[:general_url] %>/xml/customers/add-item-quantity/productCode/MY_PRODUCT_CODE/code/canceled_reactivate/itemCode/MY_ITEM_CODE
 ```
 
 ```php
@@ -783,7 +783,7 @@ Name | Description
 
 ```shell
 curl -u "<username>:<API key>" \
-https://cheddargetter.com/xml/customers/remove-item-quantity/productCode/MY_PRODUCT_CODE/code/canceled_reactivate/itemCode/MY_ITEM_CODE
+<%= config[:general_url] %>/xml/customers/remove-item-quantity/productCode/MY_PRODUCT_CODE/code/canceled_reactivate/itemCode/MY_ITEM_CODE
 ```
 
 ```php
@@ -825,7 +825,7 @@ Name | Description
 ```shell
 curl -d "quantity=1.0000" \
 -u "<username>:<API key>" \
-https://cheddargetter.com/xml/customers/set-item-quantity/productCode/MY_PRODUCT_CODE/code/canceled_reactivate/itemCode/MY_ITEM_CODE
+<%= config[:general_url] %>/xml/customers/set-item-quantity/productCode/MY_PRODUCT_CODE/code/canceled_reactivate/itemCode/MY_ITEM_CODE
 ```
 
 ```php
@@ -873,7 +873,7 @@ curl -d "chargeCode=CHARGE_CODE" \
 -d "quantity=3" \
 -d "eachAmount=2.50" \
 -u "<username>:<API key>" \
-https://cheddargetter.com/xml/customers/add-charge/productCode/MY_PRODUCT_CODE/code/canceled_reactivate
+<%= config[:general_url] %>/xml/customers/add-charge/productCode/MY_PRODUCT_CODE/code/canceled_reactivate
 ```
 
 ```php
@@ -905,7 +905,7 @@ curl -d "chargeCode=CREDIT_CODE" \
 -d "quantity=2" \
 -d "eachAmount=-8.00" \
 -u "<username>:<API key>" \
-https://cheddargetter.com/xml/customers/add-charge/productCode/MY_PRODUCT_CODE/code/canceled_reactivate
+<%= config[:general_url] %>/xml/customers/add-charge/productCode/MY_PRODUCT_CODE/code/canceled_reactivate
 ```
 
 ```php
@@ -977,7 +977,7 @@ with `productCode=MY_PRODUCT_CODE`
 
 Name | Description
 ---- | -----------
-`chargeId` | **Required** CheddarGetter's ID for the charge/credit
+`chargeId` | **Required** <%= config[:general_name] %>'s ID for the charge/credit
 `invoicePeriod` | The billing period - 'current' (the default) or 'outstanding'. [See below](#current-vs-outstanding-invoice).
 `remoteAddress` | **Not Required ([see below](#fraud-protection-rate-limiting))** Client IPv4 address
 
@@ -1015,7 +1015,7 @@ Name | Description
   The customer must have an outstanding invoice. This method can be useful for
   manually retrying the transaction on an outstanding invoice. An invoice may
   be outstanding if all prior attempts to transact the invoice were unsuccessful
-  or if the invoice has not yet been attempted as with the <a href="http://support.cheddargetter.com/kb/operational-how-tos/web-hooks-service-hooks-and-captain-hooks#subscription-billable">
+  or if the invoice has not yet been attempted as with the <a href="<%= config[:support_url] %>/kb/operational-how-tos/web-hooks-service-hooks-and-captain-hooks#subscription-billable">
   Subscription Billable Event
   </a>.
   <br/>
@@ -1037,7 +1037,7 @@ Refund a transaction on a billed invoice in the product with `productCode=MY_PRO
 
 Name | Description
 ---- | -----------
-`number` or `id `| **Required** Either CheddarGetter's ID for the invoice or the CheddarGetter-generated invoice number
+`number` or `id `| **Required** Either <%= config[:general_name] %>'s ID for the invoice or the <%= config[:general_name] %>-generated invoice number
 `amount` | **Required** An amount less than or equal to the refundable amount. See notes.
 `remoteAddress` | **Not Required ([see below](#fraud-protection-rate-limiting))** Client IPv4 address
 
@@ -1065,7 +1065,7 @@ Void a transaction on a billed invoice in the product with `productCode=MY_PRODU
 
 Name | Description
 ---- | -----------
-`number` or `id` | **Required** Either CheddarGetter's ID for the invoice or the CheddarGetter-generated invoice number
+`number` or `id` | **Required** Either <%= config[:general_name] %>'s ID for the invoice or the <%= config[:general_name] %>-generated invoice number
 `remoteAddress` | **Not Required ([see below](#fraud-protection-rate-limiting))** lient IPv4 address
 
 <aside class="notice">
@@ -1075,20 +1075,20 @@ Name | Description
 
 ### Issue a Void or Refund
 
-Defer to CheddarGetter to decide if a void or a refund is executed against
+Defer to <%= config[:general_name] %> to decide if a void or a refund is executed against
 the invoice in the product with  `productCode=MY_PRODUCT_CODE`
 
 `/invoices/void-or-refund/productCode/MY_PRODUCT_CODE`
 
 Name | Description
 ---- | -----------
-`number` or `id` | **Required** Either CheddarGetter's ID for the invoice or the CheddarGetter-generated invoice number
+`number` or `id` | **Required** Either <%= config[:general_name] %>'s ID for the invoice or the <%= config[:general_name] %>-generated invoice number
 `remoteAddress` | **Not Required ([see below](#fraud-protection-rate-limiting))** Client IPv4 address
 
 <aside class="notice">
   Many billing solutions do not allow for voids. Voids are only possible for a
   short period of time after the transaction is executed. In short, determining
-  whether to execute a void or a refund is a moving target. Fortunately, CheddarGetter
+  whether to execute a void or a refund is a moving target. Fortunately, <%= config[:general_name] %>
   has already figured that out. Using this call makes voids and refunds simple.
   A drawback of using this method is that partial refunds are not possible.
 </aside>
@@ -1102,12 +1102,12 @@ with  `productCode=MY_PRODUCT_CODE`
 
 Name | Description
 ---- | -----------
-`number` or `id` | **Required** Either CheddarGetter's ID for the invoice or the CheddarGetter-generated invoice number
+`number` or `id` | **Required** Either <%= config[:general_name] %>'s ID for the invoice or the <%= config[:general_name] %>-generated invoice number
 `remoteAddress` | **Not Required ([see below](#fraud-protection-rate-limiting))** Client IPv4 address
 
 <aside class="notice">
   Email notifications must be enabled in your account.
-  <a href="https://cheddargetter.com/admin/emails">
+  <a href="<%= config[:general_url] %>/admin/emails">
     Check your settings here
   </a>.
   <br/>
