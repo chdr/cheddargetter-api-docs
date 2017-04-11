@@ -15,6 +15,11 @@ set :js_dir, 'javascripts'
 set :images_dir, 'images'
 set :fonts_dir, 'fonts'
 
+# Template Variables
+config[:general_name] = 'CheddarGetter'
+config[:general_url] = 'https://cheddargetter.com'
+config[:support_url] = 'http://support.cheddargetter.com'
+
 # Activate the syntax highlighter
 activate :syntax
 ready do
