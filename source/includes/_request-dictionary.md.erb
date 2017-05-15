@@ -189,8 +189,8 @@ Name | Description
 `lastName` | **Required** Limited to 40 characters
 `email` | **Required** Valid email address
 `company` |  Limited to 60 characters
-`isVatExempt` | 1 or 0
-`vatNumber` | If the customer is geographically eligible to be taxed and is exempt, provide the exemption number if applicable. Limited to 32 characters
+`isTaxExempt` | 1 or 0
+`taxNumber` | Customer tax number if applicable. Limited to 32 characters
 `notes` | Limited to 255 characters
 `firstContactDatetime` | Date or datetime in ISO 8601 format.(e.g., 2011-08-01 or 2011-08-01T15:30:00+00:00). See the [KB Article](<%= config[:support_url] %>/faqs/marketing-metrics/marketing-metrics)
 `referer` | A valid URL referer. Limited to 255 characters. See the [KB Article](<%= config[:support_url] %>/faqs/marketing-metrics/marketing-metrics)
@@ -299,8 +299,8 @@ Name | Description
 `lastName` | **Required** Limited to 40 characters
 `email` | **Required** Valid email address
 `company` | Limited to 60 characters
-`isVatExempt` | 1 or 0
-`vatNumber` | If the customer is geographically eligible to be taxed and is exempt, provide the exemption number if applicable. Limited to 32 characters
+`isTaxExempt` | 1 or 0
+`taxNumber` | Customer tax number if applicable. Limited to 32 characters
 `notes` | Limited to 255 characters
 `firstContactDatetime` | Date or datetime in ISO 8601 format. (e.g., 2011-08-01 or 2011-08-01T15:30:00+00:00). See the [KB Article](<%= config[:support_url] %>/faqs/marketing-metrics/marketing-metrics)
 `referer` | A valid URL referer. Limited to 255 characters. See the [KB Article](<%= config[:support_url] %>/faqs/marketing-metrics/marketing-metrics)
@@ -475,8 +475,8 @@ Name | Description
 `email` | Valid email address
 `company` | Limited to 60 characters
 `notes` | Limited to 255 characters
-`isVatExempt` | 1 or 0
-`vatNumber` | If the customer lives in a VAT eligible country and is exempt, provide the exemption number. Limited to 32 characters
+`isTaxExempt` | 1 or 0
+`taxNumber` | Customer tax number if applicable. Limited to 32 characters
 `firstContactDatetime` | Date or datetime in ISO 8601 format. (e.g., 2011-08-01 or 2011-08-01T15:30:00+00:00). See the [KB Article](<%= config[:support_url] %>/faqs/marketing-metrics/marketing-metrics)
 `referer` | A valid URL referer. Limited to 255 characters. See the [KB Article](<%= config[:support_url] %>/faqs/marketing-metrics/marketing-metrics)
 `campaignTerm` | The "term" or "keyword" phrase that lead a potential customer to your site. Google Adwords equivalent: "utm_term". See the [KB Article](<%= config[:support_url] %>/faqs/marketing-metrics/marketing-metrics)
