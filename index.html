@@ -650,12 +650,12 @@ and subscribe the customer to a pricing plan.</p>
 <td>Limited to 60 characters</td>
 </tr>
 <tr>
-<td><code class="prettyprint">isVatExempt</code></td>
+<td><code class="prettyprint">isTaxExempt</code></td>
 <td>1 or 0</td>
 </tr>
 <tr>
-<td><code class="prettyprint">vatNumber</code></td>
-<td>If the customer is geographically eligible to be taxed and is exempt, provide the exemption number if applicable. Limited to 32 characters</td>
+<td><code class="prettyprint">taxNumber</code></td>
+<td>Customer tax number if applicable. Limited to 32 characters</td>
 </tr>
 <tr>
 <td><code class="prettyprint">notes</code></td>
@@ -897,12 +897,12 @@ about whether or not importing is possible in your situation.</p>
 <td>Limited to 60 characters</td>
 </tr>
 <tr>
-<td><code class="prettyprint">isVatExempt</code></td>
+<td><code class="prettyprint">isTaxExempt</code></td>
 <td>1 or 0</td>
 </tr>
 <tr>
-<td><code class="prettyprint">vatNumber</code></td>
-<td>If the customer is geographically eligible to be taxed and is exempt, provide the exemption number if applicable. Limited to 32 characters</td>
+<td><code class="prettyprint">taxNumber</code></td>
+<td>Customer tax number if applicable. Limited to 32 characters</td>
 </tr>
 <tr>
 <td><code class="prettyprint">notes</code></td>
@@ -1181,12 +1181,12 @@ $customer = $client-&gt;editSubscription('canceled_reactivate', null, $data);
 <td>Limited to 255 characters</td>
 </tr>
 <tr>
-<td><code class="prettyprint">isVatExempt</code></td>
+<td><code class="prettyprint">isTaxExempt</code></td>
 <td>1 or 0</td>
 </tr>
 <tr>
-<td><code class="prettyprint">vatNumber</code></td>
-<td>If the customer lives in a VAT eligible country and is exempt, provide the exemption number. Limited to 32 characters</td>
+<td><code class="prettyprint">taxNumber</code></td>
+<td>Customer tax number if applicable. Limited to 32 characters</td>
 </tr>
 <tr>
 <td><code class="prettyprint">firstContactDatetime</code></td>
