@@ -4,17 +4,19 @@
 
 Authentication is achieved via HTTP Basic Authentication.
 
-`username: Email address of an authorized user of CheddarGetter`
-`password: Password for the authorized user`
+* `username`: Email address of an authorized user of CheddarGetter
+* `password`: Password for the authorized user
 
 It is recommended that you use a different user account for development accounts vs. live accounts.  It's also a good idea to use a dedicated user account just for API authentication.
 
 ## Request
 
 The standard URL format is:
+
 `https://cheddargetter.com/xml/<PATH>/productCode/<MY_PRODUCT_CODE>[/PARAMS]`
 
 For example:
+
 `https://cheddargetter.com/xml/customers/get/productCode/MY_PRODUCT_CODE`
 
 gets all customer data for the product with `productCode=MY_PRODUCT_CODE`
@@ -24,7 +26,7 @@ and
 `https://cheddargetter.com/xml/customers/get/code/MY_FIRST_CUSTOMER/productCode/MY_PRODUCT_CODE`
 
 gets customer data for the customer with `code=MY_FIRST_CUSTOMER` in the product
-with  `code=MY_PRODUCT_CODE`
+with `code=MY_PRODUCT_CODE`
 
 ## Response
 

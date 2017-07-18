@@ -12,10 +12,6 @@ Get all pricing plan data from the product with `productCode=MY_PRODUCT_CODE`
 
 `/plans/get/productCode/MY_PRODUCT_CODE`
 
-#### Response
-
-`Example response: plans.xml`
-
 ### Get a Single Pricing Plan
 
 Get the pricing plan data from the product with `productCode=MY_PRODUCT_CODE`
@@ -187,9 +183,10 @@ Name | Description
 `firstName` | **Required** Limited to 40 characters
 `lastName` | **Required** Limited to 40 characters
 `email` | **Required** Valid email address
-`company` |  Limited to 60 characters
-`isVatExempt` | 1 or 0
-`vatNumber` | If the customer is geographically eligible to be taxed and is exempt, provide the exemption number if applicable. Limited to 32 characters
+`company` | Limited to 60 characters
+`taxRate` | The rate for this customer if different than the configured default (e.g, 0.123)
+`isTaxExempt` | 1 or 0
+`taxNumber` | If the customer is exempt, provide the exemption number if applicable. Limited to 32 characters
 `notes` | Limited to 255 characters
 `firstContactDatetime` | Date or datetime in ISO 8601 format.(e.g., 2011-08-01 or 2011-08-01T15:30:00+00:00). See the [KB Article](http://support.cheddargetter.com/faqs/marketing-metrics/marketing-metrics)
 `referer` | A valid URL referer. Limited to 255 characters. See the [KB Article](http://support.cheddargetter.com/faqs/marketing-metrics/marketing-metrics)
@@ -277,8 +274,9 @@ Name | Description
 `lastName` | **Required** Limited to 40 characters
 `email` | **Required** Valid email address
 `company` | Limited to 60 characters
-`isVatExempt` | 1 or 0
-`vatNumber` | If the customer is geographically eligible to be taxed and is exempt, provide the exemption number if applicable. Limited to 32 characters
+`taxRate` | The rate for this customer if different than the configured default (e.g, 0.123)
+`isTaxExempt` | 1 or 0
+`taxNumber` | If the customer exempt, provide the exemption number if applicable. Limited to 32 characters
 `notes` | Limited to 255 characters
 `firstContactDatetime` | Date or datetime in ISO 8601 format. (e.g., 2011-08-01 or 2011-08-01T15:30:00+00:00). See the [KB Article](http://support.cheddargetter.com/faqs/marketing-metrics/marketing-metrics)
 `referer` | A valid URL referer. Limited to 255 characters. See the [KB Article](http://support.cheddargetter.com/faqs/marketing-metrics/marketing-metrics)
@@ -433,8 +431,9 @@ Name | Description
 `email` | Valid email address
 `company` | Limited to 60 characters
 `notes` | Limited to 255 characters
-`isVatExempt` | 1 or 0
-`vatNumber` | If the customer lives in a VAT eligible country and is exempt, provide the exemption number. Limited to 32 characters
+`taxRate` | The rate for this customer if different than the configured default (e.g, 0.123)
+`isTaxExempt` | 1 or 0
+`taxNumber` | If the customer is exempt, provide the exemption number. Limited to 32 characters
 `firstContactDatetime` | Date or datetime in ISO 8601 format. (e.g., 2011-08-01 or 2011-08-01T15:30:00+00:00). See the [KB Article](http://support.cheddargetter.com/faqs/marketing-metrics/marketing-metrics)
 `referer` | A valid URL referer. Limited to 255 characters. See the [KB Article](http://support.cheddargetter.com/faqs/marketing-metrics/marketing-metrics)
 `campaignTerm` | The "term" or "keyword" phrase that lead a potential customer to your site. Google Adwords equivalent: "utm_term". See the [KB Article](http://support.cheddargetter.com/faqs/marketing-metrics/marketing-metrics)
@@ -536,11 +535,21 @@ Update an existing customer's information in the product with
 
 Name | Description
 ---- | -----------
-`firstName` | Limited to 20 characters
-`lastName` | Limited to 20 characters
+`firstName` | Limited to 20 characters.
+`lastName` | Limited to 20 characters.
 `email` | Valid email address
-`Company` | Limited to 60 characters
+`company` | Limited to 60 characters
 `notes` | Limited to 255 characters
+`taxRate` | The rate for this customer if different than the configured default (e.g, 0.123)
+`isTaxExempt` | 1 or 0
+`taxNumber` | If the customer is exempt, provide the exemption number. Limited to 32 characters
+`firstContactDatetime` | Date or datetime in ISO 8601 format. (e.g., 2011-08-01 or 2011-08-01T15:30:00+00:00). See the [KB Article](http://support.cheddargetter.com/faqs/marketing-metrics/marketing-metrics)
+`referer` | A valid URL referer. Limited to 255 characters. See the [KB Article](http://support.cheddargetter.com/faqs/marketing-metrics/marketing-metrics)
+`campaignTerm` | The "term" or "keyword" phrase that lead a potential customer to your site. Google Adwords equivalent: "utm_term". See the [KB Article](http://support.cheddargetter.com/faqs/marketing-metrics/marketing-metrics)
+`campaignName` | The name of the marketing campaign. Google Adwords equivalent: "utm_campaign". See the [KB Article](http://support.cheddargetter.com/faqs/marketing-metrics/marketing-metrics)
+`campaignSource` | The source of the lead. Google Adwords equivalent: "utm_source". See the [KB Article](http://support.cheddargetter.com/faqs/marketing-metrics/marketing-metrics)
+`campaignMedium` | The medium used to find your site. Google Adwords equivalent: "utm_medium". See the [KB Article](http://support.cheddargetter.com/faqs/marketing-metrics/marketing-metrics)
+`campaignContent` | The content you wish to track. Google Adwords equivalent: "utm_content". See the [KB Article](http://support.cheddargetter.com/faqs/marketing-metrics/marketing-metrics)
 `metaData[<user-defined>]` | See the [KB Article](http://support.cheddargetter.com/kb/api-8/customer-meta-data) about customer metadata
 `remoteAddress` | **Not Required ([See Below](#fraud-protection-rate-limiting))** Client IPv4 address
 
