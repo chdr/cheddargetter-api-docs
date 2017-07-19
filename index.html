@@ -370,8 +370,10 @@ as <em>private</em>.</p>
 
 <p>Authentication is achieved via HTTP Basic Authentication.</p>
 
-<p><code class="prettyprint">username: Email address of an authorized user of CheddarGetter</code>
-<code class="prettyprint">password: Password for the authorized user</code></p>
+<ul>
+<li><code class="prettyprint">username</code>: Email address of an authorized user of CheddarGetter</li>
+<li><code class="prettyprint">password</code>: Password for the authorized user</li>
+</ul>
 
 <p>It is recommended that you use a different user account for development accounts vs. live accounts.  It&rsquo;s also a good idea to use a dedicated user account just for API authentication.</p>
 
@@ -380,8 +382,9 @@ as <em>private</em>.</p>
 <p>The standard URL format is:
 <code class="prettyprint">https://cheddargetter.com/xml/&lt;PATH&gt;/productCode/&lt;MY_PRODUCT_CODE&gt;[/PARAMS]</code></p>
 
-<p>For example:
-<code class="prettyprint">https://cheddargetter.com/xml/customers/get/productCode/MY_PRODUCT_CODE</code></p>
+<p>For example:</p>
+
+<p><code class="prettyprint">https://cheddargetter.com/xml/customers/get/productCode/MY_PRODUCT_CODE</code></p>
 
 <p>gets all customer data for the product with <code class="prettyprint">productCode=MY_PRODUCT_CODE</code></p>
 
@@ -390,7 +393,7 @@ as <em>private</em>.</p>
 <p><code class="prettyprint">https://cheddargetter.com/xml/customers/get/code/MY_FIRST_CUSTOMER/productCode/MY_PRODUCT_CODE</code></p>
 
 <p>gets customer data for the customer with <code class="prettyprint">code=MY_FIRST_CUSTOMER</code> in the product
-with  <code class="prettyprint">code=MY_PRODUCT_CODE</code></p>
+with <code class="prettyprint">code=MY_PRODUCT_CODE</code></p>
 
 <h2 id="response">Response</h2>
 
@@ -432,10 +435,6 @@ parameters.</p>
 <p>Get all pricing plan data from the product with <code class="prettyprint">productCode=MY_PRODUCT_CODE</code></p>
 
 <p><code class="prettyprint">/plans/get/productCode/MY_PRODUCT_CODE</code></p>
-
-<h4 id="response">Response</h4>
-
-<p><code class="prettyprint">Example response: plans.xml</code></p>
 
 <h3 id="get-a-single-pricing-plan">Get a Single Pricing Plan</h3>
 
@@ -648,6 +647,10 @@ and subscribe the customer to a pricing plan.</p>
 <tr>
 <td><code class="prettyprint">company</code></td>
 <td>Limited to 60 characters</td>
+</tr>
+<tr>
+<td><code class="prettyprint">taxRate</code></td>
+<td>The rate for this customer if different than the configured default (e.g, 0.123)</td>
 </tr>
 <tr>
 <td><code class="prettyprint">isTaxExempt</code></td>
@@ -895,6 +898,10 @@ about whether or not importing is possible in your situation.</p>
 <tr>
 <td><code class="prettyprint">company</code></td>
 <td>Limited to 60 characters</td>
+</tr>
+<tr>
+<td><code class="prettyprint">taxRate</code></td>
+<td>The rate for this customer if different than the configured default (e.g, 0.123)</td>
 </tr>
 <tr>
 <td><code class="prettyprint">isTaxExempt</code></td>
@@ -1181,6 +1188,10 @@ $customer = $client-&gt;editSubscription('canceled_reactivate', null, $data);
 <td>Limited to 255 characters</td>
 </tr>
 <tr>
+<td><code class="prettyprint">taxRate</code></td>
+<td>The rate for this customer if different than the configured default (e.g, 0.123)</td>
+</tr>
+<tr>
 <td><code class="prettyprint">isTaxExempt</code></td>
 <td>1 or 0</td>
 </tr>
@@ -1395,11 +1406,11 @@ $customer = $client-&gt;editCustomerOnly('canceled_reactivate', null, $data);
 </thead><tbody>
 <tr>
 <td><code class="prettyprint">firstName</code></td>
-<td>Limited to 20 characters</td>
+<td>Limited to 20 characters.</td>
 </tr>
 <tr>
 <td><code class="prettyprint">lastName</code></td>
-<td>Limited to 20 characters</td>
+<td>Limited to 20 characters.</td>
 </tr>
 <tr>
 <td><code class="prettyprint">email</code></td>
@@ -1412,6 +1423,46 @@ $customer = $client-&gt;editCustomerOnly('canceled_reactivate', null, $data);
 <tr>
 <td><code class="prettyprint">notes</code></td>
 <td>Limited to 255 characters</td>
+</tr>
+<tr>
+<td><code class="prettyprint">taxRate</code></td>
+<td>The rate for this customer if different than the configured default (e.g, 0.123)</td>
+</tr>
+<tr>
+<td><code class="prettyprint">isTaxExempt</code></td>
+<td>1 or 0</td>
+</tr>
+<tr>
+<td><code class="prettyprint">taxNumber</code></td>
+<td>Customer tax number if applicable. Limited to 32 characters</td>
+</tr>
+<tr>
+<td><code class="prettyprint">firstContactDatetime</code></td>
+<td>Date or datetime in ISO 8601 format. (e.g., 2011-08-01 or 2011-08-01T15:30:00+00:00). See the <a href="http://support.cheddargetter.com/faqs/marketing-metrics/marketing-metrics">KB Article</a></td>
+</tr>
+<tr>
+<td><code class="prettyprint">referer</code></td>
+<td>A valid URL referer. Limited to 255 characters. See the <a href="http://support.cheddargetter.com/faqs/marketing-metrics/marketing-metrics">KB Article</a></td>
+</tr>
+<tr>
+<td><code class="prettyprint">campaignTerm</code></td>
+<td>The &ldquo;term&rdquo; or &ldquo;keyword&rdquo; phrase that lead a potential customer to your site. Google Adwords equivalent: &ldquo;utm_term&rdquo;. See the <a href="http://support.cheddargetter.com/faqs/marketing-metrics/marketing-metrics">KB Article</a></td>
+</tr>
+<tr>
+<td><code class="prettyprint">campaignName</code></td>
+<td>The name of the marketing campaign. Google Adwords equivalent: &ldquo;utm_campaign&rdquo;. See the <a href="http://support.cheddargetter.com/faqs/marketing-metrics/marketing-metrics">KB Article</a></td>
+</tr>
+<tr>
+<td><code class="prettyprint">campaignSource</code></td>
+<td>The source of the lead. Google Adwords equivalent: &ldquo;utm_source&rdquo;. See the <a href="http://support.cheddargetter.com/faqs/marketing-metrics/marketing-metrics">KB Article</a></td>
+</tr>
+<tr>
+<td><code class="prettyprint">campaignMedium</code></td>
+<td>The medium used to find your site. Google Adwords equivalent: &ldquo;utm_medium&rdquo;. See the <a href="http://support.cheddargetter.com/faqs/marketing-metrics/marketing-metrics">KB Article</a></td>
+</tr>
+<tr>
+<td><code class="prettyprint">campaignContent</code></td>
+<td>The content you wish to track. Google Adwords equivalent: &ldquo;utm_content&rdquo;. See the <a href="http://support.cheddargetter.com/faqs/marketing-metrics/marketing-metrics">KB Article</a></td>
 </tr>
 <tr>
 <td><code class="prettyprint">metaData[&lt;user-defined&gt;]</code></td>
