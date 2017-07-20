@@ -16,9 +16,9 @@ set :images_dir, 'images'
 set :fonts_dir, 'fonts'
 
 # Template Variables
-config[:general_name] = 'CheddarGetter'
-config[:general_url] = 'https://cheddargetter.com'
-config[:support_url] = 'http://support.cheddargetter.com'
+config[:general_name] = 'Cheddar'
+config[:general_url] = 'https://getcheddar.com'
+config[:support_url] = 'http://support.getcheddar.com'
 
 # Activate the syntax highlighter
 activate :syntax
