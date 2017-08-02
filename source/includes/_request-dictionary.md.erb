@@ -210,7 +210,7 @@ Name | Description
 `subscription[ccFirstName]` | **Conditional (See Notes)** Limited to 40 characters
 `subscription[ccLastName]` | **Conditional (See Notes)** Limited to 40 characters
 `subscription[ccCompany]` | Limited to 60 characters
-`subscription[ccCountry]` | Limited to 60 characters. Many billing solutions require that the ISO 2 char codes are used.
+`subscription[ccCountry]` | Limited to 60 characters. Many payment processors require that the ISO 2 char codes are used.
 `subscription[ccAddress]` | Limited to 60 characters
 `subscription[ccCity]` | Limited to 40 characters
 `subscription[ccState]` | Limited to 40 characters. 2 character state/province codes are suggested when country is US/Canada.
@@ -253,7 +253,7 @@ Name | Description
     values instead of
     <code>subscription[ccNumber]</code>
     and <code>subscription[ccCardCode]</code>.
-    This feature is compatible with only some back-end billing solutions.
+    This feature is compatible with only some back-end payment processors.
     In some cases, only the <code>subscription[gatewayToken]</code> is
     required as the additional data is subsequently requested from the
     upstream gateway. In that case, params passed in the request will
@@ -282,7 +282,7 @@ Name | Description
 
 Import customers to the product with `productCode=MY_PRODUCT_CODE`. Existing
 paying (or non-paying) customers in another billing system may be imported while
-maintaining payment methods if the billing solution is compatible. Please [contact
+maintaining payment methods if the payment processor is compatible. Please [contact
 support](<%= config[:support_url] %>/discussion/new) for more information
 about whether or not importing is possible in your situation.
 
@@ -319,7 +319,7 @@ Name | Description
 `subscription[ccLastName]` | **Conditional** Limited to 40 characters. If you specify a `subscription[gatewayToken]`, this is required.
 `subscription[ccEmail]` | **Conditional** A valid email address. If you specify a subscription[gatewayToken] and  and `subscription[method]=paypal`, this is required and should be the email address of the PayPal account.
 `subscription[ccCompany]` | Limited to 60 characters
-`subscription[ccCountry]` | Limited to 60 characters. Many billing solutions require that the ISO 2 char codes are used.
+`subscription[ccCountry]` | Limited to 60 characters. Many payment processors require that the ISO 2 char codes are used.
 `subscription[ccAddress]` | Limited to 60 characters
 `subscription[ccCity]` | Limited to 40 characters
 `subscription[ccState]` | Limited to 40 characters. 2 character state/province codes are suggested when country is US/Canada.
@@ -333,16 +333,16 @@ Name | Description
 
 <aside class="notice">
 
-  Only direct credit card billing solutions are compatible with this import
+  Only direct credit card payment processors are compatible with this import
   when importing customers with a payment method. Future implementations may
-  include support for additional billing solution types.
+  include support for additional payment processor types.
 <br/>
 <br/>
 <p>
     Gateway token values are not validated against the upstream gateway. In
     other words, request data is validated for format only and not for accuracy
     or existence of the corresponding payment method reference at the upstream
-    billing solution.
+    payment processor.
 </p>
 <p>
     Up to 100 customers may be imported in one call. Customer data must be in a
@@ -496,7 +496,7 @@ Name | Description
 `subscription[ccFirstName]` | **Not Required (See Notes)** Limited to 20 characters
 `subscription[ccLastName]` | **Not Required (See Notes)** Limited to 20 characters
 `subscription[ccCompany]` | Limited to 50 characters
-`subscription[ccCountry]` | Limited to 60 characters. Many billing solutions require that the ISO 2 char codes are used.
+`subscription[ccCountry]` | Limited to 60 characters. Many payment processors require that the ISO 2 char codes are used.
 `subscription[ccAddress]` | Limited to 60 characters
 `subscription[ccCity]` | Limited to 40 characters
 `subscription[ccState]` | Suggested when country is US/Canada.
@@ -532,7 +532,7 @@ Name | Description
     values instead of
     <code>subscription[ccNumber]</code>
     and <code>subscription[ccCardCode]</code>.
-    This feature is compatible with only some back-end billing solutions.
+    This feature is compatible with only some back-end payment processors.
     In some cases, only the <code>subscription[gatewayToken]</code> is
     required as the additional data is subsequently requested from the
     upstream gateway. In that case, params passed in the request will
@@ -657,7 +657,7 @@ Name | Description
 `ccFirstName` | **Not Required (See Notes)** Limited to 20 characters
 `ccLastName` | **Not Required (See Notes)** Limited to 20 characters
 `ccCompany` | Limited to 50 characters
-`ccCountry` | Limited to 60 characters. Many billing solutions require that the ISO 2 char codes are used.
+`ccCountry` | Limited to 60 characters. Many payment processors require that the ISO 2 char codes are used.
 `ccAddress` | Limited to 60 characters
 `ccCity` | Limited to 40 characters
 `ccState` | Limited to 40 characters. 2 character state/province codes are suggested when country is US/Canada.
@@ -694,7 +694,7 @@ Name | Description
     values instead of
     <code>ccNumber</code>
     and <code>ccCardCode</code>.
-    This feature is compatible with only some back-end billing solutions.
+    This feature is compatible with only some back-end payment processors.
     In some cases, only the <code>subscription[gatewayToken]</code> is
     required as the additional data is subsequently requested from the
     upstream gateway. In that case, params passed in the request will
@@ -1051,7 +1051,7 @@ Name | Description
 `remoteAddress` | **Not Required ([see below](#fraud-protection-rate-limiting))** Client IPv4 address
 
 <aside class="notice">
-  Many billing solutions allow for partial refunds. If your billing solution
+  Many payment processors allow for partial refunds. If your payment processor
   allows partial refunds, the amount may be less than the amount of the original
   transaction. If the transaction had been previously refunded and you wish to
   issue another refund, the amount must be less than or equal to the original
@@ -1059,8 +1059,8 @@ Name | Description
   <br/>
   <br/>
   <p>
-    Some billing solutions allow for refunds prior to transaction settlement.
-    If your billing solution does not allow refunds prior to settlement, you
+    Some payment processors allow for refunds prior to transaction settlement.
+    If your payment processor does not allow refunds prior to settlement, you
     must execute a void of the full transaction or wait until after settlement
     occurs to issue a refund.
   </p>
@@ -1078,7 +1078,7 @@ Name | Description
 `remoteAddress` | **Not Required ([see below](#fraud-protection-rate-limiting))** lient IPv4 address
 
 <aside class="notice">
-  Some billing solutions allow for voids. If your billing solution allows
+  Some payment processors allow for voids. If your payment processor allows
   voids, a void can only be executed prior to transaction settlement.
 </aside>
 
@@ -1095,7 +1095,7 @@ Name | Description
 `remoteAddress` | **Not Required ([see below](#fraud-protection-rate-limiting))** Client IPv4 address
 
 <aside class="notice">
-  Many billing solutions do not allow for voids. Voids are only possible for a
+  Many payment processors do not allow for voids. Voids are only possible for a
   short period of time after the transaction is executed. In short, determining
   whether to execute a void or a refund is a moving target. Fortunately, <%= config[:general_name] %>
   has already figured that out. Using this call makes voids and refunds simple.
