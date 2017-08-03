@@ -750,7 +750,7 @@ and subscribe the customer to a pricing plan.</p>
 </tr>
 <tr>
 <td><code class="prettyprint">subscription[ccCountry]</code></td>
-<td>Limited to 60 characters. Many billing solutions require that the ISO 2 char codes are used.</td>
+<td>Limited to 60 characters. Many payment processors require that the ISO 2 char codes are used.</td>
 </tr>
 <tr>
 <td><code class="prettyprint">subscription[ccAddress]</code></td>
@@ -834,7 +834,7 @@ and subscribe the customer to a pricing plan.</p>
     values instead of
     <code>subscription[ccNumber]</code>
     and <code>subscription[ccCardCode]</code>.
-    This feature is compatible with only some back-end billing solutions.
+    This feature is compatible with only some back-end payment processors.
     In some cases, only the <code>subscription[gatewayToken]</code> is
     required as the additional data is subsequently requested from the
     upstream gateway. In that case, params passed in the request will
@@ -863,7 +863,7 @@ and subscribe the customer to a pricing plan.</p>
 
 <p>Import customers to the product with <code class="prettyprint">productCode=MY_PRODUCT_CODE</code>. Existing
 paying (or non-paying) customers in another billing system may be imported while
-maintaining payment methods if the billing solution is compatible. Please <a href="http://support.getcheddar.com/discussion/new">contact
+maintaining payment methods if the payment processor is compatible. Please <a href="http://support.getcheddar.com/discussion/new">contact
 support</a> for more information
 about whether or not importing is possible in your situation.</p>
 
@@ -993,7 +993,7 @@ about whether or not importing is possible in your situation.</p>
 </tr>
 <tr>
 <td><code class="prettyprint">subscription[ccCountry]</code></td>
-<td>Limited to 60 characters. Many billing solutions require that the ISO 2 char codes are used.</td>
+<td>Limited to 60 characters. Many payment processors require that the ISO 2 char codes are used.</td>
 </tr>
 <tr>
 <td><code class="prettyprint">subscription[ccAddress]</code></td>
@@ -1039,16 +1039,16 @@ about whether or not importing is possible in your situation.</p>
 
 <aside class="notice">
 
-  Only direct credit card billing solutions are compatible with this import
+  Only direct credit card payment processors are compatible with this import
   when importing customers with a payment method. Future implementations may
-  include support for additional billing solution types.
+  include support for additional payment processor types.
 <br/>
 <br/>
 <p>
     Gateway token values are not validated against the upstream gateway. In
     other words, request data is validated for format only and not for accuracy
     or existence of the corresponding payment method reference at the upstream
-    billing solution.
+    payment processor.
 </p>
 <p>
     Up to 100 customers may be imported in one call. Customer data must be in a
@@ -1281,7 +1281,7 @@ $customer = $client-&gt;editSubscription('canceled_reactivate', null, $data);
 </tr>
 <tr>
 <td><code class="prettyprint">subscription[ccCountry]</code></td>
-<td>Limited to 60 characters. Many billing solutions require that the ISO 2 char codes are used.</td>
+<td>Limited to 60 characters. Many payment processors require that the ISO 2 char codes are used.</td>
 </tr>
 <tr>
 <td><code class="prettyprint">subscription[ccAddress]</code></td>
@@ -1343,7 +1343,7 @@ $customer = $client-&gt;editSubscription('canceled_reactivate', null, $data);
     values instead of
     <code>subscription[ccNumber]</code>
     and <code>subscription[ccCardCode]</code>.
-    This feature is compatible with only some back-end billing solutions.
+    This feature is compatible with only some back-end payment processors.
     In some cases, only the <code>subscription[gatewayToken]</code> is
     required as the additional data is subsequently requested from the
     upstream gateway. In that case, params passed in the request will
@@ -1552,7 +1552,7 @@ $customer = $client-&gt;editSubscription('canceled_reactivate', null, $data);
 </tr>
 <tr>
 <td><code class="prettyprint">ccCountry</code></td>
-<td>Limited to 60 characters. Many billing solutions require that the ISO 2 char codes are used.</td>
+<td>Limited to 60 characters. Many payment processors require that the ISO 2 char codes are used.</td>
 </tr>
 <tr>
 <td><code class="prettyprint">ccAddress</code></td>
@@ -1615,7 +1615,7 @@ $customer = $client-&gt;editSubscription('canceled_reactivate', null, $data);
     values instead of
     <code>ccNumber</code>
     and <code>ccCardCode</code>.
-    This feature is compatible with only some back-end billing solutions.
+    This feature is compatible with only some back-end payment processors.
     In some cases, only the <code>subscription[gatewayToken]</code> is
     required as the additional data is subsequently requested from the
     upstream gateway. In that case, params passed in the request will
@@ -2050,7 +2050,7 @@ the customer&rsquo;s current payment method in the product with <code class="pre
 </tbody></table>
 
 <aside class="notice">
-  Many billing solutions allow for partial refunds. If your billing solution
+  Many payment processors allow for partial refunds. If your payment processor
   allows partial refunds, the amount may be less than the amount of the original
   transaction. If the transaction had been previously refunded and you wish to
   issue another refund, the amount must be less than or equal to the original
@@ -2058,8 +2058,8 @@ the customer&rsquo;s current payment method in the product with <code class="pre
   <br/>
   <br/>
   <p>
-    Some billing solutions allow for refunds prior to transaction settlement.
-    If your billing solution does not allow refunds prior to settlement, you
+    Some payment processors allow for refunds prior to transaction settlement.
+    If your payment processor does not allow refunds prior to settlement, you
     must execute a void of the full transaction or wait until after settlement
     occurs to issue a refund.
   </p>
@@ -2088,7 +2088,7 @@ the customer&rsquo;s current payment method in the product with <code class="pre
 </tbody></table>
 
 <aside class="notice">
-  Some billing solutions allow for voids. If your billing solution allows
+  Some payment processors allow for voids. If your payment processor allows
   voids, a void can only be executed prior to transaction settlement.
 </aside>
 
@@ -2116,7 +2116,7 @@ the invoice in the product with  <code class="prettyprint">productCode=MY_PRODUC
 </tbody></table>
 
 <aside class="notice">
-  Many billing solutions do not allow for voids. Voids are only possible for a
+  Many payment processors do not allow for voids. Voids are only possible for a
   short period of time after the transaction is executed. In short, determining
   whether to execute a void or a refund is a moving target. Fortunately, Cheddar
   has already figured that out. Using this call makes voids and refunds simple.
