@@ -3,7 +3,7 @@
 
   const host = window.location.host;
 
-  if (host === 'getcheddar.com') {
+  if (host === 'docs.getcheddar.com') {
     // load onetrust head script
     loadHeadScript();
   }
