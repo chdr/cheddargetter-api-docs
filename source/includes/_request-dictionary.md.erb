@@ -55,11 +55,11 @@ as 2010-07-04T00:00:00+00:00 <= X <= 2010-08-04T23:59:59+00:00.
 
 ```shell
 curl -u "<username>:<API key>" \
-<%= config[:general_url] %>/xml/customers/get/productCode/MY_PRODUCT_CODE/code/canceled_reactivate
+<%= config[:general_url] %>/xml/customers/get/productCode/MY_PRODUCT_CODE/code/MY_CUSTOMER_CODE
 ```
 
 ```php
-$customer = $client->getCustomer('canceled_reactivate');
+$customer = $client->getCustomer('MY_CUSTOMER_CODE');
 
 // get current subscription
 $subscription = $customer->getCustomerSubscription();
@@ -77,7 +77,7 @@ $invoice = $customer->getCustomerInvoice();
 ```
 
 ```ruby
-client.get_customer(:code => 'canceled_reactivate')
+client.get_customer(:code => 'MY_CUSTOMER_CODE')
 ```
 
 Get the customer data from the product with `productCode=MY_PRODUCT_CODE`
@@ -411,7 +411,7 @@ Delete all existing customers in the product with `productCode=MY_PRODUCT_CODE`
 curl -d "firstName=New&lastName=Info&email=new_info@example.com" \
 -d "subscription[planCode]=NEW_PLAN_CODE" \
 -u "<username>:<API key>" \
-<%= config[:general_url] %>/xml/customers/edit/productCode/MY_PRODUCT_CODE/code/canceled_reactivate
+<%= config[:general_url] %>/xml/customers/edit/productCode/MY_PRODUCT_CODE/code/MY_CUSTOMER_CODE
 ```
 
 ```php
@@ -423,12 +423,12 @@ $data = array(
 		'planCode' => 'NEW_PLAN_CODE'
 	)
 );
-$customer = $client->editCustomer('canceled_reactivate', null, $data);
+$customer = $client->editCustomer('MY_CUSTOMER_CODE', null, $data);
 ```
 
 ```ruby
 client.edit_customer(
-  {:code      => 'canceled_reactivate'},
+  {:code      => 'MY_CUSTOMER_CODE'},
   {
     :firstName => 'New',
     :lastName  => 'Info',
@@ -445,17 +445,17 @@ client.edit_customer(
 ```shell
 curl -d "changeBillDate=2015-12-09" \
 -u "<username>:<API key>" \
-<%= config[:general_url] %>/xml/customers/edit-subscription/productCode/MY_PRODUCT_CODE/code/canceled_reactivate
+<%= config[:general_url] %>/xml/customers/edit-subscription/productCode/MY_PRODUCT_CODE/code/MY_CUSTOMER_CODE
 ```
 
 ```php
 $data = array('changeBillDate' => '2015-12-09T09:36:37-05:00');
-$customer = $client->editSubscription('canceled_reactivate', null, $data);
+$customer = $client->editSubscription('MY_CUSTOMER_CODE', null, $data);
 ```
 
 ```ruby
 client.edit_subscription(
-  {:code      => 'canceled_reactivate'},
+  {:code      => 'MY_CUSTOMER_CODE'},
   {:changeBillDate     => '2015-12-09T09:36:37-05:00'}
 )
 ```
@@ -564,7 +564,7 @@ Name | Description
 ```shell
 curl -d "firstName=New&lastName=Name" \
 -u "<username>:<API key>" \
-<%= config[:general_url] %>/xml/customers/edit/productCode/MY_PRODUCT_CODE/code/canceled_reactivate
+<%= config[:general_url] %>/xml/customers/edit/productCode/MY_PRODUCT_CODE/code/MY_CUSTOMER_CODE
 ```
 
 ```php
@@ -573,12 +573,12 @@ $data = array(
 	'lastName'  => 'Info',
 	'email'     => 'new_info@example.com'
 );
-$customer = $client->editCustomerOnly('canceled_reactivate', null, $data);
+$customer = $client->editCustomerOnly('MY_CUSTOMER_CODE', null, $data);
 ```
 
 ```ruby
 client.edit_customer_only(
-  {:code       => 'canceled_reactivate'},
+  {:code       => 'MY_CUSTOMER_CODE'},
   {
     :firstName => 'New',
     :lastName  => 'Info',
@@ -623,17 +623,17 @@ Name | Description
 ```shell
 curl -d "planCode=NEW_PLAN_CODE" \
 -u "<username>:<API key>" \
-<%= config[:general_url] %>/xml/customers/edit-subscription/productCode/MY_PRODUCT_CODE/code/canceled_reactivate
+<%= config[:general_url] %>/xml/customers/edit-subscription/productCode/MY_PRODUCT_CODE/code/MY_CUSTOMER_CODE
 ```
 
 ```php
 $data = array('planCode' => 'NEW_PLAN_CODE');
-$customer = $client->editSubscription('canceled_reactivate', null, $data);
+$customer = $client->editSubscription('MY_CUSTOMER_CODE', null, $data);
 ```
 
 ```ruby
 client.edit_subscription(
-  {:code      => 'canceled_reactivate'},
+  {:code      => 'MY_CUSTOMER_CODE'},
   {:planCode     => 'NEW_PLAN_CODE'}
 )
 ```
@@ -751,7 +751,7 @@ and item for an individual subscription.
 
 ```shell
 curl -u "<username>:<API key>" \
-<%= config[:general_url] %>/xml/customers/add-item-quantity/productCode/MY_PRODUCT_CODE/code/canceled_reactivate/itemCode/MY_ITEM_CODE
+<%= config[:general_url] %>/xml/customers/add-item-quantity/productCode/MY_PRODUCT_CODE/code/MY_CUSTOMER_CODE/itemCode/MY_ITEM_CODE
 ```
 
 ```php
@@ -759,13 +759,13 @@ $data = array(
 	'itemCode' => 'MY_ITEM_CODE'
 );
 
-$quantity = $client->addItemQuantity('canceled_reactivate', null, $data);
+$quantity = $client->addItemQuantity('MY_CUSTOMER_CODE', null, $data);
 ```
 
 ```ruby
 client.add_item_quantity(
 	{
-		:code => 'canceled_reactivate',
+		:code => 'MY_CUSTOMER_CODE',
 		:item_code => 'MY_ITEM_CODE'
 	}
 )
@@ -792,7 +792,7 @@ Name | Description
 
 ```shell
 curl -u "<username>:<API key>" \
-<%= config[:general_url] %>/xml/customers/remove-item-quantity/productCode/MY_PRODUCT_CODE/code/canceled_reactivate/itemCode/MY_ITEM_CODE
+<%= config[:general_url] %>/xml/customers/remove-item-quantity/productCode/MY_PRODUCT_CODE/code/MY_CUSTOMER_CODE/itemCode/MY_ITEM_CODE
 ```
 
 ```php
@@ -800,13 +800,13 @@ $data = array(
 	'itemCode' => 'MY_ITEM_CODE'
 );
 
-$quantity = $client->removeItemQuantity('canceled_reactivate', null, $data);
+$quantity = $client->removeItemQuantity('MY_CUSTOMER_CODE', null, $data);
 ```
 
 ```ruby
 client.remove_item_quantity(
 	{
-		:code => 'canceled_reactivate',
+		:code => 'MY_CUSTOMER_CODE',
 		:item_code => 'MY_ITEM_CODE'
 	}
 )
@@ -834,7 +834,7 @@ Name | Description
 ```shell
 curl -d "quantity=1.0000" \
 -u "<username>:<API key>" \
-<%= config[:general_url] %>/xml/customers/set-item-quantity/productCode/MY_PRODUCT_CODE/code/canceled_reactivate/itemCode/MY_ITEM_CODE
+<%= config[:general_url] %>/xml/customers/set-item-quantity/productCode/MY_PRODUCT_CODE/code/MY_CUSTOMER_CODE/itemCode/MY_ITEM_CODE
 ```
 
 ```php
@@ -843,13 +843,13 @@ $data = array(
 	'quantity' => 1.0000
 );
 
-$quantity = $client->setItemQuantity('canceled_reactivate', null, $data);
+$quantity = $client->setItemQuantity('MY_CUSTOMER_CODE', null, $data);
 ```
 
 ```ruby
 client.set_item_quantity(
 	{
-		:code => 'canceled_reactivate',
+		:code => 'MY_CUSTOMER_CODE',
 		:item_code => 'MY_ITEM_CODE'
 	},
 	{
@@ -882,7 +882,7 @@ curl -d "chargeCode=CHARGE_CODE" \
 -d "quantity=3" \
 -d "eachAmount=2.50" \
 -u "<username>:<API key>" \
-<%= config[:general_url] %>/xml/customers/add-charge/productCode/MY_PRODUCT_CODE/code/canceled_reactivate
+<%= config[:general_url] %>/xml/customers/add-charge/productCode/MY_PRODUCT_CODE/code/MY_CUSTOMER_CODE
 ```
 
 ```php
@@ -892,12 +892,12 @@ $data = array(
 	'eachAmount' => 2.50,
 	'description' => 'Example charge'
 );
-$customer = $client->addCharge('canceled_reactivate', null, $data);
+$customer = $client->addCharge('MY_CUSTOMER_CODE', null, $data);
 ```
 
 ```ruby
 client.add_charge(
-	{:code => 'canceled_reactivate'},
+	{:code => 'MY_CUSTOMER_CODE'},
 	{
 		:chargeCode => 'CHARGE_CODE',
 		:quantity => 3,
@@ -914,7 +914,7 @@ curl -d "chargeCode=CREDIT_CODE" \
 -d "quantity=2" \
 -d "eachAmount=-8.00" \
 -u "<username>:<API key>" \
-<%= config[:general_url] %>/xml/customers/add-charge/productCode/MY_PRODUCT_CODE/code/canceled_reactivate
+<%= config[:general_url] %>/xml/customers/add-charge/productCode/MY_PRODUCT_CODE/code/MY_CUSTOMER_CODE
 ```
 
 ```php
@@ -924,12 +924,12 @@ $data = array(
 	'eachAmount' => 2.50,
 	'description' => 'Example charge'
 );
-$customer = $client->addCharge('canceled_reactivate', null, $data);
+$customer = $client->addCharge('MY_CUSTOMER_CODE', null, $data);
 ```
 
 ```ruby
 client.add_charge(
-	{:code => 'canceled_reactivate'},
+	{:code => 'MY_CUSTOMER_CODE'},
 	{
 		:chargeCode => 'CHARGE_CODE',
 		:quantity => 2,
@@ -960,19 +960,19 @@ Name | Description
 ```shell
 curl -d "chargeId=CHARGE_ID" \
 -u "<username>:<API key>" \
-https://chedddargetter.com/xml/customers/delete-charge/productCode/MY_PRODUCT_CODE/code/canceled_reactivate
+https://chedddargetter.com/xml/customers/delete-charge/productCode/MY_PRODUCT_CODE/code/MY_CUSTOMER_CODE
 ```
 
 ```php
 $data = array(
 	'chargeId' => 'CHARGE_ID'
 );
-$customer = $client->deleteCharge('canceled_reactivate', null, $data);
+$customer = $client->deleteCharge('MY_CUSTOMER_CODE', null, $data);
 ```
 
 ```ruby
 client.delete_charge(
-	{:code => 'canceled_reactivate'},
+	{:code => 'MY_CUSTOMER_CODE'},
 	{
 		:chargeId => 'CHARGE_ID'
 	}
