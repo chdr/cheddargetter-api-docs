@@ -538,8 +538,8 @@ as 2010-07-04T00:00:00+00:00 <= X <= 2010-08-04T23:59:59+00:00.
 <p>Get a Single Customer</p>
 </blockquote>
 <pre class="highlight shell tab-shell"><code>curl -u <span class="s2">"&lt;username&gt;:&lt;API key&gt;"</span> <span class="se">\</span>
-https://getcheddar.com/xml/customers/get/productCode/MY_PRODUCT_CODE/code/canceled_reactivate
-</code></pre><pre class="highlight php tab-php"><code>$customer = $client-&gt;getCustomer('canceled_reactivate');
+https://getcheddar.com/xml/customers/get/productCode/MY_PRODUCT_CODE/code/MY_CUSTOMER_CODE
+</code></pre><pre class="highlight php tab-php"><code>$customer = $client-&gt;getCustomer('MY_CUSTOMER_CODE');
 
 // get current subscription
 $subscription = $customer-&gt;getCustomerSubscription();
@@ -554,7 +554,7 @@ $plan = $customer-&gt;getCustomerPlan();
 $invoice = $customer-&gt;getCustomerInvoice();
 
 // See Cheddar_Response for more convenience methods
-</code></pre><pre class="highlight ruby tab-ruby"><code><span class="n">client</span><span class="p">.</span><span class="nf">get_customer</span><span class="p">(</span><span class="ss">:code</span> <span class="o">=&gt;</span> <span class="s1">'canceled_reactivate'</span><span class="p">)</span>
+</code></pre><pre class="highlight ruby tab-ruby"><code><span class="n">client</span><span class="p">.</span><span class="nf">get_customer</span><span class="p">(</span><span class="ss">:code</span> <span class="o">=&gt;</span> <span class="s1">'MY_CUSTOMER_CODE'</span><span class="p">)</span>
 </code></pre>
 <p>Get the customer data from the product with <code class="prettyprint">productCode=MY_PRODUCT_CODE</code>
 for the customer with <code class="prettyprint">code=MY_CUSTOMER_CODE</code> (or by id or <code class="prettyprint">invoiceNumber</code>).</p>
@@ -1139,7 +1139,7 @@ about whether or not importing is possible in your situation.</p>
 <pre class="highlight shell tab-shell"><code>curl -d <span class="s2">"firstName=New&amp;lastName=Info&amp;email=new_info@example.com"</span> <span class="se">\</span>
 -d <span class="s2">"subscription[planCode]=NEW_PLAN_CODE"</span> <span class="se">\</span>
 -u <span class="s2">"&lt;username&gt;:&lt;API key&gt;"</span> <span class="se">\</span>
-https://getcheddar.com/xml/customers/edit/productCode/MY_PRODUCT_CODE/code/canceled_reactivate
+https://getcheddar.com/xml/customers/edit/productCode/MY_PRODUCT_CODE/code/MY_CUSTOMER_CODE
 </code></pre><pre class="highlight php tab-php"><code>$data = array(
     'firstName' =&gt; 'New',
     'lastName'  =&gt; 'Info',
@@ -1148,9 +1148,9 @@ https://getcheddar.com/xml/customers/edit/productCode/MY_PRODUCT_CODE/code/cance
         'planCode' =&gt; 'NEW_PLAN_CODE'
     )
 );
-$customer = $client-&gt;editCustomer('canceled_reactivate', null, $data);
+$customer = $client-&gt;editCustomer('MY_CUSTOMER_CODE', null, $data);
 </code></pre><pre class="highlight ruby tab-ruby"><code><span class="n">client</span><span class="p">.</span><span class="nf">edit_customer</span><span class="p">(</span>
-  <span class="p">{</span><span class="ss">:code</span>      <span class="o">=&gt;</span> <span class="s1">'canceled_reactivate'</span><span class="p">},</span>
+  <span class="p">{</span><span class="ss">:code</span>      <span class="o">=&gt;</span> <span class="s1">'MY_CUSTOMER_CODE'</span><span class="p">},</span>
   <span class="p">{</span>
     <span class="ss">:firstName</span> <span class="o">=&gt;</span> <span class="s1">'New'</span><span class="p">,</span>
     <span class="ss">:lastName</span>  <span class="o">=&gt;</span> <span class="s1">'Info'</span><span class="p">,</span>
@@ -1166,11 +1166,11 @@ $customer = $client-&gt;editCustomer('canceled_reactivate', null, $data);
 </blockquote>
 <pre class="highlight shell tab-shell"><code>curl -d <span class="s2">"changeBillDate=2015-12-09"</span> <span class="se">\</span>
 -u <span class="s2">"&lt;username&gt;:&lt;API key&gt;"</span> <span class="se">\</span>
-https://getcheddar.com/xml/customers/edit-subscription/productCode/MY_PRODUCT_CODE/code/canceled_reactivate
+https://getcheddar.com/xml/customers/edit-subscription/productCode/MY_PRODUCT_CODE/code/MY_CUSTOMER_CODE
 </code></pre><pre class="highlight php tab-php"><code>$data = array('changeBillDate' =&gt; '2015-12-09T09:36:37-05:00');
-$customer = $client-&gt;editSubscription('canceled_reactivate', null, $data);
+$customer = $client-&gt;editSubscription('MY_CUSTOMER_CODE', null, $data);
 </code></pre><pre class="highlight ruby tab-ruby"><code><span class="n">client</span><span class="p">.</span><span class="nf">edit_subscription</span><span class="p">(</span>
-  <span class="p">{</span><span class="ss">:code</span>      <span class="o">=&gt;</span> <span class="s1">'canceled_reactivate'</span><span class="p">},</span>
+  <span class="p">{</span><span class="ss">:code</span>      <span class="o">=&gt;</span> <span class="s1">'MY_CUSTOMER_CODE'</span><span class="p">},</span>
   <span class="p">{</span><span class="ss">:changeBillDate</span>     <span class="o">=&gt;</span> <span class="s1">'2015-12-09T09:36:37-05:00'</span><span class="p">}</span>
 <span class="p">)</span>
 </code></pre>
@@ -1397,15 +1397,15 @@ $customer = $client-&gt;editSubscription('canceled_reactivate', null, $data);
 </blockquote>
 <pre class="highlight shell tab-shell"><code>curl -d <span class="s2">"firstName=New&amp;lastName=Name"</span> <span class="se">\</span>
 -u <span class="s2">"&lt;username&gt;:&lt;API key&gt;"</span> <span class="se">\</span>
-https://getcheddar.com/xml/customers/edit/productCode/MY_PRODUCT_CODE/code/canceled_reactivate
+https://getcheddar.com/xml/customers/edit/productCode/MY_PRODUCT_CODE/code/MY_CUSTOMER_CODE
 </code></pre><pre class="highlight php tab-php"><code>$data = array(
     'firstName' =&gt; 'New',
     'lastName'  =&gt; 'Info',
     'email'     =&gt; 'new_info@example.com'
 );
-$customer = $client-&gt;editCustomerOnly('canceled_reactivate', null, $data);
+$customer = $client-&gt;editCustomerOnly('MY_CUSTOMER_CODE', null, $data);
 </code></pre><pre class="highlight ruby tab-ruby"><code><span class="n">client</span><span class="p">.</span><span class="nf">edit_customer_only</span><span class="p">(</span>
-  <span class="p">{</span><span class="ss">:code</span>       <span class="o">=&gt;</span> <span class="s1">'canceled_reactivate'</span><span class="p">},</span>
+  <span class="p">{</span><span class="ss">:code</span>       <span class="o">=&gt;</span> <span class="s1">'MY_CUSTOMER_CODE'</span><span class="p">},</span>
   <span class="p">{</span>
     <span class="ss">:firstName</span> <span class="o">=&gt;</span> <span class="s1">'New'</span><span class="p">,</span>
     <span class="ss">:lastName</span>  <span class="o">=&gt;</span> <span class="s1">'Info'</span><span class="p">,</span>
@@ -1505,11 +1505,11 @@ $customer = $client-&gt;editCustomerOnly('canceled_reactivate', null, $data);
 </blockquote>
 <pre class="highlight shell tab-shell"><code>curl -d <span class="s2">"planCode=NEW_PLAN_CODE"</span> <span class="se">\</span>
 -u <span class="s2">"&lt;username&gt;:&lt;API key&gt;"</span> <span class="se">\</span>
-https://getcheddar.com/xml/customers/edit-subscription/productCode/MY_PRODUCT_CODE/code/canceled_reactivate
+https://getcheddar.com/xml/customers/edit-subscription/productCode/MY_PRODUCT_CODE/code/MY_CUSTOMER_CODE
 </code></pre><pre class="highlight php tab-php"><code>$data = array('planCode' =&gt; 'NEW_PLAN_CODE');
-$customer = $client-&gt;editSubscription('canceled_reactivate', null, $data);
+$customer = $client-&gt;editSubscription('MY_CUSTOMER_CODE', null, $data);
 </code></pre><pre class="highlight ruby tab-ruby"><code><span class="n">client</span><span class="p">.</span><span class="nf">edit_subscription</span><span class="p">(</span>
-  <span class="p">{</span><span class="ss">:code</span>      <span class="o">=&gt;</span> <span class="s1">'canceled_reactivate'</span><span class="p">},</span>
+  <span class="p">{</span><span class="ss">:code</span>      <span class="o">=&gt;</span> <span class="s1">'MY_CUSTOMER_CODE'</span><span class="p">},</span>
   <span class="p">{</span><span class="ss">:planCode</span>     <span class="o">=&gt;</span> <span class="s1">'NEW_PLAN_CODE'</span><span class="p">}</span>
 <span class="p">)</span>
 </code></pre>
@@ -1696,15 +1696,15 @@ and item for an individual subscription.</p>
 <p>Add Item Quantity</p>
 </blockquote>
 <pre class="highlight shell tab-shell"><code>curl -u <span class="s2">"&lt;username&gt;:&lt;API key&gt;"</span> <span class="se">\</span>
-https://getcheddar.com/xml/customers/add-item-quantity/productCode/MY_PRODUCT_CODE/code/canceled_reactivate/itemCode/MY_ITEM_CODE
+https://getcheddar.com/xml/customers/add-item-quantity/productCode/MY_PRODUCT_CODE/code/MY_CUSTOMER_CODE/itemCode/MY_ITEM_CODE
 </code></pre><pre class="highlight php tab-php"><code>$data = array(
     'itemCode' =&gt; 'MY_ITEM_CODE'
 );
 
-$quantity = $client-&gt;addItemQuantity('canceled_reactivate', null, $data);
+$quantity = $client-&gt;addItemQuantity('MY_CUSTOMER_CODE', null, $data);
 </code></pre><pre class="highlight ruby tab-ruby"><code><span class="n">client</span><span class="p">.</span><span class="nf">add_item_quantity</span><span class="p">(</span>
     <span class="p">{</span>
-        <span class="ss">:code</span> <span class="o">=&gt;</span> <span class="s1">'canceled_reactivate'</span><span class="p">,</span>
+        <span class="ss">:code</span> <span class="o">=&gt;</span> <span class="s1">'MY_CUSTOMER_CODE'</span><span class="p">,</span>
         <span class="ss">:item_code</span> <span class="o">=&gt;</span> <span class="s1">'MY_ITEM_CODE'</span>
     <span class="p">}</span>
 <span class="p">)</span>
@@ -1741,15 +1741,15 @@ $quantity = $client-&gt;addItemQuantity('canceled_reactivate', null, $data);
 <p>Remove Item Quantity</p>
 </blockquote>
 <pre class="highlight shell tab-shell"><code>curl -u <span class="s2">"&lt;username&gt;:&lt;API key&gt;"</span> <span class="se">\</span>
-https://getcheddar.com/xml/customers/remove-item-quantity/productCode/MY_PRODUCT_CODE/code/canceled_reactivate/itemCode/MY_ITEM_CODE
+https://getcheddar.com/xml/customers/remove-item-quantity/productCode/MY_PRODUCT_CODE/code/MY_CUSTOMER_CODE/itemCode/MY_ITEM_CODE
 </code></pre><pre class="highlight php tab-php"><code>$data = array(
     'itemCode' =&gt; 'MY_ITEM_CODE'
 );
 
-$quantity = $client-&gt;removeItemQuantity('canceled_reactivate', null, $data);
+$quantity = $client-&gt;removeItemQuantity('MY_CUSTOMER_CODE', null, $data);
 </code></pre><pre class="highlight ruby tab-ruby"><code><span class="n">client</span><span class="p">.</span><span class="nf">remove_item_quantity</span><span class="p">(</span>
     <span class="p">{</span>
-        <span class="ss">:code</span> <span class="o">=&gt;</span> <span class="s1">'canceled_reactivate'</span><span class="p">,</span>
+        <span class="ss">:code</span> <span class="o">=&gt;</span> <span class="s1">'MY_CUSTOMER_CODE'</span><span class="p">,</span>
         <span class="ss">:item_code</span> <span class="o">=&gt;</span> <span class="s1">'MY_ITEM_CODE'</span>
     <span class="p">}</span>
 <span class="p">)</span>
@@ -1787,16 +1787,16 @@ $quantity = $client-&gt;removeItemQuantity('canceled_reactivate', null, $data);
 </blockquote>
 <pre class="highlight shell tab-shell"><code>curl -d <span class="s2">"quantity=1.0000"</span> <span class="se">\</span>
 -u <span class="s2">"&lt;username&gt;:&lt;API key&gt;"</span> <span class="se">\</span>
-https://getcheddar.com/xml/customers/set-item-quantity/productCode/MY_PRODUCT_CODE/code/canceled_reactivate/itemCode/MY_ITEM_CODE
+https://getcheddar.com/xml/customers/set-item-quantity/productCode/MY_PRODUCT_CODE/code/MY_CUSTOMER_CODE/itemCode/MY_ITEM_CODE
 </code></pre><pre class="highlight php tab-php"><code>$data = array(
     'itemCode' =&gt; 'MY_ITEM_CODE',
     'quantity' =&gt; 1.0000
 );
 
-$quantity = $client-&gt;setItemQuantity('canceled_reactivate', null, $data);
+$quantity = $client-&gt;setItemQuantity('MY_CUSTOMER_CODE', null, $data);
 </code></pre><pre class="highlight ruby tab-ruby"><code><span class="n">client</span><span class="p">.</span><span class="nf">set_item_quantity</span><span class="p">(</span>
     <span class="p">{</span>
-        <span class="ss">:code</span> <span class="o">=&gt;</span> <span class="s1">'canceled_reactivate'</span><span class="p">,</span>
+        <span class="ss">:code</span> <span class="o">=&gt;</span> <span class="s1">'MY_CUSTOMER_CODE'</span><span class="p">,</span>
         <span class="ss">:item_code</span> <span class="o">=&gt;</span> <span class="s1">'MY_ITEM_CODE'</span>
     <span class="p">},</span>
     <span class="p">{</span>
@@ -1842,16 +1842,16 @@ $quantity = $client-&gt;setItemQuantity('canceled_reactivate', null, $data);
 -d <span class="s2">"quantity=3"</span> <span class="se">\</span>
 -d <span class="s2">"eachAmount=2.50"</span> <span class="se">\</span>
 -u <span class="s2">"&lt;username&gt;:&lt;API key&gt;"</span> <span class="se">\</span>
-https://getcheddar.com/xml/customers/add-charge/productCode/MY_PRODUCT_CODE/code/canceled_reactivate
+https://getcheddar.com/xml/customers/add-charge/productCode/MY_PRODUCT_CODE/code/MY_CUSTOMER_CODE
 </code></pre><pre class="highlight php tab-php"><code>$data = array(
     'chargeCode' =&gt; 'CHARGE_CODE',
     'quantity' =&gt; 3,
     'eachAmount' =&gt; 2.50,
     'description' =&gt; 'Example charge'
 );
-$customer = $client-&gt;addCharge('canceled_reactivate', null, $data);
+$customer = $client-&gt;addCharge('MY_CUSTOMER_CODE', null, $data);
 </code></pre><pre class="highlight ruby tab-ruby"><code><span class="n">client</span><span class="p">.</span><span class="nf">add_charge</span><span class="p">(</span>
-    <span class="p">{</span><span class="ss">:code</span> <span class="o">=&gt;</span> <span class="s1">'canceled_reactivate'</span><span class="p">},</span>
+    <span class="p">{</span><span class="ss">:code</span> <span class="o">=&gt;</span> <span class="s1">'MY_CUSTOMER_CODE'</span><span class="p">},</span>
     <span class="p">{</span>
         <span class="ss">:chargeCode</span> <span class="o">=&gt;</span> <span class="s1">'CHARGE_CODE'</span><span class="p">,</span>
         <span class="ss">:quantity</span> <span class="o">=&gt;</span> <span class="mi">3</span><span class="p">,</span>
@@ -1867,16 +1867,16 @@ $customer = $client-&gt;addCharge('canceled_reactivate', null, $data);
 -d <span class="s2">"quantity=2"</span> <span class="se">\</span>
 -d <span class="s2">"eachAmount=-8.00"</span> <span class="se">\</span>
 -u <span class="s2">"&lt;username&gt;:&lt;API key&gt;"</span> <span class="se">\</span>
-https://getcheddar.com/xml/customers/add-charge/productCode/MY_PRODUCT_CODE/code/canceled_reactivate
+https://getcheddar.com/xml/customers/add-charge/productCode/MY_PRODUCT_CODE/code/MY_CUSTOMER_CODE
 </code></pre><pre class="highlight php tab-php"><code>$data = array(
     'chargeCode' =&gt; 'CHARGE_CODE',
     'quantity' =&gt; 3,
     'eachAmount' =&gt; 2.50,
     'description' =&gt; 'Example charge'
 );
-$customer = $client-&gt;addCharge('canceled_reactivate', null, $data);
+$customer = $client-&gt;addCharge('MY_CUSTOMER_CODE', null, $data);
 </code></pre><pre class="highlight ruby tab-ruby"><code><span class="n">client</span><span class="p">.</span><span class="nf">add_charge</span><span class="p">(</span>
-    <span class="p">{</span><span class="ss">:code</span> <span class="o">=&gt;</span> <span class="s1">'canceled_reactivate'</span><span class="p">},</span>
+    <span class="p">{</span><span class="ss">:code</span> <span class="o">=&gt;</span> <span class="s1">'MY_CUSTOMER_CODE'</span><span class="p">},</span>
     <span class="p">{</span>
         <span class="ss">:chargeCode</span> <span class="o">=&gt;</span> <span class="s1">'CHARGE_CODE'</span><span class="p">,</span>
         <span class="ss">:quantity</span> <span class="o">=&gt;</span> <span class="mi">2</span><span class="p">,</span>
@@ -1929,13 +1929,13 @@ with <code class="prettyprint">productCode=MY_PRODUCT_CODE</code></p>
 </blockquote>
 <pre class="highlight shell tab-shell"><code>curl -d <span class="s2">"chargeId=CHARGE_ID"</span> <span class="se">\</span>
 -u <span class="s2">"&lt;username&gt;:&lt;API key&gt;"</span> <span class="se">\</span>
-https://chedddargetter.com/xml/customers/delete-charge/productCode/MY_PRODUCT_CODE/code/canceled_reactivate
+https://chedddargetter.com/xml/customers/delete-charge/productCode/MY_PRODUCT_CODE/code/MY_CUSTOMER_CODE
 </code></pre><pre class="highlight php tab-php"><code>$data = array(
     'chargeId' =&gt; 'CHARGE_ID'
 );
-$customer = $client-&gt;deleteCharge('canceled_reactivate', null, $data);
+$customer = $client-&gt;deleteCharge('MY_CUSTOMER_CODE', null, $data);
 </code></pre><pre class="highlight ruby tab-ruby"><code><span class="n">client</span><span class="p">.</span><span class="nf">delete_charge</span><span class="p">(</span>
-    <span class="p">{</span><span class="ss">:code</span> <span class="o">=&gt;</span> <span class="s1">'canceled_reactivate'</span><span class="p">},</span>
+    <span class="p">{</span><span class="ss">:code</span> <span class="o">=&gt;</span> <span class="s1">'MY_CUSTOMER_CODE'</span><span class="p">},</span>
     <span class="p">{</span>
         <span class="ss">:chargeId</span> <span class="o">=&gt;</span> <span class="s1">'CHARGE_ID'</span>
     <span class="p">}</span>
