@@ -1,19 +1,19 @@
 Vagrant.configure(2) do |config|
   config.vm.box = "ubuntu/trusty64"
   config.vm.network :forwarded_port, guest: 4567, host: 4567
-  config.ssh.forward_agent = true
-  config.vm.provider :virtualbox do |vb|
-    vb.customize ["modifyvm", :id, "--memory", 768]
+  config.vm.provider "virtualbox" do |vb|
+    vb.memory = "2048"
   end
 
   config.vm.provision "bootstrap",
     type: "shell",
     inline: <<-SHELL
-      sudo add-apt-repository ppa:brightbox/ruby-ng-experimental
+      sudo apt-add-repository ppa:brightbox/ruby-ng
       sudo apt-get update
-      sudo apt-get install -yq ruby2.2 ruby2.2-dev pkg-config build-essential nodejs git libxml2-dev libxslt-dev
+      sudo apt-get install -yq ruby2.4 ruby2.4-dev
+      sudo apt-get install -yq pkg-config build-essential nodejs git libxml2-dev libxslt-dev
       sudo apt-get autoremove -yq
-      gem2.2 install --no-ri --no-rdoc bundler
+      gem2.4 install --no-ri --no-rdoc bundler
     SHELL
 
   # add the local user git config to the vm
