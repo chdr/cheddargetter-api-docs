@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html>
   <head>
@@ -222,9 +223,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <img src="images/navbar.png" alt="Navbar" />
       </span>
     </a>
-    <div class="tocify-wrapper">
+    <div class="toc-wrapper">
       <h4>API Reference</h4>
-      <img src="images/logo.svg" alt="Logo" />
+      <img src="images/logo.svg" class="logo" alt="Logo" />
         <div class="lang-selector">
               <a href="#" data-language-name="shell">cUrl</a>
               <a href="#" data-language-name="php">php</a>
@@ -234,14 +235,120 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <input type="text" class="search" id="input-search" placeholder="Search">
         </div>
         <ul class="search-results"></ul>
-      <div id="toc">
-      </div>
-
-      <ul class="toc-footer">
-          <li><a href="https://getcheddar.com">Go to Cheddar</a></li>
-          <li><a href="https://github.com/tripit/slate">Documentation Powered by Slate</a></li>
+      <ul id="toc" class="toc-list-h1">
+          <li>
+            <a href="#introduction" class="toc-h1 toc-link" data-title="Introduction">Introduction</a>
+          </li>
+          <li>
+            <a href="#how-does-it-work" class="toc-h1 toc-link" data-title="How Does It Work?">How Does It Work?</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#ok-that-39-s-nice-but-how-do-i-use-it" class="toc-h2 toc-link" data-title="Ok, That's Nice But How Do I Use It?">Ok, That's Nice But How Do I Use It?</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#open-source-wrappers" class="toc-h1 toc-link" data-title="Open Source Wrappers">Open Source Wrappers</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#ruby" class="toc-h2 toc-link" data-title="Ruby">Ruby</a>
+                  </li>
+                  <li>
+                    <a href="#php" class="toc-h2 toc-link" data-title="PHP">PHP</a>
+                  </li>
+                  <li>
+                    <a href="#python" class="toc-h2 toc-link" data-title="Python">Python</a>
+                  </li>
+                  <li>
+                    <a href="#node-js" class="toc-h2 toc-link" data-title="Node.js">Node.js</a>
+                  </li>
+                  <li>
+                    <a href="#java" class="toc-h2 toc-link" data-title="Java">Java</a>
+                  </li>
+                  <li>
+                    <a href="#c-35" class="toc-h2 toc-link" data-title="C#">C#</a>
+                  </li>
+                  <li>
+                    <a href="#coldfusion" class="toc-h2 toc-link" data-title="ColdFusion">ColdFusion</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#support" class="toc-h1 toc-link" data-title="Support">Support</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#api-knowledge-base" class="toc-h2 toc-link" data-title="API Knowledge Base">API Knowledge Base</a>
+                  </li>
+                  <li>
+                    <a href="#general-knowledge-base" class="toc-h2 toc-link" data-title="General Knowledge Base">General Knowledge Base</a>
+                  </li>
+                  <li>
+                    <a href="#public-and-private-discussion" class="toc-h2 toc-link" data-title="Public and Private Discussion">Public and Private Discussion</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#request-response-format" class="toc-h1 toc-link" data-title="Request/Response Format">Request/Response Format</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#authentication" class="toc-h2 toc-link" data-title="Authentication">Authentication</a>
+                  </li>
+                  <li>
+                    <a href="#request" class="toc-h2 toc-link" data-title="Request">Request</a>
+                  </li>
+                  <li>
+                    <a href="#response" class="toc-h2 toc-link" data-title="Response">Response</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#request-dictionary" class="toc-h1 toc-link" data-title="Request Dictionary">Request Dictionary</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#pricing-plans" class="toc-h2 toc-link" data-title="Pricing Plans">Pricing Plans</a>
+                  </li>
+                  <li>
+                    <a href="#customers" class="toc-h2 toc-link" data-title="Customers">Customers</a>
+                  </li>
+                  <li>
+                    <a href="#subscriptions" class="toc-h2 toc-link" data-title="Subscriptions">Subscriptions</a>
+                  </li>
+                  <li>
+                    <a href="#tracked-items" class="toc-h2 toc-link" data-title="Tracked Items">Tracked Items</a>
+                  </li>
+                  <li>
+                    <a href="#invoice-interactions" class="toc-h2 toc-link" data-title="Invoice Interactions">Invoice Interactions</a>
+                  </li>
+                  <li>
+                    <a href="#promotions" class="toc-h2 toc-link" data-title="Promotions">Promotions</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#current-vs-outstanding-invoice" class="toc-h1 toc-link" data-title="Current vs. Outstanding Invoice">Current vs. Outstanding Invoice</a>
+          </li>
+          <li>
+            <a href="#response-codes" class="toc-h1 toc-link" data-title="Response Codes">Response Codes</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#http-status-codes" class="toc-h2 toc-link" data-title="HTTP Status Codes">HTTP Status Codes</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#error-messages" class="toc-h1 toc-link" data-title="Error Messages">Error Messages</a>
+          </li>
+          <li>
+            <a href="#fraud-protection-rate-limiting" class="toc-h1 toc-link" data-title="Fraud Protection, Rate Limiting">Fraud Protection, Rate Limiting</a>
+          </li>
+          <li>
+            <a href="#webhooks-reverse-api-callbacks" class="toc-h1 toc-link" data-title="Webhooks, Reverse API, Callbacks">Webhooks, Reverse API, Callbacks</a>
+          </li>
       </ul>
-
+      <ul class="toc-footer">
+        <li><a href="https://getcheddar.com">Go to Cheddar</a></li>
+        <li><a href="https://github.com/tripit/slate">Documentation Powered by Slate</a></li>
+      </ul>
     </div>
     <div class="page-wrapper">
       <div class="dark-box">
@@ -250,47 +357,35 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
       </div>
       <div class="content">
-        
-          <h1 id="introduction">Introduction</h1>
-
+        <h1 id='introduction'>Introduction</h1>
 <p>The Cheddar API enables you to leverage the full power of Cheddar
 directly into your custom application. You can use our API with any programming
 language to integrate the recurring billing and subscription management
 processes curated by Cheddar.</p>
-
-          <h1 id="how-does-it-work">How Does It Work?</h1>
-
+<h1 id='how-does-it-work'>How Does It Work?</h1>
 <p>Our API utilizes a REST-like interface where method calls are made by sending
 HTTP GET or POST requests.  Response data is returned in XML format.</p>
 
 <p>The response contains an HTTP status code of 200 for a successful request.
 A status code of 400 or greater is returned upon an adverse condition.
 That makes handling errors quite simple.</p>
-
-<h2 id="ok-thats-nice-but-how-do-i-use-it">Ok, That&rsquo;s Nice But How Do I Use It?</h2>
-
+<h2 id='ok-that-39-s-nice-but-how-do-i-use-it'>Ok, That&#39;s Nice But How Do I Use It?</h2>
 <p>First, I suggest reviewing our <a href="#open-source-wrappers">Open Source Wrappers</a>
 available for you to use.  They make integrating quite easy.</p>
 
-<p>You&rsquo;re also welcome to write your own code to work with the API. If you have
-questions about that, <a href="#support">we&rsquo;re here to help</a>.</p>
-
-<h3 id="sample-integration">Sample Integration</h3>
-
+<p>You&#39;re also welcome to write your own code to work with the API. If you have
+questions about that, <a href="#support">we&#39;re here to help</a>.</p>
+<h3 id='sample-integration'>Sample Integration</h3>
 <p>There are just a few things to consider when planning for an integration with
-the Cheddar API.  We&rsquo;ve created a KB Article on the subject based on our
+the Cheddar API.  We&#39;ve created a KB Article on the subject based on our
 own PHP wrapper. <a href="http://support.getcheddar.com/kb/api-8/sample-integration-roadmap">Check it out</a>.</p>
-
-          <h1 id="open-source-wrappers">Open Source Wrappers</h1>
-
+<h1 id='open-source-wrappers'>Open Source Wrappers</h1>
 <p>The Cheddar API can be leveraged by any programming language. All publicly
 available code libraries will be made available as they are created. Discussion
 of these code libraries is welcomed in the Cheddar API Discussion Forum.
 Please visit <a href="http://support.getcheddar.com/">the support forum</a>
 for more information.</p>
-
-<h2 id="ruby">Ruby</h2>
-
+<h2 id='ruby'>Ruby</h2>
 <p>The officially supported gem from Michael at <a href="http://www.expectedbehavior.com/">ExpectedBehavior</a>.
 The ExpectedBehavior gem fully implements the API and includes 100% test coverage.
 <a href="http://www.rubydoc.info/gems/cheddargetter_client_ruby">Check out the docs</a>.</p>
@@ -298,11 +393,9 @@ The ExpectedBehavior gem fully implements the API and includes 100% test coverag
 <ul>
 <li><a href="https://github.com/expectedbehavior/cheddargetter_client_ruby">https://github.com/expectedbehavior/cheddargetter_client_ruby</a></li>
 </ul>
-
-<h2 id="php">PHP</h2>
-
+<h2 id='php'>PHP</h2>
 <p>The PHP Cheddar Client is a wrapper for the Cheddar API provided and
-supported by the Cheddar team.  There&rsquo;s a nice
+supported by the Cheddar team.  There&#39;s a nice
 <a href="http://support.getcheddar.com/kb/api-8/php-client-library-quick-start">Quick Start Guide</a>.
 This ZF-compatible library is provided as an open source repository via GitHub
 here:</p>
@@ -310,34 +403,26 @@ here:</p>
 <ul>
 <li><a href="http://github.com/marcguyer/cheddargetter-client-php">http://github.com/marcguyer/cheddar-client-php</a></li>
 </ul>
-
-<h2 id="python">Python</h2>
-
+<h2 id='python'>Python</h2>
 <p><a href="https://www.smartfile.com/">Smartfile</a> has taken over maintenance of Sharpy. Thanks,  <a href="http://twitter.com/theSeanOC">@theSeanOC</a> for the original lib!</p>
 
 <ul>
 <li><a href="https://github.com/smartfile/sharpy">https://github.com/smartfile/sharpy</a></li>
 </ul>
-
-<h2 id="node-js">Node.js</h2>
-
+<h2 id='node-js'>Node.js</h2>
 <p><a href="http://www.jamiter.com/">Michiel ter Reehorst</a> has taken over maintenance of the Node.js lib. Follow <a href="https://twitter.com/_jamiter">@_jamiter</a>. Thanks, <a href="https://twitter.com/respectTheCode">@respectTheCode</a> for the original lib!</p>
 
 <ul>
 <li><a href="https://github.com/jamiter/node-cheddargetter">https://github.com/jamiter/node-cheddargetter</a></li>
 </ul>
-
-<h2 id="java">Java</h2>
-
+<h2 id='java'>Java</h2>
 <p>David of <a href="http://rusticisoftware.com">Rustici Software</a> has posted his Java
 offering on GitHub.</p>
 
 <ul>
 <li><a href="https://github.com/RusticiSoftware/CheddarClient">https://github.com/RusticiSoftware/CheddarClient</a></li>
 </ul>
-
-<h2 id="c">C&#35;</h2>
-
+<h2 id='c-35'>C&#35;</h2>
 <p>Johnny Arguelles of CollabCoders made his extension of <a href="https://github.com/nofxsnap">John Siladie</a>’s
 wrapper available on <a href="https://www.nuget.org/packages/CheddarGetter.CollabCoders">NuGet</a>.</p>
 
@@ -345,133 +430,97 @@ wrapper available on <a href="https://www.nuget.org/packages/CheddarGetter.Colla
 <li><a href="https://github.com/collabcoders/CheddarGetter">https://github.com/collabcoders/CheddarGetter</a></li>
 </ul>
 
-<p>Take a look at <a href="http://www.shorepound.net/">Nathan Arnolds</a>&lsquo;s fork of
-<a href="https://github.com/nofxsnap">John Siladie</a>&rsquo;s initial release.</p>
+<p>Take a look at <a href="http://www.shorepound.net/">Nathan Arnolds</a>&#39;s fork of
+<a href="https://github.com/nofxsnap">John Siladie</a>&#39;s initial release.</p>
 
 <ul>
 <li><a href="https://github.com/shorepound/CheddarGetter">https://github.com/shorepound/CheddarGetter</a></li>
 </ul>
-
-<h2 id="coldfusion">ColdFusion</h2>
-
+<h2 id='coldfusion'>ColdFusion</h2>
 <p><a href="http://www.scottsdalewebsitedesign.com/">Will</a> has posted his ColdFusion offering at RIAForge.</p>
 
 <ul>
 <li><a href="http://cfcheddargetter.riaforge.org/">http://cfcheddargetter.riaforge.org/</a></li>
 </ul>
-
-          <h1 id="support">Support</h1>
-
+<h1 id='support'>Support</h1>
 <p>If you have questions about using the Cheddar API, the following support
 resources are available:</p>
-
-<h2 id="api-knowledge-base">API Knowledge Base</h2>
-
+<h2 id='api-knowledge-base'>API Knowledge Base</h2>
 <p>Visit the official <a href="http://support.getcheddar.com/kb/api-8">Cheddar API Knowledge Base</a>.
 Most answers are found within this API documentation or within the Cheddar
 API Knowledge Base.</p>
-
-<h2 id="general-knowledge-base">General Knowledge Base</h2>
-
+<h2 id='general-knowledge-base'>General Knowledge Base</h2>
 <p>We publish all known issues in our Knowledge Base because developers leveraging
 the Cheddar API best exercise the code and identify potential errors.
 If you have a problem, please search the <a href="http://support.getcheddar.com/kb">Knowledge Base</a>
 to see if we are already aware of the issue. If you verify an issue report does
 not exist, please describe your issue in a new post with as much detail as possible.</p>
-
-<h2 id="public-and-private-discussion">Public and Private Discussion</h2>
-
+<h2 id='public-and-private-discussion'>Public and Private Discussion</h2>
 <p>If you need help not found in the Knowledge Base, start a
 <a href="http://support.getcheddar.com/discussion/new">new public discussion</a>.
 If your question contains sensitive information, feel free to mark the discussion
 as <em>private</em>.</p>
-
-          <h1 id="request-response-format">Request/Response Format</h1>
-
-<h2 id="authentication">Authentication</h2>
-
+<h1 id='request-response-format'>Request/Response Format</h1><h2 id='authentication'>Authentication</h2>
 <p>Authentication is achieved via HTTP Basic Authentication.</p>
 
 <ul>
-<li><code class="prettyprint">username</code>: Email address of an authorized user of Cheddar</li>
-<li><code class="prettyprint">password</code>: Password for the authorized user</li>
+<li><code>username</code>: Email address of an authorized user of Cheddar</li>
+<li><code>password</code>: Password for the authorized user</li>
 </ul>
 
-<p>It is recommended that you use a different user account for development accounts vs. live accounts.  It&rsquo;s also a good idea to use a dedicated user account just for API authentication.</p>
-
-<h2 id="request">Request</h2>
-
+<p>It is recommended that you use a different user account for development accounts vs. live accounts.  It&#39;s also a good idea to use a dedicated user account just for API authentication.</p>
+<h2 id='request'>Request</h2>
 <p>The standard URL format is:
-<code class="prettyprint">https://getcheddar.com/xml/&lt;PATH&gt;/productCode/&lt;MY_PRODUCT_CODE&gt;[/PARAMS]</code></p>
+<code>https://getcheddar.com/xml/&lt;PATH&gt;/productCode/&lt;MY_PRODUCT_CODE&gt;[/PARAMS]</code></p>
 
 <p>For example:</p>
 
-<p><code class="prettyprint">https://getcheddar.com/xml/customers/get/productCode/MY_PRODUCT_CODE</code></p>
+<p><code>https://getcheddar.com/xml/customers/get/productCode/MY_PRODUCT_CODE</code></p>
 
-<p>gets all customer data for the product with <code class="prettyprint">productCode=MY_PRODUCT_CODE</code></p>
+<p>gets all customer data for the product with <code>productCode=MY_PRODUCT_CODE</code></p>
 
 <p>and</p>
 
-<p><code class="prettyprint">https://getcheddar.com/xml/customers/get/code/MY_FIRST_CUSTOMER/productCode/MY_PRODUCT_CODE</code></p>
+<p><code>https://getcheddar.com/xml/customers/get/code/MY_FIRST_CUSTOMER/productCode/MY_PRODUCT_CODE</code></p>
 
-<p>gets customer data for the customer with <code class="prettyprint">code=MY_FIRST_CUSTOMER</code> in the product
-with <code class="prettyprint">code=MY_PRODUCT_CODE</code></p>
-
-<h2 id="response">Response</h2>
-
+<p>gets customer data for the customer with <code>code=MY_FIRST_CUSTOMER</code> in the product
+with <code>code=MY_PRODUCT_CODE</code></p>
+<h2 id='response'>Response</h2>
 <p>Response format is XML.  There are three response document types: <em>Plans</em>,
 <em>Customers</em>, and <em>Error</em>.  The <em>Plans</em> document is returned when interacting
-with pricing plans (a simple <code class="prettyprint">GET</code>, for example).  The <em>Customers</em> document is
+with pricing plans (a simple <code>GET</code>, for example).  The <em>Customers</em> document is
 returned when interacting with customers.</p>
 
-<p>You may also view raw API responses within the GUI.  For example, if you&rsquo;re looking at your customer list:</p>
+<p>You may also view raw API responses within the GUI.  For example, if you&#39;re looking at your customer list:</p>
 
-<p><code class="prettyprint">https://getcheddar.com/admin/customers/get</code></p>
+<p><code>https://getcheddar.com/admin/customers/get</code></p>
 
-<p>Simply change <code class="prettyprint">/admin/</code> to <code class="prettyprint">/xml/</code>:</p>
+<p>Simply change <code>/admin/</code> to <code>/xml/</code>:</p>
 
-<p><code class="prettyprint">https://getcheddar.com/xml/customers/get</code></p>
-
-<h3 id="plans-response-example">Plans Response Example</h3>
-
+<p><code>https://getcheddar.com/xml/customers/get</code></p>
+<h3 id='plans-response-example'>Plans Response Example</h3>
 <script src="https://gist.github.com/marcguyer/660077.js?file=plans.xml"></script>
-
-<h3 id="customers-response-example">Customers Response Example</h3>
-
+<h3 id='customers-response-example'>Customers Response Example</h3>
 <script src="https://gist.github.com/marcguyer/660077.js?file=customers.xml"></script>
-
-<h3 id="error-response-example">Error Response Example</h3>
-
+<h3 id='error-response-example'>Error Response Example</h3>
 <script src="https://gist.github.com/marcguyer/660077.js?file=error.xml"></script>
-
-          <h1 id="request-dictionary">Request Dictionary</h1>
-
+<h1 id='request-dictionary'>Request Dictionary</h1>
 <p>All API request types and parameters are logically named and should be easily
 understandable. The following outlines each possible API call and required
 parameters.</p>
+<h2 id='pricing-plans'>Pricing Plans</h2><h3 id='get-all-pricing-plans'>Get All Pricing Plans</h3>
+<p>Get all pricing plan data from the product with <code>productCode=MY_PRODUCT_CODE</code></p>
 
-<h2 id="pricing-plans">Pricing Plans</h2>
+<p><code>/plans/get/productCode/MY_PRODUCT_CODE</code></p>
+<h3 id='get-a-single-pricing-plan'>Get a Single Pricing Plan</h3>
+<p>Get the pricing plan data from the product with <code>productCode=MY_PRODUCT_CODE</code>
+for the pricing plan with <code>code=MY_PLAN_CODE</code></p>
 
-<h3 id="get-all-pricing-plans">Get All Pricing Plans</h3>
+<p><code>/plans/get/productCode/MY_PRODUCT_CODE/code/MY_PLAN_CODE</code></p>
+<h2 id='customers'>Customers</h2><h3 id='get-all-customers'>Get All Customers</h3>
+<p>Get all customer data from the product with <code>productCode=MY_PRODUCT_CODE</code></p>
 
-<p>Get all pricing plan data from the product with <code class="prettyprint">productCode=MY_PRODUCT_CODE</code></p>
-
-<p><code class="prettyprint">/plans/get/productCode/MY_PRODUCT_CODE</code></p>
-
-<h3 id="get-a-single-pricing-plan">Get a Single Pricing Plan</h3>
-
-<p>Get the pricing plan data from the product with <code class="prettyprint">productCode=MY_PRODUCT_CODE</code>
-for the pricing plan with <code class="prettyprint">code=MY_PLAN_CODE</code></p>
-
-<p><code class="prettyprint">/plans/get/productCode/MY_PRODUCT_CODE/code/MY_PLAN_CODE</code></p>
-
-<h2 id="customers">Customers</h2>
-
-<h3 id="get-all-customers">Get All Customers</h3>
-
-<p>Get all customer data from the product with <code class="prettyprint">productCode=MY_PRODUCT_CODE</code></p>
-
-<p><code class="prettyprint">/customers/get/productCode/MY_PRODUCT_CODE</code></p>
+<p><code>/customers/get/productCode/MY_PRODUCT_CODE</code></p>
 
 <table><thead>
 <tr>
@@ -480,47 +529,47 @@ for the pricing plan with <code class="prettyprint">code=MY_PLAN_CODE</code></p>
 </tr>
 </thead><tbody>
 <tr>
-<td><code class="prettyprint">subscriptionStatus</code></td>
-<td>&ldquo;activeOnly&rdquo; or &ldquo;canceledOnly&rdquo;</td>
+<td><code>subscriptionStatus</code></td>
+<td>&quot;activeOnly&quot; or &quot;canceledOnly&quot;</td>
 </tr>
 <tr>
-<td><code class="prettyprint">planCode[]</code></td>
+<td><code>planCode[]</code></td>
 <td>Your pricing plan code. This is an array and may be provided multiple times to filter by multiple plans.</td>
 </tr>
 <tr>
-<td><code class="prettyprint">createdAfterDate</code></td>
+<td><code>createdAfterDate</code></td>
 <td>YYYY-MM-DD</td>
 </tr>
 <tr>
-<td><code class="prettyprint">createdBeforeDate</code></td>
+<td><code>createdBeforeDate</code></td>
 <td>YYYY-MM-DD</td>
 </tr>
 <tr>
-<td><code class="prettyprint">canceledAfterDate</code></td>
+<td><code>canceledAfterDate</code></td>
 <td>YYYY-MM-DD</td>
 </tr>
 <tr>
-<td><code class="prettyprint">canceledBeforeDate</code></td>
+<td><code>canceledBeforeDate</code></td>
 <td>YYYY-MM-DD</td>
 </tr>
 <tr>
-<td><code class="prettyprint">transactedAfterDate</code></td>
+<td><code>transactedAfterDate</code></td>
 <td>YYYY-MM-DD</td>
 </tr>
 <tr>
-<td><code class="prettyprint">transactedBeforeDate</code></td>
+<td><code>transactedBeforeDate</code></td>
 <td>YYYY-MM-DD</td>
 </tr>
 <tr>
-<td><code class="prettyprint">orderBy</code></td>
-<td>&ldquo;name&rdquo; (default), &ldquo;company&rdquo;, &ldquo;plan&rdquo;, &ldquo;billingDatetime&rdquo; or &ldquo;createdDatetime&rdquo;</td>
+<td><code>orderBy</code></td>
+<td>&quot;name&quot; (default), &quot;company&quot;, &quot;plan&quot;, &quot;billingDatetime&quot; or &quot;createdDatetime&quot;</td>
 </tr>
 <tr>
-<td><code class="prettyprint">orderByDirection</code></td>
-<td>&ldquo;asc&rdquo; (default) or &ldquo;desc&rdquo;</td>
+<td><code>orderByDirection</code></td>
+<td>&quot;asc&quot; (default) or &quot;desc&quot;</td>
 </tr>
 <tr>
-<td><code class="prettyprint">search</code></td>
+<td><code>search</code></td>
 <td>Text search customer name, company, email address and last four digits of credit card.</td>
 </tr>
 </tbody></table>
@@ -531,9 +580,7 @@ for the authenticated user. Dates are inclusive. e.g. assuming timezone for the
 authenticated user is set to UTC, 2010-07-04 <= X <= 2010-08-04 is interpreted
 as 2010-07-04T00:00:00+00:00 <= X <= 2010-08-04T23:59:59+00:00.
 </aside>
-
-<h3 id="get-a-single-customer">Get a Single Customer</h3>
-
+<h3 id='get-a-single-customer'>Get a Single Customer</h3>
 <blockquote>
 <p>Get a Single Customer</p>
 </blockquote>
@@ -556,17 +603,15 @@ $invoice = $customer-&gt;getCustomerInvoice();
 // See Cheddar_Response for more convenience methods
 </code></pre><pre class="highlight ruby tab-ruby"><code><span class="n">client</span><span class="p">.</span><span class="nf">get_customer</span><span class="p">(</span><span class="ss">:code</span> <span class="o">=&gt;</span> <span class="s1">'MY_CUSTOMER_CODE'</span><span class="p">)</span>
 </code></pre>
-<p>Get the customer data from the product with <code class="prettyprint">productCode=MY_PRODUCT_CODE</code>
-for the customer with <code class="prettyprint">code=MY_CUSTOMER_CODE</code> (or by id or <code class="prettyprint">invoiceNumber</code>).</p>
+<p>Get the customer data from the product with <code>productCode=MY_PRODUCT_CODE</code>
+for the customer with <code>code=MY_CUSTOMER_CODE</code> (or by id or <code>invoiceNumber</code>).</p>
 
-<p><code class="prettyprint">/customers/get/productCode/MY_PRODUCT_CODE/code/MY_CUSTOMER_CODE</code></p>
+<p><code>/customers/get/productCode/MY_PRODUCT_CODE/code/MY_CUSTOMER_CODE</code></p>
 
-<p><code class="prettyprint">/customers/get/productCode/MY_PRODUCT_CODE/invoiceNumber/1</code></p>
+<p><code>/customers/get/productCode/MY_PRODUCT_CODE/invoiceNumber/1</code></p>
 
-<p><code class="prettyprint">/customers/get/productCode/MY_PRODUCT_CODE/id/CG_CUSTOMER_ID</code></p>
-
-<h3 id="create-a-new-customer">Create a New Customer</h3>
-
+<p><code>/customers/get/productCode/MY_PRODUCT_CODE/id/CG_CUSTOMER_ID</code></p>
+<h3 id='create-a-new-customer'>Create a New Customer</h3>
 <blockquote>
 <p>Create a customer with a credit card</p>
 </blockquote>
@@ -635,10 +680,10 @@ $customer = $client-&gt;newCustomer($data);
   <span class="p">}</span>
 <span class="p">)</span>
 </code></pre>
-<p>Create a new customer in the product with  <code class="prettyprint">productCode=MY_PRODUCT_CODE</code>
+<p>Create a new customer in the product with  <code>productCode=MY_PRODUCT_CODE</code>
 and subscribe the customer to a pricing plan.</p>
 
-<p><code class="prettyprint">/customers/new/productCode/MY_PRODUCT_CODE</code></p>
+<p><code>/customers/new/productCode/MY_PRODUCT_CODE</code></p>
 
 <table><thead>
 <tr>
@@ -647,183 +692,183 @@ and subscribe the customer to a pricing plan.</p>
 </tr>
 </thead><tbody>
 <tr>
-<td><code class="prettyprint">code</code></td>
+<td><code>code</code></td>
 <td><strong>Required</strong> Your code for this customer. Limited to 255 characters.</td>
 </tr>
 <tr>
-<td><code class="prettyprint">gatewayToken</code></td>
+<td><code>gatewayToken</code></td>
 <td><strong>Conditional</strong> The gateway reference code. Limited to 255 characters.</td>
 </tr>
 <tr>
-<td><code class="prettyprint">firstName</code></td>
+<td><code>firstName</code></td>
 <td><strong>Required</strong> Limited to 40 characters</td>
 </tr>
 <tr>
-<td><code class="prettyprint">lastName</code></td>
+<td><code>lastName</code></td>
 <td><strong>Required</strong> Limited to 40 characters</td>
 </tr>
 <tr>
-<td><code class="prettyprint">email</code></td>
+<td><code>email</code></td>
 <td><strong>Required</strong> Valid email address</td>
 </tr>
 <tr>
-<td><code class="prettyprint">company</code></td>
+<td><code>company</code></td>
 <td>Limited to 60 characters</td>
 </tr>
 <tr>
-<td><code class="prettyprint">taxRate</code></td>
+<td><code>taxRate</code></td>
 <td>The rate for this customer if different than the configured default (e.g, 0.123)</td>
 </tr>
 <tr>
-<td><code class="prettyprint">isTaxExempt</code></td>
+<td><code>isTaxExempt</code></td>
 <td>1 or 0</td>
 </tr>
 <tr>
-<td><code class="prettyprint">taxNumber</code></td>
+<td><code>taxNumber</code></td>
 <td>Customer tax number if applicable. Limited to 32 characters</td>
 </tr>
 <tr>
-<td><code class="prettyprint">notes</code></td>
+<td><code>notes</code></td>
 <td>Limited to 255 characters</td>
 </tr>
 <tr>
-<td><code class="prettyprint">firstContactDatetime</code></td>
+<td><code>firstContactDatetime</code></td>
 <td>Date or datetime in ISO 8601 format.(e.g., 2011-08-01 or 2011-08-01T15:30:00+00:00). See the <a href="http://support.getcheddar.com/kb/marketing-metrics/what-are-marketing-metrics-why-do-i-care-how-do-i-get-setup">KB Article</a></td>
 </tr>
 <tr>
-<td><code class="prettyprint">referer</code></td>
+<td><code>referer</code></td>
 <td>A valid URL referer. Limited to 255 characters. See the <a href="http://support.getcheddar.com/kb/marketing-metrics/what-are-marketing-metrics-why-do-i-care-how-do-i-get-setup">KB Article</a></td>
 </tr>
 <tr>
-<td><code class="prettyprint">campaignTerm</code></td>
-<td>The &ldquo;term&rdquo; or &ldquo;keyword&rdquo; phrase that lead a potential customer to your site. Google Adwords equivalent: &ldquo;utm_term&rdquo;. See the <a href="http://support.getcheddar.com/kb/marketing-metrics/what-are-marketing-metrics-why-do-i-care-how-do-i-get-setup">KB Article</a></td>
+<td><code>campaignTerm</code></td>
+<td>The &quot;term&quot; or &quot;keyword&quot; phrase that lead a potential customer to your site. Google Adwords equivalent: &quot;utm_term&quot;. See the <a href="http://support.getcheddar.com/kb/marketing-metrics/what-are-marketing-metrics-why-do-i-care-how-do-i-get-setup">KB Article</a></td>
 </tr>
 <tr>
-<td><code class="prettyprint">campaignName</code></td>
-<td>The name of the marketing campaign. Google Adwords equivalent: &ldquo;utm_campaign&rdquo;. See the <a href="http://support.getcheddar.com/kb/marketing-metrics/what-are-marketing-metrics-why-do-i-care-how-do-i-get-setup">KB Article</a></td>
+<td><code>campaignName</code></td>
+<td>The name of the marketing campaign. Google Adwords equivalent: &quot;utm_campaign&quot;. See the <a href="http://support.getcheddar.com/kb/marketing-metrics/what-are-marketing-metrics-why-do-i-care-how-do-i-get-setup">KB Article</a></td>
 </tr>
 <tr>
-<td><code class="prettyprint">campaignSource</code></td>
-<td>The source of the lead. Google Adwords equivalent: &ldquo;utm_source&rdquo;. See the <a href="http://support.getcheddar.com/kb/marketing-metrics/what-are-marketing-metrics-why-do-i-care-how-do-i-get-setup">KB Article</a></td>
+<td><code>campaignSource</code></td>
+<td>The source of the lead. Google Adwords equivalent: &quot;utm_source&quot;. See the <a href="http://support.getcheddar.com/kb/marketing-metrics/what-are-marketing-metrics-why-do-i-care-how-do-i-get-setup">KB Article</a></td>
 </tr>
 <tr>
-<td><code class="prettyprint">campaignMedium</code></td>
-<td>The medium used to find your site. Google Adwords equivalent: &ldquo;utm_medium&rdquo;. See the <a href="http://support.getcheddar.com/kb/marketing-metrics/what-are-marketing-metrics-why-do-i-care-how-do-i-get-setup">KB Article</a></td>
+<td><code>campaignMedium</code></td>
+<td>The medium used to find your site. Google Adwords equivalent: &quot;utm_medium&quot;. See the <a href="http://support.getcheddar.com/kb/marketing-metrics/what-are-marketing-metrics-why-do-i-care-how-do-i-get-setup">KB Article</a></td>
 </tr>
 <tr>
-<td><code class="prettyprint">campaignContent</code></td>
-<td>The content you wish to track. Google Adwords equivalent: &ldquo;utm_content&rdquo;. See the <a href="http://support.getcheddar.com/kb/marketing-metrics/what-are-marketing-metrics-why-do-i-care-how-do-i-get-setup">KB Article</a></td>
+<td><code>campaignContent</code></td>
+<td>The content you wish to track. Google Adwords equivalent: &quot;utm_content&quot;. See the <a href="http://support.getcheddar.com/kb/marketing-metrics/what-are-marketing-metrics-why-do-i-care-how-do-i-get-setup">KB Article</a></td>
 </tr>
 <tr>
-<td><code class="prettyprint">metaData[&lt;user-defined&gt;]</code></td>
+<td><code>metaData[&lt;user-defined&gt;]</code></td>
 <td>See the <a href="http://support.getcheddar.com/kb/api-8/customer-meta-data">KB Article</a> about customer metadata</td>
 </tr>
 <tr>
-<td><code class="prettyprint">subscription[planCode]</code></td>
+<td><code>subscription[planCode]</code></td>
 <td><strong>Required</strong> Your code for the subscribed pricing plan</td>
 </tr>
 <tr>
-<td><code class="prettyprint">subscription[couponCode]</code></td>
-<td>Coupon code for the promotion you&rsquo;d like to apply to the subscription</td>
+<td><code>subscription[couponCode]</code></td>
+<td>Coupon code for the promotion you&#39;d like to apply to the subscription</td>
 </tr>
 <tr>
-<td><code class="prettyprint">subscription[initialBillDate]</code></td>
-<td>Date or datetime in ISO 8601 format. (e.g., 2011-08-01 or 2011-08-01T15:30:00+00:00). Date on which you would like the customers first invoice to be billable. This option overrides the pricing plan default. Must either be today&rsquo;s date (run invoice immediately) or a future date.</td>
+<td><code>subscription[initialBillDate]</code></td>
+<td>Date or datetime in ISO 8601 format. (e.g., 2011-08-01 or 2011-08-01T15:30:00+00:00). Date on which you would like the customers first invoice to be billable. This option overrides the pricing plan default. Must either be today&#39;s date (run invoice immediately) or a future date.</td>
 </tr>
 <tr>
-<td><code class="prettyprint">subscription[method]</code></td>
-<td>&ldquo;cc&rdquo; (default) or &ldquo;paypal&rdquo;</td>
+<td><code>subscription[method]</code></td>
+<td>&quot;cc&quot; (default) or &quot;paypal&quot;</td>
 </tr>
 <tr>
-<td><code class="prettyprint">subscription[ccNumber]</code></td>
-<td><strong>Conditional (See Notes)</strong> Numbers only &ndash; a valid credit/debit card number</td>
+<td><code>subscription[ccNumber]</code></td>
+<td><strong>Conditional (See Notes)</strong> Numbers only -- a valid credit/debit card number</td>
 </tr>
 <tr>
-<td><code class="prettyprint">subscription[ccExpiration]</code></td>
+<td><code>subscription[ccExpiration]</code></td>
 <td><strong>Conditional (See Notes)</strong> MM/YYYY - the expiration date for the credit card</td>
 </tr>
 <tr>
-<td><code class="prettyprint">subscription[ccCardCode]</code></td>
-<td><strong>Conditional. If plan is free, not required. If your preference is to require the <code class="prettyprint">cardCode</code>, required. Not required when method is paypal.</strong> 3-4 digits - The Card Verification Value (CCV).</td>
+<td><code>subscription[ccCardCode]</code></td>
+<td><strong>Conditional. If plan is free, not required. If your preference is to require the <code>cardCode</code>, required. Not required when method is paypal.</strong> 3-4 digits - The Card Verification Value (CCV).</td>
 </tr>
 <tr>
-<td><code class="prettyprint">subscription[gatewayToken]</code></td>
-<td><strong>Conditional (See Notes)</strong> The gateway reference code for the payment method. Provide this in lieu of <code class="prettyprint">ccNumber</code> when pre-tokenized payment methods are available.</td>
+<td><code>subscription[gatewayToken]</code></td>
+<td><strong>Conditional (See Notes)</strong> The gateway reference code for the payment method. Provide this in lieu of <code>ccNumber</code> when pre-tokenized payment methods are available.</td>
 </tr>
 <tr>
-<td><code class="prettyprint">subscription[ccType]</code></td>
-<td><strong>Conditional</strong> visa, mc, disc, amex, diners, jcb, unk. If you specify a <code class="prettyprint">subscription[gatewayToken]</code>, this is required.</td>
+<td><code>subscription[ccType]</code></td>
+<td><strong>Conditional</strong> visa, mc, disc, amex, diners, jcb, unk. If you specify a <code>subscription[gatewayToken]</code>, this is required.</td>
 </tr>
 <tr>
-<td><code class="prettyprint">subscription[ccLastFour]</code></td>
-<td><strong>Conditional</strong> Numbers only &ndash; last four digits of credit/debit card number. If you specify a <code class="prettyprint">subscription[gatewayToken]</code>, this is required.</td>
+<td><code>subscription[ccLastFour]</code></td>
+<td><strong>Conditional</strong> Numbers only -- last four digits of credit/debit card number. If you specify a <code>subscription[gatewayToken]</code>, this is required.</td>
 </tr>
 <tr>
-<td><code class="prettyprint">subscription[ccFirstName]</code></td>
+<td><code>subscription[ccFirstName]</code></td>
 <td><strong>Conditional (See Notes)</strong> Limited to 40 characters</td>
 </tr>
 <tr>
-<td><code class="prettyprint">subscription[ccLastName]</code></td>
+<td><code>subscription[ccLastName]</code></td>
 <td><strong>Conditional (See Notes)</strong> Limited to 40 characters</td>
 </tr>
 <tr>
-<td><code class="prettyprint">subscription[ccCompany]</code></td>
+<td><code>subscription[ccCompany]</code></td>
 <td>Limited to 60 characters</td>
 </tr>
 <tr>
-<td><code class="prettyprint">subscription[ccCountry]</code></td>
+<td><code>subscription[ccCountry]</code></td>
 <td>Limited to 60 characters. Many payment processors require that the ISO 2 char codes are used.</td>
 </tr>
 <tr>
-<td><code class="prettyprint">subscription[ccAddress]</code></td>
+<td><code>subscription[ccAddress]</code></td>
 <td>Limited to 60 characters</td>
 </tr>
 <tr>
-<td><code class="prettyprint">subscription[ccCity]</code></td>
+<td><code>subscription[ccCity]</code></td>
 <td>Limited to 40 characters</td>
 </tr>
 <tr>
-<td><code class="prettyprint">subscription[ccState]</code></td>
+<td><code>subscription[ccState]</code></td>
 <td>Limited to 40 characters. 2 character state/province codes are suggested when country is US/Canada.</td>
 </tr>
 <tr>
-<td><code class="prettyprint">subscription[ccZip]</code></td>
+<td><code>subscription[ccZip]</code></td>
 <td>Limited to 20 characters</td>
 </tr>
 <tr>
-<td><code class="prettyprint">subscription[returnUrl]</code></td>
+<td><code>subscription[returnUrl]</code></td>
 <td><strong>Conditional. Required when method is PayPal.</strong> Must be a valid URL. Only used when method is paypal. This is the location where subscriber is returned from paypal after accepting a preapproval.</td>
 </tr>
 <tr>
-<td><code class="prettyprint">subscription[cancelUrl]</code></td>
+<td><code>subscription[cancelUrl]</code></td>
 <td><strong>Conditional. Required when method is PayPal.</strong> Must be a valid URL. Only used when method is paypal. This is the location where subscriber is returned from paypal after declining a preapproval.</td>
 </tr>
 <tr>
-<td><code class="prettyprint">charges[&lt;user-defined&gt;][chargeCode]</code></td>
+<td><code>charges[&lt;user-defined&gt;][chargeCode]</code></td>
 <td><strong>Not Required (See Notes)</strong> Your code for this charge. Limited to 36 characters.</td>
 </tr>
 <tr>
-<td><code class="prettyprint">charges[&lt;user-defined&gt;][quantity]</code></td>
+<td><code>charges[&lt;user-defined&gt;][quantity]</code></td>
 <td><strong>Not Required (See Notes)</strong> Positive integer quantity</td>
 </tr>
 <tr>
-<td><code class="prettyprint">charges[&lt;user-defined&gt;][eachAmount]</code></td>
+<td><code>charges[&lt;user-defined&gt;][eachAmount]</code></td>
 <td><strong>Not Required (See Notes)</strong> Positive or negative integer or float with two digit decimal precision. A positive number will create a charge (debit). A negative number will create a credit.</td>
 </tr>
 <tr>
-<td><code class="prettyprint">charges[&lt;user-defined&gt;][description]</code></td>
+<td><code>charges[&lt;user-defined&gt;][description]</code></td>
 <td>Description for this charge/credit</td>
 </tr>
 <tr>
-<td><code class="prettyprint">items[&lt;user-defined&gt;][itemCode]</code></td>
+<td><code>items[&lt;user-defined&gt;][itemCode]</code></td>
 <td><strong>Not Required (See Notes)</strong> Your code for this tracked item. Limited to 36 characters.</td>
 </tr>
 <tr>
-<td><code class="prettyprint">items[&lt;user-defined&gt;][quantity]</code></td>
+<td><code>items[&lt;user-defined&gt;][quantity]</code></td>
 <td><strong>Not Required (See Notes)</strong> The positive amount accurate to up to 4 decimal places that you wish to set the current usage to for this item. Can be zero.</td>
 </tr>
 <tr>
-<td><code class="prettyprint">remoteAddress</code></td>
+<td><code>remoteAddress</code></td>
 <td><strong>Not Required (<a href="#fraud-protection-rate-limiting">See Below</a>)</strong> Client IPv4 address</td>
 </tr>
 </tbody></table>
@@ -880,16 +925,14 @@ and subscribe the customer to a pricing plan.</p>
 </p>
 
 </aside>
-
-<h3 id="import-customers">Import Customers</h3>
-
-<p>Import customers to the product with <code class="prettyprint">productCode=MY_PRODUCT_CODE</code>. Existing
+<h3 id='import-customers'>Import Customers</h3>
+<p>Import customers to the product with <code>productCode=MY_PRODUCT_CODE</code>. Existing
 paying (or non-paying) customers in another billing system may be imported while
 maintaining payment methods if the payment processor is compatible. Please <a href="http://support.getcheddar.com/discussion/new">contact
 support</a> for more information
 about whether or not importing is possible in your situation.</p>
 
-<p><code class="prettyprint">/customers/import/productCode/MY_PRODUCT_CODE</code></p>
+<p><code>/customers/import/productCode/MY_PRODUCT_CODE</code></p>
 
 <table><thead>
 <tr>
@@ -898,163 +941,163 @@ about whether or not importing is possible in your situation.</p>
 </tr>
 </thead><tbody>
 <tr>
-<td><code class="prettyprint">code</code></td>
+<td><code>code</code></td>
 <td><strong>Required</strong> Your code for this customer. Limited to 255 characters.</td>
 </tr>
 <tr>
-<td><code class="prettyprint">gatewayToken</code></td>
+<td><code>gatewayToken</code></td>
 <td><strong>Conditional</strong> The gateway reference code. Limited to 255 characters.</td>
 </tr>
 <tr>
-<td><code class="prettyprint">firstName</code></td>
+<td><code>firstName</code></td>
 <td><strong>Required</strong> Limited to 40 characters</td>
 </tr>
 <tr>
-<td><code class="prettyprint">lastName</code></td>
+<td><code>lastName</code></td>
 <td><strong>Required</strong> Limited to 40 characters</td>
 </tr>
 <tr>
-<td><code class="prettyprint">email</code></td>
+<td><code>email</code></td>
 <td><strong>Required</strong> Valid email address</td>
 </tr>
 <tr>
-<td><code class="prettyprint">company</code></td>
+<td><code>company</code></td>
 <td>Limited to 60 characters</td>
 </tr>
 <tr>
-<td><code class="prettyprint">taxRate</code></td>
+<td><code>taxRate</code></td>
 <td>The rate for this customer if different than the configured default (e.g, 0.123)</td>
 </tr>
 <tr>
-<td><code class="prettyprint">isTaxExempt</code></td>
+<td><code>isTaxExempt</code></td>
 <td>1 or 0</td>
 </tr>
 <tr>
-<td><code class="prettyprint">taxNumber</code></td>
+<td><code>taxNumber</code></td>
 <td>Customer tax number if applicable. Limited to 32 characters</td>
 </tr>
 <tr>
-<td><code class="prettyprint">notes</code></td>
+<td><code>notes</code></td>
 <td>Limited to 255 characters</td>
 </tr>
 <tr>
-<td><code class="prettyprint">firstContactDatetime</code></td>
+<td><code>firstContactDatetime</code></td>
 <td>Date or datetime in ISO 8601 format. (e.g., 2011-08-01 or 2011-08-01T15:30:00+00:00). See the <a href="http://support.getcheddar.com/kb/marketing-metrics/what-are-marketing-metrics-why-do-i-care-how-do-i-get-setup">KB Article</a></td>
 </tr>
 <tr>
-<td><code class="prettyprint">referer</code></td>
+<td><code>referer</code></td>
 <td>A valid URL referer. Limited to 255 characters. See the <a href="http://support.getcheddar.com/kb/marketing-metrics/what-are-marketing-metrics-why-do-i-care-how-do-i-get-setup">KB Article</a></td>
 </tr>
 <tr>
-<td><code class="prettyprint">campaignTerm</code></td>
-<td>The &ldquo;term&rdquo; or &ldquo;keyword&rdquo; phrase that lead a potential customer to your site. Google Adwords equivalent: &ldquo;utm_term&rdquo;. See the <a href="http://support.getcheddar.com/kb/marketing-metrics/what-are-marketing-metrics-why-do-i-care-how-do-i-get-setup">KB Article</a></td>
+<td><code>campaignTerm</code></td>
+<td>The &quot;term&quot; or &quot;keyword&quot; phrase that lead a potential customer to your site. Google Adwords equivalent: &quot;utm_term&quot;. See the <a href="http://support.getcheddar.com/kb/marketing-metrics/what-are-marketing-metrics-why-do-i-care-how-do-i-get-setup">KB Article</a></td>
 </tr>
 <tr>
-<td><code class="prettyprint">campaignName</code></td>
-<td>The name of the marketing campaign. Google Adwords equivalent: &ldquo;utm_campaign&rdquo;. See the <a href="http://support.getcheddar.com/kb/marketing-metrics/what-are-marketing-metrics-why-do-i-care-how-do-i-get-setup">KB Article</a></td>
+<td><code>campaignName</code></td>
+<td>The name of the marketing campaign. Google Adwords equivalent: &quot;utm_campaign&quot;. See the <a href="http://support.getcheddar.com/kb/marketing-metrics/what-are-marketing-metrics-why-do-i-care-how-do-i-get-setup">KB Article</a></td>
 </tr>
 <tr>
-<td><code class="prettyprint">campaignSource</code></td>
-<td>The source of the lead. Google Adwords equivalent: &ldquo;utm_source&rdquo;. See the <a href="http://support.getcheddar.com/kb/marketing-metrics/what-are-marketing-metrics-why-do-i-care-how-do-i-get-setup">KB Article</a></td>
+<td><code>campaignSource</code></td>
+<td>The source of the lead. Google Adwords equivalent: &quot;utm_source&quot;. See the <a href="http://support.getcheddar.com/kb/marketing-metrics/what-are-marketing-metrics-why-do-i-care-how-do-i-get-setup">KB Article</a></td>
 </tr>
 <tr>
-<td><code class="prettyprint">campaignMedium</code></td>
-<td>The medium used to find your site. Google Adwords equivalent: &ldquo;utm_medium&rdquo;. See the <a href="http://support.getcheddar.com/kb/marketing-metrics/what-are-marketing-metrics-why-do-i-care-how-do-i-get-setup">KB Article</a></td>
+<td><code>campaignMedium</code></td>
+<td>The medium used to find your site. Google Adwords equivalent: &quot;utm_medium&quot;. See the <a href="http://support.getcheddar.com/kb/marketing-metrics/what-are-marketing-metrics-why-do-i-care-how-do-i-get-setup">KB Article</a></td>
 </tr>
 <tr>
-<td><code class="prettyprint">campaignContent</code></td>
-<td>The content you wish to track. Google Adwords equivalent: &ldquo;utm_content&rdquo;. See the <a href="http://support.getcheddar.com/kb/marketing-metrics/what-are-marketing-metrics-why-do-i-care-how-do-i-get-setup">KB Article</a></td>
+<td><code>campaignContent</code></td>
+<td>The content you wish to track. Google Adwords equivalent: &quot;utm_content&quot;. See the <a href="http://support.getcheddar.com/kb/marketing-metrics/what-are-marketing-metrics-why-do-i-care-how-do-i-get-setup">KB Article</a></td>
 </tr>
 <tr>
-<td><code class="prettyprint">metaData[&lt;user-defined&gt;]</code></td>
+<td><code>metaData[&lt;user-defined&gt;]</code></td>
 <td>See the <a href="http://support.getcheddar.com/kb/api-8/customer-meta-data">KB Article</a> about customer metadata</td>
 </tr>
 <tr>
-<td><code class="prettyprint">subscription[planCode]</code></td>
+<td><code>subscription[planCode]</code></td>
 <td><strong>Required</strong> Your code for the subscribed pricing plan</td>
 </tr>
 <tr>
-<td><code class="prettyprint">subscription[initialBillDate]</code></td>
-<td>Date or datetime in ISO 8601 format. (e.g., 2011-08-01 or 2011-08-01T15:30:00+00:00). Date on which you would like the customers first invoice to be billable. This option overrides the pricing plan default. Must either be today&rsquo;s date (run invoice immediately) or a future date. If empty, the initial invoice will not be scheduled and a subsequent subscription edit with <code class="prettyprint">changeBillDate</code> param is required to schedule the invoice.</td>
+<td><code>subscription[initialBillDate]</code></td>
+<td>Date or datetime in ISO 8601 format. (e.g., 2011-08-01 or 2011-08-01T15:30:00+00:00). Date on which you would like the customers first invoice to be billable. This option overrides the pricing plan default. Must either be today&#39;s date (run invoice immediately) or a future date. If empty, the initial invoice will not be scheduled and a subsequent subscription edit with <code>changeBillDate</code> param is required to schedule the invoice.</td>
 </tr>
 <tr>
-<td><code class="prettyprint">subscription[method]</code></td>
-<td><strong>Conditional</strong> Payment method (&lsquo;cc&rsquo; or &lsquo;paypal&rsquo;). Required if specifying a payment method. If empty, payment method will be ignored.</td>
+<td><code>subscription[method]</code></td>
+<td><strong>Conditional</strong> Payment method (&#39;cc&#39; or &#39;paypal&#39;). Required if specifying a payment method. If empty, payment method will be ignored.</td>
 </tr>
 <tr>
-<td><code class="prettyprint">subscription[gatewayToken]</code></td>
+<td><code>subscription[gatewayToken]</code></td>
 <td><strong>Conditional</strong> The gateway reference code for the payment method. Required if your settings require it and/or if the customer currently has a payment method that you would like to use to continue to bill this customer.</td>
 </tr>
 <tr>
-<td><code class="prettyprint">subscription[ccType]</code></td>
-<td><strong>Conditional</strong> visa, mc, disc, amex, diners, jcb, unk. If you specify a <code class="prettyprint">subscription[gatewayToken]</code> and <code class="prettyprint">subscription[method]=cc</code>, this is required.</td>
+<td><code>subscription[ccType]</code></td>
+<td><strong>Conditional</strong> visa, mc, disc, amex, diners, jcb, unk. If you specify a <code>subscription[gatewayToken]</code> and <code>subscription[method]=cc</code>, this is required.</td>
 </tr>
 <tr>
-<td><code class="prettyprint">subscription[ccLastFour]</code></td>
-<td><strong>Conditional</strong> Numbers only &ndash; last four digits of credit/debit card number. If you specify a <code class="prettyprint">subscription[gatewayToken]</code> and <code class="prettyprint">subscription[method]=cc</code>, this is required.</td>
+<td><code>subscription[ccLastFour]</code></td>
+<td><strong>Conditional</strong> Numbers only -- last four digits of credit/debit card number. If you specify a <code>subscription[gatewayToken]</code> and <code>subscription[method]=cc</code>, this is required.</td>
 </tr>
 <tr>
-<td><code class="prettyprint">subscription[ccExpiration]</code></td>
-<td><strong>Conditional</strong> MM/YYYY - the expiration date for the credit/debit card. If you specify a <code class="prettyprint">subscription[gatewayToken]</code> and <code class="prettyprint">subscription[method]=cc</code>, this is required.</td>
+<td><code>subscription[ccExpiration]</code></td>
+<td><strong>Conditional</strong> MM/YYYY - the expiration date for the credit/debit card. If you specify a <code>subscription[gatewayToken]</code> and <code>subscription[method]=cc</code>, this is required.</td>
 </tr>
 <tr>
-<td><code class="prettyprint">subscription[ccFirstName]</code></td>
-<td><strong>Conditional</strong> Limited to 40 characters. If you specify a <code class="prettyprint">subscription[gatewayToken]</code>, this is required.</td>
+<td><code>subscription[ccFirstName]</code></td>
+<td><strong>Conditional</strong> Limited to 40 characters. If you specify a <code>subscription[gatewayToken]</code>, this is required.</td>
 </tr>
 <tr>
-<td><code class="prettyprint">subscription[ccLastName]</code></td>
-<td><strong>Conditional</strong> Limited to 40 characters. If you specify a <code class="prettyprint">subscription[gatewayToken]</code>, this is required.</td>
+<td><code>subscription[ccLastName]</code></td>
+<td><strong>Conditional</strong> Limited to 40 characters. If you specify a <code>subscription[gatewayToken]</code>, this is required.</td>
 </tr>
 <tr>
-<td><code class="prettyprint">subscription[ccEmail]</code></td>
-<td><strong>Conditional</strong> A valid email address. If you specify a subscription[gatewayToken] and  and <code class="prettyprint">subscription[method]=paypal</code>, this is required and should be the email address of the PayPal account.</td>
+<td><code>subscription[ccEmail]</code></td>
+<td><strong>Conditional</strong> A valid email address. If you specify a subscription[gatewayToken] and  and <code>subscription[method]=paypal</code>, this is required and should be the email address of the PayPal account.</td>
 </tr>
 <tr>
-<td><code class="prettyprint">subscription[ccCompany]</code></td>
+<td><code>subscription[ccCompany]</code></td>
 <td>Limited to 60 characters</td>
 </tr>
 <tr>
-<td><code class="prettyprint">subscription[ccCountry]</code></td>
+<td><code>subscription[ccCountry]</code></td>
 <td>Limited to 60 characters. Many payment processors require that the ISO 2 char codes are used.</td>
 </tr>
 <tr>
-<td><code class="prettyprint">subscription[ccAddress]</code></td>
+<td><code>subscription[ccAddress]</code></td>
 <td>Limited to 60 characters</td>
 </tr>
 <tr>
-<td><code class="prettyprint">subscription[ccCity]</code></td>
+<td><code>subscription[ccCity]</code></td>
 <td>Limited to 40 characters</td>
 </tr>
 <tr>
-<td><code class="prettyprint">subscription[ccState]</code></td>
+<td><code>subscription[ccState]</code></td>
 <td>Limited to 40 characters. 2 character state/province codes are suggested when country is US/Canada.</td>
 </tr>
 <tr>
-<td><code class="prettyprint">subscription[ccZip]</code></td>
+<td><code>subscription[ccZip]</code></td>
 <td>Limited to 20 characters</td>
 </tr>
 <tr>
-<td><code class="prettyprint">charges[&lt;user-defined&gt;][chargeCode]</code></td>
+<td><code>charges[&lt;user-defined&gt;][chargeCode]</code></td>
 <td><strong>Not Required (See Notes)</strong> Your code for this charge. Limited to 36 characters.</td>
 </tr>
 <tr>
-<td><code class="prettyprint">charges[&lt;user-defined&gt;][quantity]</code></td>
+<td><code>charges[&lt;user-defined&gt;][quantity]</code></td>
 <td><strong>Not Required (See Notes)</strong> Positive integer quantity</td>
 </tr>
 <tr>
-<td><code class="prettyprint">charges[&lt;user-defined&gt;][eachAmount]</code></td>
+<td><code>charges[&lt;user-defined&gt;][eachAmount]</code></td>
 <td><strong>Not Required (See Notes)</strong> Positive or negative integer or float with two digit decimal precision. A positive number will create a charge (debit). A negative number will create a credit.</td>
 </tr>
 <tr>
-<td><code class="prettyprint">charges[&lt;user-defined&gt;][description]</code></td>
+<td><code>charges[&lt;user-defined&gt;][description]</code></td>
 <td>Description for this charge/credit</td>
 </tr>
 <tr>
-<td><code class="prettyprint">items[&lt;user-defined&gt;][itemCode]</code></td>
+<td><code>items[&lt;user-defined&gt;][itemCode]</code></td>
 <td><strong>Not Required (See Notes)</strong> Your code for this tracked item. Limited to 36 characters.</td>
 </tr>
 <tr>
-<td><code class="prettyprint">items[&lt;user-defined&gt;][quantity]</code></td>
+<td><code>items[&lt;user-defined&gt;][quantity]</code></td>
 <td><strong>Not Required (See Notes)</strong> The positive amount accurate to up to 4 decimal places that you wish to set the current usage to for this item. Can be zero.</td>
 </tr>
 </tbody></table>
@@ -1079,7 +1122,7 @@ about whether or not importing is possible in your situation.</p>
 <p>
   Any customer may be imported with or without a payment method. If payment
   method import is desired, the last four digits of the card number, the
-  expiration date and the card type are required (card type may be &ldquo;unk&rdquo; if
+  expiration date and the card type are required (card type may be "unk" if
   not known).
 </p>
 
@@ -1108,31 +1151,25 @@ about whether or not importing is possible in your situation.</p>
 </p>
 
 </aside>
+<h3 id='delete-a-customer'>Delete a Customer</h3>
+<p>Delete an existing customer in the product with <code>productCode=MY_PRODUCT_CODE</code></p>
 
-<h3 id="delete-a-customer">Delete a Customer</h3>
-
-<p>Delete an existing customer in the product with <code class="prettyprint">productCode=MY_PRODUCT_CODE</code></p>
-
-<p><code class="prettyprint">/customers/delete/productCode/MY_PRODUCT_CODE/code/MY_CUSTOMER_CODE</code></p>
+<p><code>/customers/delete/productCode/MY_PRODUCT_CODE/code/MY_CUSTOMER_CODE</code></p>
 
 <aside class="warning">
   Warning - This will delete the customer and all related data in Cheddar
   and will delete the customer data at the gateway if a gateway is configured.
 </aside>
+<h3 id='delete-all-customers'>Delete All Customers</h3>
+<p>Delete all existing customers in the product with <code>productCode=MY_PRODUCT_CODE</code></p>
 
-<h3 id="delete-all-customers">Delete All Customers</h3>
-
-<p>Delete all existing customers in the product with <code class="prettyprint">productCode=MY_PRODUCT_CODE</code></p>
-
-<p><code class="prettyprint">/customers/delete-all/confirm/[current unix timestamp]/productCode/MY_PRODUCT_CODE</code></p>
+<p><code>/customers/delete-all/confirm/[current unix timestamp]/productCode/MY_PRODUCT_CODE</code></p>
 
 <aside class="warning">
   Warning - This will delete all customers and all related data in
   Cheddar. This method is <b>disabled</b> in production accounts.
 </aside>
-
-<h3 id="update-a-customer-and-subscription">Update a Customer and Subscription</h3>
-
+<h3 id='update-a-customer-and-subscription'>Update a Customer and Subscription</h3>
 <blockquote>
 <p>Update a Customer and Subscription</p>
 </blockquote>
@@ -1174,10 +1211,10 @@ $customer = $client-&gt;editSubscription('MY_CUSTOMER_CODE', null, $data);
   <span class="p">{</span><span class="ss">:changeBillDate</span>     <span class="o">=&gt;</span> <span class="s1">'2015-12-09T09:36:37-05:00'</span><span class="p">}</span>
 <span class="p">)</span>
 </code></pre>
-<p>Update an existing customer&rsquo;s information in the product with
-<code class="prettyprint">productCode=MY_PRODUCT_CODE</code> and modify the subscription information</p>
+<p>Update an existing customer&#39;s information in the product with
+<code>productCode=MY_PRODUCT_CODE</code> and modify the subscription information</p>
 
-<p><code class="prettyprint">/customers/edit/productCode/MY_PRODUCT_CODE/code/MY_CUSTOMER_CODE</code></p>
+<p><code>/customers/edit/productCode/MY_PRODUCT_CODE/code/MY_CUSTOMER_CODE</code></p>
 
 <table><thead>
 <tr>
@@ -1186,155 +1223,155 @@ $customer = $client-&gt;editSubscription('MY_CUSTOMER_CODE', null, $data);
 </tr>
 </thead><tbody>
 <tr>
-<td><code class="prettyprint">gatewayToken</code></td>
+<td><code>gatewayToken</code></td>
 <td>The gateway reference code. Limited to 255 characters.</td>
 </tr>
 <tr>
-<td><code class="prettyprint">firstName</code></td>
+<td><code>firstName</code></td>
 <td>Limited to 20 characters.</td>
 </tr>
 <tr>
-<td><code class="prettyprint">lastName</code></td>
+<td><code>lastName</code></td>
 <td>Limited to 20 characters.</td>
 </tr>
 <tr>
-<td><code class="prettyprint">email</code></td>
+<td><code>email</code></td>
 <td>Valid email address</td>
 </tr>
 <tr>
-<td><code class="prettyprint">company</code></td>
+<td><code>company</code></td>
 <td>Limited to 60 characters</td>
 </tr>
 <tr>
-<td><code class="prettyprint">notes</code></td>
+<td><code>notes</code></td>
 <td>Limited to 255 characters</td>
 </tr>
 <tr>
-<td><code class="prettyprint">taxRate</code></td>
+<td><code>taxRate</code></td>
 <td>The rate for this customer if different than the configured default (e.g, 0.123)</td>
 </tr>
 <tr>
-<td><code class="prettyprint">isTaxExempt</code></td>
+<td><code>isTaxExempt</code></td>
 <td>1 or 0</td>
 </tr>
 <tr>
-<td><code class="prettyprint">taxNumber</code></td>
+<td><code>taxNumber</code></td>
 <td>Customer tax number if applicable. Limited to 32 characters</td>
 </tr>
 <tr>
-<td><code class="prettyprint">firstContactDatetime</code></td>
+<td><code>firstContactDatetime</code></td>
 <td>Date or datetime in ISO 8601 format. (e.g., 2011-08-01 or 2011-08-01T15:30:00+00:00). See the <a href="http://support.getcheddar.com/kb/marketing-metrics/what-are-marketing-metrics-why-do-i-care-how-do-i-get-setup">KB Article</a></td>
 </tr>
 <tr>
-<td><code class="prettyprint">referer</code></td>
+<td><code>referer</code></td>
 <td>A valid URL referer. Limited to 255 characters. See the <a href="http://support.getcheddar.com/kb/marketing-metrics/what-are-marketing-metrics-why-do-i-care-how-do-i-get-setup">KB Article</a></td>
 </tr>
 <tr>
-<td><code class="prettyprint">campaignTerm</code></td>
-<td>The &ldquo;term&rdquo; or &ldquo;keyword&rdquo; phrase that lead a potential customer to your site. Google Adwords equivalent: &ldquo;utm_term&rdquo;. See the <a href="http://support.getcheddar.com/kb/marketing-metrics/what-are-marketing-metrics-why-do-i-care-how-do-i-get-setup">KB Article</a></td>
+<td><code>campaignTerm</code></td>
+<td>The &quot;term&quot; or &quot;keyword&quot; phrase that lead a potential customer to your site. Google Adwords equivalent: &quot;utm_term&quot;. See the <a href="http://support.getcheddar.com/kb/marketing-metrics/what-are-marketing-metrics-why-do-i-care-how-do-i-get-setup">KB Article</a></td>
 </tr>
 <tr>
-<td><code class="prettyprint">campaignName</code></td>
-<td>The name of the marketing campaign. Google Adwords equivalent: &ldquo;utm_campaign&rdquo;. See the <a href="http://support.getcheddar.com/kb/marketing-metrics/what-are-marketing-metrics-why-do-i-care-how-do-i-get-setup">KB Article</a></td>
+<td><code>campaignName</code></td>
+<td>The name of the marketing campaign. Google Adwords equivalent: &quot;utm_campaign&quot;. See the <a href="http://support.getcheddar.com/kb/marketing-metrics/what-are-marketing-metrics-why-do-i-care-how-do-i-get-setup">KB Article</a></td>
 </tr>
 <tr>
-<td><code class="prettyprint">campaignSource</code></td>
-<td>The source of the lead. Google Adwords equivalent: &ldquo;utm_source&rdquo;. See the <a href="http://support.getcheddar.com/kb/marketing-metrics/what-are-marketing-metrics-why-do-i-care-how-do-i-get-setup">KB Article</a></td>
+<td><code>campaignSource</code></td>
+<td>The source of the lead. Google Adwords equivalent: &quot;utm_source&quot;. See the <a href="http://support.getcheddar.com/kb/marketing-metrics/what-are-marketing-metrics-why-do-i-care-how-do-i-get-setup">KB Article</a></td>
 </tr>
 <tr>
-<td><code class="prettyprint">campaignMedium</code></td>
-<td>The medium used to find your site. Google Adwords equivalent: &ldquo;utm_medium&rdquo;. See the <a href="http://support.getcheddar.com/kb/marketing-metrics/what-are-marketing-metrics-why-do-i-care-how-do-i-get-setup">KB Article</a></td>
+<td><code>campaignMedium</code></td>
+<td>The medium used to find your site. Google Adwords equivalent: &quot;utm_medium&quot;. See the <a href="http://support.getcheddar.com/kb/marketing-metrics/what-are-marketing-metrics-why-do-i-care-how-do-i-get-setup">KB Article</a></td>
 </tr>
 <tr>
-<td><code class="prettyprint">campaignContent</code></td>
-<td>The content you wish to track. Google Adwords equivalent: &ldquo;utm_content&rdquo;. See the <a href="http://support.getcheddar.com/kb/marketing-metrics/what-are-marketing-metrics-why-do-i-care-how-do-i-get-setup">KB Article</a></td>
+<td><code>campaignContent</code></td>
+<td>The content you wish to track. Google Adwords equivalent: &quot;utm_content&quot;. See the <a href="http://support.getcheddar.com/kb/marketing-metrics/what-are-marketing-metrics-why-do-i-care-how-do-i-get-setup">KB Article</a></td>
 </tr>
 <tr>
-<td><code class="prettyprint">metaData[&lt;user-defined&gt;]</code></td>
+<td><code>metaData[&lt;user-defined&gt;]</code></td>
 <td>See the <a href="http://support.getcheddar.com/kb/api-8/customer-meta-data">KB Article</a> about customer metadata</td>
 </tr>
 <tr>
-<td><code class="prettyprint">subscription[method]</code></td>
-<td>&ldquo;cc&rdquo; (default) or &ldquo;paypal&rdquo;</td>
+<td><code>subscription[method]</code></td>
+<td>&quot;cc&quot; (default) or &quot;paypal&quot;</td>
 </tr>
 <tr>
-<td><code class="prettyprint">subscription[planCode]</code></td>
+<td><code>subscription[planCode]</code></td>
 <td>Your code for the subscribed pricing plan</td>
 </tr>
 <tr>
-<td><code class="prettyprint">subscription[couponCode]</code></td>
-<td>Coupon code for the promotion you&rsquo;d like to apply to the subscription</td>
+<td><code>subscription[couponCode]</code></td>
+<td>Coupon code for the promotion you&#39;d like to apply to the subscription</td>
 </tr>
 <tr>
-<td><code class="prettyprint">subscription[ccNumber]</code></td>
-<td><strong>Not Required (See Notes)</strong> Numbers only &ndash; a valid credit/debit card number</td>
+<td><code>subscription[ccNumber]</code></td>
+<td><strong>Not Required (See Notes)</strong> Numbers only -- a valid credit/debit card number</td>
 </tr>
 <tr>
-<td><code class="prettyprint">subscription[ccExpiration]</code></td>
+<td><code>subscription[ccExpiration]</code></td>
 <td><strong>Not Required (See Notes)</strong> MM/YYYY - the expiration date for the credit card</td>
 </tr>
 <tr>
-<td><code class="prettyprint">subscription[ccCardCode]</code></td>
+<td><code>subscription[ccCardCode]</code></td>
 <td><strong>Conditional. If plan is free, no. If your preference is to require the cardCode, yes.</strong> 3-4 digits - The Card Verification Value (CCV).</td>
 </tr>
 <tr>
-<td><code class="prettyprint">subscription[gatewayToken]</code></td>
-<td><strong>Conditional (See Notes)</strong> The gateway reference code for the payment method. Provide this in lieu of <code class="prettyprint">ccNumber</code> when pre-tokenized payment methods are available.</td>
+<td><code>subscription[gatewayToken]</code></td>
+<td><strong>Conditional (See Notes)</strong> The gateway reference code for the payment method. Provide this in lieu of <code>ccNumber</code> when pre-tokenized payment methods are available.</td>
 </tr>
 <tr>
-<td><code class="prettyprint">subscription[ccType]</code></td>
-<td><strong>Conditional</strong> visa, mc, disc, amex, diners, jcb, unk. If you specify a <code class="prettyprint">subscription[gatewayToken]</code>, this is required.</td>
+<td><code>subscription[ccType]</code></td>
+<td><strong>Conditional</strong> visa, mc, disc, amex, diners, jcb, unk. If you specify a <code>subscription[gatewayToken]</code>, this is required.</td>
 </tr>
 <tr>
-<td><code class="prettyprint">subscription[ccLastFour]</code></td>
-<td><strong>Conditional</strong> Numbers only &ndash; last four digits of credit/debit card number. If you specify a <code class="prettyprint">subscription[gatewayToken]</code>, this is required.</td>
+<td><code>subscription[ccLastFour]</code></td>
+<td><strong>Conditional</strong> Numbers only -- last four digits of credit/debit card number. If you specify a <code>subscription[gatewayToken]</code>, this is required.</td>
 </tr>
 <tr>
-<td><code class="prettyprint">subscription[ccFirstName]</code></td>
+<td><code>subscription[ccFirstName]</code></td>
 <td><strong>Not Required (See Notes)</strong> Limited to 20 characters</td>
 </tr>
 <tr>
-<td><code class="prettyprint">subscription[ccLastName]</code></td>
+<td><code>subscription[ccLastName]</code></td>
 <td><strong>Not Required (See Notes)</strong> Limited to 20 characters</td>
 </tr>
 <tr>
-<td><code class="prettyprint">subscription[ccCompany]</code></td>
+<td><code>subscription[ccCompany]</code></td>
 <td>Limited to 50 characters</td>
 </tr>
 <tr>
-<td><code class="prettyprint">subscription[ccCountry]</code></td>
+<td><code>subscription[ccCountry]</code></td>
 <td>Limited to 60 characters. Many payment processors require that the ISO 2 char codes are used.</td>
 </tr>
 <tr>
-<td><code class="prettyprint">subscription[ccAddress]</code></td>
+<td><code>subscription[ccAddress]</code></td>
 <td>Limited to 60 characters</td>
 </tr>
 <tr>
-<td><code class="prettyprint">subscription[ccCity]</code></td>
+<td><code>subscription[ccCity]</code></td>
 <td>Limited to 40 characters</td>
 </tr>
 <tr>
-<td><code class="prettyprint">subscription[ccState]</code></td>
+<td><code>subscription[ccState]</code></td>
 <td>Suggested when country is US/Canada.</td>
 </tr>
 <tr>
-<td><code class="prettyprint">subscription[ccZip]</code></td>
+<td><code>subscription[ccZip]</code></td>
 <td>Conditional. If plan is free, no. If your preference is to require the zip, yes.</td>
 </tr>
 <tr>
-<td><code class="prettyprint">subscription[returnUrl]</code></td>
+<td><code>subscription[returnUrl]</code></td>
 <td><strong>Conditional. Required when method is paypal.</strong> Must be a valid URL. Only used when method is paypal. This is the location where subscriber is returned from paypal after accepting a preapproval.</td>
 </tr>
 <tr>
-<td><code class="prettyprint">subscription[cancelUrl]</code></td>
+<td><code>subscription[cancelUrl]</code></td>
 <td><strong>Conditional. Required when method is paypal.</strong> Must be a valid URL. Only used when method is paypal. This is the location where subscriber is returned from paypal after declining a preapproval.</td>
 </tr>
 <tr>
-<td><code class="prettyprint">subscription[changeBillDate]</code></td>
-<td>Date or datetime in ISO 8601 format. (e.g., 2011-08-01 or 2011-08-01T15:30:00+00:00). You may also use the word &lsquo;now&rsquo; as shorthand for the current datetime.</td>
+<td><code>subscription[changeBillDate]</code></td>
+<td>Date or datetime in ISO 8601 format. (e.g., 2011-08-01 or 2011-08-01T15:30:00+00:00). You may also use the word &#39;now&#39; as shorthand for the current datetime.</td>
 </tr>
 <tr>
-<td><code class="prettyprint">remoteAddress</code></td>
+<td><code>remoteAddress</code></td>
 <td><strong>Not Required (<a href="#fraud-protection-rate-limiting">See Below</a>)</strong> Client IPv4 address</td>
 </tr>
 </tbody></table>
@@ -1343,7 +1380,7 @@ $customer = $client-&gt;editSubscription('MY_CUSTOMER_CODE', null, $data);
 
   If the customer does not already have a subscription with a valid credit card,
   all credit card information is required. If the plan code corresponds to a
-  &ldquo;free&rdquo; plan, no Credit Card data is required. If the customer already has a
+  "free" plan, no Credit Card data is required. If the customer already has a
   subscription with a credit card, no credit card information data is required.
   In this instance, any subset of credit card data may be provided.
 <br/>
@@ -1377,7 +1414,7 @@ $customer = $client-&gt;editSubscription('MY_CUSTOMER_CODE', null, $data);
   effects the billing cycle. Subsequent bill dates will be on the new cycle.
   In other words, for a monthly plan that typically bills on the 3rd of every
   month, if the next bill date is changed to the 10th, the subscription will
-  now bill every month on the 10th. If the date is equal to &lsquo;now&rsquo; or is less
+  now bill every month on the 10th. If the date is equal to 'now' or is less
   than or equal to the current date and time, the current invoice will be
   executed in real-time.
 </p>
@@ -1389,9 +1426,7 @@ $customer = $client-&gt;editSubscription('MY_CUSTOMER_CODE', null, $data);
   </p>
 
 </aside>
-
-<h3 id="update-a-customer-only">Update a Customer Only</h3>
-
+<h3 id='update-a-customer-only'>Update a Customer Only</h3>
 <blockquote>
 <p>Update a Customer</p>
 </blockquote>
@@ -1415,10 +1450,10 @@ $customer = $client-&gt;editCustomerOnly('MY_CUSTOMER_CODE', null, $data);
   <span class="p">}</span>
 <span class="p">)</span>
 </code></pre>
-<p>Update an existing customer&rsquo;s information in the product with
-<code class="prettyprint">productCode=MY_PRODUCT_CODE</code></p>
+<p>Update an existing customer&#39;s information in the product with
+<code>productCode=MY_PRODUCT_CODE</code></p>
 
-<p><code class="prettyprint">/customers/edit-customer/productCode/MY_PRODUCT_CODE/code/MY_CUSTOMER_CODE</code></p>
+<p><code>/customers/edit-customer/productCode/MY_PRODUCT_CODE/code/MY_CUSTOMER_CODE</code></p>
 
 <table><thead>
 <tr>
@@ -1427,81 +1462,77 @@ $customer = $client-&gt;editCustomerOnly('MY_CUSTOMER_CODE', null, $data);
 </tr>
 </thead><tbody>
 <tr>
-<td><code class="prettyprint">firstName</code></td>
+<td><code>firstName</code></td>
 <td>Limited to 20 characters.</td>
 </tr>
 <tr>
-<td><code class="prettyprint">lastName</code></td>
+<td><code>lastName</code></td>
 <td>Limited to 20 characters.</td>
 </tr>
 <tr>
-<td><code class="prettyprint">email</code></td>
+<td><code>email</code></td>
 <td>Valid email address</td>
 </tr>
 <tr>
-<td><code class="prettyprint">company</code></td>
+<td><code>company</code></td>
 <td>Limited to 60 characters</td>
 </tr>
 <tr>
-<td><code class="prettyprint">notes</code></td>
+<td><code>notes</code></td>
 <td>Limited to 255 characters</td>
 </tr>
 <tr>
-<td><code class="prettyprint">taxRate</code></td>
+<td><code>taxRate</code></td>
 <td>The rate for this customer if different than the configured default (e.g, 0.123)</td>
 </tr>
 <tr>
-<td><code class="prettyprint">isTaxExempt</code></td>
+<td><code>isTaxExempt</code></td>
 <td>1 or 0</td>
 </tr>
 <tr>
-<td><code class="prettyprint">taxNumber</code></td>
+<td><code>taxNumber</code></td>
 <td>Customer tax number if applicable. Limited to 32 characters</td>
 </tr>
 <tr>
-<td><code class="prettyprint">firstContactDatetime</code></td>
+<td><code>firstContactDatetime</code></td>
 <td>Date or datetime in ISO 8601 format. (e.g., 2011-08-01 or 2011-08-01T15:30:00+00:00). See the <a href="http://support.cheddargetter.com/faqs/marketing-metrics/marketing-metrics">KB Article</a></td>
 </tr>
 <tr>
-<td><code class="prettyprint">referer</code></td>
+<td><code>referer</code></td>
 <td>A valid URL referer. Limited to 255 characters. See the <a href="http://support.cheddargetter.com/faqs/marketing-metrics/marketing-metrics">KB Article</a></td>
 </tr>
 <tr>
-<td><code class="prettyprint">campaignTerm</code></td>
-<td>The &ldquo;term&rdquo; or &ldquo;keyword&rdquo; phrase that lead a potential customer to your site. Google Adwords equivalent: &ldquo;utm_term&rdquo;. See the <a href="http://support.cheddargetter.com/faqs/marketing-metrics/marketing-metrics">KB Article</a></td>
+<td><code>campaignTerm</code></td>
+<td>The &quot;term&quot; or &quot;keyword&quot; phrase that lead a potential customer to your site. Google Adwords equivalent: &quot;utm_term&quot;. See the <a href="http://support.cheddargetter.com/faqs/marketing-metrics/marketing-metrics">KB Article</a></td>
 </tr>
 <tr>
-<td><code class="prettyprint">campaignName</code></td>
-<td>The name of the marketing campaign. Google Adwords equivalent: &ldquo;utm_campaign&rdquo;. See the <a href="http://support.cheddargetter.com/faqs/marketing-metrics/marketing-metrics">KB Article</a></td>
+<td><code>campaignName</code></td>
+<td>The name of the marketing campaign. Google Adwords equivalent: &quot;utm_campaign&quot;. See the <a href="http://support.cheddargetter.com/faqs/marketing-metrics/marketing-metrics">KB Article</a></td>
 </tr>
 <tr>
-<td><code class="prettyprint">campaignSource</code></td>
-<td>The source of the lead. Google Adwords equivalent: &ldquo;utm_source&rdquo;. See the <a href="http://support.cheddargetter.com/faqs/marketing-metrics/marketing-metrics">KB Article</a></td>
+<td><code>campaignSource</code></td>
+<td>The source of the lead. Google Adwords equivalent: &quot;utm_source&quot;. See the <a href="http://support.cheddargetter.com/faqs/marketing-metrics/marketing-metrics">KB Article</a></td>
 </tr>
 <tr>
-<td><code class="prettyprint">campaignMedium</code></td>
-<td>The medium used to find your site. Google Adwords equivalent: &ldquo;utm_medium&rdquo;. See the <a href="http://support.cheddargetter.com/faqs/marketing-metrics/marketing-metrics">KB Article</a></td>
+<td><code>campaignMedium</code></td>
+<td>The medium used to find your site. Google Adwords equivalent: &quot;utm_medium&quot;. See the <a href="http://support.cheddargetter.com/faqs/marketing-metrics/marketing-metrics">KB Article</a></td>
 </tr>
 <tr>
-<td><code class="prettyprint">campaignContent</code></td>
-<td>The content you wish to track. Google Adwords equivalent: &ldquo;utm_content&rdquo;. See the <a href="http://support.cheddargetter.com/faqs/marketing-metrics/marketing-metrics">KB Article</a></td>
+<td><code>campaignContent</code></td>
+<td>The content you wish to track. Google Adwords equivalent: &quot;utm_content&quot;. See the <a href="http://support.cheddargetter.com/faqs/marketing-metrics/marketing-metrics">KB Article</a></td>
 </tr>
 <tr>
-<td><code class="prettyprint">metaData[&lt;user-defined&gt;]</code></td>
+<td><code>metaData[&lt;user-defined&gt;]</code></td>
 <td>See the <a href="http://support.cheddargetter.com/kb/api-8/customer-meta-data">KB Article</a> about customer metadata</td>
 </tr>
 <tr>
-<td><code class="prettyprint">remoteAddress</code></td>
+<td><code>remoteAddress</code></td>
 <td><strong>Not Required (<a href="#fraud-protection-rate-limiting">See Below</a>)</strong> Client IPv4 address</td>
 </tr>
 </tbody></table>
-
-<h2 id="subscriptions">Subscriptions</h2>
-
-<h3 id="update-a-subscription-only">Update a Subscription Only</h3>
-
+<h2 id='subscriptions'>Subscriptions</h2><h3 id='update-a-subscription-only'>Update a Subscription Only</h3>
 <blockquote>
-<p>Update a Customer&rsquo;s Subscription</p>
+<p>Update a Customer&#39;s Subscription</p>
 </blockquote>
 <pre class="highlight shell tab-shell"><code>curl -d <span class="s2">"planCode=NEW_PLAN_CODE"</span> <span class="se">\</span>
 -u <span class="s2">"&lt;username&gt;:&lt;API key&gt;"</span> <span class="se">\</span>
@@ -1513,10 +1544,10 @@ $customer = $client-&gt;editSubscription('MY_CUSTOMER_CODE', null, $data);
   <span class="p">{</span><span class="ss">:planCode</span>     <span class="o">=&gt;</span> <span class="s1">'NEW_PLAN_CODE'</span><span class="p">}</span>
 <span class="p">)</span>
 </code></pre>
-<p>Update an existing customer&rsquo;s subscription information in the product with
-<code class="prettyprint">productCode=MY_PRODUCT_CODE</code></p>
+<p>Update an existing customer&#39;s subscription information in the product with
+<code>productCode=MY_PRODUCT_CODE</code></p>
 
-<p><code class="prettyprint">/customers/edit-subscription/productCode/MY_PRODUCT_CODE/code/MY_CUSTOMER_CODE</code></p>
+<p><code>/customers/edit-subscription/productCode/MY_PRODUCT_CODE/code/MY_CUSTOMER_CODE</code></p>
 
 <table><thead>
 <tr>
@@ -1525,87 +1556,87 @@ $customer = $client-&gt;editSubscription('MY_CUSTOMER_CODE', null, $data);
 </tr>
 </thead><tbody>
 <tr>
-<td><code class="prettyprint">method</code></td>
-<td>&ldquo;cc&rdquo; (default) or &ldquo;paypal&rdquo;</td>
+<td><code>method</code></td>
+<td>&quot;cc&quot; (default) or &quot;paypal&quot;</td>
 </tr>
 <tr>
-<td><code class="prettyprint">planCode</code></td>
+<td><code>planCode</code></td>
 <td>Your code for the subscribed plan</td>
 </tr>
 <tr>
-<td><code class="prettyprint">couponCode</code></td>
-<td>Coupon code you&rsquo;d like to apply to the subscription</td>
+<td><code>couponCode</code></td>
+<td>Coupon code you&#39;d like to apply to the subscription</td>
 </tr>
 <tr>
-<td><code class="prettyprint">ccNumber</code></td>
-<td><strong>Not Required (See Notes)</strong> Numbers only &ndash; a valid credit/debit card number</td>
+<td><code>ccNumber</code></td>
+<td><strong>Not Required (See Notes)</strong> Numbers only -- a valid credit/debit card number</td>
 </tr>
 <tr>
-<td><code class="prettyprint">ccExpiration</code></td>
+<td><code>ccExpiration</code></td>
 <td><strong>Not Required (See Notes)</strong> MM/YYYY - the expiration date for the credit card</td>
 </tr>
 <tr>
-<td><code class="prettyprint">ccCardCode</code></td>
+<td><code>ccCardCode</code></td>
 <td><strong>Not Required (See Notes)</strong> 3-4 digits - The Card Verification Value (CCV).</td>
 </tr>
 <tr>
-<td><code class="prettyprint">gatewayToken</code></td>
-<td><strong>Conditional (See Notes)</strong> The gateway reference code for the payment method. Provide this in lieu of <code class="prettyprint">ccNumber</code> when pre-tokenized payment methods are available.</td>
+<td><code>gatewayToken</code></td>
+<td><strong>Conditional (See Notes)</strong> The gateway reference code for the payment method. Provide this in lieu of <code>ccNumber</code> when pre-tokenized payment methods are available.</td>
 </tr>
 <tr>
-<td><code class="prettyprint">ccType</code></td>
-<td><strong>Conditional</strong> visa, mc, disc, amex, diners, jcb, unk. If you specify a <code class="prettyprint">gatewayToken</code>, this is required.</td>
+<td><code>ccType</code></td>
+<td><strong>Conditional</strong> visa, mc, disc, amex, diners, jcb, unk. If you specify a <code>gatewayToken</code>, this is required.</td>
 </tr>
 <tr>
-<td><code class="prettyprint">ccLastFour</code></td>
-<td><strong>Conditional</strong> Numbers only &ndash; last four digits of credit/debit card number. If you specify a <code class="prettyprint">subscription[gatewayToken]</code>, this is required.</td>
+<td><code>ccLastFour</code></td>
+<td><strong>Conditional</strong> Numbers only -- last four digits of credit/debit card number. If you specify a <code>subscription[gatewayToken]</code>, this is required.</td>
 </tr>
 <tr>
-<td><code class="prettyprint">ccFirstName</code></td>
+<td><code>ccFirstName</code></td>
 <td><strong>Not Required (See Notes)</strong> Limited to 20 characters</td>
 </tr>
 <tr>
-<td><code class="prettyprint">ccLastName</code></td>
+<td><code>ccLastName</code></td>
 <td><strong>Not Required (See Notes)</strong> Limited to 20 characters</td>
 </tr>
 <tr>
-<td><code class="prettyprint">ccCompany</code></td>
+<td><code>ccCompany</code></td>
 <td>Limited to 50 characters</td>
 </tr>
 <tr>
-<td><code class="prettyprint">ccCountry</code></td>
+<td><code>ccCountry</code></td>
 <td>Limited to 60 characters. Many payment processors require that the ISO 2 char codes are used.</td>
 </tr>
 <tr>
-<td><code class="prettyprint">ccAddress</code></td>
+<td><code>ccAddress</code></td>
 <td>Limited to 60 characters</td>
 </tr>
 <tr>
-<td><code class="prettyprint">ccCity</code></td>
+<td><code>ccCity</code></td>
 <td>Limited to 40 characters</td>
 </tr>
 <tr>
-<td><code class="prettyprint">ccState</code></td>
+<td><code>ccState</code></td>
 <td>Limited to 40 characters. 2 character state/province codes are suggested when country is US/Canada.</td>
 </tr>
 <tr>
-<td><code class="prettyprint">ccZip</code></td>
+<td><code>ccZip</code></td>
 <td><strong>Not Required (See Notes)</strong> Limited to 20 characters</td>
 </tr>
 <tr>
-<td><code class="prettyprint">returnUrl</code></td>
+<td><code>returnUrl</code></td>
 <td><strong>Conditional. Required when method is paypal.</strong> Must be a valid URL. Only used when method is paypal. This is the location where subscriber is returned from paypal after accepting a preapproval.</td>
 </tr>
 <tr>
-<td><code class="prettyprint">cancelUrl</code></td>
+<td><code>cancelUrl</code></td>
 <td><strong>Conditional. Required when method is paypal.</strong> Must be a valid URL. Only used when method is paypal. This is the location where subscriber is returned from paypal after declining a preapproval.</td>
 </tr>
 <tr>
-<td><code class="prettyprint">changeBillDate</code></td>
-<td>Date or datetime in ISO 8601 format. (e.g., 2011-08-01 or 2011-08-01T15:30:00+00:00). You may also use the word &lsquo;now&rsquo; as shorthand for the current datetime.</td>
+<td><code>changeBillDate</code></td>
+<td>Date or datetime in ISO 8601 format. (e.g., 2011-08-01 or 2011-08-01T15:30:00+00:00). You may also use the word &#39;now&#39; as shorthand for the current datetime.</td>
 </tr>
 <tr>
-<td><code class="prettyprint">remoteAddress</code></td>
+<td><code>remoteAddress</code></td>
 <td><strong>Not Required (<a href="#fraud-protection-rate-limiting">See Below</a>)</strong> Client IPv4 address</td>
 </tr>
 </tbody></table>
@@ -1614,7 +1645,7 @@ $customer = $client-&gt;editSubscription('MY_CUSTOMER_CODE', null, $data);
 
   If the customer does not already have a subscription with a valid credit card,
   all credit card information is required. If the plan code corresponds to a
-  &ldquo;free&rdquo; plan, no credit card data is required. If the customer already has a
+  "free" plan, no credit card data is required. If the customer already has a
   subscription with a credit card, no credit card information data is required.
   In this instance, any subset of credit card data may be provided. Your
   preferences still apply for <code>ccCardCode</code> and <code>ccZip</code>.
@@ -1649,7 +1680,7 @@ $customer = $client-&gt;editSubscription('MY_CUSTOMER_CODE', null, $data);
   effects the billing cycle. Subsequent bill dates will be on the new cycle.
   In other words, for a monthly plan that typically bills on the 3rd of every
   month, if the next bill date is changed to the 10th, the subscription will
-  now bill every month on the 10th. If the date is equal to &lsquo;now&rsquo; or is less
+  now bill every month on the 10th. If the date is equal to 'now' or is less
   than or equal to the current date and time, the current invoice will be
   executed in real-time.
 </p>
@@ -1661,22 +1692,18 @@ $customer = $client-&gt;editSubscription('MY_CUSTOMER_CODE', null, $data);
   </p>
 
 </aside>
+<h3 id='cancel-a-customer-39-s-subscription'>Cancel a Customer&#39;s Subscription</h3>
+<p>Cancel an existing customer&#39;s subscription in the product with
+<code>productCode=MY_PRODUCT_CODE</code></p>
 
-<h3 id="cancel-a-customers-subscription">Cancel a Customer&rsquo;s Subscription</h3>
-
-<p>Cancel an existing customer&rsquo;s subscription in the product with
-<code class="prettyprint">productCode=MY_PRODUCT_CODE</code></p>
-
-<p><code class="prettyprint">/customers/cancel/productCode/MY_PRODUCT_CODE/code/MY_CUSTOMER_CODE</code></p>
+<p><code>/customers/cancel/productCode/MY_PRODUCT_CODE/code/MY_CUSTOMER_CODE</code></p>
 
 <aside class="notice">
-  The customer&rsquo;s current subscription will be canceled at the moment this call
-  is made. If you would like to reactivate a customer&rsquo;s subscription, you may do
+  The customer's current subscription will be canceled at the moment this call
+  is made. If you would like to reactivate a customer's subscription, you may do
   so by updating the subscription with full credit card data.
 </aside>
-
-<h2 id="tracked-items">Tracked Items</h2>
-
+<h2 id='tracked-items'>Tracked Items</h2>
 <p>Use the tracked item endpoints to <em>set</em>, <em>increment</em>, or <em>decrement</em> the quantity of
 and item for an individual subscription.</p>
 
@@ -1687,11 +1714,9 @@ and item for an individual subscription.</p>
 <ul>
 <li>The cancellation is the special <code>paypal-wait</code> state and the PayPal preapproval request period is still valid (up to 3 hours)</li>
 <li>The canceled subscription has a pending invoice with a billingDatetime in the future</li>
-<li>The quantity update request is for the outstanding invoice. The request includes the <code class="prettyprint">invoicePeriod</code> parameter and it is set to <code class="prettyprint">outstanding</code></li>
+<li>The quantity update request is for the outstanding invoice. The request includes the <code>invoicePeriod</code> parameter and it is set to <code>outstanding</code></li>
 </ul>
-
-<h3 id="add-item-quantity">Add Item Quantity</h3>
-
+<h3 id='add-item-quantity'>Add Item Quantity</h3>
 <blockquote>
 <p>Add Item Quantity</p>
 </blockquote>
@@ -1709,10 +1734,10 @@ $quantity = $client-&gt;addItemQuantity('MY_CUSTOMER_CODE', null, $data);
     <span class="p">}</span>
 <span class="p">)</span>
 </code></pre>
-<p>Increment a customer&rsquo;s current usage of a single item in the product with
-<code class="prettyprint">productCode=MY_PRODUCT_CODE</code></p>
+<p>Increment a customer&#39;s current usage of a single item in the product with
+<code>productCode=MY_PRODUCT_CODE</code></p>
 
-<p><code class="prettyprint">/customers/add-item-quantity/productCode/MY_PRODUCT_CODE/code/MY_CUSTOMER_CODE/itemCode/MY_ITEM_CODE</code></p>
+<p><code>/customers/add-item-quantity/productCode/MY_PRODUCT_CODE/code/MY_CUSTOMER_CODE/itemCode/MY_ITEM_CODE</code></p>
 
 <table><thead>
 <tr>
@@ -1721,11 +1746,11 @@ $quantity = $client-&gt;addItemQuantity('MY_CUSTOMER_CODE', null, $data);
 </tr>
 </thead><tbody>
 <tr>
-<td><code class="prettyprint">quantity</code></td>
+<td><code>quantity</code></td>
 <td>The positive amount accurate to up to 4 decimal places (if other that 1.0000) that you wish to add to the current usage for this item.</td>
 </tr>
 <tr>
-<td><code class="prettyprint">remoteAddress</code></td>
+<td><code>remoteAddress</code></td>
 <td><strong>Not Required (<a href="#fraud-protection-rate-limiting">See Below</a>)</strong> Client IPv4 address</td>
 </tr>
 </tbody></table>
@@ -1734,9 +1759,7 @@ $quantity = $client-&gt;addItemQuantity('MY_CUSTOMER_CODE', null, $data);
   <code>quantity</code> is only required if you wish to add more than one to
   the current usage amount.
 </aside>
-
-<h3 id="remove-item-quantity">Remove Item Quantity</h3>
-
+<h3 id='remove-item-quantity'>Remove Item Quantity</h3>
 <blockquote>
 <p>Remove Item Quantity</p>
 </blockquote>
@@ -1754,10 +1777,10 @@ $quantity = $client-&gt;removeItemQuantity('MY_CUSTOMER_CODE', null, $data);
     <span class="p">}</span>
 <span class="p">)</span>
 </code></pre>
-<p>Decrement a customer&rsquo;s current usage of a single item in the product with
-<code class="prettyprint">productCode=MY_PRODUCT_CODE</code></p>
+<p>Decrement a customer&#39;s current usage of a single item in the product with
+<code>productCode=MY_PRODUCT_CODE</code></p>
 
-<p><code class="prettyprint">/customers/remove-item-quantity/productCode/MY_PRODUCT_CODE/code/MY_CUSTOMER_CODE/itemCode/MY_ITEM_CODE</code></p>
+<p><code>/customers/remove-item-quantity/productCode/MY_PRODUCT_CODE/code/MY_CUSTOMER_CODE/itemCode/MY_ITEM_CODE</code></p>
 
 <table><thead>
 <tr>
@@ -1766,11 +1789,11 @@ $quantity = $client-&gt;removeItemQuantity('MY_CUSTOMER_CODE', null, $data);
 </tr>
 </thead><tbody>
 <tr>
-<td><code class="prettyprint">quantity</code></td>
-<td>The positive amount accurate to up to 4 decimal places (if other that 1.0000) that you wish to remove from the customer&rsquo;s current quantity for this item.</td>
+<td><code>quantity</code></td>
+<td>The positive amount accurate to up to 4 decimal places (if other that 1.0000) that you wish to remove from the customer&#39;s current quantity for this item.</td>
 </tr>
 <tr>
-<td><code class="prettyprint">remoteAddress</code></td>
+<td><code>remoteAddress</code></td>
 <td><strong>Not Required (<a href="#fraud-protection-rate-limiting">see below</a>)</strong> Client IPv4 address</td>
 </tr>
 </tbody></table>
@@ -1779,9 +1802,7 @@ $quantity = $client-&gt;removeItemQuantity('MY_CUSTOMER_CODE', null, $data);
   <code>quantity</code> is only required if you wish to subtract more than 1 from
   the current usage amount.
 </aside>
-
-<h3 id="set-item-quantity">Set Item Quantity</h3>
-
+<h3 id='set-item-quantity'>Set Item Quantity</h3>
 <blockquote>
 <p>Set Item Quantity</p>
 </blockquote>
@@ -1806,10 +1827,10 @@ $quantity = $client-&gt;setItemQuantity('MY_CUSTOMER_CODE', null, $data);
     <span class="p">}</span>
 <span class="p">)</span>
 </code></pre>
-<p>Set a customer&rsquo;s current usage of a single item in the product with
-<code class="prettyprint">productCode=MY_PRODUCT_CODE</code></p>
+<p>Set a customer&#39;s current usage of a single item in the product with
+<code>productCode=MY_PRODUCT_CODE</code></p>
 
-<p><code class="prettyprint">/customers/set-item-quantity/productCode/MY_PRODUCT_CODE/code/MY_CUSTOMER_CODE/itemCode/MY_ITEM_CODE</code></p>
+<p><code>/customers/set-item-quantity/productCode/MY_PRODUCT_CODE/code/MY_CUSTOMER_CODE/itemCode/MY_ITEM_CODE</code></p>
 
 <table><thead>
 <tr>
@@ -1818,23 +1839,19 @@ $quantity = $client-&gt;setItemQuantity('MY_CUSTOMER_CODE', null, $data);
 </tr>
 </thead><tbody>
 <tr>
-<td><code class="prettyprint">quantity</code></td>
+<td><code>quantity</code></td>
 <td>Yes</td>
 </tr>
 <tr>
-<td><code class="prettyprint">invoicePeriod</code></td>
-<td>The billing period - &lsquo;current&rsquo; (the default) or &lsquo;outstanding&rsquo;. <a href="#current-vs-outstanding-invoice">See below</a>.</td>
+<td><code>invoicePeriod</code></td>
+<td>The billing period - &#39;current&#39; (the default) or &#39;outstanding&#39;. <a href="#current-vs-outstanding-invoice">See below</a>.</td>
 </tr>
 <tr>
-<td><code class="prettyprint">remoteAddress</code></td>
+<td><code>remoteAddress</code></td>
 <td><strong>Not Required (<a href="#fraud-protection-rate-limiting">see below</a>)</strong> Client IPv4 address</td>
 </tr>
 </tbody></table>
-
-<h2 id="invoice-interactions">Invoice Interactions</h2>
-
-<h3 id="add-a-custom-charge-credit">Add a Custom Charge/Credit</h3>
-
+<h2 id='invoice-interactions'>Invoice Interactions</h2><h3 id='add-a-custom-charge-credit'>Add a Custom Charge/Credit</h3>
 <blockquote>
 <p>Add a Custom Charge</p>
 </blockquote>
@@ -1885,10 +1902,10 @@ $customer = $client-&gt;addCharge('MY_CUSTOMER_CODE', null, $data);
     <span class="p">}</span>
 <span class="p">)</span>
 </code></pre>
-<p>Add an arbitrary charge or credit to the customer&rsquo;s current invoice in the product
-with <code class="prettyprint">productCode=MY_PRODUCT_CODE</code></p>
+<p>Add an arbitrary charge or credit to the customer&#39;s current invoice in the product
+with <code>productCode=MY_PRODUCT_CODE</code></p>
 
-<p><code class="prettyprint">/customers/add-charge/productCode/MY_PRODUCT_CODE/code/MY_CUSTOMER_CODE</code></p>
+<p><code>/customers/add-charge/productCode/MY_PRODUCT_CODE/code/MY_CUSTOMER_CODE</code></p>
 
 <table><thead>
 <tr>
@@ -1897,33 +1914,31 @@ with <code class="prettyprint">productCode=MY_PRODUCT_CODE</code></p>
 </tr>
 </thead><tbody>
 <tr>
-<td><code class="prettyprint">chargeCode</code></td>
+<td><code>chargeCode</code></td>
 <td><strong>Required</strong> Your code for this charge. Limited to 36 characters.</td>
 </tr>
 <tr>
-<td><code class="prettyprint">quantity</code></td>
+<td><code>quantity</code></td>
 <td><strong>Required</strong> Positive integer quantity</td>
 </tr>
 <tr>
-<td><code class="prettyprint">eachAmount</code></td>
+<td><code>eachAmount</code></td>
 <td><strong>Required</strong> Positive or negative integer or float with two digit decimal precision. A positive number will create a charge (debit). A negative number will create a credit.</td>
 </tr>
 <tr>
-<td><code class="prettyprint">description</code></td>
+<td><code>description</code></td>
 <td>Description for this charge/credit</td>
 </tr>
 <tr>
-<td><code class="prettyprint">invoicePeriod</code></td>
-<td>The billing period - &lsquo;current&rsquo; (the default) or &lsquo;outstanding&rsquo;. <a href="#current-vs-outstanding-invoice">See below</a>.</td>
+<td><code>invoicePeriod</code></td>
+<td>The billing period - &#39;current&#39; (the default) or &#39;outstanding&#39;. <a href="#current-vs-outstanding-invoice">See below</a>.</td>
 </tr>
 <tr>
-<td><code class="prettyprint">remoteAddress</code></td>
+<td><code>remoteAddress</code></td>
 <td><strong>Not Required (<a href="#fraud-protection-rate-limiting">see below</a>)</strong> Client IPv4 address</td>
 </tr>
 </tbody></table>
-
-<h3 id="delete-a-custom-charge-credit">Delete a Custom Charge/Credit</h3>
-
+<h3 id='delete-a-custom-charge-credit'>Delete a Custom Charge/Credit</h3>
 <blockquote>
 <p>Delete a Custom Charge/Credit</p>
 </blockquote>
@@ -1941,10 +1956,10 @@ $customer = $client-&gt;deleteCharge('MY_CUSTOMER_CODE', null, $data);
     <span class="p">}</span>
 <span class="p">)</span>
 </code></pre>
-<p>Remove a charge or credit from the customer&rsquo;s current invoice in the product
-with <code class="prettyprint">productCode=MY_PRODUCT_CODE</code></p>
+<p>Remove a charge or credit from the customer&#39;s current invoice in the product
+with <code>productCode=MY_PRODUCT_CODE</code></p>
 
-<p><code class="prettyprint">/customers/delete-charge/productCode/MY_PRODUCT_CODE/code/MY_CUSTOMER_CODE</code></p>
+<p><code>/customers/delete-charge/productCode/MY_PRODUCT_CODE/code/MY_CUSTOMER_CODE</code></p>
 
 <table><thead>
 <tr>
@@ -1953,25 +1968,23 @@ with <code class="prettyprint">productCode=MY_PRODUCT_CODE</code></p>
 </tr>
 </thead><tbody>
 <tr>
-<td><code class="prettyprint">chargeId</code></td>
-<td><strong>Required</strong> Cheddar&rsquo;s ID for the charge/credit</td>
+<td><code>chargeId</code></td>
+<td><strong>Required</strong> Cheddar&#39;s ID for the charge/credit</td>
 </tr>
 <tr>
-<td><code class="prettyprint">invoicePeriod</code></td>
-<td>The billing period - &lsquo;current&rsquo; (the default) or &lsquo;outstanding&rsquo;. <a href="#current-vs-outstanding-invoice">See below</a>.</td>
+<td><code>invoicePeriod</code></td>
+<td>The billing period - &#39;current&#39; (the default) or &#39;outstanding&#39;. <a href="#current-vs-outstanding-invoice">See below</a>.</td>
 </tr>
 <tr>
-<td><code class="prettyprint">remoteAddress</code></td>
+<td><code>remoteAddress</code></td>
 <td><strong>Not Required (<a href="#fraud-protection-rate-limiting">see below</a>)</strong> Client IPv4 address</td>
 </tr>
 </tbody></table>
-
-<h3 id="create-a-one-time-invoice">Create a One-Time Invoice</h3>
-
+<h3 id='create-a-one-time-invoice'>Create a One-Time Invoice</h3>
 <p>Create a parallel one-time invoice and execute the transaction immediately using
-the customer&rsquo;s current payment method in the product with <code class="prettyprint">productCode=MY_PRODUCT_CODE</code></p>
+the customer&#39;s current payment method in the product with <code>productCode=MY_PRODUCT_CODE</code></p>
 
-<p><code class="prettyprint">/invoices/new/productCode/MY_PRODUCT_CODE/code/MY_CUSTOMER_CODE</code></p>
+<p><code>/invoices/new/productCode/MY_PRODUCT_CODE/code/MY_CUSTOMER_CODE</code></p>
 
 <table><thead>
 <tr>
@@ -1980,23 +1993,23 @@ the customer&rsquo;s current payment method in the product with <code class="pre
 </tr>
 </thead><tbody>
 <tr>
-<td><code class="prettyprint">charges[&lt;user-defined&gt;][chargeCode]</code></td>
+<td><code>charges[&lt;user-defined&gt;][chargeCode]</code></td>
 <td><strong>Required</strong> Your code for this charge. Limited to 36 characters.</td>
 </tr>
 <tr>
-<td><code class="prettyprint">charges[&lt;user-defined&gt;][quantity]</code></td>
+<td><code>charges[&lt;user-defined&gt;][quantity]</code></td>
 <td><strong>Required</strong> Positive integer quantity</td>
 </tr>
 <tr>
-<td><code class="prettyprint">charges[&lt;user-defined&gt;][eachAmount]</code></td>
+<td><code>charges[&lt;user-defined&gt;][eachAmount]</code></td>
 <td><strong>Required</strong> Positive or negative integer or float with two digit decimal precision. A positive number will create a charge (debit). A negative number will create a credit.</td>
 </tr>
 <tr>
-<td><code class="prettyprint">charges[&lt;user-defined&gt;][description]</code></td>
+<td><code>charges[&lt;user-defined&gt;][description]</code></td>
 <td>Description for this charge/credit</td>
 </tr>
 <tr>
-<td><code class="prettyprint">remoteAddress</code></td>
+<td><code>remoteAddress</code></td>
 <td><strong>Not Required (<a href="#fraud-protection-rate-limiting">see below</a>)</strong> Client IPv4 address</td>
 </tr>
 </tbody></table>
@@ -2004,12 +2017,10 @@ the customer&rsquo;s current payment method in the product with <code class="pre
 <aside class="notice">
   At least one charge is required. Multiple charges may be submitted.
 </aside>
+<h3 id='run-an-outstanding-invoice'>Run an Outstanding Invoice</h3>
+<p>Execute an outstanding invoice in the product with <code>productCode=MY_PRODUCT_CODE</code></p>
 
-<h3 id="run-an-outstanding-invoice">Run an Outstanding Invoice</h3>
-
-<p>Execute an outstanding invoice in the product with <code class="prettyprint">productCode=MY_PRODUCT_CODE</code></p>
-
-<p><code class="prettyprint">/customers/run-outstanding/productCode/MY_PRODUCT_CODE/code/MY_CUSTOMER_CODE</code></p>
+<p><code>/customers/run-outstanding/productCode/MY_PRODUCT_CODE/code/MY_CUSTOMER_CODE</code></p>
 
 <table><thead>
 <tr>
@@ -2018,11 +2029,11 @@ the customer&rsquo;s current payment method in the product with <code class="pre
 </tr>
 </thead><tbody>
 <tr>
-<td><code class="prettyprint">ccCardCode</code></td>
+<td><code>ccCardCode</code></td>
 <td>3-4 digits - The Card Verification Value (CCV).</td>
 </tr>
 <tr>
-<td><code class="prettyprint">remoteAddress</code></td>
+<td><code>remoteAddress</code></td>
 <td><strong>Not Required (<a href="#fraud-protection-rate-limiting">see below</a>)</strong> Client IPv4 address</td>
 </tr>
 </tbody></table>
@@ -2044,12 +2055,10 @@ the customer&rsquo;s current payment method in the product with <code class="pre
     for a zero amount and reactivate the subscription.
   </p>
 </aside>
+<h3 id='issue-a-refund'>Issue a Refund</h3>
+<p>Refund a transaction on a billed invoice in the product with <code>productCode=MY_PRODUCT_CODE</code></p>
 
-<h3 id="issue-a-refund">Issue a Refund</h3>
-
-<p>Refund a transaction on a billed invoice in the product with <code class="prettyprint">productCode=MY_PRODUCT_CODE</code></p>
-
-<p><code class="prettyprint">/invoices/refund/productCode/MY_PRODUCT_CODE</code></p>
+<p><code>/invoices/refund/productCode/MY_PRODUCT_CODE</code></p>
 
 <table><thead>
 <tr>
@@ -2058,15 +2067,15 @@ the customer&rsquo;s current payment method in the product with <code class="pre
 </tr>
 </thead><tbody>
 <tr>
-<td><code class="prettyprint">number</code> or <code class="prettyprint">id</code></td>
-<td><strong>Required</strong> Either Cheddar&rsquo;s ID for the invoice or the Cheddar-generated invoice number</td>
+<td><code>number</code> or <code>id</code></td>
+<td><strong>Required</strong> Either Cheddar&#39;s ID for the invoice or the Cheddar-generated invoice number</td>
 </tr>
 <tr>
-<td><code class="prettyprint">amount</code></td>
+<td><code>amount</code></td>
 <td><strong>Required</strong> An amount less than or equal to the refundable amount. See notes.</td>
 </tr>
 <tr>
-<td><code class="prettyprint">remoteAddress</code></td>
+<td><code>remoteAddress</code></td>
 <td><strong>Not Required (<a href="#fraud-protection-rate-limiting">see below</a>)</strong> Client IPv4 address</td>
 </tr>
 </tbody></table>
@@ -2086,12 +2095,10 @@ the customer&rsquo;s current payment method in the product with <code class="pre
     occurs to issue a refund.
   </p>
 </aside>
+<h3 id='issue-a-void'>Issue a Void</h3>
+<p>Void a transaction on a billed invoice in the product with <code>productCode=MY_PRODUCT_CODE</code></p>
 
-<h3 id="issue-a-void">Issue a Void</h3>
-
-<p>Void a transaction on a billed invoice in the product with <code class="prettyprint">productCode=MY_PRODUCT_CODE</code></p>
-
-<p><code class="prettyprint">/invoices/void/productCode/MY_PRODUCT_CODE</code></p>
+<p><code>/invoices/void/productCode/MY_PRODUCT_CODE</code></p>
 
 <table><thead>
 <tr>
@@ -2100,11 +2107,11 @@ the customer&rsquo;s current payment method in the product with <code class="pre
 </tr>
 </thead><tbody>
 <tr>
-<td><code class="prettyprint">number</code> or <code class="prettyprint">id</code></td>
-<td><strong>Required</strong> Either Cheddar&rsquo;s ID for the invoice or the Cheddar-generated invoice number</td>
+<td><code>number</code> or <code>id</code></td>
+<td><strong>Required</strong> Either Cheddar&#39;s ID for the invoice or the Cheddar-generated invoice number</td>
 </tr>
 <tr>
-<td><code class="prettyprint">remoteAddress</code></td>
+<td><code>remoteAddress</code></td>
 <td><strong>Not Required (<a href="#fraud-protection-rate-limiting">see below</a>)</strong> lient IPv4 address</td>
 </tr>
 </tbody></table>
@@ -2113,13 +2120,11 @@ the customer&rsquo;s current payment method in the product with <code class="pre
   Some payment processors allow for voids. If your payment processor allows
   voids, a void can only be executed prior to transaction settlement.
 </aside>
-
-<h3 id="issue-a-void-or-refund">Issue a Void or Refund</h3>
-
+<h3 id='issue-a-void-or-refund'>Issue a Void or Refund</h3>
 <p>Defer to Cheddar to decide if a void or a refund is executed against
-the invoice in the product with  <code class="prettyprint">productCode=MY_PRODUCT_CODE</code></p>
+the invoice in the product with  <code>productCode=MY_PRODUCT_CODE</code></p>
 
-<p><code class="prettyprint">/invoices/void-or-refund/productCode/MY_PRODUCT_CODE</code></p>
+<p><code>/invoices/void-or-refund/productCode/MY_PRODUCT_CODE</code></p>
 
 <table><thead>
 <tr>
@@ -2128,11 +2133,11 @@ the invoice in the product with  <code class="prettyprint">productCode=MY_PRODUC
 </tr>
 </thead><tbody>
 <tr>
-<td><code class="prettyprint">number</code> or <code class="prettyprint">id</code></td>
-<td><strong>Required</strong> Either Cheddar&rsquo;s ID for the invoice or the Cheddar-generated invoice number</td>
+<td><code>number</code> or <code>id</code></td>
+<td><strong>Required</strong> Either Cheddar&#39;s ID for the invoice or the Cheddar-generated invoice number</td>
 </tr>
 <tr>
-<td><code class="prettyprint">remoteAddress</code></td>
+<td><code>remoteAddress</code></td>
 <td><strong>Not Required (<a href="#fraud-protection-rate-limiting">see below</a>)</strong> Client IPv4 address</td>
 </tr>
 </tbody></table>
@@ -2144,13 +2149,11 @@ the invoice in the product with  <code class="prettyprint">productCode=MY_PRODUC
   has already figured that out. Using this call makes voids and refunds simple.
   A drawback of using this method is that partial refunds are not possible.
 </aside>
-
-<h3 id="send-or-resend-an-invoice-email">Send or Resend an Invoice email</h3>
-
+<h3 id='send-or-resend-an-invoice-email'>Send or Resend an Invoice email</h3>
 <p>Send (or resend) email notification for the invoice in the product
-with  <code class="prettyprint">productCode=MY_PRODUCT_CODE</code></p>
+with  <code>productCode=MY_PRODUCT_CODE</code></p>
 
-<p><code class="prettyprint">/invoices/send-email/productCode/MY_PRODUCT_CODE</code></p>
+<p><code>/invoices/send-email/productCode/MY_PRODUCT_CODE</code></p>
 
 <table><thead>
 <tr>
@@ -2159,11 +2162,11 @@ with  <code class="prettyprint">productCode=MY_PRODUCT_CODE</code></p>
 </tr>
 </thead><tbody>
 <tr>
-<td><code class="prettyprint">number</code> or <code class="prettyprint">id</code></td>
-<td><strong>Required</strong> Either Cheddar&rsquo;s ID for the invoice or the Cheddar-generated invoice number</td>
+<td><code>number</code> or <code>id</code></td>
+<td><strong>Required</strong> Either Cheddar&#39;s ID for the invoice or the Cheddar-generated invoice number</td>
 </tr>
 <tr>
-<td><code class="prettyprint">remoteAddress</code></td>
+<td><code>remoteAddress</code></td>
 <td><strong>Not Required (<a href="#fraud-protection-rate-limiting">see below</a>)</strong> Client IPv4 address</td>
 </tr>
 </tbody></table>
@@ -2176,54 +2179,42 @@ with  <code class="prettyprint">productCode=MY_PRODUCT_CODE</code></p>
   <br/>
   <br/>
   <p>
-    Emails are automatically sent but if you&rsquo;d like to resend one, just use this
+    Emails are automatically sent but if you'd like to resend one, just use this
     method. The most recent relevant email will be sent for the invoice. For
     example, if the most recent transaction was declined, the decline email is
     sent. If that most recent transaction was approved, the payment receipt email
     is sent.
   </p>
 </aside>
+<h2 id='promotions'>Promotions</h2><h3 id='get-all-promotions'>Get all Promotions</h3>
+<p>Get all promotion data from the product with  <code>productCode=MY_PRODUCT_CODE</code></p>
 
-<h2 id="promotions">Promotions</h2>
+<p><code>/promotions/get/productCode/MY_PRODUCT_CODE</code></p>
+<h3 id='get-a-single-promotions'>Get a Single Promotions</h3>
+<p>Get the promotion data from the product with  <code>productCode=MY_PRODUCT_CODE</code> for
+the promotion with coupon <code>code=MY_COUPON_CODE</code></p>
 
-<h3 id="get-all-promotions">Get all Promotions</h3>
-
-<p>Get all promotion data from the product with  <code class="prettyprint">productCode=MY_PRODUCT_CODE</code></p>
-
-<p><code class="prettyprint">/promotions/get/productCode/MY_PRODUCT_CODE</code></p>
-
-<h3 id="get-a-single-promotions">Get a Single Promotions</h3>
-
-<p>Get the promotion data from the product with  <code class="prettyprint">productCode=MY_PRODUCT_CODE</code> for
-the promotion with coupon <code class="prettyprint">code=MY_COUPON_CODE</code></p>
-
-<p><code class="prettyprint">/promotions/get/productCode/MY_PRODUCT_CODE/code/MY_COUPON_CODE</code></p>
-
-          <h1 id="current-vs-outstanding-invoice">Current vs. Outstanding Invoice</h1>
-
-<p>Many API calls interact with a customer&rsquo;s subscription invoice. The &ldquo;current&rdquo;
-subscription invoice is the one that is currently &ldquo;open&rdquo;. In other words, it is
+<p><code>/promotions/get/productCode/MY_PRODUCT_CODE/code/MY_COUPON_CODE</code></p>
+<h1 id='current-vs-outstanding-invoice'>Current vs. Outstanding Invoice</h1>
+<p>Many API calls interact with a customer&#39;s subscription invoice. The &quot;current&quot;
+subscription invoice is the one that is currently &quot;open&quot;. In other words, it is
 scheduled to bill in the future. You can add charges, credits, and item
-quantities to a subscription invoice. In almost every case, you&rsquo;ll want to
-interact with the &ldquo;current&rdquo; subscription invoice. This is the default for all
-relevant API calls. In rare cases, you might want to adjust the &ldquo;outstanding&rdquo;
+quantities to a subscription invoice. In almost every case, you&#39;ll want to
+interact with the &quot;current&quot; subscription invoice. This is the default for all
+relevant API calls. In rare cases, you might want to adjust the &quot;outstanding&quot;
 subscription invoice.</p>
 
 <p>An outstanding invoice is one that was scheduled to bill in the past but has
 not yet been paid. This could be a scheduled invoice that was attempted but
-declined (the subscriber is in the dunning process) or simply one that&rsquo;s
-scheduled in the past but Cheddar&rsquo;s recurring engine hasn&rsquo;t picked it up
+declined (the subscriber is in the dunning process) or simply one that&#39;s
+scheduled in the past but Cheddar&#39;s recurring engine hasn&#39;t picked it up
 for execution yet. If a subscription is canceled for non-payment, it almost
 certainly has an outstanding invoice.</p>
 
-<p>Some API methods have a parameter named <code class="prettyprint">invoicePeriod</code>. In the case when you want
+<p>Some API methods have a parameter named <code>invoicePeriod</code>. In the case when you want
 to interact with the outstanding invoice, set the value for this parameter to
-&ldquo;outstanding&rdquo;.</p>
-
-          <h1 id="response-codes">Response Codes</h1>
-
-<h2 id="http-status-codes">HTTP Status Codes</h2>
-
+&quot;outstanding&quot;.</p>
+<h1 id='response-codes'>Response Codes</h1><h2 id='http-status-codes'>HTTP Status Codes</h2>
 <p>The Cheddar API returns appropriate HTTP status codes for every request.</p>
 
 <table><thead>
@@ -2233,60 +2224,54 @@ to interact with the outstanding invoice, set the value for this parameter to
 </tr>
 </thead><tbody>
 <tr>
-<td><code class="prettyprint">200 OK</code></td>
+<td><code>200 OK</code></td>
 <td>Success!</td>
 </tr>
 <tr>
-<td><code class="prettyprint">400 Bad Request</code></td>
+<td><code>400 Bad Request</code></td>
 <td>The request was invalid. An accompanying error message will explain why.</td>
 </tr>
 <tr>
-<td><code class="prettyprint">404 Not Found</code></td>
+<td><code>404 Not Found</code></td>
 <td>The URI requested is invalid or the resource requested, such as a user, does not exist.</td>
 </tr>
 <tr>
-<td><code class="prettyprint">412 Precondition Failed</code></td>
+<td><code>412 Precondition Failed</code></td>
 <td>The request contains POST data that is in an invalid format or required parameters are missing.</td>
 </tr>
 <tr>
-<td><code class="prettyprint">422 Unprocessable Entity</code></td>
-<td>The gateway doesn&rsquo;t like the payment data. In other words, the gateway failed to process the request.</td>
+<td><code>422 Unprocessable Entity</code></td>
+<td>The gateway doesn&#39;t like the payment data. In other words, the gateway failed to process the request.</td>
 </tr>
 <tr>
-<td><code class="prettyprint">500 Internal Server Error</code></td>
+<td><code>500 Internal Server Error</code></td>
 <td>Something is broken. Please post in the support forum so the Cheddar team can investigate.</td>
 </tr>
 <tr>
-<td><code class="prettyprint">502 Bad Gateway</code></td>
+<td><code>502 Bad Gateway</code></td>
 <td>Communication with the payment gateway failed. Try again later.</td>
 </tr>
 </tbody></table>
-
-          <h1 id="error-messages">Error Messages</h1>
-
+<h1 id='error-messages'>Error Messages</h1>
 <p>When the Cheddar API returns error messages, it does so in XML format. For example, an error from an XML method might look like this:</p>
 
-<p><code class="prettyprint">&lt;error id=&quot;1234&quot; code=&quot;404&quot; auxCode=&quot;&quot;&gt;Customer not found&lt;/error&gt;</code></p>
+<p><code>&lt;error id=&quot;1234&quot; code=&quot;404&quot; auxCode=&quot;&quot;&gt;Customer not found&lt;/error&gt;</code></p>
 
 <p>Errors are logged and exposed to you in the admin GUI: <a href="https://getcheddar.com/admin/activity/errors">https://getcheddar.com/admin/activity/errors</a></p>
 
 <p><a href="http://support.getcheddar.com/kb/api-8/error-handling">More information about errors is available in this KB article</a></p>
-
-          <h1 id="fraud-protection-rate-limiting">Fraud Protection, Rate Limiting</h1>
-
+<h1 id='fraud-protection-rate-limiting'>Fraud Protection, Rate Limiting</h1>
 <p>All API requests should include the client IP address if possible. If not
 provided, the IP of the machine making the request will be used. This value is
 used for rate limiting, fraud protection, etc. To prevent the same fraudster
 from attempting to signup for your service over and over and over again with
-different credit card numbers, you&rsquo;ll need to provide the IP address with the
+different credit card numbers, you&#39;ll need to provide the IP address with the
 request.</p>
-
-          <h1 id="webhooks-reverse-api-callbacks">Webhooks, Reverse API, Callbacks</h1>
-
+<h1 id='webhooks-reverse-api-callbacks'>Webhooks, Reverse API, Callbacks</h1>
 <p>Yup, Cheddar supports custom webhooks as well as some pre-defined third
 party hooks. The hook system is fault tolerant with automatic retries and
 includes a management console and some other niceties at no extra charge
-(ooh, burn!). Yeah, we&rsquo;re pretty proud of it.</p>
+(ooh, burn!). Yeah, we&#39;re pretty proud of it.</p>
 
 <p><a href="http://support.getcheddar.com/kb/api-8/web-hooks-service-hooks-and-captain-hooks">More information about webhooks</a></p>
 
